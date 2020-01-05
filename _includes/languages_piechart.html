@@ -1,117 +1,36 @@
-
-<meta charset="utf-8">
-
-<!-- Load d3.js -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js"></script>
-
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
-
-<!-- Color scale -->
-<!--<script type="text/javascript" src="{{ "/assets/js/d3-scale-chromatic.v1.min.js" | prepend: site.baseurl }}"></script>-->
-
-<script>
-
-  // set the dimensions and margins of the graph
-  var width = 450
-      height = 450
-      margin = 100
-  
-  // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-  var radius = Math.min(width, height) / 2 - margin
-  
-  // append the svg object to the div called 'my_dataviz'
-  var svg = d3.select("#my_dataviz")
-    .append("svg")
-      .attr("width", width)
-      .attr("height", height)
-    .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-  
-  // Create dummy data
-  var data = {
-    "Python": 30,
-    "Processing": 20,
-    "Haskell": 15,
-    "C/C++": 15,
-    "Julia": 15,
-    "Java": 5,
-    "JS": 5,
-    "C#": 5
-  }
-  
-  // set the color scale
-  //var color = d3.scaleOrdinal()
-  //  .domain(data)
-  //  .range(d3.schemeSet2);
-  
-  // Compute the position of each group on the pie:
-  var pie = d3.pie()
-    .value(function(d) {return d.value; })
-  var data_ready = pie(d3.entries(data))
-  // Now I know that group A goes from 0 degrees to x degrees and so on.
-
-  // shape helper to build arcs:
-  var arcGenerator = d3.arc()
-    .innerRadius(0)
-    .outerRadius(radius)
-
-  function midAngle(d){
-		return d.startAngle + (d.endAngle - d.startAngle)/2;
-	}
-  
-  // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-  svg
-    .selectAll('mySlices')
-    .data(data_ready)
-    .enter()
-    .append('path')
-      .attr('d', arcGenerator)
-      //.attr('fill', function(d){ return(color(d.data.key)) })
-      .attr('fill', function(d){ return "red" })
-      .attr("stroke", "black")
-      .style("stroke-width", "2px")
-      .style("opacity", 0.7)
-    .on("mouseover", function(d) {
-      d3.select(this).style("fill", "white");
-      d3.select(this).style("stroke-width", "4px");
-    })
-    .on("mouseout", function(d) {
-      //d3.select(this).style("fill", color(d.data.key));
-      d3.select(this).style("fill", "red");
-      d3.select(this).style("stroke-width", "2px");
-    });
-  
-  // Now add the annotation. Use the centroid method to get the best coordinates
-  svg
-    .selectAll('mySlices')
-    .data(data_ready)
-    .enter()
-    .append('text')
-    .text(function(d){ return d.data.key})
-    .attr("transform", function(d) {
-      var pos = arcGenerator.centroid(d);
-      pos[0] *= 2.75
-      pos[1] *= 2.75
-      return "translate(" + pos + ")"
-      })
-    .style("text-anchor", "middle")
-    .style("font-size", 17);
-  
-  svg
-    .selectAll('mySlices')
-    .data(data_ready)
-    .enter()
-    .append('text')
-    .text(function(d){ return d.data.value + "%"})
-    .attr("transform", function(d) {
-      var pos = arcGenerator.centroid(d);
-      pos[0] *= 1.6
-      pos[1] *= 1.6
-      return "translate(" + pos + ")"
-      })
-    .style("text-anchor", "middle")
-    .style("font-size", 12);
-    
-  
-  </script>
+<div id="my_dataviz"><svg width="450" height="450">
+    <g transform="translate(225,225)">
+      <path d="M7.654042494670958e-15,-125A125,125,0,0,1,123.7276802351166,17.789354784160633L0,0Z" fill="#66c2a5"
+        stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(102, 194, 165);"></path>
+      <path d="M123.7276802351166,17.789354784160633A125,125,0,0,1,35.216569605178705,119.93662170181217L0,0Z"
+        fill="#fc8d62" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(252, 141, 98);"></path>
+      <path d="M35.216569605178705,119.93662170181217A125,125,0,0,1,-67.58010218194971,105.15669160389764L0,0Z"
+        fill="#8da0cb" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(141, 160, 203);"></path>
+      <path d="M-67.58010218194971,105.15669160389764A125,125,0,0,1,-123.72768023511658,17.789354784160647L0,0Z"
+        fill="#e78ac3" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(231, 138, 195);"></path>
+      <path d="M-123.72768023511658,17.789354784160647A125,125,0,0,1,-94.46869679428225,-81.85759174316067L0,0Z"
+        fill="#a6d854" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(166, 216, 84);"></path>
+      <path d="M-94.46869679428225,-81.85759174316067A125,125,0,0,1,-67.58010218194968,-105.15669160389766L0,0Z"
+        fill="#ffd92f" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(255, 217, 47);"></path>
+      <path d="M-67.58010218194968,-105.15669160389766A125,125,0,0,1,-35.21656960517872,-119.93662170181217L0,0Z"
+        fill="#e5c494" stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(229, 196, 148);"></path>
+      <path d="M-35.21656960517872,-119.93662170181217A125,125,0,0,1,-2.2962127484012872e-14,-125L0,0Z" fill="#b3b3b3"
+        stroke="black" style="stroke-width: 2px; opacity: 0.7; fill: rgb(179, 179, 179);"></path><text
+        transform="translate(129.89445809213814,-112.55418864684589)" style="text-anchor: middle;">Python</text><text
+        transform="translate(129.89445809213814,112.55418864684589)" style="text-anchor: middle;">Processing</text><text
+        transform="translate(-24.46036282822086,170.12556032328533)" style="text-anchor: middle;">Haskell</text><text
+        transform="translate(-144.5904509553593,92.92264050018082)" style="text-anchor: middle;">C/C++</text><text
+        transform="translate(-164.91285483999175,-48.42278320712068)" style="text-anchor: middle;">Julia</text><text
+        transform="translate(-112.55418864684584,-129.89445809213817)" style="text-anchor: middle;">Java</text><text
+        transform="translate(-71.39945535969922,-156.34299920155786)" style="text-anchor: middle;">JS</text><text
+        transform="translate(-24.460362828220898,-170.1255603232853)" style="text-anchor: middle;">C#</text><text
+        transform="translate(75.57495743542583,-65.48607339452852)" style="text-anchor: middle;">30%</text><text
+        transform="translate(75.57495743542583,65.48607339452852)" style="text-anchor: middle;">20%</text><text
+        transform="translate(-14.231483827328502,98.98214418809329)" style="text-anchor: middle;">15%</text><text
+        transform="translate(-84.12535328311814,54.06408174555975)" style="text-anchor: middle;">15%</text><text
+        transform="translate(-95.94929736144975,-28.173255684142944)" style="text-anchor: middle;">15%</text><text
+        transform="translate(-65.48607339452849,-75.57495743542584)" style="text-anchor: middle;">5%</text><text
+        transform="translate(-41.54150130018864,-90.96319953545185)" style="text-anchor: middle;">5%</text><text
+        transform="translate(-14.231483827328525,-98.98214418809327)" style="text-anchor: middle;">5%</text>
+    </g>
+  </svg></div>
