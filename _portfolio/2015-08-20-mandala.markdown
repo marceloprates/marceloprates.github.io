@@ -1,0 +1,9 @@
+---
+title: 'Mandala'
+date: 2015-08-20
+excerpt: "<a href='https://www.openprocessing.org/sketch/209852/'><img src='/images/sketches/mandala.png' width='400'></a>"
+tags: 
+    - Generative Art
+---
+
+<iframe src="https://www.openprocessing.org/sketch/209852/embed/" width="600" height="600"></iframe>
