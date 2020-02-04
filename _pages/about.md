@@ -8,6 +8,8 @@ redirect_from:
   - /about.html
 ---
 
+![](images/shapes-path.png)
+
 My name is Marcelo Prates. I hold a PhD in Computer Science with Major in Machine Learning from [UFRGS](https://ufrgs.br). During my doctorate (**Aug 2015 - Aug 2019**) I've studied [Neural-Symbolic Reasoning]() / [Graph Neural Networks]() (i.e. training deep learning models to solve symbolic problems) and the [Ethics of Artificial Intelligence](), in particular [Machine Bias]().
 
 I currently (**Aug 2019 - Today**) work as a Data Scientist at [Poatek IT Consulting](https://poatek.com). As a Data Scientist in Poatek I've worked on a wide range of interesting projects, including risk analysis , relationship extraction and visualization applied to geospatial data. Many of these projects included machine learning or deep learning to some extent (convolutional neural networks, gradient boosting / ensemble methods and pre-trained language models).
