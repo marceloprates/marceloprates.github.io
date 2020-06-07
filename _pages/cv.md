@@ -16,7 +16,10 @@ Education
 
 Work experience
 ======
-* August 2019 -- Today: Data Scientist
+* March 2020 -- Today: AI Researcher
+  * [Samsung R&D Institute Brazil](https://research.samsung.com/srbr)
+
+* August 2019 -- March 2020: Data Scientist
   * [Poatek IT Consulting](https://poatek.com)
 
 * April 2018 -- Today: Volunteer Mathematics Teacher

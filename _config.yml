@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Marcelo Prates"
   avatar           : "profile.png"
-  bio              : "CS PhD from UFRGS. Data Sci. @ Poatek. Volunteer Math Teacher @ ONGEP. Generative Artist."
+  bio              : "CS PhD from UFRGS. AI Researcher @ Samsung Electronics. Volunteer Math Teacher @ ONGEP. Occasional Generative Artist."
   location         : "Porto Alegre"
-  employer         : "Poatek"
+  employer         : "Samsung R&D Institute Brazil"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=pzoM9S8AAAAJ&hl=en"
   email            : "marceloorp@gmail.com"
@@ -159,7 +159,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
