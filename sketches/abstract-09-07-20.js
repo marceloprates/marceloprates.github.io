@@ -21,7 +21,7 @@ function setup()
 
     // Plot the "paper texture" on a different graphics object
     texture_graphics = createGraphics(width, height);
-    drawNoiseBackground(20000, texture_graphics);
+    drawNoiseBackground(40000, texture_graphics);
 }
 
 function draw() {
