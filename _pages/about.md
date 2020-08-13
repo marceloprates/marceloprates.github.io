@@ -8,9 +8,18 @@ redirect_from:
   - /about.html
 ---
 
-![](images/shapes-path.png)
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+<script src="https://unpkg.com/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
+
+<!--![](images/shapes-path.png)-->
 
 My name is Marcelo Prates. I hold a PhD in Computer Science with Major in Machine Learning from [UFRGS](https://ufrgs.br). During my doctorate (**Aug 2015 - Aug 2019**) I've studied [Neural-Symbolic Reasoning]() / [Graph Neural Networks]() (i.e. training deep learning models to solve symbolic problems) and the [Ethics of Artificial Intelligence](), in particular [Machine Bias]().
+
+<div id="sketch-holder" style = "text-align: center">
+</div>
+
+<script src='sketches/abstract-09-07-20.js'>
+</script>
 
 I currently (**March 2020 - Today**) work as an AI Researcher at [Samsung R&D Institute Brazil](https://research.samsung.com/srbr). I was previously (**Aug 2019 - March 2020**) a Data Scientist at [Poatek](https://www.poatek.com/), where I worked on a wide range of interesting projects, including risk analysis , relationship extraction and visualization applied to geospatial data. Many of these projects included machine learning or deep learning to some extent (convolutional neural networks, gradient boosting / ensemble methods and pre-trained language models).
 
