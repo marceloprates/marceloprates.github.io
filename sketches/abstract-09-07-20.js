@@ -21,7 +21,7 @@ function setup()
 
     // Plot the "paper texture" on a different graphics object
     texture_graphics = createGraphics(width, height);
-    drawNoiseBackground(40000, texture_graphics);
+    drawNoiseBackground(0.1*(width*height), texture_graphics);
 }
 
 function draw() {
@@ -39,7 +39,7 @@ function draw() {
     push()
     for (var k = 0; k < m; k++)
     {
-        sw = 30 * sin(TWO_PI * k / m)
+        sw = 0.04 * width * sin(TWO_PI * k / m)
         strokeWeight(sw)
 
         stroke(palette[0])
@@ -65,7 +65,7 @@ function draw() {
     push()
     for (var k = 0; k < m; k++)
     {
-        sw = 30 * sin(TWO_PI * k / m)
+        sw = 0.04 * width * sin(TWO_PI * k / m)
         strokeWeight(sw)
 
         stroke(palette[1])
@@ -91,7 +91,7 @@ function draw() {
     push()
     for (var k = 0; k < m; k++)
     {
-        sw = 30 * sin(TWO_PI * k / m)
+        sw = 0.04 * width * sin(TWO_PI * k / m)
         strokeWeight(sw)
 
         stroke(palette[2])
