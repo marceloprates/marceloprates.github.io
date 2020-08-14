@@ -114,34 +114,7 @@ function draw() {
     }
     pop()
 
-    // Imprint the "paper texture" after everything is drawn
-    //image(texture_graphics, 0, 0)
-    texture_graphics.loadPixels()
-    loadPixels()
-    let d = pixelDensity();
-    for (let x = 0; x < width; x++)
-    {
-        for (let y = 0; y < height; y++)
-        {
-            for (let i = 0; i < d; i++)
-            {
-                for (let j = 0; j < d; j++)
-                {
-                    index = 4 * ((y * d + j) * width * d + (x * d + i));
-                    if ((pixels[index + 0] < 255) || (pixels[index + 1] < 255) || (pixels[index + 1] < 255))
-                    {
-                        let a = float(texture_graphics.pixels[index + 3]) / 255
-                        pixels[index + 0] = (1 - a) * pixels[index + 0] + a * texture_graphics.pixels[index + 0]
-                        pixels[index + 1] = (1 - a) * pixels[index + 1] + a * texture_graphics.pixels[index + 1]
-                        pixels[index + 2] = (1 - a) * pixels[index + 2] + a * texture_graphics.pixels[index + 2]
-                        //pixels[index+3] = 
-                    }
-                }
-            }
-        }
-    }
-
-    updatePixels()
+    image(texture_graphics, 0, 0)
 }
 
 function drawNoiseBackground(_n, _graphics)
