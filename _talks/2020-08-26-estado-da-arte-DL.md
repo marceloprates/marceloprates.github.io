@@ -8,4 +8,4 @@ date: 2020-08-26
 location: "UNISINOS, São Leopoldo, Rio Grande do Sul (virtual)"
 ---
 
-<iframe src="http://docs.google.com/gview?url=https://github.com/marceloprates/marceloprates.github.io/raw/master/_talks/estado-da-arte-DL.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
+<iframe src="https://docs.google.com/gview?url=https://github.com/marceloprates/marceloprates.github.io/raw/master/_talks/estado-da-arte-DL.pdf&embedded=true" style="width:718px; height:700px;" frameborder="0"></iframe>
