@@ -1,9 +1,0 @@
----
-title: 'Agreste'
-date: 2015-08-11
-excerpt: "<a href='https://www.openprocessing.org/sketch/208976/'><img src='/images/sketches/agreste.png' width='400'></a>"
-tags: 
-    - Generative Art
----
-
-<iframe src="https://www.openprocessing.org/sketch/208976/embed/" width="600" height="600"></iframe>

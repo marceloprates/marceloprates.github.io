@@ -1,9 +1,0 @@
----
-title: 'Turmites'
-date: 2017-10-04
-excerpt: "<a href='https://www.openprocessing.org/sketch/456236/'><img src='/images/sketches/turmites.png' width='400'></a>"
-tags: 
-    - Generative Art
----
-
-<iframe src="https://www.openprocessing.org/sketch/456236/embed/" width="600" height="600"></iframe>

@@ -1,7 +1,7 @@
 ---
 title: 'Rorschach'
 date: 2018-04-22
-excerpt: "<a href='https://www.openprocessing.org/sketch/541006/'><img src='/images/sketches/rorschach.png' width='400'></a>"
+excerpt: "<a href='/portfolio/2018-04-22-rorschach/'><img src='/images/sketches/rorschach.png' width='400'></a>"
 tags: 
     - Generative Art
 ---

@@ -1,9 +1,0 @@
----
-title: 'Rubrica'
-date: 2015-07-29
-excerpt: "<a href='https://www.openprocessing.org/sketch/208028/'><img src='/images/sketches/rubrica.png' width='400'></a>"
-tags: 
-    - Generative Art
----
-
-<iframe src="https://www.openprocessing.org/sketch/208028/embed/" width="600" height="600"></iframe>
