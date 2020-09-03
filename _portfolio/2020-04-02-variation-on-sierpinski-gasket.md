@@ -6,6 +6,7 @@ tags:
     - Generative Art
 ---
 
-[Check out on OpenProcessing](https://www.openprocessing.org/sketch/867465/embed/)
+* [Check out on OpenProcessing](https://www.openprocessing.org/sketch/867465/embed/)
+* [Check out on marceloprates.github.io/p5js_sketches](https://marceloprates.github.io/p5js-sketches/variation_on_sierpinski_gasket/)
 
-![](images/sketches/variation-on-sierpinski-gasket.png)
+![]({{site.base_url}}/images/sketches/variation-on-sierpinski-gasket.png)
