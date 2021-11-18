@@ -1,0 +1,14 @@
+---
+title: 'Hilbert Curve'
+date: 2021-11-16
+excerpt: "<a href='/portfolio/2021-11-16-hilbert-1/'><img src='/images/sketches/hilbert-1.png'></a>"
+tags: 
+    - Generative Art
+    - Cartography
+    - OpenStreetMap
+    - Maps
+    - Python
+---
+
+
+<img src='{{ site.url }}/images/sketches/hilbert-1.png'>

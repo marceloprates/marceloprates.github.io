@@ -1,0 +1,15 @@
+---
+title: 'Slime Mold'
+date: 2021-11-16
+excerpt: "<a href='/portfolio/2021-11-16-slime-mold/'><img src='/images/sketches/slime-blue.gif'></a>"
+tags: 
+    - Generative Art
+    - Cartography
+    - OpenStreetMap
+    - Maps
+    - Python
+---
+
+Made with Matplotlib and Shapely libraries.
+
+<img src='{{ site.url }}/images/sketches/slime-blue.gif'>

@@ -1,0 +1,15 @@
+---
+title: 'Bloop'
+date: 2021-11-16
+excerpt: "<a href='/portfolio/2021-11-16-bloop/'><img src='/images/sketches/bloop-v2.gif'></a>"
+tags: 
+    - Generative Art
+    - Cartography
+    - OpenStreetMap
+    - Maps
+    - Python
+---
+
+Made in matplotlib using raymarching and signed distance functions.
+
+<img src='{{ site.url }}/images/sketches/bloop-v2.gif'>

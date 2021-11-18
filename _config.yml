@@ -82,14 +82,14 @@ analytics:
 # Site Author
 author:
   name             : "Marcelo Prates"
-  avatar           : "profile.png"
+  avatar           : "marcelo-hawaii-full.jpg"
   bio              : "CS PhD from UFRGS. AI Researcher @ Samsung Electronics. Volunteer Math Teacher @ ONGEP. Occasional Generative Artist."
   location         : "Porto Alegre"
   employer         : "Samsung R&D Institute Brazil"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=pzoM9S8AAAAJ&hl=en"
   email            : "marceloorp@gmail.com"
-  researchgate     :  "https://www.researchgate.net/profile/Marcelo_Prates2"
+  #researchgate     :  "https://www.researchgate.net/profile/Marcelo_Prates2"
   uri              :
   bitbucket        :
   codepen          :

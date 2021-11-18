@@ -1,0 +1,15 @@
+---
+title: 'Rule 30 (for sale)'
+date: 2021-11-16
+excerpt: "<a href='/portfolio/2021-11-16-rule30/'><img src='/images/sketches/rule30-v1.png'></a>"
+tags: 
+    - Generative Art
+    - Cartography
+    - OpenStreetMap
+    - Maps
+    - Python
+---
+
+Made in Matplotlib and Shapely based on the elementary cellular automata rule 30. [Prints for sale](https://www.redbubble.com/studio/promote/89868873).
+
+<img src='{{ site.url }}/images/sketches/rule30-v1.png'>
