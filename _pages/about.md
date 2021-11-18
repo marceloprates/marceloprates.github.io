@@ -12,7 +12,11 @@ redirect_from:
 <script src="https://unpkg.com/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
 
 <!--![](images/shapes-path.png)-->
-![](images/floral-automata.png)
+
+<div id="sketch-holder" style = "text-align: center">
+</div>
+<script src='sketches/abstract-09-07-20.js'>
+</script>
 
 My name is Marcelo Prates. I hold a PhD in Computer Science with Major in Machine Learning from [UFRGS](https://ufrgs.br). During my doctorate (**Aug 2015 - Aug 2019**) I've studied Graph Neural Networks and the Ethics of Artificial Intelligence, in particular Machine Bias.
 
@@ -20,10 +24,7 @@ I currently work as an AI Researcher at [Samsung R&D Institute Brazil](https://r
 
 I have also been playing arond with Generative art / Creative coding for some time now. You can see some of my sketches in the [Generative Art tab]().
 
-<div id="sketch-holder" style = "text-align: center">
-</div>
-<script src='sketches/abstract-09-07-20.js'>
-</script>
+![](images/floral-automata.png)
 
 <!--
 
