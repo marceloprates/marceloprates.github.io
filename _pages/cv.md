@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-<object data="{{ site.url }}{{ site.baseurl }}/files/Marcelo_Prates_CV__v2_.pdf" width="800" height="800" type="application/pdf"></object>
+<object data="{{ site.url }}{{ site.baseurl }}/files/CV.pdf" width="800" height="800" type="application/pdf"></object>
