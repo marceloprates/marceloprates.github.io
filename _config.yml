@@ -82,10 +82,10 @@ analytics:
 # Site Author
 author:
   name             : "Marcelo Prates"
-  avatar           : "marcelo-hawaii-full.jpg"
-  bio              : "CS PhD from UFRGS, AI Researcher @ Samsung Electronics, Generative Artist"
+  avatar           : "marcelo-garopaba-crop.jpg"
+  bio              : "CS PhD from UFRGS, Data Scientist @ Dataside, Generative Artist"
   location         : "Porto Alegre"
-  employer         : "Samsung R&D Institute Brazil"
+  #employer         : "Dataside"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?user=pzoM9S8AAAAJ&hl=en"
   email            : "marceloorp@gmail.com"
@@ -110,7 +110,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "marceloprates_"
+  #twitter          : "marceloprates_"
   vine             :
   weibo            :
   xing             :
