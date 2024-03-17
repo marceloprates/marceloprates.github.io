@@ -8,6 +8,9 @@ main:
     
   - title: "Generative Art"
     url: /generative-art/
+
+  - title: "Blog"
+    url: /blog/
     
   - title: "CV"
     url: /cv/
