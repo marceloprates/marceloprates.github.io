@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-<object data="{{ site.url }}{{ site.baseurl }}/files/resume.pdf" width="800" height="800" type="application/pdf"></object>
+<object data="https://github.com/marceloprates/Resume/blob/master/resume.pdf" width="800" height="800" type="application/pdf"></object>
