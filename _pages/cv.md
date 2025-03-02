@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-<object data="https://raw.githubusercontent.com/marceloprates/Resume/master/resume.pdf" width="800" height="800" type="application/pdf"></object>
+<iframe src="https://raw.githubusercontent.com/marceloprates/Resume/master/resume.pdf" width="800" height="800"></iframe>
