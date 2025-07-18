@@ -9,5 +9,5 @@ redirect_from:
 
 {% include base_path %}
 
-<iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/marceloprates/Resume/master/resume.pdf&embedded=true" width="800" height="800"></iframe>
+<iframe src="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/marceloprates/Resume/master/output/latest/cv_latest.pdf&embedded=true" width="800" height="800"></iframe>
 

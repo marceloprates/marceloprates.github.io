@@ -2,6 +2,58 @@
 _site/
 .sass-cache/
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Bundler
+.bundle/
+
+# Log files
+log/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# VS Code
+.vscode/
+
+# Docker
+*.pid
+tmp/
+
+# Misc
+*.sublime-project
+*.sublime-workspace
+
+# Ignore vendor (if not needed for deployment)
+vendor/
+
+# Ignore assets cache
+.asset-cache/
+
+# Ignore drafts and backups
+_drafts/
+
+# Ignore system files
+Thumbs.db
+Desktop.ini
+
+# Ignore markdown generator output
+markdown_generator/
+
+# Ignore talkmap output
+talkmap_out.ipynb
+
+# Ignore files folder
+files/
+
+# Ignore images folder
+images/
+
 # Ignore the directory for local files during development
 local/
 
@@ -11,3 +63,5 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+
+/images
