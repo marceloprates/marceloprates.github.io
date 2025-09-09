@@ -8,7 +8,7 @@ import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllProjects, getProjectBySlug } from '@/lib/content';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     const projects = getAllProjects();
     return projects.map((p) => ({ slug: p.slug }));
 }

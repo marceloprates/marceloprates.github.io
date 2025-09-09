@@ -8,10 +8,11 @@ import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllPosts, getPostBySlug } from '@/lib/content';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     const posts = getAllPosts();
     return posts.map((p) => ({ slug: p.slug }));
 }
+
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
