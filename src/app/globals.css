@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hack Nerd Font (web) */
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/fonts/Nerd Fonts Collection/HackNerdFont-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/fonts/Nerd Fonts Collection/HackNerdFont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/fonts/Nerd Fonts Collection/HackNerdFont-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/fonts/Nerd Fonts Collection/HackNerdFont-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Utility: force Nerd Font for icon glyphs */
+.font-nerd {
+  font-family: "Hack Nerd Font", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-variant-ligatures: none;
+}
+
+/* Fallback: keep primary font, but allow Nerd Font for missing glyphs */
+.nerd-fallback {
+  font-family: 'Libre Baskerville', 'Hack Nerd Font', serif !important;
+}
+
+:root {
+  --bg: #0d0f17;
+  --bg-alt: #111623;
+  --accent: #3d9dff;
+  --radius: 14px;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+  /* gray-900 */
+  font-family: 'Libre Baskerville', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure headings use Libre Baskerville too (stronger weight for titles) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+}
+
+/* Dark mode body */
+html.dark body {
+  background: #0d0f17;
+  color: white;
+  position: relative;
+}
+
+/* Dark mode background gradient */
+html.dark body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #1d2333 0, #0d0f17 70%),
+    linear-gradient(140deg, #0d0f17, #111623);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Utility fallback for bg-gray-900 removed in Tailwind v4 preset differences */
+.bg-gray-900 {
+  background-color: #0d0f17 !important;
+}
+
+/* Utility fallback removed unsupported property for older browsers */
+.text-balance {
+  overflow-wrap: anywhere;
+}
+
+/* Animated gradient border helper */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(110deg, #3d9dff, rgba(168, 85, 247, .6), #3d9dff);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 8s linear infinite;
+}
+
+@keyframes border-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color .3s, background .3s, transform .4s;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.prose :where(a) {
+  color: var(--accent);
+}
+
+/* Ensure the font-typewriter class uses Noto Serif with higher specificity */
+.font-typewriter {
+  font-family: 'Noto Serif', serif !important;
+}
+
+/* Add the Libre Baskerville font style for headings */
+.libre-baskerville {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0f17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c3a52;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4f6d;
+}
+
+/* Motion */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Film grain animation */
+@keyframes film-flicker {
+  0% {
+    transform: translate(-1%, 1%) scale(1.01);
+    opacity: 0.95;
+  }
+
+  25% {
+    transform: translate(1.5%, -1.5%) scale(1.02);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translate(-0.5%, -0.5%) scale(1.01);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(1%, 1%) scale(1.02);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(-1%, 1%) scale(1.01);
+    opacity: 0.95;
+  }
+}
+
+.film-grain {
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -1;
+  animation-timing-function: ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn .6s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn .6s ease-out .3s forwards;
+}
+
+.animate-fade-in-delayed-more {
+  opacity: 0;
+  animation: fadeIn .6s ease-out .6s forwards;
+}

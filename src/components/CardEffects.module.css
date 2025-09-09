@@ -1,0 +1,11 @@
+.shine {
+    background: radial-gradient(240px 240px at var(--mx, -100px) var(--my, -100px),
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.06) 35%,
+            transparent 60%);
+    mix-blend-mode: overlay;
+}
+
+.pop {
+    transform: translateZ(12px);
+}

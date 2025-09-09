@@ -1,0 +1,92 @@
+.shine {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    background: radial-gradient(600px 200px at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.06), transparent 50%);
+    z-index: 2;
+}
+
+.scanlines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px);
+    z-index: 1;
+}
+
+/* Folio layered card effect */
+.folio {
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    /* match rounded-2xl */
+    pointer-events: none;
+    will-change: transform, opacity;
+    transition: transform 280ms cubic-bezier(.2, .8, .2, 1), opacity 280ms ease;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    opacity: 0.88;
+    transform: translate3d(0, 0, 0);
+    z-index: 0;
+}
+
+/* Dark theme tone for folio sheets */
+:global(.dark) .folio {
+    background: linear-gradient(180deg, rgba(24, 24, 27, 0.9), rgba(24, 24, 27, 0.8));
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.folio1 {
+    --px: calc(var(--mx, 0px) * 0.01);
+    --py: calc(var(--my, 0px) * 0.01);
+    transform: translate3d(calc(-8px + var(--px)), calc(8px + var(--py)), -2px) rotate(-2deg);
+    opacity: 0.7;
+}
+
+.folio2 {
+    --px: calc(var(--mx, 0px) * 0.015);
+    --py: calc(var(--my, 0px) * 0.015);
+    transform: translate3d(calc(8px + var(--px)), calc(16px + var(--py)), -4px) rotate(3deg);
+    opacity: 0.55;
+}
+
+/* Fan out a bit more on hover via the parent group */
+:global(.group):hover .folio1 {
+    transform: translate3d(calc(-12px + var(--px)), calc(10px + var(--py)), -2px) rotate(-3deg);
+}
+
+:global(.group):hover .folio2 {
+    transform: translate3d(calc(12px + var(--px)), calc(22px + var(--py)), -4px) rotate(4.5deg);
+}
+
+.group:hover .shine {
+    opacity: 1;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 24px;
+    background: #e8edf1;
+    border-radius: 2px;
+    animation: blink 1.2s steps(1, end) infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0.1;
+    }
+}

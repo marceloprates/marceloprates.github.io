@@ -1,0 +1,146 @@
+.imageRightClip {
+    /* Diagonal slash: keeps the right side visible with a slanted edge */
+    -webkit-clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.flipContainer {
+    perspective: 1000px;
+    height: 100%;
+    position: relative;
+    /* needed for z-index to apply */
+    z-index: 0;
+    /* baseline so siblings stack naturally */
+}
+
+/* When the tile is interacted with, raise its stacking so it can overlap rows */
+.flipContainer:hover,
+.flipContainer:focus-within {
+    z-index: 40;
+}
+
+/* Applied from the component when flipped to persist elevation (mobile/tap) */
+.isActive {
+    z-index: 50;
+}
+
+.flipCard {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    /* Default growth factor for flipped state (25% = scaleY(1.25)) */
+    --flip-grow: 0.25;
+    /* Keep scaling centered so it grows equally up and down */
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.flipCard.flipped {
+    /* apply vertical growth using CSS var */
+    transform: rotateY(180deg) scaleY(calc(1 + var(--flip-grow)));
+}
+
+/* Parameterized growth presets (percent to decimal) */
+.flipGrow0 {
+    --flip-grow: 0;
+}
+
+.flipGrow5 {
+    --flip-grow: 0.05;
+}
+
+.flipGrow10 {
+    --flip-grow: 0.10;
+}
+
+.flipGrow15 {
+    --flip-grow: 0.15;
+}
+
+.flipGrow20 {
+    --flip-grow: 0.20;
+}
+
+.flipGrow25 {
+    --flip-grow: 0.25;
+}
+
+.flipGrow30 {
+    --flip-grow: 0.30;
+}
+
+.flipGrow40 {
+    --flip-grow: 0.40;
+}
+
+.flipGrow50 {
+    --flip-grow: 0.50;
+}
+
+.flipCardFront,
+.flipCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    top: 0;
+    left: 0;
+}
+
+/* Make sure front sits above back by default */
+.flipCardFront {
+    z-index: 3;
+    overflow: hidden;
+}
+
+/* Make the back explicitly opaque and visible when flipped */
+.flipCardBack {
+    z-index: 2;
+    transform: rotateY(180deg);
+    /* Allow per-tile gradient color from the component */
+    /* Keep depth/shadow consistent with the front */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    opacity: 1;
+}
+
+/* Swap stacking so the back sits on top when flipped */
+.flipCard.flipped .flipCardFront {
+    z-index: 1;
+}
+
+.flipCard.flipped .flipCardBack {
+    z-index: 4;
+}
+
+/* Fallback style for tiles without a gradient class */
+.flipCardBackNeutral {
+    background-color: #ffffff;
+    background-image: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #cbd5e1;
+}
+
+/* Grid item wrapper elevation so expanded tiles overlay next rows */
+.gridItem {
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+}
+
+.gridItem:hover,
+.gridItem:focus-within {
+    z-index: 999;
+}
+
+.gridItem.isActive {
+    z-index: 1000;
+}
+
+/* Also raise the transformed container within when parent is elevated */
+.gridItem:hover .flipContainer,
+.gridItem.isActive .flipContainer {
+    z-index: 1000;
+}

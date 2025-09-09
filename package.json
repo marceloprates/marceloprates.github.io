@@ -1,0 +1,49 @@
+{
+  "name": "page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "echo \"Export handled during \"next build\" when \"output: 'export'\" is set in next.config.js\"",
+    "start": "next start",
+    "lint": "next lint",
+    "validate:content-images": "node ./scripts/validate-content-images.js",
+    "ci:check": "npm run lint && npm run build && npm run validate:content-images"
+  },
+  "dependencies": {
+    "@fontsource/pacifico": "^5.2.6",
+    "@tailwindcss/typography": "^0.5.16",
+    "framer-motion": "^12.23.12",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.540.0",
+    "katex": "^0.16.11",
+    "next": "15.5.0",
+    "next-themes": "^0.4.6",
+    "p5": "^1.11.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "rehype-katex": "^7.0.0",
+    "rehype-raw": "^6.1.1",
+    "shiki": "^0.14.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/p5": "^1.7.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
