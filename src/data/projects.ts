@@ -27,7 +27,7 @@ export const projects: Project[] = [
         title: 'cosmos',
         desc: 'An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.',
         tags: ['LaTeX', 'Editing', 'OCR'],
-        link: 'https://marceloprates.github.io/portfolio/2024-3-13-cosmos/',
+        link: 'https://github.com/marceloprates/Cosmos/',
     },
 
 ];
