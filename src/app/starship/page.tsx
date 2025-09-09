@@ -4,7 +4,6 @@ import React from 'react';
 
 // Simple YAML display page that fetches content from a GitHub Gist
 // Route: /starship
-
 async function fetchGist(): Promise<string> {
     const url = 'https://gist.githubusercontent.com/marceloprates/08d994f3aa6d0e8e6ce4dbd44ccde6b2/raw';
     const res = await fetch(url, {
@@ -40,7 +39,6 @@ export default async function StarshipPage() {
 
             <div className="rounded-xl ring-1 ring-black/5 dark:ring-white/10 overflow-hidden">
                 <div className="m-0 text-xs leading-relaxed overflow-x-auto">
-                    {/* eslint-disable-next-line react/no-danger */}
                     <div dangerouslySetInnerHTML={{ __html: highlighted }} />
                 </div>
             </div>

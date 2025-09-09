@@ -9,3 +9,11 @@
 .pop {
     transform: translateZ(12px);
 }
+
+/* A4 portrait aspect ratio (~1:1.414). We use aspect-ratio property and a max-width to keep it reasonable on small screens */
+.a4 {
+    aspect-ratio: 1 / 1.414;
+    width: 100%;
+    max-width: 360px;
+    /* keeps card from getting too wide on small screens */
+}

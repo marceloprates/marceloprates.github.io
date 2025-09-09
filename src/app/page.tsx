@@ -1,11 +1,9 @@
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectCard } from '@/components/ProjectCard';
-import PostCard from '@/components/PostCard';
 import { TileButton } from '@/components/TileButton';
 import { projects } from '@/data/projects';
 import { tiles } from '@/data/tiles';
@@ -13,13 +11,13 @@ import { publications } from '@/data/publications';
 import { Section } from '@/components/Section';
 import { PublicationCard } from '@/components/PublicationCard';
 import { StarshipCard } from '@/components/StarshipCard';
-import { getAllPosts, PostMeta } from '@/lib/content';
+// import { getAllPosts, PostMeta } from '@/lib/content';
 import ThemeToggle from '@/components/ThemeToggle';
 
 export default async function Home() {
   // theme toggle relies on next-themes which is client-side; keep the button client-only
-  // fetch recent posts on server
-  const posts: PostMeta[] = getAllPosts();
+  // fetch recent posts on server (disabled for now)
+  // const posts: PostMeta[] = getAllPosts();
   // Fetch LaTeX resume content from external repo (cache and revalidate periodically)
   const resumeExperienceUrl = 'https://raw.githubusercontent.com/marceloprates/Resume/master/src/experience.tex';
   const resumeSkillsUrl = 'https://raw.githubusercontent.com/marceloprates/Resume/master/src/sidebars/page1sidebar.tex';

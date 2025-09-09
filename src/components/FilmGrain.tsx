@@ -133,7 +133,6 @@ export function FilmGrain({
         const url = c.toDataURL("image/png");
         setDataUrl(url);
         if (debug) {
-            // eslint-disable-next-line no-console
             console.log("FilmGrain frame", { theme, urlLength: url.length });
         }
     };

@@ -1,21 +1,19 @@
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+// ArrowRight intentionally not used here; kept for consistency with other components
 import Tilt from './Tilt';
 import { Section } from './Section';
 import effects from './CardEffects.module.css';
 
-interface AboutLink {
-  href: string;
-  label: string;
-}
-
-const aboutLinks: AboutLink[] = [
+// aboutLinks are currently unused; keep definition commented for future navigation
+/*
+const aboutLinks = [
   { href: '#education', label: 'Education' },
   { href: '#career', label: 'Career' },
   { href: '#art', label: 'Creative Coding' },
   { href: '#interests', label: 'Interests' },
   { href: '#oss', label: 'Open Source' },
 ];
+*/
 
 interface AboutSectionProps {
   name: string;
@@ -29,15 +27,15 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
       <div className="grid gap-12 md:grid-cols-3 items-start">
         <div className="md:col-span-1 space-y-6">
           {/* Profile Card */}
-          <Tilt className="group relative overflow-hidden rounded-2xl p-6 bg-white/70 dark:bg-white/5 shadow-inner backdrop-blur-sm ring-1 ring-black/5 dark:ring-white/10" scale={1.03}>
+          <Tilt className={`group relative overflow-hidden rounded-2xl p-6 bg-white/70 dark:bg-white/5 shadow-inner backdrop-blur-sm ring-1 ring-black/5 dark:ring-white/10 ${effects.a4}`} scale={1.03}>
             <span
               aria-hidden
               className={`pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${effects.shine}`}
             />
             <div className="flex flex-col items-center space-y-4">
-              <div className="relative w-32 h-32 rounded-xl overflow-hidden ring-2 ring-black/5 dark:ring-white/10">
+              <div className="relative w-40 h-52 md:w-48 md:h-60 rounded-xl overflow-hidden ring-2 ring-black/5 dark:ring-white/10">
                 <Image
-                  src="/images/profile.png"
+                  src="/images/profile.jpg"
                   alt={name}
                   fill
                   className="object-cover"
@@ -55,7 +53,7 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
             </div>
           </Tilt>
 
-          {/* Navigation Links */}
+          {/* Navigation Links 
           <div className="flex flex-col gap-2 text-base">
             {aboutLinks.map((link) => (
               <a
@@ -68,6 +66,7 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
               </a>
             ))}
           </div>
+          */}
         </div>
 
         {/* Content Sections */}
