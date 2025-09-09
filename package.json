@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "echo \"Export handled during \"next build\" when \"output: 'export'\" is set in next.config.js\"",
     "start": "next start",
-    "lint": "next lint",
+  "lint": "eslint --ext .ts,.tsx,.js,.jsx --config ./config/eslint.config.mjs .",
     "validate:content-images": "node ./scripts/validate-content-images.js",
     "ci:check": "npm run lint && npm run build && npm run validate:content-images"
   },

@@ -1,6 +1,10 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const CONTENT_DIR = path.resolve(__dirname, '../content');
 
@@ -64,4 +68,4 @@ function main() {
     console.log('All markdown image references look good.');
 }
 
-if (require.main === module) main();
+if (process.argv[1] && process.argv[1].endsWith(fileURLToPath(import.meta.url))) main();
