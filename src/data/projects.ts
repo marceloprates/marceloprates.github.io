@@ -7,7 +7,7 @@ export const projects: Project[] = [
         desc: 'Generate beautiful maps from OpenStreetMap data with Python and matplotlib.',
         tags: ['Python', 'Maps', 'OpenStreetMap'],
         link: 'https://github.com/marceloprates/prettymaps',
-        image: '/images/projects/prettymaps/heerhugowaard.png',
+        image: 'https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/heerhugowaard.png',
     },
     {
         title: 'easyshader',
