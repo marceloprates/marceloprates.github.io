@@ -22,8 +22,8 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Your Portfolio - GitHub Pages",
-  description: "Personal portfolio website built with Next.js",
+  title: "Marcelo Prates — Data Scientist",
+  description: "Personal website of Marcelo Prates, Brazilian data scientist. Projects, publications, and more.",
 };
 
 export default function RootLayout({
