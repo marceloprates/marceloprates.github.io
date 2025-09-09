@@ -47,5 +47,4 @@ Thumbs.db
 *.local
 
 # Ignore posts/ and talks/
-content/posts/
-content/talks/
+# Ignore posts/ and talks/
