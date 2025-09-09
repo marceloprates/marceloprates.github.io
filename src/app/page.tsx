@@ -307,7 +307,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Recent posts */}
+        {/* Recent posts 
         <Section id="recent-posts" title="Recent Posts" gradient="from-sky-500 via-blue-500 to-indigo-500">
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.slice(0, 3).map((p) => (
@@ -320,6 +320,7 @@ export default async function Home() {
             </Link>
           </p>
         </Section>
+        */}
 
         {/* Papers */}
         <Section id="papers" title="Papers" gradient="from-emerald-500 via-teal-500 to-cyan-500">
