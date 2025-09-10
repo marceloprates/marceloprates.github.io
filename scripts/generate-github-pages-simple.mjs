@@ -3,6 +3,10 @@ import path from 'path';
 import fetch from 'node-fetch';
 import matter from 'gray-matter';
 
+function getGithubToken() {
+    return process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.PERSONAL_TOKEN;
+}
+
 const projectsPath = path.join(process.cwd(), 'src', 'data', 'projects.json');
 const openSourcePath = path.join(process.cwd(), 'src', 'data', 'github-projects.json');
 const configPath = path.join(process.cwd(), 'config', 'github.json');
@@ -13,7 +17,7 @@ const config = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath
 
 async function fetchRepo(repo) {
     try {
-        const token = process.env.GITHUB_TOKEN;
+        const token = getGithubToken();
         const headers = { Accept: 'application/vnd.github.v3+json' };
         if (token) headers.Authorization = `token ${token}`;
         const res = await fetch(`https://api.github.com/repos/${repo}`, { headers });
@@ -27,7 +31,7 @@ async function fetchRepo(repo) {
 
 async function fetchReadme(repo) {
     try {
-        const token = process.env.GITHUB_TOKEN;
+        const token = getGithubToken();
         const headers = { Accept: 'application/vnd.github.v3+json' };
         if (token) headers.Authorization = `token ${token}`;
         const res = await fetch(`https://api.github.com/repos/${repo}/readme`, { headers });

@@ -297,7 +297,7 @@ export default async function Home() {
   // small helper: call GH REST API v3 for repo
   const fetchRepo = async (repo: string) => {
     try {
-      const token = process.env.GITHUB_TOKEN;
+      const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.PERSONAL_TOKEN;
       const headers: Record<string, string> = { Accept: 'application/vnd.github.v3+json' };
       if (token) headers.Authorization = `token ${token}`;
       // Use fetch so Next.js can cache/revalidate (server-side)

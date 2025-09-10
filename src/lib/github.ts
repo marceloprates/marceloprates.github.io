@@ -14,8 +14,10 @@ export async function generateGitHubProjectPage(project: Project) {
         return;
     }
 
-    // Get repository details from GitHub API
-    const token = process.env.GITHUB_TOKEN;
+    // Get repository details from GitHub API. Accept multiple env var names because
+    // CI repository secrets cannot start with "GITHUB_"; allow GH_TOKEN, GITHUB_PAT
+    // or PERSONAL_TOKEN as fallbacks.
+    const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.PERSONAL_TOKEN;
     const headers: Record<string, string> = { Accept: 'application/vnd.github.v3+json' };
     if (token) headers.Authorization = `token ${token}`;
 

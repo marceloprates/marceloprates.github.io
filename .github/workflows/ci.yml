@@ -27,5 +27,13 @@ jobs:
           fi
 
       - name: Run CI checks (lint, build, validate)
+        env:
+          # Allow repository secrets named GH_TOKEN, GITHUB_PAT or PERSONAL_TOKEN
+          # to be used by scripts that expect GITHUB_TOKEN. Repository secrets
+          # cannot start with GITHUB_ but users may create GH_TOKEN instead.
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           npm run ci:check

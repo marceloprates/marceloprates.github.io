@@ -1,5 +1,17 @@
 [
   {
+    "repo": "marceloprates/audio-gravity",
+    "stars": 0,
+    "forks": 0,
+    "gitstarRank": 12649722,
+    "name": "audio-gravity",
+    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
+    "link": "https://github.com/marceloprates/audio-gravity",
+    "topics": [
+      "Processing"
+    ]
+  },
+  {
     "repo": "marceloprates/Cosmos",
     "stars": 4,
     "forks": 0,
@@ -12,43 +24,6 @@
     ]
   },
   {
-    "repo": "marceloprates/Gender-Bias",
-    "stars": 7,
-    "forks": 6,
-    "gitstarRank": 1810719,
-    "name": "Gender-Bias",
-    "description": "Data and code used to produce the analyses in the paper \"Assessing gender bias in machine translation: a case study with Google Translate\" (Neural Computing and Applications 2019). The goal of this paper was to measure the extent of gender bias in Google Translate. Our results show that GT is heavily biased towards male defaults, which are more pronounced in stereotypical job positions such as STEM fields.",
-    "link": "https://arxiv.org/abs/1809.02208",
-    "topics": [
-      "Rich Text Format",
-      "TeX",
-      "Julia",
-      "Python"
-    ]
-  },
-  {
-    "repo": "marceloprates/easyshader",
-    "stars": 25,
-    "forks": 2,
-    "gitstarRank": 774954,
-    "name": "easyshader",
-    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
-    "link": "https://github.com/marceloprates/easyshader",
-    "topics": [
-      "Python"
-    ]
-  },
-  {
-    "repo": "marceloprates/marceloprates",
-    "stars": 0,
-    "forks": 0,
-    "gitstarRank": 12649722,
-    "name": "marceloprates",
-    "description": "marceloprates - A  project",
-    "link": "https://github.com/marceloprates/marceloprates",
-    "topics": []
-  },
-  {
     "repo": "marceloprates/Hexmosaic-Wallpapers-Processing",
     "stars": 0,
     "forks": 1,
@@ -56,18 +31,6 @@
     "name": "Hexmosaic-Wallpapers-Processing",
     "description": "Processing sketch to generate simple hexagonal mosaic wallpapers",
     "link": "https://github.com/marceloprates/Hexmosaic-Wallpapers-Processing",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
-    "repo": "marceloprates/Rorschach",
-    "stars": 1,
-    "forks": 0,
-    "gitstarRank": 5481385,
-    "name": "Rorschach",
-    "description": "Processing sketch to draw animated Rorschach tests",
-    "link": "https://github.com/marceloprates/Rorschach",
     "topics": [
       "Processing"
     ]
@@ -87,6 +50,31 @@
     ]
   },
   {
+    "repo": "marceloprates/marceloprates",
+    "stars": 0,
+    "forks": 0,
+    "gitstarRank": 12649722,
+    "name": "marceloprates",
+    "description": "marceloprates - A  project",
+    "link": "https://github.com/marceloprates/marceloprates",
+    "topics": []
+  },
+  {
+    "repo": "marceloprates/Gender-Bias",
+    "stars": 7,
+    "forks": 6,
+    "gitstarRank": 1810719,
+    "name": "Gender-Bias",
+    "description": "Data and code used to produce the analyses in the paper \"Assessing gender bias in machine translation: a case study with Google Translate\" (Neural Computing and Applications 2019). The goal of this paper was to measure the extent of gender bias in Google Translate. Our results show that GT is heavily biased towards male defaults, which are more pronounced in stereotypical job positions such as STEM fields.",
+    "link": "https://arxiv.org/abs/1809.02208",
+    "topics": [
+      "Rich Text Format",
+      "TeX",
+      "Julia",
+      "Python"
+    ]
+  },
+  {
     "repo": "marceloprates/Resume",
     "stars": 1,
     "forks": 1,
@@ -100,15 +88,39 @@
     ]
   },
   {
-    "repo": "marceloprates/audio-gravity",
-    "stars": 0,
+    "repo": "marceloprates/Rorschach",
+    "stars": 1,
     "forks": 0,
-    "gitstarRank": 12649722,
-    "name": "audio-gravity",
-    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
-    "link": "https://github.com/marceloprates/audio-gravity",
+    "gitstarRank": 5481385,
+    "name": "Rorschach",
+    "description": "Processing sketch to draw animated Rorschach tests",
+    "link": "https://github.com/marceloprates/Rorschach",
     "topics": [
       "Processing"
+    ]
+  },
+  {
+    "repo": "marceloprates/TSP-Animation",
+    "stars": 3,
+    "forks": 0,
+    "gitstarRank": 3036257,
+    "name": "TSP-Animation",
+    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
+    "link": "https://github.com/marceloprates/TSP-Animation",
+    "topics": [
+      "Python"
+    ]
+  },
+  {
+    "repo": "marceloprates/easyshader",
+    "stars": 25,
+    "forks": 2,
+    "gitstarRank": 774954,
+    "name": "easyshader",
+    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
+    "link": "https://github.com/marceloprates/easyshader",
+    "topics": [
+      "Python"
     ]
   },
   {
@@ -133,18 +145,6 @@
     "link": "https://github.com/marceloprates/Voxel-Watersim",
     "topics": [
       "Processing"
-    ]
-  },
-  {
-    "repo": "marceloprates/TSP-Animation",
-    "stars": 3,
-    "forks": 0,
-    "gitstarRank": 3036257,
-    "name": "TSP-Animation",
-    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
-    "link": "https://github.com/marceloprates/TSP-Animation",
-    "topics": [
-      "Python"
     ]
   }
 ]

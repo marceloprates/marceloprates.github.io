@@ -3,7 +3,14 @@
 import fs from 'fs';
 import path from 'path';
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+function getGithubToken() {
+    // Accept multiple env var names because GitHub Actions disallows creating secrets
+    // that start with GITHUB_. Allow users to provide GH_TOKEN, GITHUB_PAT, or
+    // PERSONAL_TOKEN instead of GITHUB_TOKEN.
+    return process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.PERSONAL_TOKEN;
+}
+
+const GITHUB_TOKEN = getGithubToken();
 
 // Repository names to always ignore when generating `src/data/projects.ts`.
 // These correspond to projects you don't want listed on the site.
@@ -15,11 +22,12 @@ const IGNORE_REPOS = [
 ];
 
 if (!GITHUB_TOKEN) {
-    console.error('\n⚠️  No GITHUB_TOKEN found in environment');
-    console.error('To avoid rate limiting, please set a GITHUB_TOKEN environment variable:');
-    console.error('\nexport GITHUB_TOKEN="your_token_here"\n');
-    console.error('You can create a token at https://github.com/settings/tokens');
-    console.error('The token only needs "public_repo" scope access.\n');
+    console.error('\n⚠️  No GitHub token found in environment');
+    console.error('To avoid rate limiting, set a token in one of these environment variables: GITHUB_TOKEN, GH_TOKEN, GITHUB_PAT, or PERSONAL_TOKEN.');
+    console.error('\nIf you created a repository secret with a different name (for example GH_TOKEN), map it to GITHUB_TOKEN in your workflow like so:');
+    console.error('\n  env:\n    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}\n');
+    console.error('\nOr set GH_TOKEN (or one of the accepted names) directly in the environment.');
+    console.error('You can create a token at https://github.com/settings/tokens (public_repo scope is sufficient).\n');
     process.exit(1);
 }
 
