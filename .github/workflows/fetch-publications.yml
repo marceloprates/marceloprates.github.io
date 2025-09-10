@@ -21,6 +21,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install system Chromium for Puppeteer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser chromium
+        # chromium installs to a standard path that puppeteer can detect on Ubuntu
+
       - name: Install dependencies
         run: npm ci
 
