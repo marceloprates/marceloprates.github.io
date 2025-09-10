@@ -7,7 +7,8 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { TileButton } from '@/components/TileButton';
 import { projects } from '@/data/projects';
 import { tiles } from '@/data/tiles';
-import { publications } from '@/data/publications';
+import { publications as staticPublications } from '@/data/publications';
+import type { Publication } from '@/types';
 import { Section } from '@/components/Section';
 import { PublicationCard } from '@/components/PublicationCard';
 import { StarshipCard } from '@/components/StarshipCard';
@@ -223,6 +224,138 @@ export default async function Home() {
     years--;
   }
 
+  // Fetch publications from Google Scholar (server-side). If scraping fails, fall back to the
+  // curated `src/data/publications.ts` list. This is a lightweight HTML parse that extracts
+  // title, link and year from the profile listing. It avoids adding new dependencies.
+  const fetchScholarPublications = async (userId: string, max = 9): Promise<Publication[]> => {
+    try {
+      const url = `https://scholar.google.com/citations?user=${userId}&hl=en&pagesize=${Math.max(100, max)}`;
+      const res = await fetch(url, {
+        headers: {
+          // Some sites block non-browser agents; use a common UA to increase chance of success.
+          'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+        },
+        // server-side fetch; allow caching for a short period
+        next: { revalidate: 60 * 60 },
+      });
+      if (!res.ok) return [];
+      const text = await res.text();
+
+      const rows = Array.from(text.matchAll(/<tr[^>]*class="gsc_a_tr"[^>]*>([\s\S]*?)<\/tr>/g)) as RegExpMatchArray[];
+      const pubs: Publication[] = [];
+      for (const m of rows) {
+        const row = (m as RegExpMatchArray)[1];
+        const titleMatch = row.match(/<a[^>]*class="gsc_a_at"[^>]*>([^<]+)<\/a>/i);
+        const hrefMatch = row.match(/<a[^>]*class="gsc_a_at"[^>]*href="([^"]+)"/i);
+        // Some entries have a popup with external links; try to extract the 'gsc_a_ext' href if present
+        const extMatch = row.match(/class="gsc_a_ext"[^>]*href="([^"]+)"/i);
+        // citation count lives in a span within class gsc_a_c
+        const citedMatch = row.match(/class="gsc_a_c"[^>]*>\s*<a[^>]*>\s*(\d+)\s*<\/a>/i) || row.match(/class="gsc_a_c"[^>]*>\s*<span[^>]*>\s*(\d+)\s*<\/span>/i);
+        const yearMatch = row.match(/<td[^>]*class="gsc_a_y"[^>]*>[\s\S]*?<span[^>]*>(\d{4})<\/span>/i);
+        // try to find a venue string (often in a div/span with class gs_gray). There are
+        // typically two gs_gray spans (authors, publication venue); prefer the second.
+        const gsGrayMatches = Array.from(row.matchAll(/class="gs_gray"[^>]*>([^<]+)</g)) as RegExpMatchArray[];
+        let venue = '';
+        if (gsGrayMatches.length >= 2) venue = gsGrayMatches[1][1].trim();
+        else if (gsGrayMatches.length === 1) venue = gsGrayMatches[0][1].trim();
+
+        const title = titleMatch ? titleMatch[1].trim() : '';
+        const href = hrefMatch ? hrefMatch[1].trim() : '';
+        // Prefer external link from popup (`extMatch`) when available; otherwise use the title href.
+        const urlFromTitle = href ? (href.startsWith('http') ? href : `https://scholar.google.com${href}`) : '';
+        let urlFull = extMatch ? (extMatch[1].startsWith('http') ? extMatch[1] : `https://scholar.google.com${extMatch[1]}`) : urlFromTitle || `https://scholar.google.com/citations?user=${userId}&hl=en`;
+        const year = yearMatch ? parseInt(yearMatch[1], 10) : 0;
+        const citations = citedMatch ? parseInt(citedMatch[1], 10) : undefined;
+        // If an external popup link points to a PDF, map it to pdfUrl and keep the primary url as the details link
+        let pdfUrl: string | undefined = undefined;
+        if (extMatch) {
+          const candidate = extMatch[1];
+          if (candidate && /\.pdf(\?|$)/i.test(candidate)) pdfUrl = candidate.startsWith('http') ? candidate : `https://scholar.google.com${candidate}`;
+        }
+
+        // If this looks like an arXiv entry, try to follow the "see all versions" (cluster) page
+        // and prefer a non-arXiv external link when available.
+        const looksLikeArxiv = /arxiv/i.test(venue) || /arxiv\.org/i.test(urlFromTitle || '');
+        if (looksLikeArxiv) {
+          // try to find a cluster id in the row (common in version links)
+          const clusterMatch = row.match(/cluster=([0-9A-Za-z_-]+)/i) || href?.match(/cluster=([0-9A-Za-z_-]+)/i);
+          if (clusterMatch && clusterMatch[1]) {
+            try {
+              const clusterId = clusterMatch[1];
+              const clusterUrl = `https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=${clusterId}`;
+              const creq = await fetch(clusterUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' }, next: { revalidate: 60 * 60 } });
+              if (creq.ok) {
+                const ctext = await creq.text();
+                // find candidate external links on the versions page and prefer the first non-arxiv absolute URL
+                const candidates = Array.from(ctext.matchAll(/href=\"([^\"]+)\"/g)) as RegExpMatchArray[];
+                const candidateUrls = candidates.map((mm) => mm[1]).filter(Boolean) as string[];
+                // Preferred publisher/ DOI hosts to prioritize when choosing a non-arXiv version
+                const preferredHosts = [
+                  'doi.org',
+                  'link.springer',
+                  'springerlink',
+                  'ieeexplore.ieee.org',
+                  'dl.acm.org',
+                  'onlinelibrary.wiley.com',
+                  'sciencedirect.com',
+                  'nature.com',
+                  'jmlr.org',
+                  'tandfonline.com',
+                  'cambridge.org',
+                  'academia.edu',
+                ];
+
+                // Normalize candidate urls and filter out internal scholar links
+                const normalized = candidateUrls
+                  .map((c) => (c.startsWith('http') ? c : `https://scholar.google.com${c}`))
+                  .filter((c) => !c.startsWith('https://scholar.google.com') && !/scholar\.google\.com/.test(c));
+
+                // Try to pick a preferred host first
+                let picked: string | undefined;
+                for (const host of preferredHosts) {
+                  const found = normalized.find((u) => u.includes(host));
+                  if (found) {
+                    picked = found;
+                    break;
+                  }
+                }
+
+                // If none matched preferred hosts, pick the first non-arXiv external url
+                if (!picked) {
+                  picked = normalized.find((u) => !/arxiv\.org/i.test(u));
+                }
+
+                if (picked) {
+                  urlFull = picked;
+                  if (/\.pdf(\?|$)/i.test(picked)) pdfUrl = picked;
+                }
+              }
+            } catch {
+              // ignore cluster fetch errors and keep original URL
+            }
+          }
+        }
+
+        if (title) pubs.push({ title, venue, year, url: urlFull, pdfUrl, citations });
+        if (pubs.length >= max) break;
+      }
+      return pubs;
+    } catch {
+      // network or parse error
+      return [];
+    }
+  };
+
+  const scholarUserId = 'pzoM9S8AAAAJ';
+  let scholarPublications: Publication[] = [];
+  try {
+    scholarPublications = await fetchScholarPublications(scholarUserId, 9);
+  } catch {
+    scholarPublications = [];
+  }
+
+  const publicationsToShow = scholarPublications.length ? scholarPublications : staticPublications;
+
   return (
     <div className="min-h-screen transition-colors">
 
@@ -323,7 +456,7 @@ export default async function Home() {
         {/* Papers */}
         <Section id="papers" title="Papers" gradient="from-emerald-500 via-teal-500 to-cyan-500">
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {publications.map((pub) => (
+            {publicationsToShow.map((pub: Publication) => (
               <PublicationCard key={pub.title} publication={pub} />
             ))}
           </div>

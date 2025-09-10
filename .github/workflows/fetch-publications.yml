@@ -1,0 +1,43 @@
+name: Fetch Scholar publications
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 3 * * *' # daily at 03:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run fetch-scholar script
+        env:
+          CI: true
+        run: |
+          node ./scripts/fetch-scholar.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add data/publications.scholar.json || true
+            git commit -m "ci: update publications.scholar.json" || true
+            git push origin HEAD:main || true
+          else
+            echo "No changes"
+          fi

@@ -53,4 +53,6 @@ export interface Publication {
     year: number;
     url: string;
     pdfUrl?: string;
+    /** Optional citation count (Cited by N) scraped from Google Scholar */
+    citations?: number;
 }

@@ -32,8 +32,11 @@ export const PublicationCard = React.memo(function PublicationCard({ publication
                 <span className="mx-2">•</span>
                 {publication.year}
             </p>
-
             <div className="relative z-10 flex items-center gap-4">
+                {typeof publication.citations === 'number' && (
+                    <span className="pointer-events-auto text-xs text-gray-600 dark:text-gray-300">{`Cited by ${publication.citations}`}</span>
+                )}
+                <div className="flex-1" />
                 {publication.pdfUrl && (
                     <a
                         href={publication.pdfUrl}

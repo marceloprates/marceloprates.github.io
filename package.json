@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx --config ./config/eslint.config.mjs .",
     "validate:content-images": "node ./scripts/validate-content-images.js",
-    "ci:check": "npm run lint && npm run build && npm run validate:content-images"
+    "ci:check": "npm run lint && npm run build && npm run validate:content-images",
+    "fetch-scholar": "node ./scripts/fetch-scholar.js",
+    "ci:fetch-publications": "npm run fetch-scholar"
   },
   "dependencies": {
     "@fontsource/pacifico": "^5.2.6",
@@ -44,6 +46,7 @@
     "eslint-config-next": "15.5.0",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "puppeteer": "^21.4.0"
   }
 }
