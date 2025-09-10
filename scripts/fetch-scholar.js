@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
-const puppeteer = require('puppeteer');
+import fs from 'fs';
+import path from 'path';
+import puppeteer from 'puppeteer';
 
 // Script: fetch-scholar.js
 // - Visits Google Scholar profile page and extracts publication rows
@@ -64,7 +64,7 @@ async function fetchProfile(userId) {
                     preferredUrl = picked.href;
                     if (/\.pdf(\?|$)/i.test(preferredUrl)) pdfUrl = preferredUrl;
                 }
-            } catch (e) {
+            } catch {
                 // ignore
             } finally {
                 await cpage.close();
