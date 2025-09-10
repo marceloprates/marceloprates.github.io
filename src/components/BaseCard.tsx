@@ -5,6 +5,7 @@ import Image, { type StaticImageData } from 'next/image';
 import Tilt from './Tilt';
 import effects from './CardEffects.module.css';
 import slashStyles from './TileButton.module.css';
+import halftone from './Texture.module.css';
 
 type ImageVariant = 'right-slashed' | 'full';
 
@@ -23,6 +24,8 @@ export interface CardBaseProps {
     contentClassName?: string;
     scale?: number;
     shine?: boolean;
+    halftone?: boolean; // subtle paper texture overlay
+    lines?: boolean; // diagonal line texture overlay
     image?: CardImage;
     overlayAriaLabel?: string;
     aspectRatio?: number; // width / height
@@ -37,6 +40,8 @@ export const BaseCard = React.memo(function BaseCard({
     contentClassName,
     scale = 1.04,
     shine = true,
+    halftone: showHalftone = true,
+    lines: showLines = false,
     image,
     overlayAriaLabel,
     children,
@@ -58,6 +63,12 @@ export const BaseCard = React.memo(function BaseCard({
                     className={`pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${effects.shine}`}
                 />
             ) : null}
+
+            {/* Optional halftone / microdot texture (comes after base bg, before images/content) */}
+            {showHalftone ? <span aria-hidden className={halftone.halftone} /> : null}
+
+            {/* Optional diagonal line texture */}
+            {showLines ? <span aria-hidden className={halftone.lines} /> : null}
 
             {/* Optional background/side image */}
             {image?.src && image.variant === 'right-slashed' ? (

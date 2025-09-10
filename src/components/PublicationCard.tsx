@@ -4,43 +4,44 @@ import React from 'react';
 import type { Publication } from '@/types';
 import BaseCard from './BaseCard';
 
-// Venue categories and their gradient colors (more subtle for backgrounds)
+// Venue categories with saturated gradients (aligned with top tile palette)
+// Using !bg-transparent later to remove BaseCard's default translucent background.
 const venueStyles = {
     'AAAI': {
-        bg: 'bg-gradient-to-br from-red-100/80 to-orange-100/80 dark:from-red-950/40 dark:to-orange-950/40',
-        accent: 'from-red-500 to-orange-500'
+        bg: 'bg-gradient-to-br from-red-500 via-orange-500 to-amber-400',
+        accent: 'from-red-300 to-amber-200'
     },
     'IJCAI': {
-        bg: 'bg-gradient-to-br from-purple-100/80 to-pink-100/80 dark:from-purple-950/40 dark:to-pink-950/40',
-        accent: 'from-purple-500 to-pink-500'
+        bg: 'bg-gradient-to-br from-violet-500 via-fuchsia-500 to-purple-500',
+        accent: 'from-fuchsia-200 to-purple-200'
     },
     'ICANN': {
-        bg: 'bg-gradient-to-br from-blue-100/80 to-indigo-100/80 dark:from-blue-950/40 dark:to-indigo-950/40',
-        accent: 'from-blue-500 to-indigo-500'
+        bg: 'bg-gradient-to-br from-sky-500 via-blue-500 to-indigo-500',
+        accent: 'from-sky-200 to-indigo-200'
     },
     'ICTAI': {
-        bg: 'bg-gradient-to-br from-green-100/80 to-emerald-100/80 dark:from-green-950/40 dark:to-emerald-950/40',
-        accent: 'from-green-500 to-emerald-500'
+        bg: 'bg-gradient-to-br from-emerald-500 via-green-500 to-teal-400',
+        accent: 'from-emerald-200 to-teal-200'
     },
     'ICONIP': {
-        bg: 'bg-gradient-to-br from-sky-100/80 to-blue-100/80 dark:from-sky-950/40 dark:to-blue-950/40',
-        accent: 'from-sky-500 to-blue-500'
+        bg: 'bg-gradient-to-br from-cyan-500 via-sky-500 to-blue-500',
+        accent: 'from-cyan-200 to-sky-200'
     },
     'GCAI': {
-        bg: 'bg-gradient-to-br from-amber-100/80 to-yellow-100/80 dark:from-amber-950/40 dark:to-yellow-950/40',
-        accent: 'from-amber-500 to-yellow-500'
+        bg: 'bg-gradient-to-br from-amber-500 via-yellow-500 to-lime-400',
+        accent: 'from-amber-200 to-lime-200'
     },
     'Journal': {
-        bg: 'bg-gradient-to-br from-rose-100/80 to-pink-100/80 dark:from-rose-950/40 dark:to-pink-950/40',
-        accent: 'from-rose-500 to-pink-500'
+        bg: 'bg-gradient-to-br from-rose-500 via-pink-500 to-fuchsia-500',
+        accent: 'from-rose-200 to-pink-200'
     },
     'HCOMP': {
-        bg: 'bg-gradient-to-br from-violet-100/80 to-purple-100/80 dark:from-violet-950/40 dark:to-purple-950/40',
-        accent: 'from-violet-500 to-purple-500'
+        bg: 'bg-gradient-to-br from-purple-500 via-violet-500 to-indigo-500',
+        accent: 'from-violet-200 to-indigo-200'
     },
     'default': {
-        bg: 'bg-gradient-to-br from-emerald-100/80 to-cyan-100/80 dark:from-emerald-950/40 dark:to-cyan-950/40',
-        accent: 'from-emerald-500 to-cyan-500'
+        bg: 'bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500',
+        accent: 'from-emerald-200 to-cyan-200'
     }
 };
 
@@ -68,28 +69,28 @@ export const PublicationCard = React.memo(function PublicationCard({ publication
             href={publication.url}
             external
             overlayAriaLabel={publication.title}
-            className={style.bg}
+            lines
+            className={`!bg-transparent ${style.bg} text-black shadow-md ring-0`} // remove base bg & ring to show vivid gradient
         >
-            <h3 className="font-semibold mb-2 text-gray-900 dark:text-white flex items-start gap-2 text-lg md:text-xl">
-                <span className={`inline-block w-1.5 h-5 rounded-full bg-gradient-to-b ${style.accent} group-hover:scale-y-110 transition-transform`} />
+            <h3 className="font-semibold mb-3 flex items-start gap-2 text-lg md:text-xl leading-snug">
+                <span className={`inline-block w-1.5 h-6 rounded-full bg-gradient-to-b ${style.accent} group-hover:scale-y-110 transition-transform`} />
                 <a
                     href={publication.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pointer-events-auto hover:underline"
+                    className="pointer-events-auto !text-black visited:!text-black focus:!text-black hover:underline decoration-2 decoration-white/40 underline-offset-2"
                 >
                     {publication.title}
                 </a>
             </h3>
-
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm font-medium text-black/90 mb-4">
                 {publication.venue}
                 <span className="mx-2">•</span>
                 {publication.year}
             </p>
             <div className="relative z-10 flex items-center gap-4">
                 {typeof publication.citations === 'number' && (
-                    <span className="pointer-events-auto text-xs text-gray-600 dark:text-gray-300">{`Cited by ${publication.citations}`}</span>
+                    <span className="pointer-events-auto text-xs tracking-wide text-black/80">{`Cited by ${publication.citations}`}</span>
                 )}
                 <div className="flex-1" />
                 {publication.pdfUrl && (
@@ -97,7 +98,7 @@ export const PublicationCard = React.memo(function PublicationCard({ publication
                         href={publication.pdfUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="pointer-events-auto text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                        className="pointer-events-auto !text-black visited:!text-black focus:!text-black text-xs md:text-sm font-semibold hover:underline"
                         onClick={(e) => e.stopPropagation()}
                     >
                         PDF
@@ -107,7 +108,7 @@ export const PublicationCard = React.memo(function PublicationCard({ publication
                     href={publication.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pointer-events-auto text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                    className="pointer-events-auto !text-black visited:!text-black focus:!text-black text-xs md:text-sm font-semibold hover:underline"
                 >
                     Details →
                 </a>
