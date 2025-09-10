@@ -1,0 +1,98 @@
+{
+  "fetchedAt": "2025-09-10T17:59:54.480Z",
+  "source": "semantic-scholar",
+  "authorId": "144677268",
+  "publications": [
+    {
+      "title": "Graph Neural Networks Meet Neural-Symbolic Computing: A Survey and Perspective",
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "year": 2020,
+      "url": "https://www.semanticscholar.org/paper/eb1a7d811ac4041963841cae7a0d49713dbce9aa",
+      "pdfUrl": "https://www.ijcai.org/proceedings/2020/0670.pdf",
+      "citations": 85,
+      "isOpenAccess": true,
+      "authors": [
+        "Luís C. Lamb",
+        "Artur S. d'Avila Garcez",
+        "Marco Gori",
+        "Marcelo O. R. Prates",
+        "Pedro H. C. Avelar",
+        "M. Vardi"
+      ]
+    },
+    {
+      "title": "Graph Colouring Meets Deep Learning: Effective Graph Neural Network Models for Combinatorial Problems",
+      "venue": "IEEE International Conference on Tools with Artificial Intelligence",
+      "year": 2019,
+      "url": "https://www.semanticscholar.org/paper/065f7d69c848952c794305d5b3f11a6948414280",
+      "pdfUrl": "https://arxiv.org/pdf/1903.04598",
+      "citations": 87,
+      "isOpenAccess": true,
+      "authors": [
+        "Henrique Lemos",
+        "Marcelo O. R. Prates",
+        "Pedro H. C. Avelar",
+        "L. Lamb"
+      ]
+    },
+    {
+      "title": "On Quantifying and Understanding the Role of Ethics in AI Research: A Historical Account of Flagship Conferences and Journals",
+      "venue": "Global Conference on Artificial Intelligence",
+      "year": 2018,
+      "url": "https://www.semanticscholar.org/paper/57abadd4577e9900b358cab7a7ad968ec6565935",
+      "pdfUrl": "https://easychair.org/publications/open/Z7D4",
+      "citations": 11,
+      "isOpenAccess": true,
+      "authors": [
+        "Marcelo O. R. Prates",
+        "Pedro H. C. Avelar",
+        "L. Lamb"
+      ]
+    },
+    {
+      "title": "Multitask Learning on Graph Neural Networks - Learning Multiple Graph Centrality Measures with a Unified Network",
+      "venue": "International Conference on Artificial Neural Networks",
+      "year": 2018,
+      "url": "https://www.semanticscholar.org/paper/5d7b7334bbef45230ab9d81a83de40f12c5ccaf6",
+      "pdfUrl": "",
+      "citations": 18,
+      "isOpenAccess": false,
+      "authors": [
+        "Pedro H. C. Avelar",
+        "Henrique Lemos",
+        "Marcelo O. R. Prates",
+        "L. Lamb"
+      ]
+    },
+    {
+      "title": "Learning to Solve NP-Complete Problems - A Graph Neural Network for the Decision TSP",
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "year": 2018,
+      "url": "https://www.semanticscholar.org/paper/960d80dfff5cddf7ad16edcc95027ac9ddec2166",
+      "pdfUrl": "https://ojs.aaai.org/index.php/AAAI/article/download/4399/4277",
+      "citations": 185,
+      "isOpenAccess": true,
+      "authors": [
+        "Marcelo O. R. Prates",
+        "Pedro H. C. Avelar",
+        "Henrique Lemos",
+        "L. Lamb",
+        "Moshe Y. Vardi"
+      ]
+    },
+    {
+      "title": "Assessing gender bias in machine translation: a case study with Google Translate",
+      "venue": "Neural computing & applications (Print)",
+      "year": 2018,
+      "url": "https://www.semanticscholar.org/paper/c590d2c8c2fb6ce5d32ee9165ab24171165f2b70",
+      "pdfUrl": "",
+      "citations": 356,
+      "isOpenAccess": false,
+      "authors": [
+        "Marcelo O. R. Prates",
+        "Pedro H. C. Avelar",
+        "L. Lamb"
+      ]
+    }
+  ]
+}

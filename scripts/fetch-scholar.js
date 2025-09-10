@@ -1,95 +1,103 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import puppeteer from 'puppeteer';
+import fetch from 'node-fetch';
 
 // Script: fetch-scholar.js
-// - Visits Google Scholar profile page and extracts publication rows
-// - For entries that are arXiv, opens the cluster "see all versions" page in a headless browser
-//   and looks for publisher/DOI links that are not arXiv
+// - Fetches publications from Semantic Scholar API
 // - Writes a JSON file to data/publications.scholar.json with extracted fields
 
-const PROFILE_URL = (userId) => `https://scholar.google.com/citations?user=${userId}&hl=en&pagesize=100`;
+const API_URL = 'https://api.semanticscholar.org/graph/v1';
+const AUTHOR_ID = '144677268'; // Marcelo O. R. Prates
 
-async function fetchProfile(userId) {
-    const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-    const page = await browser.newPage();
-    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-    const url = PROFILE_URL(userId);
-    await page.goto(url, { waitUntil: 'domcontentloaded' });
+// Papers to exclude (known incorrect attributions)
+const EXCLUDED_PAPERS = [
+    '823dbab690b96cd624facb7b6f9c5db05096af80' // Pure-Past Linear Temporal and Dynamic Logic paper
+];
 
-    // Evaluate rows client-side for more reliable HTML compared to fetch
-    const rows = await page.$$eval('tr.gsc_a_tr', (trs) => {
-        return trs.map((tr) => tr.innerHTML);
+async function fetchProfile() {
+    console.log('Fetching publications from Semantic Scholar...');
+
+    const response = await fetch(`${API_URL}/author/${AUTHOR_ID}?fields=name,papers.title,papers.year,papers.venue,papers.citationCount,papers.openAccessPdf,papers.url,papers.isOpenAccess,papers.authors`, {
+        headers: {
+            'Accept': 'application/json'
+        }
     });
 
-    const publications = [];
-    for (const rowHtml of rows) {
-        // Extract basic fields using DOM parsing in the browser is better, but we already have rowHtml
-        // We'll open a temporary page to parse the row with the browser DOM for robust extraction
-        const rpage = await browser.newPage();
-        await rpage.setContent(`<table><tr>${rowHtml}</tr></table>`, { waitUntil: 'domcontentloaded' });
-        const title = await rpage.$eval('.gsc_a_at', (a) => a.textContent.trim()).catch(() => '');
-        const titleHref = await rpage.$eval('.gsc_a_at', (a) => a.getAttribute('href')).catch(() => '');
-        const venue = await rpage.$$eval('.gs_gray', (els) => els.map((e) => e.textContent.trim())).catch(() => []);
-        const venueText = venue.length >= 2 ? venue[1] : (venue[0] || '');
-        const year = await rpage.$eval('.gsc_a_y .gsc_a_y', (s) => s.textContent.trim()).catch(() => '');
-        const cited = await rpage.$eval('.gsc_a_c a, .gsc_a_c span', (s) => s.textContent.trim()).catch(() => '');
-
-        // external popup link (may be available as an element with class gsc_a_ext)
-        const extHref = await rpage.$eval('.gsc_a_ext', (e) => e.getAttribute('href')).catch(() => '');
-
-        // cluster link may be in the title href or elsewhere; try to find a cluster id
-        const clusterMatch = (titleHref || '').match(/cluster=([0-9A-Za-z_-]+)/);
-
-        let preferredUrl = '';
-        let pdfUrl = '';
-
-        // If cluster exists, open cluster page and attempt to find publisher links
-        if (clusterMatch) {
-            const clusterId = clusterMatch[1];
-            const clusterUrl = `https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=${clusterId}`;
-            const cpage = await browser.newPage();
-            await cpage.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-            try {
-                await cpage.goto(clusterUrl, { waitUntil: 'domcontentloaded' });
-                // collect anchors
-                const anchors = await cpage.$$eval('a', (as) => as.map((a) => ({ href: a.href, text: a.textContent }))).catch(() => []);
-                // preferred hosts
-                const preferredHosts = ['doi.org', 'link.springer', 'springerlink', 'ieeexplore.ieee.org', 'dl.acm.org', 'onlinelibrary.wiley.com', 'sciencedirect.com', 'nature.com', 'jmlr.org', 'tandfonline.com', 'cambridge.org'];
-                // find preferred
-                let picked = anchors.find(a => preferredHosts.some(h => a.href.includes(h)));
-                if (!picked) picked = anchors.find(a => !/arxiv.org/i.test(a.href) && !a.href.includes('scholar.google.com'));
-                if (picked) {
-                    preferredUrl = picked.href;
-                    if (/\.pdf(\?|$)/i.test(preferredUrl)) pdfUrl = preferredUrl;
-                }
-            } catch {
-                // ignore
-            } finally {
-                await cpage.close();
-            }
-        }
-
-        // fallback prefer extHref, then titleHref
-        if (!preferredUrl) preferredUrl = extHref ? (extHref.startsWith('http') ? extHref : `https://scholar.google.com${extHref}`) : (titleHref ? (titleHref.startsWith('http') ? titleHref : `https://scholar.google.com${titleHref}`) : '');
-
-        publications.push({ title, venue: venueText, year: parseInt(year) || undefined, url: preferredUrl || '', pdfUrl: pdfUrl || undefined, citations: parseInt(cited) || undefined });
-        await rpage.close();
+    if (!response.ok) {
+        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
     }
 
-    await browser.close();
+    const data = await response.json();
+
+    console.log(`Found ${data.papers.length} publications...`);
+
+    // Get your name from the API response
+    const authorName = data.name;
+    console.log(`Author name: ${authorName}`);
+
+    // Filter papers to ensure you're an author, exclude known incorrect papers,
+    // filter out papers without proper venues or from arXiv, and papers with <10 citations
+    const filteredPapers = data.papers.filter(paper => {
+        // Extract paper ID from URL
+        const paperId = paper.url.split('/').pop();
+
+        // Exclude known incorrect papers
+        if (EXCLUDED_PAPERS.includes(paperId)) {
+            return false;
+        }
+
+        // Exclude papers without venue or from arXiv
+        if (!paper.venue || paper.venue.trim() === '' || paper.venue.toLowerCase() === 'arxiv.org') {
+            return false;
+        }
+
+        // Exclude papers with less than 10 citations
+        if (!paper.citationCount || paper.citationCount < 10) {
+            return false;
+        }
+
+        // Check for exact name match
+        const hasExactMatch = paper.authors.some(author =>
+            author.name === authorName ||
+            author.name === "Marcelo O. R. Prates" ||
+            author.name === "Marcelo Prates"
+        );
+
+        return hasExactMatch;
+    });
+
+    console.log(`Filtered to ${filteredPapers.length} papers where you are an author...`);
+
+    const publications = filteredPapers.map(paper => ({
+        title: paper.title,
+        venue: paper.venue,
+        year: paper.year,
+        url: paper.url || '',
+        pdfUrl: paper.openAccessPdf?.url,
+        citations: paper.citationCount,
+        isOpenAccess: paper.isOpenAccess,
+        authors: paper.authors.map(a => a.name) // Include author names for verification
+    }));
+
+    // Sort by year (newest first)
+    publications.sort((a, b) => (b.year || 0) - (a.year || 0));
+
     return publications;
 }
 
 async function main() {
-    const userId = process.argv[2] || 'pzoM9S8AAAAJ';
     const outDir = path.join(process.cwd(), 'data');
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
     const outPath = path.join(outDir, 'publications.scholar.json');
 
-    const pubs = await fetchProfile(userId);
-    fs.writeFileSync(outPath, JSON.stringify({ fetchedAt: new Date().toISOString(), userId, publications: pubs }, null, 2));
+    const pubs = await fetchProfile();
+    fs.writeFileSync(outPath, JSON.stringify({
+        fetchedAt: new Date().toISOString(),
+        source: 'semantic-scholar',
+        authorId: AUTHOR_ID,
+        publications: pubs
+    }, null, 2));
     console.log('Wrote', outPath);
 }
 

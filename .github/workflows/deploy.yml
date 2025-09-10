@@ -35,6 +35,13 @@ jobs:
             npm install --no-fund --no-audit
           fi
 
+      - name: Run fetch-scholar script (generate publications)
+        env:
+          CI: true
+        run: |
+          # Generate/refresh data/publications.scholar.json so the site can read it during build
+          node ./scripts/fetch-scholar.js || echo "fetch-scholar failed; proceeding without updated publications"
+
       - name: Build Next.js static site
         env:
           NODE_ENV: production

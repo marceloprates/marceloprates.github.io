@@ -69,7 +69,7 @@ export const tiles: Tile[] = [
     },
     {
         label: 'Open Source',
-        href: '#',
+        href: '#open-source',
         variant: 'lg',
         gradientClass: 'oss',
         image: '/file.svg',
