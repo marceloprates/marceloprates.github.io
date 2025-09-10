@@ -12,6 +12,17 @@ const nextConfig = {
     // DO NOT set basePath or assetPrefix - serve from root
     basePath: '',
     assetPrefix: '',
+
+    // Configure webpack to handle markdown files
+    webpack: (config) => {
+        config.module.rules.push({
+            test: /\.md$/,
+            // Process markdown files as raw strings
+            type: 'asset/source',
+        });
+
+        return config;
+    },
 }
 
 module.exports = nextConfig;

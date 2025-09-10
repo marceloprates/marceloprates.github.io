@@ -4,32 +4,33 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-github-pages-simple.mjs && node scripts/generate-github-projects.mjs && next build",
     "export": "echo \"Export handled during \"next build\" when \"output: 'export'\" is set in next.config.js\"",
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx --config ./config/eslint.config.mjs .",
     "validate:content-images": "node ./scripts/validate-content-images.js",
     "ci:check": "npm run lint && npm run build && npm run validate:content-images",
     "fetch-scholar": "node ./scripts/fetch-scholar.js",
-    "ci:fetch-publications": "npm run fetch-scholar"
+    "ci:fetch-publications": "npm run fetch-scholar",
+    "generate:projects": "node scripts/generate-github-projects.mjs"
   },
   "dependencies": {
     "@fontsource/pacifico": "^5.2.6",
     "@tailwindcss/typography": "^0.5.16",
     "framer-motion": "^12.23.12",
     "gray-matter": "^4.0.3",
-    "lucide-react": "^0.540.0",
     "katex": "^0.16.11",
+    "lucide-react": "^0.540.0",
     "next": "15.5.0",
     "next-themes": "^0.4.6",
     "p5": "^1.11.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0",
     "rehype-katex": "^7.0.0",
     "rehype-raw": "^6.1.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "shiki": "^0.14.0"
   },
   "devDependencies": {
@@ -44,9 +45,10 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
+    "node-fetch": "^3.3.0",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5",
-    "node-fetch": "^3.3.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }

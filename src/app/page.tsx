@@ -1,14 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { githubConfig } from '../../config/github';
 
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectCard } from '@/components/ProjectCard';
 import { TileButton } from '@/components/TileButton';
-import { projects } from '@/data/projects';
+import { projects as rawProjects } from '@/data/projects';
+import { selectedProjects } from '@/data/selected-projects';
+import { getAllProjects as getAllContentProjects, getProjectBySlug } from '@/lib/content';
+import { getProjectMetadata } from '@/lib/project-metadata.server';
 import { tiles } from '@/data/tiles';
 import { publications as staticPublications } from '@/data/publications';
-import type { Publication } from '@/types';
+import type { Publication, Project } from '@/types';
 import { Section } from '@/components/Section';
 import { PublicationCard } from '@/components/PublicationCard';
 import { StarshipCard } from '@/components/StarshipCard';
@@ -185,6 +189,7 @@ export default async function Home() {
   };
   const skills = parseSkillsFromLatex(skillsLatex);
 
+
   // Fixed number of positions per skill for aligned dot columns
   const MAX_SKILL_DOTS = 8;
 
@@ -274,6 +279,113 @@ export default async function Home() {
 
   const publicationsToShow = publications.length ? publications : staticPublications;
 
+  // Enrich projects with GitHub stats when link points to github.com
+  const parseGithubRepo = (url: string): string | null => {
+    try {
+      const u = new URL(url, 'https://example.com');
+      if (u.hostname.toLowerCase().endsWith('github.com')) {
+        // path like /owner/repo or /owner/repo/
+        const parts = u.pathname.replace(/^\//, '').split('/').filter(Boolean);
+        if (parts.length >= 2) return `${parts[0]}/${parts[1]}`;
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
+  // small helper: call GH REST API v3 for repo
+  const fetchRepo = async (repo: string) => {
+    try {
+      const token = process.env.GITHUB_TOKEN;
+      const headers: Record<string, string> = { Accept: 'application/vnd.github.v3+json' };
+      if (token) headers.Authorization = `token ${token}`;
+      // Use fetch so Next.js can cache/revalidate (server-side)
+      const res = await fetch(`https://api.github.com/repos/${repo}`, { headers, next: { revalidate: 60 * 60 } });
+      if (!res.ok) return {};
+      const j = await res.json();
+      return { stars: typeof j.stargazers_count === 'number' ? j.stargazers_count : undefined, forks: typeof j.forks_count === 'number' ? j.forks_count : undefined };
+    } catch {
+      return {};
+    }
+  };
+
+  // Fetch gitstar-ranking rank by scraping the HTML (no public JSON API found for repos)
+  // Example page: https://gitstar-ranking.com/<owner>/<repo>
+  const fetchGitstar = async (repo: string) => {
+    try {
+      const [owner, name] = repo.split('/');
+      if (!owner || !name) return {};
+      const url = `https://gitstar-ranking.com/${owner}/${name}`;
+      const res = await fetch(url, { next: { revalidate: 60 * 60 } });
+      if (!res.ok) return {};
+      const html = await res.text();
+      // Look for the 'Rank' attribute block: a div with class 'repository_attribute' containing 'Rank'
+      // then the following 'repository_value' div with the number.
+      const attrRegex = /<div class='repository_attribute[^>]*'>\s*Rank\s*<\/div>\s*<div class='repository_value[^>]*'>\s*([0-9,]+)\s*<\/div>/i;
+      const m = attrRegex.exec(html);
+      if (m) {
+        const rank = parseInt(m[1].replace(/,/g, ''), 10);
+        if (Number.isFinite(rank)) return { gitstarRank: rank, gitstarUrl: url };
+      }
+      return {};
+    } catch {
+      return {};
+    }
+  };
+
+  // enrich projects list and track GitHub projects
+  const gitHubProjects: Array<{ repo: string; stars?: number; forks?: number; gitstarRank?: number; name: string; description?: string; link: string; topics?: string[] }> = [];
+
+  const projects: Project[] = await Promise.all(
+    rawProjects.map(async (p: unknown) => {
+      const pObj = p as Project;
+      const repo = pObj.repo || parseGithubRepo(pObj.link);
+      if (!repo) return ({ ...pObj } as Project);
+      const [stats, gsr] = await Promise.all([fetchRepo(repo), fetchGitstar(repo)]);
+      console.log(`Enriched project ${pObj.title} with repo ${repo}:`, { stats, gsr });
+
+      // Track GitHub projects for github-projects.json
+      gitHubProjects.push({
+        repo,
+        stars: stats.stars,
+        forks: stats.forks,
+        gitstarRank: gsr.gitstarRank,
+        name: pObj.title,
+        description: pObj.desc,
+        link: pObj.link,
+        topics: pObj.tags
+      });
+
+      return { ...pObj, repo, stars: stats.stars, forks: stats.forks, gitstarRank: gsr.gitstarRank, gitstarUrl: gsr.gitstarUrl } as Project;
+    })
+  );
+
+  // Save GitHub projects data
+  const gitHubProjectsPath = path.join(process.cwd(), 'src', 'data', 'github-projects.json');
+  try {
+    fs.writeFileSync(gitHubProjectsPath, JSON.stringify(gitHubProjects, null, 2));
+    console.log('Saved GitHub projects data to:', gitHubProjectsPath);
+  } catch (err) {
+    console.error('Failed to save GitHub projects data:', err);
+  }
+
+  // Resolve server-side project links to local pages when available to avoid
+  // hydration mismatches between server and client rendering (client uses
+  // window.__PROJECT_METADATA__ to prefer local pages).
+  const projectMetadata = getProjectMetadata();
+  const projectsFinal: Project[] = projects.map((p) => {
+    try {
+      if (p.repo && projectMetadata[p.repo]?.hasLocalPage) {
+        const slug = projectMetadata[p.repo].slug || p.repo.split('/')[1];
+        return { ...p, link: `/projects/${slug}` } as Project;
+      }
+    } catch (e) {
+      // ignore and fallback to original link
+    }
+    return p;
+  });
+
   return (
     <div className="min-h-screen transition-colors">
 
@@ -285,32 +397,9 @@ export default async function Home() {
           <h1 className="text-4xl font-extrabold leading-tight mb-4 text-gray-900 dark:text-white libre-baskerville">
             {'>'} Hi, I&apos;m{' '}
             <span className="relative inline-block">
-              <span
-                className="bg-yellow-200 dark:bg-yellow-400/60 px-1 rounded-sm z-0 absolute inset-0 -skew-y-2 pointer-events-none"
-                aria-hidden="true"
-                style={{
-                  overflow: 'hidden',
-                  filter: 'contrast(1.2)',
-                }}
-              >
-                <span
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      'repeating-linear-gradient(135deg, rgba(0,0,0,0.06) 0px, rgba(0,0,0,0.06) 1px, transparent 1px, transparent 4px)',
-                    opacity: 0.6,
-                    mixBlendMode: 'multiply',
-                  }}
-                />
-                <span
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage:
-                      'url("data:image/svg+xml;utf8,<svg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grain\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'1.0\' numOctaves=\'3\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23grain)\' opacity=\'0.35\'/></svg>")',
-                    opacity: 0.85,
-                    mixBlendMode: 'multiply',
-                  }}
-                />
+              <span className="bg-yellow-200 dark:bg-yellow-400/60 px-1 rounded-sm z-0 absolute inset-0 -skew-y-2 pointer-events-none" aria-hidden="true">
+                <span className="absolute inset-0 opacity-60 mix-blend-multiply bg-gradient-to-br from-transparent via-black/5 to-transparent" />
+                <span className="absolute inset-0 opacity-90 mix-blend-multiply bg-[length:40px_40px] bg-[url('data:image/svg+xml;utf8,<svg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grain\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'1.0\' numOctaves=\'3\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23grain)\' opacity=\'0.35\'/></svg>')]" />
               </span>
               <span className="relative z-10 font-extrabold text-gray-900 dark:text-gray-900">Marcelo Prates!</span>
             </span>
@@ -350,9 +439,107 @@ export default async function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <StarshipCard href="/starship" />
-            {projects.slice(0, 7).map((p) => (
-              <ProjectCard key={p.title} project={p} />
-            ))}
+            {/* Render exactly the manually selected projects in the configured order. */}
+            {(() => {
+              // Load local content projects to allow references to content pages like '/projects/streamlines' or 'streamlines'
+              const contentProjects = getAllContentProjects();
+
+              const selectedResolved: Project[] = [];
+
+              for (const entry of selectedProjects) {
+                // If entry looks like an owner/repo (contains '/'), try repo first.
+                if (entry.includes('/')) {
+                  const found = projectsFinal.find((p) => p.repo === entry || (p.link && p.link.includes(entry.split('/')[1])));
+                  if (found) {
+                    selectedResolved.push(found);
+                    continue;
+                  }
+
+                  // Repository not found — try treating the last path segment as a local slug
+                  const last = entry.split('/').filter(Boolean).pop();
+                  if (last) {
+                    const contentMatch = contentProjects.find((c) => c.slug.toLowerCase() === last.toLowerCase());
+                    if (contentMatch) {
+                      const local = getProjectBySlug(contentMatch.slug);
+                      if (local) {
+                        const meta = local.meta || {};
+                        // Resolve an optional image declared in frontmatter. If it's a
+                        // bare filename, assume it's stored under /images/projects/{slug}/
+                        let imageSrc: string | undefined = undefined;
+                        // Prefer an explicit `image` frontmatter field
+                        if (meta.image && typeof meta.image === 'string') {
+                          const img = meta.image.trim();
+                          if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
+                          else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                        }
+                        // Fallback: allow frontmatter `excerpt` to contain an <img src="..."> tag
+                        if (!imageSrc && meta.excerpt && typeof meta.excerpt === 'string') {
+                          const m = meta.excerpt.match(/src=["']([^"']+)["']/i);
+                          if (m && m[1]) {
+                            const img = m[1].trim();
+                            if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
+                            else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                          }
+                        }
+
+                        selectedResolved.push({
+                          title: meta.title || contentMatch.slug,
+                          desc: (meta.excerpt || meta.description || '').replace(/<[^>]+>/g, '').trim(),
+                          tags: meta.tags || [],
+                          link: `/projects/${contentMatch.slug}`,
+                          repo: meta.repo || undefined,
+                          image: imageSrc,
+                        });
+                        continue;
+                      }
+                    }
+                  }
+                }
+
+                // If entry looks like a path '/projects/slug', normalize to slug and try content
+                let slug = entry;
+                if (slug.startsWith('/projects/')) slug = slug.replace('/projects/', '');
+                const contentMatch = contentProjects.find((c) => c.slug.toLowerCase() === slug.toLowerCase());
+                if (contentMatch) {
+                  const local = getProjectBySlug(contentMatch.slug);
+                  if (local) {
+                    const meta = local.meta || {};
+                    let imageSrc: string | undefined = undefined;
+                    // Prefer an explicit `image` frontmatter field
+                    if (meta.image && typeof meta.image === 'string') {
+                      const img = meta.image.trim();
+                      if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
+                      else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                    }
+                    // Fallback: allow frontmatter `excerpt` to contain an <img src="..."> tag
+                    if (!imageSrc && meta.excerpt && typeof meta.excerpt === 'string') {
+                      const m = meta.excerpt.match(/src=["']([^"']+)["']/i);
+                      if (m && m[1]) {
+                        const img = m[1].trim();
+                        if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
+                        else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                      }
+                    }
+
+                    selectedResolved.push({
+                      title: meta.title || contentMatch.slug,
+                      desc: (meta.excerpt || meta.description || '').replace(/<[^>]+>/g, '').trim(),
+                      tags: meta.tags || [],
+                      link: `/projects/${contentMatch.slug}`,
+                      repo: meta.repo || undefined,
+                      image: imageSrc,
+                    });
+                    continue;
+                  }
+                }
+
+                // As a last resort, try to match by title in fetched projects
+                const byTitle = projectsFinal.find((p) => p.title && p.title.toLowerCase() === entry.toLowerCase());
+                if (byTitle) selectedResolved.push(byTitle);
+              }
+
+              return selectedResolved.map((p) => <ProjectCard key={p.title} project={p} />);
+            })()}
           </div>
         </section>
 
@@ -369,28 +556,14 @@ export default async function Home() {
             </a>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects
-              .filter((p) => ['prettymaps', 'easyshader', 'cosmos'].includes(p.title))
+            {projectsFinal
+              .filter((p) => p.repo && !githubConfig.excludeFromPages.includes(p.repo!))
+              .sort((a, b) => (b.stars || 0) - (a.stars || 0))
               .map((p) => (
                 <ProjectCard key={p.title} project={p} />
               ))}
           </div>
         </section>
-
-        {/* Recent posts 
-        <Section id="recent-posts" title="Recent Posts" gradient="from-sky-500 via-blue-500 to-indigo-500">
-          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.slice(0, 3).map((p) => (
-              <PostCard key={p.slug} post={p} />
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-gray-600 dark:text-gray-300">
-            <Link href="/posts" className="text-blue-600 dark:text-blue-400 hover:underline">
-              See all posts →
-            </Link>
-          </p>
-        </Section>
-        */}
 
         {/* Papers */}
         <Section id="papers" title="Selected Papers" gradient="from-emerald-500 via-teal-500 to-cyan-500">

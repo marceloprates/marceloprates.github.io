@@ -22,6 +22,7 @@ export interface CardBaseProps {
     external?: boolean;
     className?: string;
     contentClassName?: string;
+    contentInteractive?: boolean; // allow interactive elements (links, buttons) inside content
     scale?: number;
     shine?: boolean;
     halftone?: boolean; // subtle paper texture overlay
@@ -38,6 +39,7 @@ export const BaseCard = React.memo(function BaseCard({
     external = false,
     className,
     contentClassName,
+    contentInteractive = false,
     scale = 1.04,
     shine = true,
     halftone: showHalftone = true,
@@ -90,7 +92,7 @@ export const BaseCard = React.memo(function BaseCard({
             ) : null}
 
             {image?.src && image.variant === 'full' ? (
-                <span aria-hidden className="pointer-events-none absolute inset-0">
+                <span aria-hidden className="pointer-events-none absolute inset-0 z-0">
                     <Image
                         src={image.src}
                         alt={image.alt ?? ''}
@@ -98,6 +100,7 @@ export const BaseCard = React.memo(function BaseCard({
                         sizes={image.sizes ?? '100vw'}
                         className="object-cover object-center opacity-100 will-change-transform"
                         priority={image.priority}
+                        unoptimized={image.src.toString().startsWith('http')}
                     />
                     {/* subtle overlay for contrast */}
                     <span className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
@@ -106,7 +109,8 @@ export const BaseCard = React.memo(function BaseCard({
 
             {/* Foreground content */}
             <div className={[
-                'relative z-10 p-6 pointer-events-none',
+                'relative z-20 p-6',
+                contentInteractive ? 'pointer-events-auto' : 'pointer-events-none',
                 contentClassName || '',
             ].filter(Boolean).join(' ')}>
                 {children}

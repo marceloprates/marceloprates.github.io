@@ -70,7 +70,11 @@ export function getProjectBySlug(slug: string) {
     const dir = path.join(contentRoot, 'projects');
     if (!fs.existsSync(dir)) return null;
     const files = fs.readdirSync(dir);
-    const file = files.find((f) => f.includes(slug));
+    const file = files.find((f) => {
+        // Match either exact slug or {owner}-{repo} style GitHub repo slugs
+        const base = f.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+        return base === slug || base.toLowerCase() === slug.toLowerCase();
+    });
     if (!file) return null;
     const raw = fs.readFileSync(path.join(dir, file), 'utf8');
     const parsed = matter(raw);
