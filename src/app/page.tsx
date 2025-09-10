@@ -235,16 +235,24 @@ export default async function Home() {
       const data = JSON.parse(raw || '{}');
 
       // Sort by citation count (highest first) and respect `max` limit
-      const rawPubs: any[] = (data.publications || []);
+      const rawPubs: unknown[] = Array.isArray(data.publications) ? data.publications : [];
 
       // Normalize citation counts: prefer citationsUpdated (set by fetch-scholar.js),
       // then googleScholarCitations, then the original semantic scholar `citations`.
-      const normalized: Publication[] = rawPubs.map((p: any) => {
-        const gs = (typeof p.googleScholarCitations === 'number') ? p.googleScholarCitations : null;
-        const updated = (typeof p.citationsUpdated === 'number') ? p.citationsUpdated : (gs ?? (p.citations || 0));
+      const normalized: Publication[] = rawPubs.map((p: unknown) => {
+        const obj = (typeof p === 'object' && p !== null) ? (p as Record<string, unknown>) : {};
+        const gs = typeof obj.googleScholarCitations === 'number' ? obj.googleScholarCitations : null;
+        const updated = typeof obj.citationsUpdated === 'number'
+          ? obj.citationsUpdated
+          : (gs ?? (typeof obj.citations === 'number' ? obj.citations : 0));
+
+        // Build a safe Publication object, coercing or defaulting fields when necessary.
         return {
-          ...p,
-          // Overwrite `citations` so downstream code and components use the preferred value
+          title: typeof obj.title === 'string' ? obj.title : String(obj.title ?? ''),
+          venue: typeof obj.venue === 'string' ? obj.venue : String(obj.venue ?? ''),
+          year: typeof obj.year === 'number' ? obj.year : Number(obj.year) || 0,
+          url: typeof obj.url === 'string' ? obj.url : String(obj.url ?? ''),
+          pdfUrl: typeof obj.pdfUrl === 'string' ? obj.pdfUrl : undefined,
           citations: updated,
         } as Publication;
       });

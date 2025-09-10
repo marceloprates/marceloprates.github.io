@@ -8,40 +8,40 @@ import BaseCard from './BaseCard';
 // Using !bg-transparent later to remove BaseCard's default translucent background.
 const venueStyles = {
     'AAAI': {
-        bg: 'bg-gradient-to-br from-red-500 via-orange-500 to-amber-400',
-        accent: 'from-red-300 to-amber-200'
+        bg: 'bg-gradient-to-br from-red-400 via-orange-400 to-amber-300',
+        accent: 'from-red-200 to-amber-100'
     },
     'IJCAI': {
-        bg: 'bg-gradient-to-br from-violet-500 via-fuchsia-500 to-purple-500',
-        accent: 'from-fuchsia-200 to-purple-200'
+        bg: 'bg-gradient-to-br from-violet-400 via-fuchsia-400 to-purple-400',
+        accent: 'from-fuchsia-100 to-purple-100'
     },
     'ICANN': {
-        bg: 'bg-gradient-to-br from-sky-500 via-blue-500 to-indigo-500',
-        accent: 'from-sky-200 to-indigo-200'
+        bg: 'bg-gradient-to-br from-sky-400 via-blue-400 to-indigo-400',
+        accent: 'from-sky-100 to-indigo-100'
     },
     'ICTAI': {
-        bg: 'bg-gradient-to-br from-emerald-500 via-green-500 to-teal-400',
-        accent: 'from-emerald-200 to-teal-200'
+        bg: 'bg-gradient-to-br from-emerald-400 via-green-400 to-teal-300',
+        accent: 'from-emerald-100 to-teal-100'
     },
     'ICONIP': {
-        bg: 'bg-gradient-to-br from-cyan-500 via-sky-500 to-blue-500',
-        accent: 'from-cyan-200 to-sky-200'
+        bg: 'bg-gradient-to-br from-cyan-400 via-sky-400 to-blue-400',
+        accent: 'from-cyan-100 to-sky-100'
     },
     'GCAI': {
-        bg: 'bg-gradient-to-br from-amber-500 via-yellow-500 to-lime-400',
-        accent: 'from-amber-200 to-lime-200'
+        bg: 'bg-gradient-to-br from-amber-400 via-yellow-400 to-lime-300',
+        accent: 'from-amber-100 to-lime-100'
     },
     'Journal': {
-        bg: 'bg-gradient-to-br from-rose-500 via-pink-500 to-fuchsia-500',
-        accent: 'from-rose-200 to-pink-200'
+        bg: 'bg-gradient-to-br from-rose-400 via-pink-400 to-fuchsia-400',
+        accent: 'from-rose-100 to-pink-100'
     },
     'HCOMP': {
-        bg: 'bg-gradient-to-br from-purple-500 via-violet-500 to-indigo-500',
-        accent: 'from-violet-200 to-indigo-200'
+        bg: 'bg-gradient-to-br from-purple-400 via-violet-400 to-indigo-400',
+        accent: 'from-violet-100 to-indigo-100'
     },
     'default': {
-        bg: 'bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500',
-        accent: 'from-emerald-200 to-cyan-200'
+        bg: 'bg-gradient-to-br from-emerald-400 via-teal-400 to-cyan-400',
+        accent: 'from-emerald-100 to-cyan-100'
     }
 };
 
@@ -90,7 +90,7 @@ export const PublicationCard = React.memo(function PublicationCard({ publication
             </p>
             <div className="relative z-10 flex items-center gap-4">
                 {typeof publication.citations === 'number' && (
-                    <span className="pointer-events-auto text-xs tracking-wide text-black/80">{`Cited by ${publication.citations}`}</span>
+                    <span className="pointer-events-auto text-sm md:text-base tracking-wide font-semibold text-black/85">{`Cited by ${publication.citations}`}</span>
                 )}
                 <div className="flex-1" />
                 {publication.pdfUrl && (
