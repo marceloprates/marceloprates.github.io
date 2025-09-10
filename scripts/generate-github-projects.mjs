@@ -18,7 +18,11 @@ const IGNORE_REPOS = [
     'Ethics-AI-Data',
     'Guerra-Mundial-POA-2020-Simulator',
     'Matematica-ONGEP',
-    'rossetti-audio'
+    'rossetti-audio',
+    'Gender-Bias',
+    'Resume',
+    'marceloprates',
+    'Hexmosaic-Wallpapers-Processing'
 ];
 
 if (!GITHUB_TOKEN) {
