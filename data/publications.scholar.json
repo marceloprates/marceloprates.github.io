@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2025-09-10T17:59:54.480Z",
-  "source": "semantic-scholar",
+  "fetchedAt": "2025-09-10T18:42:34.475Z",
+  "source": "semantic-scholar+google-scholar",
   "authorId": "144677268",
   "publications": [
     {
@@ -18,7 +18,13 @@
         "Marcelo O. R. Prates",
         "Pedro H. C. Avelar",
         "M. Vardi"
-      ]
+      ],
+      "googleScholarCitations": 239,
+      "citationsUpdated": 239,
+      "citationCountSources": {
+        "semanticScholar": 85,
+        "googleScholar": 239
+      }
     },
     {
       "title": "Graph Colouring Meets Deep Learning: Effective Graph Neural Network Models for Combinatorial Problems",
@@ -33,7 +39,13 @@
         "Marcelo O. R. Prates",
         "Pedro H. C. Avelar",
         "L. Lamb"
-      ]
+      ],
+      "googleScholarCitations": 112,
+      "citationsUpdated": 112,
+      "citationCountSources": {
+        "semanticScholar": 87,
+        "googleScholar": 112
+      }
     },
     {
       "title": "On Quantifying and Understanding the Role of Ethics in AI Research: A Historical Account of Flagship Conferences and Journals",
@@ -47,7 +59,13 @@
         "Marcelo O. R. Prates",
         "Pedro H. C. Avelar",
         "L. Lamb"
-      ]
+      ],
+      "googleScholarCitations": 20,
+      "citationsUpdated": 20,
+      "citationCountSources": {
+        "semanticScholar": 11,
+        "googleScholar": 20
+      }
     },
     {
       "title": "Multitask Learning on Graph Neural Networks - Learning Multiple Graph Centrality Measures with a Unified Network",
@@ -62,7 +80,13 @@
         "Henrique Lemos",
         "Marcelo O. R. Prates",
         "L. Lamb"
-      ]
+      ],
+      "googleScholarCitations": 19,
+      "citationsUpdated": 19,
+      "citationCountSources": {
+        "semanticScholar": 18,
+        "googleScholar": 19
+      }
     },
     {
       "title": "Learning to Solve NP-Complete Problems - A Graph Neural Network for the Decision TSP",
@@ -78,7 +102,13 @@
         "Henrique Lemos",
         "L. Lamb",
         "Moshe Y. Vardi"
-      ]
+      ],
+      "googleScholarCitations": 1,
+      "citationsUpdated": 185,
+      "citationCountSources": {
+        "semanticScholar": 185,
+        "googleScholar": 1
+      }
     },
     {
       "title": "Assessing gender bias in machine translation: a case study with Google Translate",
@@ -92,7 +122,13 @@
         "Marcelo O. R. Prates",
         "Pedro H. C. Avelar",
         "L. Lamb"
-      ]
+      ],
+      "googleScholarCitations": 600,
+      "citationsUpdated": 600,
+      "citationCountSources": {
+        "semanticScholar": 356,
+        "googleScholar": 600
+      }
     }
   ]
 }

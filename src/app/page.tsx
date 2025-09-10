@@ -235,8 +235,21 @@ export default async function Home() {
       const data = JSON.parse(raw || '{}');
 
       // Sort by citation count (highest first) and respect `max` limit
-      const pubs: Publication[] = (data.publications || [])
-        .sort((a: Publication, b: Publication) => (b.citations || 0) - (a.citations || 0));
+      const rawPubs: any[] = (data.publications || []);
+
+      // Normalize citation counts: prefer citationsUpdated (set by fetch-scholar.js),
+      // then googleScholarCitations, then the original semantic scholar `citations`.
+      const normalized: Publication[] = rawPubs.map((p: any) => {
+        const gs = (typeof p.googleScholarCitations === 'number') ? p.googleScholarCitations : null;
+        const updated = (typeof p.citationsUpdated === 'number') ? p.citationsUpdated : (gs ?? (p.citations || 0));
+        return {
+          ...p,
+          // Overwrite `citations` so downstream code and components use the preferred value
+          citations: updated,
+        } as Publication;
+      });
+
+      const pubs: Publication[] = normalized.sort((a: Publication, b: Publication) => (b.citations || 0) - (a.citations || 0));
 
       return pubs.slice(0, max);
     } catch {

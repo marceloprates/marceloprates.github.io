@@ -2,6 +2,10 @@
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
+// Note: we intentionally avoid adding heavy scraping libraries to keep this script
+// dependency-light. We do a gentle HTML parse of Google Scholar results to
+// extract the "Cited by N" count. If you prefer a more robust parser, add
+// cheerio and switch to it.
 
 // Script: fetch-scholar.js
 // - Fetches publications from Semantic Scholar API
@@ -90,15 +94,92 @@ async function main() {
     const outDir = path.join(process.cwd(), 'data');
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
     const outPath = path.join(outDir, 'publications.scholar.json');
-
     const pubs = await fetchProfile();
+
+    console.log('Enriching publications with Google Scholar citation counts (this may be slow)...');
+    // Enrich each publication with Google Scholar citation counts when possible.
+    for (let i = 0; i < pubs.length; i++) {
+        const p = pubs[i];
+        try {
+            // Use title + first author name to increase match likelihood
+            const firstAuthor = (p.authors && p.authors.length) ? p.authors[0] : '';
+            const gsCitations = await fetchGoogleScholarCitations(p.title, firstAuthor);
+            p.googleScholarCitations = gsCitations;
+            // Choose the higher / preferred citation count (Google Scholar tends to be higher)
+            p.citationsUpdated = (typeof gsCitations === 'number' && gsCitations > (p.citations || 0)) ? gsCitations : (p.citations || 0);
+            p.citationCountSources = {
+                semanticScholar: p.citations || 0,
+                googleScholar: (typeof gsCitations === 'number') ? gsCitations : null
+            };
+        } catch (err) {
+            console.warn('Failed to fetch Google Scholar for', p.title, err && err.message);
+            p.googleScholarCitations = null;
+            p.citationsUpdated = p.citations || 0;
+            p.citationCountSources = {
+                semanticScholar: p.citations || 0,
+                googleScholar: null
+            };
+        }
+
+        // Delay between requests to avoid being blocked (polite scraping)
+        await delay(1500);
+    }
+
     fs.writeFileSync(outPath, JSON.stringify({
         fetchedAt: new Date().toISOString(),
-        source: 'semantic-scholar',
+        source: 'semantic-scholar+google-scholar',
         authorId: AUTHOR_ID,
         publications: pubs
     }, null, 2));
     console.log('Wrote', outPath);
+}
+
+function delay(ms) {
+    return new Promise((res) => setTimeout(res, ms));
+}
+
+async function fetchGoogleScholarCitations(title, firstAuthor = '') {
+    // Query Google Scholar with title and first author for disambiguation.
+    const query = `${title} ${firstAuthor}`.trim();
+    const url = `https://scholar.google.com/scholar?hl=en&q=${encodeURIComponent(query)}`;
+
+    // Use a browser-like user agent. Google blocks non-browser agents aggressively.
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    };
+
+    try {
+        const resp = await fetch(url, { headers });
+        if (!resp.ok) {
+            // If blocked (e.g. 403) or other error, return null and let caller fallback
+            console.warn(`Google Scholar request failed: ${resp.status} ${resp.statusText}`);
+            return null;
+        }
+
+        const html = await resp.text();
+
+        // Look for the first "Cited by N" occurrence in the result page.
+        // Typical snippet: <a href="/scholar?cites=12345">Cited by 123</a>
+        const citedByMatch = html.match(/Cited by\s*(\d+)/i);
+        if (citedByMatch && citedByMatch[1]) {
+            const n = parseInt(citedByMatch[1], 10);
+            if (!Number.isNaN(n)) return n;
+        }
+
+        // Fallback: try to find link with /scholar?cites= and digits followed by >Cited by N<
+        const linkMatch = html.match(/<a[^>]+href="[^"]*\/scholar\?cites=[^\"]+"[^>]*>\s*Cited by\s*(\d+)\s*<\/a>/i);
+        if (linkMatch && linkMatch[1]) {
+            const n = parseInt(linkMatch[1], 10);
+            if (!Number.isNaN(n)) return n;
+        }
+
+        return null;
+    } catch (err) {
+        console.warn('Error querying Google Scholar for', title, err && err.message);
+        return null;
+    }
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });
