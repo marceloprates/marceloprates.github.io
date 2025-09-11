@@ -380,7 +380,7 @@ export default async function Home() {
         const slug = projectMetadata[p.repo].slug || p.repo.split('/')[1];
         return { ...p, link: `/projects/${slug}` } as Project;
       }
-    } catch (e) {
+    } catch {
       // ignore and fallback to original link
     }
     return p;

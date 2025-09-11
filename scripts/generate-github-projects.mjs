@@ -230,7 +230,7 @@ async function main() {
                         }
                     }
                 }
-            } catch (err) {
+            } catch {
                 // Non-fatal; keep generated project as-is
                 // console.warn('Could not read project markdown for', repo.name, err.message);
             }
@@ -258,7 +258,7 @@ async function main() {
                 // also check owner/name form if IGNORE_REPOS contains that
                 const short = full.split('/').pop() || '';
                 if (ignoreLower.has(short)) return false;
-            } catch (e) {
+            } catch {
                 // keep by default on error
             }
             return true;
@@ -275,8 +275,8 @@ export const projects: Project[] = ${JSON.stringify(projectsFiltered, null, 2)};
         fs.writeFileSync(projectsPath, projectsContent);
         console.log(`✨ Success! Wrote ${projectsFiltered.length} project entries to ${projectsPath}`);
 
-    } catch (err) {
-        console.error('\n❌ Error:', err.message);
+    } catch (error) {
+        console.error('\n❌ Error:', error instanceof Error ? error.message : String(error));
         process.exit(1);
     }
 }

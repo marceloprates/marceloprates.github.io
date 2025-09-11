@@ -1,11 +1,11 @@
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// dirname imported previously only for potential future use; remove to avoid unused var
+// import { dirname } from 'path';
 import { projects } from '../src/data/projects.ts';
 import { generateGitHubProjectPage } from '../src/lib/github.ts';
 
-const __filename = fileURLToPath(import.meta.url);
-// __dirname available for potential future use
-const __dirname = dirname(__filename);
+// Resolve current filename (kept in case future relative path calculations are needed)
+fileURLToPath(import.meta.url);
 
 async function generateAllGitHubPages() {
     console.log('Generating GitHub project pages...');

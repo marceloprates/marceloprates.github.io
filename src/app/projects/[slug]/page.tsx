@@ -8,6 +8,17 @@ import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllProjects, getProjectBySlug } from '@/lib/content';
 
+// Frontmatter shape for project markdown files (extend as needed)
+interface ProjectFrontmatter {
+    title?: string;
+    date?: string;
+    tags?: string[];
+    excerpt?: string;
+    cover?: string; // canonical cover field
+    image?: string; // fallback legacy field name
+    [key: string]: unknown; // allow additional arbitrary keys without using 'any'
+}
+
 export async function generateStaticParams() {
     const projects = getAllProjects();
     return projects.map((p) => ({ slug: p.slug }));
@@ -26,7 +37,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         );
     }
 
-    const meta = project.meta || {};
+    const meta = (project.meta || {}) as ProjectFrontmatter;
     const content = project.content || '';
 
     return (
@@ -37,7 +48,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     {meta.date && <p className="text-sm text-gray-600">{meta.date}</p>}
                     {/* Optional cover image from frontmatter (cover or image) */}
                     {(() => {
-                        const cover = (meta as any).cover || (meta as any).image;
+                        const cover = meta.cover || meta.image;
                         if (!cover || typeof cover !== 'string') return null;
                         // Normalize: if it's a bare filename (no leading / or protocol), assume /images/projects/{slug}/<file>
                         const normalized = /^(https?:)?\//.test(cover)
@@ -45,10 +56,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                             : `/images/projects/${slug}/${cover}`;
                         return (
                             <div className="mt-6 not-prose rounded-xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10">
-                                {/* Use plain img to keep static export simple (no next/image optimization needed) */}
+                                {/* Using plain <img> intentionally for static export (no optimization pipeline) */}
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={normalized}
-                                    alt={(meta.title || slug) + ' cover'}
+                                    alt={`${meta.title || slug} cover`}
                                     className="w-full h-auto block"
                                     loading="lazy"
                                 />

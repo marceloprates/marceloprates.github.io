@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// dirname not required (removed to prevent unused variable lint warning)
+// import { dirname } from 'path';
 import fs from 'fs';
 import path from 'path';
 const projectsPath = path.join(process.cwd(), 'src', 'data', 'projects.json');
@@ -12,9 +13,7 @@ const moduleObj = githubModule as Record<string, unknown>;
 const maybeGen = moduleObj['generateGitHubProjectPage'];
 const generateGitHubProjectPage = typeof maybeGen === 'function' ? (maybeGen as (p: unknown) => Promise<void>) : undefined;
 
-const __filename = fileURLToPath(import.meta.url);
-// _dirname kept for potential future use (rename to avoid unused var lint)
-const _dirname = dirname(__filename);
+fileURLToPath(import.meta.url);
 
 async function generateAllGitHubPages() {
     console.log('Generating GitHub project pages...');

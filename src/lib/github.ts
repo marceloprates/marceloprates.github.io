@@ -80,7 +80,7 @@ export async function generateGitHubProjectPage(project: Project) {
                 // skip writing and return early
                 return;
             }
-        } catch (err) {
+        } catch {
             // If parsing fails, fall back to normal behavior
         }
 
