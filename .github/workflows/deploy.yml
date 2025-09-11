@@ -45,6 +45,13 @@ jobs:
       - name: Build Next.js static site
         env:
           NODE_ENV: production
+          # Map repository secrets so build scripts that look for a GitHub token
+          # (scripts/generate-github-pages*.mjs, generate-github-projects.mjs) can
+          # authenticate and avoid rate limiting. User stores the token as GH_TOKEN.
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           npm run build
           # Prevent GitHub Pages from processing the site with Jekyll

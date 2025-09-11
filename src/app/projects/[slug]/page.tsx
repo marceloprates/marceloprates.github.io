@@ -35,6 +35,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <header>
                     <h1 className="text-3xl font-extrabold mb-2">{meta.title || slug}</h1>
                     {meta.date && <p className="text-sm text-gray-600">{meta.date}</p>}
+                    {/* Optional cover image from frontmatter (cover or image) */}
+                    {(() => {
+                        const cover = (meta as any).cover || (meta as any).image;
+                        if (!cover || typeof cover !== 'string') return null;
+                        // Normalize: if it's a bare filename (no leading / or protocol), assume /images/projects/{slug}/<file>
+                        const normalized = /^(https?:)?\//.test(cover)
+                            ? cover
+                            : `/images/projects/${slug}/${cover}`;
+                        return (
+                            <div className="mt-6 not-prose rounded-xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10">
+                                {/* Use plain img to keep static export simple (no next/image optimization needed) */}
+                                <img
+                                    src={normalized}
+                                    alt={(meta.title || slug) + ' cover'}
+                                    className="w-full h-auto block"
+                                    loading="lazy"
+                                />
+                            </div>
+                        );
+                    })()}
                 </header>
 
                 <section className="mt-6">

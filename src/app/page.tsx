@@ -472,6 +472,11 @@ export default async function Home() {
                           if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
                           else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
                         }
+                        // Allow using `cover` frontmatter field (common in content) as image
+                        if (!imageSrc && meta.cover && typeof meta.cover === 'string') {
+                          const img = meta.cover.trim();
+                          if (img.startsWith('http') || img.startsWith('/')) imageSrc = img; else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                        }
                         // Fallback: allow frontmatter `excerpt` to contain an <img src="..."> tag
                         if (!imageSrc && meta.excerpt && typeof meta.excerpt === 'string') {
                           const m = meta.excerpt.match(/src=["']([^"']+)["']/i);
@@ -510,6 +515,10 @@ export default async function Home() {
                       const img = meta.image.trim();
                       if (img.startsWith('http') || img.startsWith('/')) imageSrc = img;
                       else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
+                    }
+                    if (!imageSrc && meta.cover && typeof meta.cover === 'string') {
+                      const img = meta.cover.trim();
+                      if (img.startsWith('http') || img.startsWith('/')) imageSrc = img; else imageSrc = `/images/projects/${contentMatch.slug}/${img}`;
                     }
                     // Fallback: allow frontmatter `excerpt` to contain an <img src="..."> tag
                     if (!imageSrc && meta.excerpt && typeof meta.excerpt === 'string') {

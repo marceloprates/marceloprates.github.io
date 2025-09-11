@@ -12,18 +12,6 @@
     ]
   },
   {
-    "repo": "marceloprates/easyshader",
-    "stars": 25,
-    "forks": 2,
-    "gitstarRank": 774954,
-    "name": "easyshader",
-    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
-    "link": "https://github.com/marceloprates/easyshader",
-    "topics": [
-      "Python"
-    ]
-  },
-  {
     "repo": "marceloprates/Cosmos",
     "stars": 4,
     "forks": 0,
@@ -33,6 +21,18 @@
     "link": "https://github.com/marceloprates/Cosmos",
     "topics": [
       "TeX"
+    ]
+  },
+  {
+    "repo": "marceloprates/easyshader",
+    "stars": 25,
+    "forks": 2,
+    "gitstarRank": 774954,
+    "name": "easyshader",
+    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
+    "link": "https://github.com/marceloprates/easyshader",
+    "topics": [
+      "Python"
     ]
   },
   {
@@ -62,18 +62,6 @@
     ]
   },
   {
-    "repo": "marceloprates/Turmites",
-    "stars": 27,
-    "forks": 0,
-    "gitstarRank": 733707,
-    "name": "Turmites",
-    "description": "An interactive tool Written in Processing to draw and generate Turmites (Turing Machines on 2D tapes).",
-    "link": "https://github.com/marceloprates/Turmites",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
     "repo": "marceloprates/TSP-Animation",
     "stars": 3,
     "forks": 0,
@@ -83,6 +71,18 @@
     "link": "https://github.com/marceloprates/TSP-Animation",
     "topics": [
       "Python"
+    ]
+  },
+  {
+    "repo": "marceloprates/Turmites",
+    "stars": 27,
+    "forks": 0,
+    "gitstarRank": 733707,
+    "name": "Turmites",
+    "description": "An interactive tool Written in Processing to draw and generate Turmites (Turing Machines on 2D tapes).",
+    "link": "https://github.com/marceloprates/Turmites",
+    "topics": [
+      "Processing"
     ]
   },
   {
