@@ -27,7 +27,7 @@ This work is [licensed](LICENSE) under a GNU Affero General Public License v3.0 
 - The [AeternaCivitas](https://magiceden.io/marketplace/aeterna_civitas) and [geoartnft](https://www.geo-nft.com/) projects have used this work to sell NFTs and refused to credit it. See how they reacted after being exposed: [AeternaCivitas](https://github.com/marceloprates/prettymaps/raw/main/pictures/NFT_theft_AeternaCivitas.jpg), [geoartnft](https://github.com/marceloprates/prettymaps/raw/main/pictures/NFT_theft_geoart.jpg).
 - **I have closed my other generative art projects on Github and won't be sharing new ones as open source to protect me from the NFT community**.
 
-<a href='https://ko-fi.com/marceloprates_' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a href='https://ko-fi.com/marceloprates_' target='_blank'><img height='36' style='border:0px;height:36px;' src="https://cdn.ko-fi.com/cdn/kofi1.png?v=3" border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## As seen on [Hacker News](https://web.archive.org/web/20210825160918/https://news.ycombinator.com/news):
 ![](https://github.com/marceloprates/prettymaps/raw/main/pictures/hackernews-prettymaps.png)
@@ -87,7 +87,7 @@ plot = prettymaps.plot('Stad van de Zon, Heerhugowaard, Netherlands')
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_7_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_7_1.png)
     
 
 
@@ -110,7 +110,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_9_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_9_1.png)
     
 
 
@@ -385,7 +385,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_15_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_15_1.png)
     
 
 
@@ -409,7 +409,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_17_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_17_1.png)
     
 
 
@@ -760,7 +760,7 @@ plot.geodataframes['building'][
 
 
     
-![svg](pictures/README/temp_readme_files/temp_readme_21_1.svg)
+![svg](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_21_1.svg)
     
 
 
@@ -804,7 +804,7 @@ for ax,building in zip(np.concatenate(axes),buildings):
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_23_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_23_1.png)
     
 
 
@@ -854,7 +854,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_27_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_27_1.png)
     
 
 
@@ -878,7 +878,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_29_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_29_1.png)
     
 
 
@@ -985,7 +985,7 @@ plot = prettymaps.multiplot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_33_3.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_33_3.png)
     
 
 
@@ -1038,7 +1038,7 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_35_5.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_35_5.png)
     
 
 
@@ -1068,6 +1068,6 @@ plot = prettymaps.plot(
 
 
     
-![png](pictures/README/temp_readme_files/temp_readme_37_1.png)
+![png](https://raw.githubusercontent.com/marceloprates/prettymaps/main/pictures/README/temp_readme_files/temp_readme_37_1.png)
     
 

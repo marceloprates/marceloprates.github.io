@@ -32,36 +32,6 @@ export const projects: Project[] = [
     "image": "/images/projects/easyshader/print-2.png"
   },
   {
-    "title": "Gender-Bias",
-    "desc": "Data and code used to produce the analyses in the paper \"Assessing gender bias in machine translation: a case study with Google Translate\" (Neural Computing and Applications 2019). The goal of this paper was to measure the extent of gender bias in Google Translate. Our results show that GT is heavily biased towards male defaults, which are more pronounced in stereotypical job positions such as STEM fields.",
-    "tags": [
-      "Rich Text Format",
-      "TeX",
-      "Julia",
-      "Python"
-    ],
-    "link": "https://arxiv.org/abs/1809.02208",
-    "repo": "marceloprates/Gender-Bias",
-    "image": "https://raw.githubusercontent.com/marceloprates/Gender-Bias/master/figures/gtranslate-screenshot-hungarian-portuguese.png"
-  },
-  {
-    "title": "Hexmosaic-Wallpapers-Processing",
-    "desc": "Processing sketch to generate simple hexagonal mosaic wallpapers",
-    "tags": [
-      "Processing"
-    ],
-    "link": "https://github.com/marceloprates/Hexmosaic-Wallpapers-Processing",
-    "repo": "marceloprates/Hexmosaic-Wallpapers-Processing",
-    "image": "https://raw.githubusercontent.com/marceloprates/Hexmosaic-Wallpapers-Processing/master/hexmosaic/Examples/red-0.png"
-  },
-  {
-    "title": "marceloprates",
-    "desc": "marceloprates - A  project",
-    "tags": [],
-    "link": "https://github.com/marceloprates/marceloprates",
-    "repo": "marceloprates/marceloprates"
-  },
-  {
     "title": "prettymaps",
     "desc": "Generate beautiful maps from OpenStreetMap data with Python and matplotlib.",
     "tags": [
@@ -72,16 +42,6 @@ export const projects: Project[] = [
     "link": "https://prettymaps.streamlit.app/",
     "repo": "marceloprates/prettymaps",
     "image": "https://github.com/marceloprates/prettymaps/raw/main/pictures/heerhugowaard.png"
-  },
-  {
-    "title": "Resume",
-    "desc": "Resume - A TeX project",
-    "tags": [
-      "TeX",
-      "Makefile"
-    ],
-    "link": "https://github.com/marceloprates/Resume",
-    "repo": "marceloprates/Resume"
   },
   {
     "title": "Rorschach",

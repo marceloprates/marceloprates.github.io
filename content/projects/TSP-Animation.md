@@ -15,7 +15,7 @@ TSP-Animation is a CLI tool (and a Python package) for generating smooth transit
 
 It leverages Vision Transformer (ViT) image embeddings and a Travelling Salesman Problem solver to find a sequence of images that (approximately) optimizes the total semantic length, that is, a sequence of images for which the semantic discrepancy between any two adjacent frames is minimized.
 
-![TSP Animation Example](videos/animation4-nov5-small.gif)
+![TSP Animation Example](https://raw.githubusercontent.com/marceloprates/TSP-Animation/main/videos/animation4-nov5-small.gif)
 
 # Installation
 
@@ -35,4 +35,4 @@ For an example, use the dataset *Selectarum stirpium Americanarum historia* (fro
 ```bash
 > tspa "files/Selectarum stirpium Americanarum historia/" "videos/Selectarum-stirpium-Americanarum-historia.mp4"
 ```
-![TSP Animation Example](videos/Selectarum%20stirpium%20Americanarum%20historia-small.gif)
+![TSP Animation Example](https://raw.githubusercontent.com/marceloprates/TSP-Animation/main/videos/Selectarum%20stirpium%20Americanarum%20historia-small.gif)

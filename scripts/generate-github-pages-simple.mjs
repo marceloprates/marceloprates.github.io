@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
 import matter from 'gray-matter';
+import { IGNORE_REPOS } from './ignore-repos.mjs';
 
 function getGithubToken() {
     return process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT || process.env.PERSONAL_TOKEN;
@@ -23,7 +24,11 @@ async function fetchRepo(repo) {
         const res = await fetch(`https://api.github.com/repos/${repo}`, { headers });
         if (!res.ok) return {};
         const j = await res.json();
-        return { stars: typeof j.stargazers_count === 'number' ? j.stargazers_count : undefined, forks: typeof j.forks_count === 'number' ? j.forks_count : undefined };
+        return {
+            stars: typeof j.stargazers_count === 'number' ? j.stargazers_count : undefined,
+            forks: typeof j.forks_count === 'number' ? j.forks_count : undefined,
+            defaultBranch: typeof j.default_branch === 'string' ? j.default_branch : undefined
+        };
     } catch {
         return {};
     }
@@ -50,12 +55,8 @@ async function fetchReadme(repo) {
 
     // Files to always ignore (do not generate). These are target markdown filenames
     // that will be skipped and removed if they already exist.
-    const IGNORE_FILE_NAMES = [
-        'Ethics-AI-Data.md',
-        'Guerra-Mundial-POA-2020-Simulator.md',
-        'Matematica-ONGEP.md',
-        'rossetti-audio.md'
-    ];
+    // Derive ignored markdown filenames from shared IGNORE_REPOS list
+    const IGNORE_FILE_NAMES = IGNORE_REPOS.map(r => `${r}.md`);
 
     // Remove any existing ignored files so they won't remain in the content folder.
     for (const fn of IGNORE_FILE_NAMES) {
@@ -103,6 +104,36 @@ async function fetchReadme(repo) {
         if (config.excludeFromPages.includes(repo)) continue;
 
         const [stats, readme] = await Promise.all([fetchRepo(repo), fetchReadme(repo)]);
+        const defaultBranch = stats.defaultBranch || 'main'; // prefer reported default branch; fallback to 'main'
+
+        // Rewrite relative image references inside README to absolute raw.githubusercontent URLs
+        const rewriteRelativeImages = (text) => {
+            if (!text) return text;
+            const makeAbsolute = (rel) => {
+                if (!rel) return rel;
+                if (/^(?:[a-z]+:)?\/\//i.test(rel) || rel.startsWith('/')) return rel; // already absolute or root
+                let cleaned = rel.replace(/^\.\//, '');
+                cleaned = cleaned.replace(/^\/+/, '');
+                return `https://raw.githubusercontent.com/${repo}/${defaultBranch}/${cleaned}`;
+            };
+            // Markdown images
+            text = text.replace(/(!\[[^\]]*\]\()(.*?)(\))/g, (full, open, inner, close) => {
+                const match = inner.match(/^(\S+)(\s+['"].*['"])$/);
+                let url = inner;
+                let title = '';
+                if (match) { url = match[1]; title = match[2]; }
+                const abs = makeAbsolute(url);
+                return `${open}${abs}${title}${close}`;
+            });
+            // HTML <img>
+            text = text.replace(/<img([^>]*?)src=["']([^"']+)["']([^>]*?)>/gi, (full, pre, src, post) => {
+                const abs = makeAbsolute(src);
+                return `<img${pre}src="${abs}"${post}>`;
+            });
+            return text;
+        };
+
+        const rewrittenReadme = rewriteRelativeImages(readme);
         const frontmatter = {
             title: p.title,
             date: undefined,
@@ -122,14 +153,14 @@ async function fetchReadme(repo) {
             if (frontmatter[k] === undefined) delete frontmatter[k];
         });
         // If we fetched a README, try to find the first image-like URL to use as cover.
-        if (readme) {
+        if (rewrittenReadme) {
             // Collect all markdown image candidates: ![alt](url)
             const mdImgRe = /!\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/gi;
             // Collect all HTML image candidates: <img src="..."> or <img src='...'>
             const htmlImgRe = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
 
-            const mdImgs = Array.from(readme.matchAll(mdImgRe)).map((m) => m[1]);
-            const htmlImgs = Array.from(readme.matchAll(htmlImgRe)).map((m) => m[1]);
+            const mdImgs = Array.from(rewrittenReadme.matchAll(mdImgRe)).map((m) => m[1]);
+            const htmlImgs = Array.from(rewrittenReadme.matchAll(htmlImgRe)).map((m) => m[1]);
             const candidates = [...mdImgs, ...htmlImgs];
 
             const isLikelyImage = (u) => {
@@ -149,8 +180,8 @@ async function fetchReadme(repo) {
 
                 // Normalize relative paths (convert to raw.githubusercontent link)
                 if (!/^https?:\/\//i.test(img) && !img.startsWith('/')) {
-                    img = img.replace(/^\.\.?\//, '');
-                    img = `https://raw.githubusercontent.com/${repo}/main/${img}`;
+                    img = img.replace(/^\.?\//, '');
+                    img = `https://raw.githubusercontent.com/${repo}/${defaultBranch}/${img}`;
                 } else {
                     // Convert GitHub blob URLs to raw URLs when possible
                     const githubBlob = img.match(/https?:\/\/github\.com\/([^/]+\/[^/]+)\/blob\/([^#?]+)(?:[?#].*)?$/i);
@@ -173,7 +204,7 @@ async function fetchReadme(repo) {
 
         // Configure gray-matter to avoid block scalar indicators. Do NOT force quotes
         // so that plain URLs (e.g. https://...) are written without surrounding quotes.
-        const content = matter.stringify(readme || `# ${p.title}\n\nNo README available.`, frontmatter, {
+        const content = matter.stringify(rewrittenReadme || `# ${p.title}\n\nNo README available.`, frontmatter, {
             flowLevel: 1 // Keep simple inline flow where appropriate
         });
         // Post-process content to avoid unnecessary quoting for plain URLs in the `cover` field.
@@ -197,7 +228,7 @@ async function fetchReadme(repo) {
                     console.log('Skipping (user-edited):', filePath);
                     continue;
                 }
-            } catch (err) {
+            } catch {
                 // parsing failed; fall back to normal behaviour
             }
             // Compare against processedContent (quotes removed) so minor formatting

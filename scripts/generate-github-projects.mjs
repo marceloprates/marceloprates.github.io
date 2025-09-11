@@ -2,6 +2,7 @@
 // and generate project entries
 import fs from 'fs';
 import path from 'path';
+import { IGNORE_REPOS } from './ignore-repos.mjs';
 
 function getGithubToken() {
     // Accept multiple env var names because GitHub Actions disallows creating secrets
@@ -12,18 +13,7 @@ function getGithubToken() {
 
 const GITHUB_TOKEN = getGithubToken();
 
-// Repository names to always ignore when generating `src/data/projects.ts`.
-// These correspond to projects you don't want listed on the site.
-const IGNORE_REPOS = [
-    'Ethics-AI-Data',
-    'Guerra-Mundial-POA-2020-Simulator',
-    'Matematica-ONGEP',
-    'rossetti-audio',
-    'Gender-Bias',
-    'Resume',
-    'marceloprates',
-    'Hexmosaic-Wallpapers-Processing'
-];
+// IGNORE_REPOS imported from shared module
 
 if (!GITHUB_TOKEN) {
     console.error('\n⚠️  No GitHub token found in environment');

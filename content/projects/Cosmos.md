@@ -19,4 +19,4 @@ cover: https://raw.githubusercontent.com/marceloprates/Cosmos/main/latex/picture
 
 ## You can download the PDF file [here](https://raw.githubusercontent.com/marceloprates/Cosmos/main/latex/volumes/volume%201/cosmos.pdf).
 
-![](latex/pictures/cosmos-cover.png)
+![](https://raw.githubusercontent.com/marceloprates/Cosmos/main/latex/pictures/cosmos-cover.png)
