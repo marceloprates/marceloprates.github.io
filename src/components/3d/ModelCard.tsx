@@ -7,7 +7,6 @@ import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { MotionValue } from "framer-motion";
 import Tilt from '../Tilt';
-import styles from '../TileButton.module.css';
 import effects from '../CardEffects.module.css';
 
 // Model component from CubeViewer with some adjustments for the card context
@@ -58,16 +57,16 @@ function Model({ url, rotationRef }: { url: string; rotationRef?: { current?: { 
 
         // Apply metallic material with a more pronounced effect
         obj.traverse((child) => {
-            if ((child as any).isMesh) {
+            if (child instanceof THREE.Mesh) {
                 const mesh = child as THREE.Mesh;
-                const oldMat: any = mesh.material;
+                const oldMat = mesh.material;
 
                 let map: THREE.Texture | null = null;
                 if (oldMat) {
-                    if (Array.isArray(oldMat) && oldMat[0] && oldMat[0].map) {
+                    if (Array.isArray(oldMat) && oldMat[0] && 'map' in oldMat[0] && oldMat[0].map instanceof THREE.Texture) {
                         map = oldMat[0].map;
-                    } else if ((oldMat as any).map) {
-                        map = (oldMat as any).map;
+                    } else if (!Array.isArray(oldMat) && 'map' in oldMat && oldMat.map instanceof THREE.Texture) {
+                        map = oldMat.map;
                     }
                 }
 
@@ -79,7 +78,7 @@ function Model({ url, rotationRef }: { url: string; rotationRef?: { current?: { 
                 });
                 if (map) metallic.map = map;
 
-                if (oldMat && (oldMat as any).side) (metallic as any).side = (oldMat as any).side;
+                if (oldMat && !Array.isArray(oldMat) && 'side' in oldMat) metallic.side = oldMat.side;
 
                 mesh.material = metallic;
                 mesh.castShadow = true;
@@ -96,11 +95,6 @@ interface ModelCardProps {
     title: string;
     description?: string;
     className?: string;
-}
-
-interface TiltEvent {
-    tiltX: number;
-    tiltY: number;
 }
 
 export default function ModelCard({ objPath, title, description, className = '' }: ModelCardProps) {

@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, MotionValue } from 'framer-motion';
 import { useCallback } from 'react';
-import type { CSSProperties, ForwardedRef, MutableRefObject } from 'react';
+import type { CSSProperties, MutableRefObject } from 'react';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 
 interface TiltProps {

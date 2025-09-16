@@ -1,4 +1,3 @@
-import CubeViewer from "@/components/3d/CubeViewer";
 import ModelCard from "@/components/3d/ModelCard";
 
 export default function DemoPage() {

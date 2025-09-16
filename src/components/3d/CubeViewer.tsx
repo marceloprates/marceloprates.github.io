@@ -53,17 +53,17 @@ function Model({ url }: { url: string }) {
         // Replace or adjust materials to a metallic MeshStandardMaterial so the OBJ looks metallic
         obj.traverse((child) => {
             // isMesh is a standard flag on THREE.Mesh instances
-            if ((child as any).isMesh) {
+            if (child instanceof THREE.Mesh) {
                 const mesh = child as THREE.Mesh;
-                const oldMat: any = mesh.material;
+                const oldMat = mesh.material;
 
                 // Prefer original texture map if present; otherwise force a coral color
                 let map: THREE.Texture | null = null;
                 if (oldMat) {
-                    if (Array.isArray(oldMat) && oldMat[0] && oldMat[0].map) {
+                    if (Array.isArray(oldMat) && oldMat[0] && 'map' in oldMat[0] && oldMat[0].map instanceof THREE.Texture) {
                         map = oldMat[0].map;
-                    } else if ((oldMat as any).map) {
-                        map = (oldMat as any).map;
+                    } else if (!Array.isArray(oldMat) && 'map' in oldMat && oldMat.map instanceof THREE.Texture) {
+                        map = oldMat.map;
                     }
                 }
 
@@ -74,6 +74,10 @@ function Model({ url }: { url: string }) {
                     side: THREE.DoubleSide, // Render both sides of each face
                 });
                 if (map) metallic.map = map;
+
+                if (oldMat && !Array.isArray(oldMat) && 'side' in oldMat) {
+                    metallic.side = oldMat.side;
+                }
 
                 mesh.material = metallic;
                 mesh.castShadow = true;
@@ -87,6 +91,8 @@ function Model({ url }: { url: string }) {
 
 export default function CubeViewer({ objPath = "/models/som4.obj" }: { objPath?: string }) {
     const [hasObj, setHasObj] = useState<boolean | null>(null);
+    const frontLightRef = useRef<THREE.DirectionalLight>(null);
+    const backLightRef = useRef<THREE.DirectionalLight>(null);
 
     useEffect(() => {
         let canceled = false;
@@ -105,6 +111,20 @@ export default function CubeViewer({ objPath = "/models/som4.obj" }: { objPath?:
         };
     }, [objPath]);
 
+    useFrame(({ camera }) => {
+        if (frontLightRef.current) {
+            const cameraPosition = camera.position.clone();
+            const lightOffset = new THREE.Vector3(2, 2, 2);
+            frontLightRef.current.position.copy(cameraPosition).add(lightOffset);
+        }
+        if (backLightRef.current) {
+            const cameraPosition = camera.position.clone();
+            const lightOffset = new THREE.Vector3(-2, 2, -2);
+            backLightRef.current.position.copy(cameraPosition).add(lightOffset);
+            backLightRef.current.lookAt(0, 0, 0);
+        }
+    });
+
     return (
         <div className="h-[500px] w-full">
             <Canvas shadows camera={{ position: [5, 5, 5], fov: 50 }}>
@@ -118,50 +138,18 @@ export default function CubeViewer({ objPath = "/models/som4.obj" }: { objPath?:
                     />
                     {/* Front light that follows the camera */}
                     <directionalLight
+                        ref={frontLightRef}
                         castShadow
                         intensity={3}
                         shadow-mapSize-width={1024}
                         shadow-mapSize-height={1024}
-                        ref={(l) => {
-                            if (!l) return;
-
-                            // Update light position on every frame based on camera position
-                            useFrame(({ camera }) => {
-                                // Get camera position and add offset for light position
-                                const cameraPosition = camera.position.clone();
-                                const lightOffset = new THREE.Vector3(2, 2, 2); // Offset from camera
-                                l.position.copy(cameraPosition).add(lightOffset);
-
-                                // Point light at the origin/center
-                                const target = l.target as THREE.Object3D;
-                                target.position.set(0, 0, 0);
-                            });
-
-                            // Create target at origin
-                            const target = new THREE.Object3D();
-                            target.position.set(0, 0, 0);
-                            if (l.parent) l.parent.add(target);
-                            l.target = target;
-                        }}
+                        target-position={[0, 0, 0]}
                     />
                     {/* Back light that follows the camera from the opposite side */}
                     <directionalLight
+                        ref={backLightRef}
                         intensity={2.5}
                         color="#ffffff"
-                        ref={(l) => {
-                            if (!l) return;
-
-                            // Update light position on every frame based on camera position
-                            useFrame(({ camera }) => {
-                                // Get camera position and add opposite offset for back light
-                                const cameraPosition = camera.position.clone();
-                                const lightOffset = new THREE.Vector3(-2, 2, -2); // Opposite offset from camera
-                                l.position.copy(cameraPosition).add(lightOffset);
-
-                                // Point light at the origin/center
-                                l.lookAt(0, 0, 0);
-                            });
-                        }}
                     />
                     {hasObj === null ? (
                         // still checking, show the box as a visual placeholder
