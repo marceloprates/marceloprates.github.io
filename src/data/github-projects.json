@@ -1,17 +1,5 @@
 [
   {
-    "repo": "marceloprates/Cosmos",
-    "stars": 4,
-    "forks": 0,
-    "gitstarRank": 2563982,
-    "name": "Cosmos",
-    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
-    "link": "https://github.com/marceloprates/Cosmos",
-    "topics": [
-      "TeX"
-    ]
-  },
-  {
     "repo": "marceloprates/prettymaps",
     "stars": 11827,
     "forks": 562,
@@ -59,6 +47,18 @@
     "link": "https://github.com/marceloprates/Rorschach",
     "topics": [
       "Processing"
+    ]
+  },
+  {
+    "repo": "marceloprates/Cosmos",
+    "stars": 4,
+    "forks": 0,
+    "gitstarRank": 2563982,
+    "name": "Cosmos",
+    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
+    "link": "https://github.com/marceloprates/Cosmos",
+    "topics": [
+      "TeX"
     ]
   },
   {

@@ -14,6 +14,7 @@ import effects from '../CardEffects.module.css';
 function Model({ url, rotationRef }: { url: string; rotationRef?: { current?: { rotateX: MotionValue<number>; rotateY: MotionValue<number> } } }) {
     const obj = useLoader(OBJLoader, url) as THREE.Group;
     const ref = useRef<THREE.Group>(null);
+    const { camera } = useThree();
     // store a permanent base rotation (radians) so we can apply tilt on top
     const baseRotation = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
@@ -54,21 +55,36 @@ function Model({ url, rotationRef }: { url: string; rotationRef?: { current?: { 
         bbox.getSize(size);
         const maxDim = Math.max(size.x, size.y, size.z);
         if (maxDim > 0) {
-            // Scale to make model 90% of card height
-            // Camera is at [4, 4, 4], distance ≈ 6.928
-            // For 90% of viewport height, scale based on camera distance
-            const cameraDistance = Math.sqrt(2 * 4 * 4 + 4 * 4 + 4 * 4); // ≈ 6.928
-            const targetSize = cameraDistance * 0.8; // 80% to account for perspective
+            // Compute the model scale based on the camera's vertical frustum height at the
+            // model's distance. This is robust to different viewport sizes and pixel ratios
+            // so the model appears the same relative size whether running locally or on GitHub Pages.
+            // Get model center in world coordinates
+            const center = new THREE.Vector3();
+            bbox.getCenter(center); // center in local object space
+            // Ensure world matrices are up to date
+            obj.updateMatrixWorld(true);
+            const centerWorld = center.clone().applyMatrix4(obj.matrixWorld);
+
+            // Determine distance from camera to model center
+            const camPos = (camera as THREE.Camera).position.clone();
+            const distance = camPos.distanceTo(centerWorld);
+
+            // Use perspective camera FOV to compute frustum (vertical) height at that distance
+            const perspective = camera as THREE.PerspectiveCamera;
+            const fov = perspective.fov; // degrees
+            const frustumHeight = 2 * distance * Math.tan((fov * Math.PI) / 180 / 2);
+
+            // targetSize is fraction of the vertical view we want the model to occupy
+            const targetSize = frustumHeight * 0.8; // keep similar to previous behaviour
             const scale = targetSize / maxDim;
             obj.scale.setScalar(scale);
-            // center
-            const center = new THREE.Vector3();
-            bbox.getCenter(center);
-            obj.position.sub(center.multiplyScalar(scale));
-            // Set a permanent base Y rotation (45°) so models load with a nicer facing
-            baseRotation.current.y = -Math.PI / 6;
 
-            // apply it once to the rendered group if available
+            // center the model so its bounding-box center sits at the origin
+            // after scaling, translate by scaled center
+            obj.position.sub(center.multiplyScalar(scale));
+
+            // Set a permanent base Y rotation so models load with a nicer facing
+            baseRotation.current.y = -Math.PI / 6;
             if (ref.current) ref.current.rotation.y = baseRotation.current.y;
         }
 
@@ -102,7 +118,7 @@ function Model({ url, rotationRef }: { url: string; rotationRef?: { current?: { 
                 mesh.receiveShadow = true;
             }
         });
-    }, [obj]);
+    }, [obj, camera]);
 
     return <primitive ref={ref} object={obj} />;
 }
