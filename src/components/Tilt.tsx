@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, MotionValue } from 'framer-motion';
 import { useCallback } from 'react';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ForwardedRef, MutableRefObject } from 'react';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 
 interface TiltProps {
@@ -11,9 +11,10 @@ interface TiltProps {
     max?: number; // max tilt in degrees
     scale?: number; // scale on hover
     style?: CSSProperties; // optional extra styles (e.g., aspect-ratio)
+    rotationRef?: MutableRefObject<{ rotateX: MotionValue<number>; rotateY: MotionValue<number> }>;
 }
 
-export function Tilt({ children, className = '', max = 12, scale = 1.03, style }: TiltProps) {
+export function Tilt({ children, className = '', max = 12, scale = 1.03, style, rotationRef }: TiltProps) {
     const prefersReduced = usePrefersReducedMotion();
 
     const rotateX = useMotionValue(0);
@@ -26,6 +27,11 @@ export function Tilt({ children, className = '', max = 12, scale = 1.03, style }
     const rX = useSpring(rotateX, springConfig);
     const rY = useSpring(rotateY, springConfig);
     const sc = useSpring(s, springConfig);
+
+    // Expose rotation values if a ref is provided
+    if (rotationRef) {
+        rotationRef.current = { rotateX, rotateY };
+    }
 
     const handleMove = useCallback(
         (e: React.MouseEvent<HTMLDivElement>) => {

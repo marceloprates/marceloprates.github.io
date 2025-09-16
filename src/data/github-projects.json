@@ -1,33 +1,9 @@
 [
   {
-    "repo": "marceloprates/audio-gravity",
-    "stars": 0,
-    "forks": 0,
-    "gitstarRank": 12649722,
-    "name": "audio-gravity",
-    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
-    "link": "https://github.com/marceloprates/audio-gravity",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
-    "repo": "marceloprates/TSP-Animation",
-    "stars": 3,
-    "forks": 0,
-    "gitstarRank": 3036257,
-    "name": "TSP-Animation",
-    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
-    "link": "https://github.com/marceloprates/TSP-Animation",
-    "topics": [
-      "Python"
-    ]
-  },
-  {
     "repo": "marceloprates/Rorschach",
     "stars": 1,
     "forks": 0,
-    "gitstarRank": 5481385,
+    "gitstarRank": 5487811,
     "name": "Rorschach",
     "description": "Processing sketch to draw animated Rorschach tests",
     "link": "https://github.com/marceloprates/Rorschach",
@@ -36,10 +12,48 @@
     ]
   },
   {
+    "repo": "marceloprates/Cosmos",
+    "stars": 4,
+    "forks": 0,
+    "gitstarRank": 2563559,
+    "name": "Cosmos",
+    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
+    "link": "https://github.com/marceloprates/Cosmos",
+    "topics": [
+      "TeX"
+    ]
+  },
+  {
+    "repo": "marceloprates/prettymaps",
+    "stars": 11826,
+    "forks": 562,
+    "gitstarRank": 2366,
+    "name": "prettymaps",
+    "description": "Generate beautiful maps from OpenStreetMap data with Python and matplotlib.",
+    "link": "https://prettymaps.streamlit.app/",
+    "topics": [
+      "Jupyter Notebook",
+      "Python",
+      "Shell"
+    ]
+  },
+  {
+    "repo": "marceloprates/audio-gravity",
+    "stars": 0,
+    "forks": 0,
+    "gitstarRank": 12666559,
+    "name": "audio-gravity",
+    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
+    "link": "https://github.com/marceloprates/audio-gravity",
+    "topics": [
+      "Processing"
+    ]
+  },
+  {
     "repo": "marceloprates/Voxel-Watersim",
     "stars": 36,
     "forks": 4,
-    "gitstarRank": 597315,
+    "gitstarRank": 597846,
     "name": "Voxel-Watersim",
     "description": "A voxel fluid simulator implemented in Processing",
     "link": "https://github.com/marceloprates/Voxel-Watersim",
@@ -51,7 +65,7 @@
     "repo": "marceloprates/easyshader",
     "stars": 25,
     "forks": 2,
-    "gitstarRank": 774954,
+    "gitstarRank": 775658,
     "name": "easyshader",
     "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
     "link": "https://github.com/marceloprates/easyshader",
@@ -60,22 +74,10 @@
     ]
   },
   {
-    "repo": "marceloprates/Cosmos",
-    "stars": 4,
-    "forks": 0,
-    "gitstarRank": 2560726,
-    "name": "Cosmos",
-    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
-    "link": "https://github.com/marceloprates/Cosmos",
-    "topics": [
-      "TeX"
-    ]
-  },
-  {
     "repo": "marceloprates/Turmites",
     "stars": 27,
     "forks": 0,
-    "gitstarRank": 733707,
+    "gitstarRank": 734369,
     "name": "Turmites",
     "description": "An interactive tool Written in Processing to draw and generate Turmites (Turing Machines on 2D tapes).",
     "link": "https://github.com/marceloprates/Turmites",
@@ -84,17 +86,15 @@
     ]
   },
   {
-    "repo": "marceloprates/prettymaps",
-    "stars": 11824,
-    "forks": 562,
-    "gitstarRank": 2364,
-    "name": "prettymaps",
-    "description": "Generate beautiful maps from OpenStreetMap data with Python and matplotlib.",
-    "link": "https://prettymaps.streamlit.app/",
+    "repo": "marceloprates/TSP-Animation",
+    "stars": 3,
+    "forks": 0,
+    "gitstarRank": 3039662,
+    "name": "TSP-Animation",
+    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
+    "link": "https://github.com/marceloprates/TSP-Animation",
     "topics": [
-      "Jupyter Notebook",
-      "Python",
-      "Shell"
+      "Python"
     ]
   }
 ]
