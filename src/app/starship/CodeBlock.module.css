@@ -1,0 +1,17 @@
+.codeWrapper {
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    font-size: 0.75rem;
+    /* text-xs */
+    line-height: 1.5;
+    /* leading-relaxed approximation */
+    position: relative;
+    background: var(--code-bg, #1e1e2e);
+    /* Catppuccin Mocha base */
+}
+
+.codeScroller {
+    padding: 1.25rem;
+    /* p-5 */
+    overflow: auto;
+}

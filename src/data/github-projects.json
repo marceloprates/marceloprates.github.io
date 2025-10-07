@@ -1,9 +1,45 @@
 [
   {
+    "repo": "marceloprates/audio-gravity",
+    "stars": 0,
+    "forks": 0,
+    "gitstarRank": 12676870,
+    "name": "audio-gravity",
+    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
+    "link": "https://github.com/marceloprates/audio-gravity",
+    "topics": [
+      "Processing"
+    ]
+  },
+  {
+    "repo": "marceloprates/Cosmos",
+    "stars": 4,
+    "forks": 0,
+    "gitstarRank": 2565459,
+    "name": "Cosmos",
+    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
+    "link": "https://github.com/marceloprates/Cosmos",
+    "topics": [
+      "TeX"
+    ]
+  },
+  {
+    "repo": "marceloprates/easyshader",
+    "stars": 25,
+    "forks": 2,
+    "gitstarRank": 776193,
+    "name": "easyshader",
+    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
+    "link": "https://github.com/marceloprates/easyshader",
+    "topics": [
+      "Python"
+    ]
+  },
+  {
     "repo": "marceloprates/prettymaps",
-    "stars": 11827,
-    "forks": 562,
-    "gitstarRank": 2366,
+    "stars": 11923,
+    "forks": 568,
+    "gitstarRank": 2329,
     "name": "prettymaps",
     "description": "Generate beautiful maps from OpenStreetMap data with Python and matplotlib.",
     "link": "https://prettymaps.streamlit.app/",
@@ -14,34 +50,10 @@
     ]
   },
   {
-    "repo": "marceloprates/audio-gravity",
-    "stars": 0,
-    "forks": 0,
-    "gitstarRank": 12669177,
-    "name": "audio-gravity",
-    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
-    "link": "https://github.com/marceloprates/audio-gravity",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
-    "repo": "marceloprates/easyshader",
-    "stars": 25,
-    "forks": 2,
-    "gitstarRank": 775854,
-    "name": "easyshader",
-    "description": "A Python DSL for 3D art using signed distance functions and raymarching, with mesh export and AR experiments.",
-    "link": "https://github.com/marceloprates/easyshader",
-    "topics": [
-      "Python"
-    ]
-  },
-  {
     "repo": "marceloprates/Rorschach",
     "stars": 1,
     "forks": 0,
-    "gitstarRank": 5488898,
+    "gitstarRank": 5492145,
     "name": "Rorschach",
     "description": "Processing sketch to draw animated Rorschach tests",
     "link": "https://github.com/marceloprates/Rorschach",
@@ -50,22 +62,10 @@
     ]
   },
   {
-    "repo": "marceloprates/Cosmos",
-    "stars": 4,
-    "forks": 0,
-    "gitstarRank": 2563982,
-    "name": "Cosmos",
-    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
-    "link": "https://github.com/marceloprates/Cosmos",
-    "topics": [
-      "TeX"
-    ]
-  },
-  {
     "repo": "marceloprates/TSP-Animation",
     "stars": 3,
     "forks": 0,
-    "gitstarRank": 3040191,
+    "gitstarRank": 3041934,
     "name": "TSP-Animation",
     "description": "CLI tool for generating smooth transition animations from unordered collections of images",
     "link": "https://github.com/marceloprates/TSP-Animation",
@@ -74,25 +74,25 @@
     ]
   },
   {
-    "repo": "marceloprates/Voxel-Watersim",
-    "stars": 36,
-    "forks": 4,
-    "gitstarRank": 598001,
-    "name": "Voxel-Watersim",
-    "description": "A voxel fluid simulator implemented in Processing",
-    "link": "https://github.com/marceloprates/Voxel-Watersim",
+    "repo": "marceloprates/Turmites",
+    "stars": 27,
+    "forks": 0,
+    "gitstarRank": 734880,
+    "name": "Turmites",
+    "description": "An interactive tool Written in Processing to draw and generate Turmites (Turing Machines on 2D tapes).",
+    "link": "https://github.com/marceloprates/Turmites",
     "topics": [
       "Processing"
     ]
   },
   {
-    "repo": "marceloprates/Turmites",
-    "stars": 27,
-    "forks": 0,
-    "gitstarRank": 734551,
-    "name": "Turmites",
-    "description": "An interactive tool Written in Processing to draw and generate Turmites (Turing Machines on 2D tapes).",
-    "link": "https://github.com/marceloprates/Turmites",
+    "repo": "marceloprates/Voxel-Watersim",
+    "stars": 36,
+    "forks": 4,
+    "gitstarRank": 598267,
+    "name": "Voxel-Watersim",
+    "description": "A voxel fluid simulator implemented in Processing",
+    "link": "https://github.com/marceloprates/Voxel-Watersim",
     "topics": [
       "Processing"
     ]
