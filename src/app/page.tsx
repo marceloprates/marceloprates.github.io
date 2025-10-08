@@ -20,6 +20,7 @@ import { StarshipCard } from '@/components/StarshipCard';
 import fs from 'fs';
 import path from 'path';
 import ThemeToggle from '@/components/ThemeToggle';
+import FilmGrain from '@/components/FilmGrain';
 
 export default async function Home() {
   // theme toggle relies on next-themes which is client-side; keep the button client-only
@@ -388,6 +389,8 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen transition-colors">
+      {/* Subtle film grain overlay (client component) */}
+      <FilmGrain className="pointer-events-none fixed inset-0" intensity={20} fps={0} tileSize={800} />
 
       <ThemeToggle />
 

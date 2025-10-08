@@ -35,7 +35,9 @@ export function FilmGrain({
     const frameRef = useRef<number | null>(null);
     const lastTimeRef = useRef<number>(0);
     const layerRef = useRef<HTMLDivElement | null>(null);
-    const interval = 1000 / fps;
+    // Treat fps <= 0 as a fully static frame (no animation frames scheduled)
+    const staticMode = fps <= 0;
+    const interval = staticMode ? Infinity : 1000 / fps;
 
     // Generate a single noise tile as data URL.
     const generateTile = () => {
@@ -44,14 +46,16 @@ export function FilmGrain({
         c.height = tileSize;
         const ctx = c.getContext("2d");
         if (!ctx) return;
-
-        const isDark = document.documentElement.classList.contains("dark") || theme === "dark";
+        // Rely solely on next-themes state to avoid race conditions where the HTML class switches after we sample.
+        const isDark = theme === "dark";
 
         // Base grain: iterate pixels via ImageData for speed.
         const imgData = ctx.createImageData(tileSize, tileSize);
         const data = imgData.data;
 
         // Revert to original procedural noise generation
+        // Theme-driven intensity override: 20 (light) vs 1 (dark), ignoring provided prop for consistent look.
+        const effectiveIntensity = isDark ? 1 : 5;
         for (let i = 0; i < data.length; i += 4) {
             const v = Math.random();
             let shade;
@@ -64,7 +68,7 @@ export function FilmGrain({
             data[i + 1] = shade;
             data[i + 2] = shade;
             const baseA = isDark ? (30 + v * 50) : (42 + v * 70);
-            data[i + 3] = .75 * baseA * intensity;
+            data[i + 3] = .75 * baseA * effectiveIntensity;
         }
         ctx.putImageData(imgData, 0, 0);
 
@@ -82,7 +86,7 @@ export function FilmGrain({
                 ctx.rotate(rotation);
                 ctx.beginPath();
                 ctx.ellipse(0, 0, rX, rY, 0, 0, Math.PI * 2);
-                const alpha = (isDark ? 0.15 + Math.random() * 0.25 : 0.08 + Math.random() * 0.15) * intensity; // Increased opacity variation for better visibility in dark mode
+                const alpha = (isDark ? 0.15 + Math.random() * 0.25 : 0.08 + Math.random() * 0.15) * effectiveIntensity; // Increased opacity variation for better visibility in dark mode
                 ctx.fillStyle = isDark ? `rgba(255,255,255,${alpha})` : `rgba(0,0,0,${alpha})`;
                 ctx.fill();
                 ctx.restore();
@@ -96,7 +100,7 @@ export function FilmGrain({
                 const x = Math.random() * tileSize;
                 const y = Math.random() * tileSize;
                 const len = tileSize * (0.3 + Math.random() * 0.5);
-                const alpha = (isDark ? 0.2 : 0.2) * intensity;
+                const alpha = (isDark ? 0.2 : 0.2) * effectiveIntensity;
                 const colors = isDark ? [
                     `rgba(255,255,255,${alpha})`,     // White
                     `rgba(200,200,255,${alpha})`,     // Light Blue
@@ -138,8 +142,8 @@ export function FilmGrain({
     };
 
     useEffect(() => {
-        if (prefersReduced) {
-            // If user prefers reduced motion, generate a single static tile and skip RAF loop
+        // In any static situation (reduced motion preference OR fps <= 0) generate once and bail.
+        if (prefersReduced || staticMode) {
             generateTile();
             return () => {
                 if (frameRef.current) cancelAnimationFrame(frameRef.current);
@@ -163,7 +167,7 @@ export function FilmGrain({
         };
         // Re-run when theme changes for correct contrast.
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [theme, interval, tileSize, intensity]);
+    }, [theme, interval, tileSize, intensity, staticMode]);
 
     // Apply runtime styles to the layer element to avoid inline JSX styles
     useEffect(() => {
@@ -173,11 +177,12 @@ export function FilmGrain({
         el.style.backgroundSize = `${tileSize}px ${tileSize}px`;
         el.style.zIndex = (1000).toString();
         el.style.willChange = 'transform';
-        el.style.animation = prefersReduced ? '' : 'film-flicker 4s ease-in-out infinite';
+        // Disable flicker animation entirely when static (fps <= 0) or reduced motion.
+        el.style.animation = (prefersReduced || staticMode) ? 'none' : 'film-flicker 4s ease-in-out infinite';
         el.style.opacity = theme === 'dark' ? '0.3' : '0.15';
         el.style.mixBlendMode = theme === 'dark' ? 'screen' : 'multiply';
         if (dataUrl) el.style.backgroundImage = `url(${dataUrl})`;
-    }, [dataUrl, tileSize, theme, prefersReduced]);
+    }, [dataUrl, tileSize, theme, prefersReduced, staticMode]);
 
     return (
         <div
