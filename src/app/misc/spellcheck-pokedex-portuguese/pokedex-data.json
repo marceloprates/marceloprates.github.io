@@ -1,0 +1,6337 @@
+[
+  {
+    "name": "abomasnow",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/abomasnow.png"
+  },
+  {
+    "name": "abra",
+    "spellEn": "aba",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/abra.png"
+  },
+  {
+    "name": "absol",
+    "spellEn": "also",
+    "spellPt": "absor",
+    "spellEs": "abril",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/absol.png"
+  },
+  {
+    "name": "accelgor",
+    "spellEn": "acceptor",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/accelgor.png"
+  },
+  {
+    "name": "aegislash",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aegislash.png"
+  },
+  {
+    "name": "aerodactyl",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aerodactyl.png"
+  },
+  {
+    "name": "aggron",
+    "spellEn": "aaron",
+    "spellPt": "agros",
+    "spellEs": "agro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aggron.png"
+  },
+  {
+    "name": "aipom",
+    "spellEn": "aim",
+    "spellPt": "aipim",
+    "spellEs": "tipom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aipom.png"
+  },
+  {
+    "name": "alakazam",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/alakazam.png"
+  },
+  {
+    "name": "alcremie",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/alcremie.png"
+  },
+  {
+    "name": "alomomola",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/alomomola.png"
+  },
+  {
+    "name": "altaria",
+    "spellEn": "altar",
+    "spellPt": "saltaria",
+    "spellEs": "altura",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/altaria.png"
+  },
+  {
+    "name": "amaura",
+    "spellEn": "mara",
+    "spellPt": "amara",
+    "spellEs": "amara",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/amaura.png"
+  },
+  {
+    "name": "ambipom",
+    "spellEn": "",
+    "spellPt": "ambiço",
+    "spellEs": "ambito",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ambipom.png"
+  },
+  {
+    "name": "amoonguss",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/amoonguss.png"
+  },
+  {
+    "name": "ampharos",
+    "spellEn": "",
+    "spellPt": "amparo",
+    "spellEs": "amparos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ampharos.png"
+  },
+  {
+    "name": "anorith",
+    "spellEn": "north",
+    "spellPt": "",
+    "spellEs": "north",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/anorith.png"
+  },
+  {
+    "name": "appletun",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "applet",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/appletun.png"
+  },
+  {
+    "name": "applin",
+    "spellEn": "applied",
+    "spellPt": "amplia",
+    "spellEs": "amplia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/applin.png"
+  },
+  {
+    "name": "araquanid",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/araquanid.png"
+  },
+  {
+    "name": "arbok",
+    "spellEn": "arbor",
+    "spellPt": "arbor",
+    "spellEs": "arbol",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arbok.png"
+  },
+  {
+    "name": "arcanine",
+    "spellEn": "canine",
+    "spellPt": "",
+    "spellEs": "canine",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arcanine.png"
+  },
+  {
+    "name": "arceus",
+    "spellEn": "access",
+    "spellPt": "adeus",
+    "spellEs": "arces",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arceus.png"
+  },
+  {
+    "name": "archen",
+    "spellEn": "arches",
+    "spellPt": "achei",
+    "spellEs": "rchen",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/archen.png"
+  },
+  {
+    "name": "archeops",
+    "spellEn": "arches",
+    "spellPt": "",
+    "spellEs": "arches",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/archeops.png"
+  },
+  {
+    "name": "arctovish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arctovish.png"
+  },
+  {
+    "name": "arctozolt",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arctozolt.png"
+  },
+  {
+    "name": "ariados",
+    "spellEn": "arcades",
+    "spellPt": "armados",
+    "spellEs": "aliados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ariados.png"
+  },
+  {
+    "name": "armaldo",
+    "spellEn": "armada",
+    "spellPt": "armado",
+    "spellEs": "armado",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/armaldo.png"
+  },
+  {
+    "name": "aromatisse",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aromatisse.png"
+  },
+  {
+    "name": "aron",
+    "spellEn": "aren",
+    "spellPt": "fron",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aron.png"
+  },
+  {
+    "name": "arrokuda",
+    "spellEn": "",
+    "spellPt": "arruda",
+    "spellEs": "arrojada",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/arrokuda.png"
+  },
+  {
+    "name": "articuno",
+    "spellEn": "articulo",
+    "spellPt": "articulou",
+    "spellEs": "articulo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/articuno.png"
+  },
+  {
+    "name": "audino",
+    "spellEn": "audio",
+    "spellPt": "pudico",
+    "spellEs": "audio",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/audino.png"
+  },
+  {
+    "name": "aurorus",
+    "spellEn": "aurora",
+    "spellPt": "auroras",
+    "spellEs": "auroras",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/aurorus.png"
+  },
+  {
+    "name": "avalugg",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/avalugg.png"
+  },
+  {
+    "name": "axew",
+    "spellEn": "axe",
+    "spellPt": "amei",
+    "spellEs": "axe",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/axew.png"
+  },
+  {
+    "name": "azelf",
+    "spellEn": "self",
+    "spellPt": "adela",
+    "spellEs": "azul",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/azelf.png"
+  },
+  {
+    "name": "azumarill",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/azumarill.png"
+  },
+  {
+    "name": "azurill",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/azurill.png"
+  },
+  {
+    "name": "bagon",
+    "spellEn": "wagon",
+    "spellPt": "baron",
+    "spellEs": "baron",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bagon.png"
+  },
+  {
+    "name": "baltoy",
+    "spellEn": "ballot",
+    "spellPt": "alto",
+    "spellEs": "alto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/baltoy.png"
+  },
+  {
+    "name": "banette",
+    "spellEn": "gazette",
+    "spellPt": "navette",
+    "spellEs": "gazette",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/banette.png"
+  },
+  {
+    "name": "barbaracle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/barbaracle.png"
+  },
+  {
+    "name": "barboach",
+    "spellEn": "",
+    "spellPt": "barbacã",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/barboach.png"
+  },
+  {
+    "name": "barraskewda",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/barraskewda.png"
+  },
+  {
+    "name": "basculegion",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/basculegion.png"
+  },
+  {
+    "name": "basculin",
+    "spellEn": "masculine",
+    "spellPt": "masculino",
+    "spellEs": "masculin",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/basculin.png"
+  },
+  {
+    "name": "bastiodon",
+    "spellEn": "bastion",
+    "spellPt": "bastidor",
+    "spellEs": "bastidor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bastiodon.png"
+  },
+  {
+    "name": "bayleef",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "bayley",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bayleef.png"
+  },
+  {
+    "name": "beartic",
+    "spellEn": "artic",
+    "spellPt": "beatice",
+    "spellEs": "artic",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/beartic.png"
+  },
+  {
+    "name": "beautifly",
+    "spellEn": "beautiful",
+    "spellPt": "beautiful",
+    "spellEs": "beautiful",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/beautifly.png"
+  },
+  {
+    "name": "beedrill",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/beedrill.png"
+  },
+  {
+    "name": "beheeyem",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/beheeyem.png"
+  },
+  {
+    "name": "beldum",
+    "spellEn": "seldom",
+    "spellPt": "bellum",
+    "spellEs": "bellum",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/beldum.png"
+  },
+  {
+    "name": "bellossom",
+    "spellEn": "blossom",
+    "spellPt": "",
+    "spellEs": "blossom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bellossom.png"
+  },
+  {
+    "name": "bellsprout",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bellsprout.png"
+  },
+  {
+    "name": "bergmite",
+    "spellEn": "berigte",
+    "spellPt": "permite",
+    "spellEs": "permite",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bergmite.png"
+  },
+  {
+    "name": "bewear",
+    "spellEn": "fewer",
+    "spellPt": "beber",
+    "spellEs": "pelear",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bewear.png"
+  },
+  {
+    "name": "bibarel",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bibarel.png"
+  },
+  {
+    "name": "bidoof",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bidoof.png"
+  },
+  {
+    "name": "binacle",
+    "spellEn": "finale",
+    "spellPt": "",
+    "spellEs": "finale",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/binacle.png"
+  },
+  {
+    "name": "bisharp",
+    "spellEn": "bishop",
+    "spellPt": "bilhar",
+    "spellEs": "bishop",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bisharp.png"
+  },
+  {
+    "name": "blacephalon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blacephalon.png"
+  },
+  {
+    "name": "blastoise",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blastoise.png"
+  },
+  {
+    "name": "blaziken",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blaziken.png"
+  },
+  {
+    "name": "blipbug",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blipbug.png"
+  },
+  {
+    "name": "blissey",
+    "spellEn": "blessed",
+    "spellPt": "bolisse",
+    "spellEs": "bliss",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blissey.png"
+  },
+  {
+    "name": "blitzle",
+    "spellEn": "little",
+    "spellPt": "little",
+    "spellEs": "little",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/blitzle.png"
+  },
+  {
+    "name": "boldore",
+    "spellEn": "odore",
+    "spellPt": "bolor",
+    "spellEs": "dolore",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/boldore.png"
+  },
+  {
+    "name": "boltund",
+    "spellEn": "bound",
+    "spellPt": "",
+    "spellEs": "bound",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/boltund.png"
+  },
+  {
+    "name": "bonsly",
+    "spellEn": "only",
+    "spellPt": "bons",
+    "spellEs": "only",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bonsly.png"
+  },
+  {
+    "name": "bouffalant",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bouffalant.png"
+  },
+  {
+    "name": "bounsweet",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bounsweet.png"
+  },
+  {
+    "name": "braixen",
+    "spellEn": "brain",
+    "spellPt": "baixei",
+    "spellEs": "brain",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/braixen.png"
+  },
+  {
+    "name": "braviary",
+    "spellEn": "bravery",
+    "spellPt": "bravias",
+    "spellEs": "bravery",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/braviary.png"
+  },
+  {
+    "name": "breloom",
+    "spellEn": "bloom",
+    "spellPt": "",
+    "spellEs": "bloom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/breloom.png"
+  },
+  {
+    "name": "brionne",
+    "spellEn": "bronze",
+    "spellPt": "bronze",
+    "spellEs": "bronce",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/brionne.png"
+  },
+  {
+    "name": "bronzong",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bronzong.png"
+  },
+  {
+    "name": "bronzor",
+    "spellEn": "bronze",
+    "spellPt": "bronze",
+    "spellEs": "bronze",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bronzor.png"
+  },
+  {
+    "name": "bruxish",
+    "spellEn": "british",
+    "spellPt": "bruxos",
+    "spellEs": "british",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bruxish.png"
+  },
+  {
+    "name": "budew",
+    "spellEn": "bude",
+    "spellPt": "puder",
+    "spellEs": "bude",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/budew.png"
+  },
+  {
+    "name": "buizel",
+    "spellEn": "buzzer",
+    "spellPt": "dizel",
+    "spellEs": "burdel",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/buizel.png"
+  },
+  {
+    "name": "bulbasaur",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bulbasaur.png"
+  },
+  {
+    "name": "buneary",
+    "spellEn": "boundary",
+    "spellPt": "",
+    "spellEs": "binary",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/buneary.png"
+  },
+  {
+    "name": "bunnelby",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/bunnelby.png"
+  },
+  {
+    "name": "burmy",
+    "spellEn": "bury",
+    "spellPt": "burro",
+    "spellEs": "bury",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/burmy.png"
+  },
+  {
+    "name": "butterfree",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/butterfree.png"
+  },
+  {
+    "name": "buzzwole",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/buzzwole.png"
+  },
+  {
+    "name": "cacnea",
+    "spellEn": "cancer",
+    "spellPt": "canôa",
+    "spellEs": "carnea",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cacnea.png"
+  },
+  {
+    "name": "cacturne",
+    "spellEn": "capture",
+    "spellPt": "",
+    "spellEs": "capture",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cacturne.png"
+  },
+  {
+    "name": "calyrex",
+    "spellEn": "calyx",
+    "spellPt": "calores",
+    "spellEs": "calores",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/calyrex.png"
+  },
+  {
+    "name": "camerupt",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "camerun",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/camerupt.png"
+  },
+  {
+    "name": "carbink",
+    "spellEn": "carbine",
+    "spellPt": "carabina",
+    "spellEs": "carbono",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/carbink.png"
+  },
+  {
+    "name": "carkol",
+    "spellEn": "carol",
+    "spellPt": "carro",
+    "spellEs": "carol",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/carkol.png"
+  },
+  {
+    "name": "carnivine",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "carnitina",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/carnivine.png"
+  },
+  {
+    "name": "carracosta",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "carrancista",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/carracosta.png"
+  },
+  {
+    "name": "carvanha",
+    "spellEn": "",
+    "spellPt": "campanha",
+    "spellEs": "caravana",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/carvanha.png"
+  },
+  {
+    "name": "cascoon",
+    "spellEn": "cartoon",
+    "spellPt": "cascos",
+    "spellEs": "casco",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cascoon.png"
+  },
+  {
+    "name": "castform",
+    "spellEn": "lastfor",
+    "spellPt": "castor",
+    "spellEs": "castor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/castform.png"
+  },
+  {
+    "name": "caterpie",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/caterpie.png"
+  },
+  {
+    "name": "celebi",
+    "spellEn": "celebs",
+    "spellPt": "recebi",
+    "spellEs": "celebs",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/celebi.png"
+  },
+  {
+    "name": "celesteela",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/celesteela.png"
+  },
+  {
+    "name": "centiskorch",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/centiskorch.png"
+  },
+  {
+    "name": "chandelure",
+    "spellEn": "chandelier",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chandelure.png"
+  },
+  {
+    "name": "chansey",
+    "spellEn": "change",
+    "spellPt": "chasse",
+    "spellEs": "channel",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chansey.png"
+  },
+  {
+    "name": "charizard",
+    "spellEn": "",
+    "spellPt": "charivari",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/charizard.png"
+  },
+  {
+    "name": "charjabug",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/charjabug.png"
+  },
+  {
+    "name": "charmander",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/charmander.png"
+  },
+  {
+    "name": "charmeleon",
+    "spellEn": "chameleon",
+    "spellPt": "",
+    "spellEs": "chameleon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/charmeleon.png"
+  },
+  {
+    "name": "chatot",
+    "spellEn": "chart",
+    "spellPt": "chatos",
+    "spellEs": "chato",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chatot.png"
+  },
+  {
+    "name": "cherrim",
+    "spellEn": "cherry",
+    "spellPt": "cheirem",
+    "spellEs": "cherry",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cherrim.png"
+  },
+  {
+    "name": "cherubi",
+    "spellEn": "",
+    "spellPt": "cheguei",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cherubi.png"
+  },
+  {
+    "name": "chesnaught",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chesnaught.png"
+  },
+  {
+    "name": "chespin",
+    "spellEn": "chemin",
+    "spellPt": "",
+    "spellEs": "chemin",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chespin.png"
+  },
+  {
+    "name": "chewtle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chewtle.png"
+  },
+  {
+    "name": "chikorita",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chikorita.png"
+  },
+  {
+    "name": "chimchar",
+    "spellEn": "",
+    "spellPt": "comichar",
+    "spellEs": "chicha",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chimchar.png"
+  },
+  {
+    "name": "chimecho",
+    "spellEn": "",
+    "spellPt": "chincho",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chimecho.png"
+  },
+  {
+    "name": "chinchou",
+    "spellEn": "",
+    "spellPt": "chincho",
+    "spellEs": "chancho",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chinchou.png"
+  },
+  {
+    "name": "chingling",
+    "spellEn": "changing",
+    "spellPt": "",
+    "spellEs": "changing",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/chingling.png"
+  },
+  {
+    "name": "cinccino",
+    "spellEn": "",
+    "spellPt": "inclino",
+    "spellEs": "inclino",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cinccino.png"
+  },
+  {
+    "name": "cinderace",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cinderace.png"
+  },
+  {
+    "name": "clamperl",
+    "spellEn": "campers",
+    "spellPt": "",
+    "spellEs": "campera",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clamperl.png"
+  },
+  {
+    "name": "clauncher",
+    "spellEn": "launcher",
+    "spellPt": "",
+    "spellEs": "launcher",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clauncher.png"
+  },
+  {
+    "name": "clawitzer",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clawitzer.png"
+  },
+  {
+    "name": "claydol",
+    "spellEn": "clayton",
+    "spellPt": "",
+    "spellEs": "clado",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/claydol.png"
+  },
+  {
+    "name": "clefable",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "plegable",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clefable.png"
+  },
+  {
+    "name": "clefairy",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clefairy.png"
+  },
+  {
+    "name": "cleffa",
+    "spellEn": "cliff",
+    "spellPt": "chefia",
+    "spellEs": "cefa",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cleffa.png"
+  },
+  {
+    "name": "clobbopus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/clobbopus.png"
+  },
+  {
+    "name": "cloyster",
+    "spellEn": "cloister",
+    "spellPt": "",
+    "spellEs": "closer",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cloyster.png"
+  },
+  {
+    "name": "coalossal",
+    "spellEn": "colossal",
+    "spellPt": "colossal",
+    "spellEs": "colossal",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/coalossal.png"
+  },
+  {
+    "name": "cobalion",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "cobalto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cobalion.png"
+  },
+  {
+    "name": "cofagrigus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cofagrigus.png"
+  },
+  {
+    "name": "combee",
+    "spellEn": "come",
+    "spellPt": "combate",
+    "spellEs": "nombre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/combee.png"
+  },
+  {
+    "name": "combusken",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/combusken.png"
+  },
+  {
+    "name": "comfey",
+    "spellEn": "come",
+    "spellPt": "comer",
+    "spellEs": "comey",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/comfey.png"
+  },
+  {
+    "name": "conkeldurr",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/conkeldurr.png"
+  },
+  {
+    "name": "copperajah",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/copperajah.png"
+  },
+  {
+    "name": "corphish",
+    "spellEn": "morphism",
+    "spellPt": "",
+    "spellEs": "cornish",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/corphish.png"
+  },
+  {
+    "name": "corsola",
+    "spellEn": "console",
+    "spellPt": "corola",
+    "spellEs": "consola",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/corsola.png"
+  },
+  {
+    "name": "corviknight",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/corviknight.png"
+  },
+  {
+    "name": "corvisquire",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/corvisquire.png"
+  },
+  {
+    "name": "cosmoem",
+    "spellEn": "cosmos",
+    "spellPt": "cospem",
+    "spellEs": "cosmos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cosmoem.png"
+  },
+  {
+    "name": "cosmog",
+    "spellEn": "cosmos",
+    "spellPt": "como",
+    "spellEs": "cosmos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cosmog.png"
+  },
+  {
+    "name": "cottonee",
+    "spellEn": "cotton",
+    "spellPt": "",
+    "spellEs": "cotton",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cottonee.png"
+  },
+  {
+    "name": "crabominable",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "abominable",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/crabominable.png"
+  },
+  {
+    "name": "crabrawler",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/crabrawler.png"
+  },
+  {
+    "name": "cradily",
+    "spellEn": "readily",
+    "spellPt": "gradil",
+    "spellEs": "cradle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cradily.png"
+  },
+  {
+    "name": "cramorant",
+    "spellEn": "cormorant",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cramorant.png"
+  },
+  {
+    "name": "cranidos",
+    "spellEn": "",
+    "spellPt": "carnudos",
+    "spellEs": "criados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cranidos.png"
+  },
+  {
+    "name": "crawdaunt",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/crawdaunt.png"
+  },
+  {
+    "name": "cresselia",
+    "spellEn": "",
+    "spellPt": "cresceria",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cresselia.png"
+  },
+  {
+    "name": "croagunk",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/croagunk.png"
+  },
+  {
+    "name": "crobat",
+    "spellEn": "acrobat",
+    "spellPt": "croça",
+    "spellEs": "acrobat",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/crobat.png"
+  },
+  {
+    "name": "croconaw",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/croconaw.png"
+  },
+  {
+    "name": "crustle",
+    "spellEn": "castle",
+    "spellPt": "custe",
+    "spellEs": "castle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/crustle.png"
+  },
+  {
+    "name": "cryogonal",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "ortogonal",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cryogonal.png"
+  },
+  {
+    "name": "cubchoo",
+    "spellEn": "cuckoo",
+    "spellPt": "",
+    "spellEs": "cuckoo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cubchoo.png"
+  },
+  {
+    "name": "cubone",
+    "spellEn": "bone",
+    "spellPt": "cubana",
+    "spellEs": "supone",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cubone.png"
+  },
+  {
+    "name": "cufant",
+    "spellEn": "infant",
+    "spellPt": "ufano",
+    "spellEs": "cuanto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cufant.png"
+  },
+  {
+    "name": "cursola",
+    "spellEn": "cursor",
+    "spellPt": "curso",
+    "spellEs": "curso",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cursola.png"
+  },
+  {
+    "name": "cutiefly",
+    "spellEn": "chiefly",
+    "spellPt": "",
+    "spellEs": "chiefly",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cutiefly.png"
+  },
+  {
+    "name": "cyndaquil",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/cyndaquil.png"
+  },
+  {
+    "name": "darkrai",
+    "spellEn": "darkgray",
+    "spellPt": "",
+    "spellEs": "darkgray",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/darkrai.png"
+  },
+  {
+    "name": "darmanitan",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/darmanitan.png"
+  },
+  {
+    "name": "dartrix",
+    "spellEn": "matrix",
+    "spellPt": "dartro",
+    "spellEs": "matrix",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dartrix.png"
+  },
+  {
+    "name": "darumaka",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/darumaka.png"
+  },
+  {
+    "name": "decidueye",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "decidiese",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/decidueye.png"
+  },
+  {
+    "name": "dedenne",
+    "spellEn": "defense",
+    "spellPt": "depende",
+    "spellEs": "depende",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dedenne.png"
+  },
+  {
+    "name": "deerling",
+    "spellEn": "derling",
+    "spellPt": "",
+    "spellEs": "derling",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/deerling.png"
+  },
+  {
+    "name": "deino",
+    "spellEn": "dino",
+    "spellPt": "deixo",
+    "spellEs": "reino",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/deino.png"
+  },
+  {
+    "name": "delcatty",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/delcatty.png"
+  },
+  {
+    "name": "delibird",
+    "spellEn": "",
+    "spellPt": "delibere",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/delibird.png"
+  },
+  {
+    "name": "delphox",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "delhom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/delphox.png"
+  },
+  {
+    "name": "deoxys",
+    "spellEn": "deoxy",
+    "spellPt": "deixes",
+    "spellEs": "delays",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/deoxys.png"
+  },
+  {
+    "name": "dewgong",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dewgong.png"
+  },
+  {
+    "name": "dewott",
+    "spellEn": "depot",
+    "spellPt": "devota",
+    "spellEs": "denota",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dewott.png"
+  },
+  {
+    "name": "dewpider",
+    "spellEn": "decider",
+    "spellPt": "",
+    "spellEs": "despide",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dewpider.png"
+  },
+  {
+    "name": "dhelmise",
+    "spellEn": "demise",
+    "spellPt": "",
+    "spellEs": "demise",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dhelmise.png"
+  },
+  {
+    "name": "dialga",
+    "spellEn": "dial",
+    "spellPt": "galga",
+    "spellEs": "dialoga",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dialga.png"
+  },
+  {
+    "name": "diancie",
+    "spellEn": "dance",
+    "spellPt": "diante",
+    "spellEs": "dance",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/diancie.png"
+  },
+  {
+    "name": "diggersby",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/diggersby.png"
+  },
+  {
+    "name": "diglett",
+    "spellEn": "dialect",
+    "spellPt": "dialeto",
+    "spellEs": "digest",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/diglett.png"
+  },
+  {
+    "name": "ditto",
+    "spellEn": "",
+    "spellPt": "dito",
+    "spellEs": "detto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ditto.png"
+  },
+  {
+    "name": "dodrio",
+    "spellEn": "diario",
+    "spellPt": "doido",
+    "spellEs": "diario",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dodrio.png"
+  },
+  {
+    "name": "doduo",
+    "spellEn": "duo",
+    "spellPt": "doudo",
+    "spellEs": "dodo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/doduo.png"
+  },
+  {
+    "name": "donphan",
+    "spellEn": "orphan",
+    "spellPt": "orphan",
+    "spellEs": "donovan",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/donphan.png"
+  },
+  {
+    "name": "dottler",
+    "spellEn": "bottle",
+    "spellPt": "",
+    "spellEs": "dotted",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dottler.png"
+  },
+  {
+    "name": "doublade",
+    "spellEn": "double",
+    "spellPt": "double",
+    "spellEs": "doblaje",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/doublade.png"
+  },
+  {
+    "name": "dracovish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "draconis",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dracovish.png"
+  },
+  {
+    "name": "dracozolt",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dracozolt.png"
+  },
+  {
+    "name": "dragalge",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dragalge.png"
+  },
+  {
+    "name": "dragapult",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dragapult.png"
+  },
+  {
+    "name": "dragonair",
+    "spellEn": "",
+    "spellPt": "dragonas",
+    "spellEs": "dragona",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dragonair.png"
+  },
+  {
+    "name": "dragonite",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dragonite.png"
+  },
+  {
+    "name": "drakloak",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drakloak.png"
+  },
+  {
+    "name": "drampa",
+    "spellEn": "drama",
+    "spellPt": "rampa",
+    "spellEs": "drama",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drampa.png"
+  },
+  {
+    "name": "drapion",
+    "spellEn": "duration",
+    "spellPt": "craion",
+    "spellEs": "duracion",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drapion.png"
+  },
+  {
+    "name": "dratini",
+    "spellEn": "rating",
+    "spellPt": "",
+    "spellEs": "rating",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dratini.png"
+  },
+  {
+    "name": "drednaw",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "drena",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drednaw.png"
+  },
+  {
+    "name": "dreepy",
+    "spellEn": "creepy",
+    "spellPt": "",
+    "spellEs": "creepy",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dreepy.png"
+  },
+  {
+    "name": "drifblim",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drifblim.png"
+  },
+  {
+    "name": "drifloon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drifloon.png"
+  },
+  {
+    "name": "drilbur",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drilbur.png"
+  },
+  {
+    "name": "drizzile",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drizzile.png"
+  },
+  {
+    "name": "drowzee",
+    "spellEn": "drowned",
+    "spellPt": "",
+    "spellEs": "drowned",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/drowzee.png"
+  },
+  {
+    "name": "druddigon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/druddigon.png"
+  },
+  {
+    "name": "dubwool",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dubwool.png"
+  },
+  {
+    "name": "ducklett",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ducklett.png"
+  },
+  {
+    "name": "dugtrio",
+    "spellEn": "",
+    "spellPt": "tugúrio",
+    "spellEs": "augurio",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dugtrio.png"
+  },
+  {
+    "name": "dunsparce",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dunsparce.png"
+  },
+  {
+    "name": "duosion",
+    "spellEn": "fusion",
+    "spellPt": "",
+    "spellEs": "fusion",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/duosion.png"
+  },
+  {
+    "name": "duraludon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/duraludon.png"
+  },
+  {
+    "name": "durant",
+    "spellEn": "durante",
+    "spellPt": "durante",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/durant.png"
+  },
+  {
+    "name": "dusclops",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dusclops.png"
+  },
+  {
+    "name": "dusknoir",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dusknoir.png"
+  },
+  {
+    "name": "duskull",
+    "spellEn": "skull",
+    "spellPt": "",
+    "spellEs": "skull",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/duskull.png"
+  },
+  {
+    "name": "dustox",
+    "spellEn": "custom",
+    "spellPt": "sustos",
+    "spellEs": "justo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dustox.png"
+  },
+  {
+    "name": "dwebble",
+    "spellEn": "pebble",
+    "spellPt": "",
+    "spellEs": "debbie",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/dwebble.png"
+  },
+  {
+    "name": "eelektrik",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eelektrik.png"
+  },
+  {
+    "name": "eelektross",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eelektross.png"
+  },
+  {
+    "name": "eevee",
+    "spellEn": "levee",
+    "spellPt": "leve",
+    "spellEs": "eeeeee",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eevee.png"
+  },
+  {
+    "name": "eiscue",
+    "spellEn": "issue",
+    "spellPt": "escu",
+    "spellEs": "issue",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eiscue.png"
+  },
+  {
+    "name": "ekans",
+    "spellEn": "evans",
+    "spellPt": "elas",
+    "spellEs": "evans",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ekans.png"
+  },
+  {
+    "name": "eldegoss",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eldegoss.png"
+  },
+  {
+    "name": "electabuzz",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/electabuzz.png"
+  },
+  {
+    "name": "electivire",
+    "spellEn": "elective",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/electivire.png"
+  },
+  {
+    "name": "electrike",
+    "spellEn": "electric",
+    "spellPt": "electrico",
+    "spellEs": "electric",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/electrike.png"
+  },
+  {
+    "name": "electrode",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/electrode.png"
+  },
+  {
+    "name": "elekid",
+    "spellEn": "ilkid",
+    "spellPt": "elegia",
+    "spellEs": "elegido",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/elekid.png"
+  },
+  {
+    "name": "elgyem",
+    "spellEn": "elem",
+    "spellPt": "alguem",
+    "spellEs": "elem",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/elgyem.png"
+  },
+  {
+    "name": "emboar",
+    "spellEn": "embark",
+    "spellPt": "embora",
+    "spellEs": "ámbar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/emboar.png"
+  },
+  {
+    "name": "emolga",
+    "spellEn": "ebola",
+    "spellPt": "malga",
+    "spellEs": "emplea",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/emolga.png"
+  },
+  {
+    "name": "empoleon",
+    "spellEn": "napoleon",
+    "spellPt": "empolgou",
+    "spellEs": "empleo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/empoleon.png"
+  },
+  {
+    "name": "enamorus",
+    "spellEn": "",
+    "spellPt": "namoros",
+    "spellEs": "enamores",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/enamorus.png"
+  },
+  {
+    "name": "entei",
+    "spellEn": "enter",
+    "spellPt": "ente",
+    "spellEs": "ente",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/entei.png"
+  },
+  {
+    "name": "escavalier",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "cavalier",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/escavalier.png"
+  },
+  {
+    "name": "espeon",
+    "spellEn": "espn",
+    "spellPt": "espero",
+    "spellEs": "espera",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/espeon.png"
+  },
+  {
+    "name": "espurr",
+    "spellEn": "spur",
+    "spellPt": "esperar",
+    "spellEs": "espera",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/espurr.png"
+  },
+  {
+    "name": "eternatus",
+    "spellEn": "",
+    "spellPt": "eternas",
+    "spellEs": "eternas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/eternatus.png"
+  },
+  {
+    "name": "excadrill",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/excadrill.png"
+  },
+  {
+    "name": "exeggcute",
+    "spellEn": "execute",
+    "spellPt": "execute",
+    "spellEs": "execute",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/exeggcute.png"
+  },
+  {
+    "name": "exeggutor",
+    "spellEn": "executor",
+    "spellPt": "executor",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/exeggutor.png"
+  },
+  {
+    "name": "exploud",
+    "spellEn": "explore",
+    "spellPt": "explodiu",
+    "spellEs": "explore",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/exploud.png"
+  },
+  {
+    "name": "falinks",
+    "spellEn": "links",
+    "spellPt": "salinas",
+    "spellEs": "links",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/falinks.png"
+  },
+  {
+    "name": "farfetchd",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/farfetchd.png"
+  },
+  {
+    "name": "fearow",
+    "spellEn": "fellow",
+    "spellPt": "feroz",
+    "spellEs": "faro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fearow.png"
+  },
+  {
+    "name": "feebas",
+    "spellEn": "feels",
+    "spellPt": "ferias",
+    "spellEs": "fechas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/feebas.png"
+  },
+  {
+    "name": "fennekin",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fennekin.png"
+  },
+  {
+    "name": "feraligatr",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/feraligatr.png"
+  },
+  {
+    "name": "ferroseed",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ferroseed.png"
+  },
+  {
+    "name": "ferrothorn",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ferrothorn.png"
+  },
+  {
+    "name": "finneon",
+    "spellEn": "finned",
+    "spellPt": "",
+    "spellEs": "fingen",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/finneon.png"
+  },
+  {
+    "name": "flaaffy",
+    "spellEn": "fluffy",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/flaaffy.png"
+  },
+  {
+    "name": "flabebe",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/flabebe.png"
+  },
+  {
+    "name": "flapple",
+    "spellEn": "apple",
+    "spellPt": "",
+    "spellEs": "apple",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/flapple.png"
+  },
+  {
+    "name": "flareon",
+    "spellEn": "flare",
+    "spellPt": "clareou",
+    "spellEs": "alarcon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/flareon.png"
+  },
+  {
+    "name": "fletchinder",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fletchinder.png"
+  },
+  {
+    "name": "fletchling",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fletchling.png"
+  },
+  {
+    "name": "floatzel",
+    "spellEn": "floated",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/floatzel.png"
+  },
+  {
+    "name": "floette",
+    "spellEn": "",
+    "spellPt": "florete",
+    "spellEs": "flotte",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/floette.png"
+  },
+  {
+    "name": "florges",
+    "spellEn": "flores",
+    "spellPt": "florões",
+    "spellEs": "flores",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/florges.png"
+  },
+  {
+    "name": "flygon",
+    "spellEn": "polygon",
+    "spellPt": "",
+    "spellEs": "lyon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/flygon.png"
+  },
+  {
+    "name": "fomantis",
+    "spellEn": "romantic",
+    "spellPt": "fumantes",
+    "spellEs": "mantis",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fomantis.png"
+  },
+  {
+    "name": "foongus",
+    "spellEn": "fungus",
+    "spellPt": "",
+    "spellEs": "longus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/foongus.png"
+  },
+  {
+    "name": "forretress",
+    "spellEn": "fortress",
+    "spellPt": "",
+    "spellEs": "fortress",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/forretress.png"
+  },
+  {
+    "name": "fraxure",
+    "spellEn": "feature",
+    "spellPt": "fraque",
+    "spellEs": "feature",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/fraxure.png"
+  },
+  {
+    "name": "frillish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/frillish.png"
+  },
+  {
+    "name": "froakie",
+    "spellEn": "rookie",
+    "spellPt": "",
+    "spellEs": "rookie",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/froakie.png"
+  },
+  {
+    "name": "frogadier",
+    "spellEn": "brigadier",
+    "spellPt": "",
+    "spellEs": "brigadier",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/frogadier.png"
+  },
+  {
+    "name": "froslass",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/froslass.png"
+  },
+  {
+    "name": "frosmoth",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/frosmoth.png"
+  },
+  {
+    "name": "furfrou",
+    "spellEn": "",
+    "spellPt": "ferrou",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/furfrou.png"
+  },
+  {
+    "name": "furret",
+    "spellEn": "turret",
+    "spellPt": "furriel",
+    "spellEs": "turret",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/furret.png"
+  },
+  {
+    "name": "gabite",
+    "spellEn": "gate",
+    "spellPt": "habite",
+    "spellEs": "habite",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gabite.png"
+  },
+  {
+    "name": "gallade",
+    "spellEn": "ballad",
+    "spellPt": "maldade",
+    "spellEs": "ballade",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gallade.png"
+  },
+  {
+    "name": "galvantula",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/galvantula.png"
+  },
+  {
+    "name": "garbodor",
+    "spellEn": "",
+    "spellPt": "garbosos",
+    "spellEs": "grabador",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/garbodor.png"
+  },
+  {
+    "name": "garchomp",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/garchomp.png"
+  },
+  {
+    "name": "gardevoir",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gardevoir.png"
+  },
+  {
+    "name": "gastly",
+    "spellEn": "vastly",
+    "spellPt": "gastar",
+    "spellEs": "gastos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gastly.png"
+  },
+  {
+    "name": "gastrodon",
+    "spellEn": "gastropod",
+    "spellPt": "",
+    "spellEs": "mastodon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gastrodon.png"
+  },
+  {
+    "name": "genesect",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/genesect.png"
+  },
+  {
+    "name": "gengar",
+    "spellEn": "gender",
+    "spellPt": "pensar",
+    "spellEs": "vengar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gengar.png"
+  },
+  {
+    "name": "geodude",
+    "spellEn": "geocode",
+    "spellPt": "",
+    "spellEs": "geocode",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/geodude.png"
+  },
+  {
+    "name": "gible",
+    "spellEn": "bible",
+    "spellPt": "gibão",
+    "spellEs": "bible",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gible.png"
+  },
+  {
+    "name": "gigalith",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gigalith.png"
+  },
+  {
+    "name": "girafarig",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/girafarig.png"
+  },
+  {
+    "name": "giratina",
+    "spellEn": "grating",
+    "spellPt": "gratia",
+    "spellEs": "gelatina",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/giratina.png"
+  },
+  {
+    "name": "glaceon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "glace",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/glaceon.png"
+  },
+  {
+    "name": "glalie",
+    "spellEn": "goalie",
+    "spellPt": "",
+    "spellEs": "galio",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/glalie.png"
+  },
+  {
+    "name": "glameow",
+    "spellEn": "glasgow",
+    "spellPt": "",
+    "spellEs": "glasgow",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/glameow.png"
+  },
+  {
+    "name": "glastrier",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/glastrier.png"
+  },
+  {
+    "name": "gligar",
+    "spellEn": "guitar",
+    "spellPt": "ligar",
+    "spellEs": "ligar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gligar.png"
+  },
+  {
+    "name": "gliscor",
+    "spellEn": "",
+    "spellPt": "licor",
+    "spellEs": "licor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gliscor.png"
+  },
+  {
+    "name": "gloom",
+    "spellEn": "",
+    "spellPt": "groom",
+    "spellEs": "bloom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gloom.png"
+  },
+  {
+    "name": "gogoat",
+    "spellEn": "goat",
+    "spellPt": "gogo",
+    "spellEs": "bogota",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gogoat.png"
+  },
+  {
+    "name": "golbat",
+    "spellEn": "global",
+    "spellPt": "gola",
+    "spellEs": "global",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golbat.png"
+  },
+  {
+    "name": "goldeen",
+    "spellEn": "golden",
+    "spellPt": "",
+    "spellEs": "golden",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/goldeen.png"
+  },
+  {
+    "name": "golduck",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golduck.png"
+  },
+  {
+    "name": "golem",
+    "spellEn": "role",
+    "spellPt": "gole",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golem.png"
+  },
+  {
+    "name": "golett",
+    "spellEn": "noleft",
+    "spellPt": "roleta",
+    "spellEs": "goleta",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golett.png"
+  },
+  {
+    "name": "golisopod",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golisopod.png"
+  },
+  {
+    "name": "golurk",
+    "spellEn": "gourd",
+    "spellPt": "",
+    "spellEs": "gourd",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/golurk.png"
+  },
+  {
+    "name": "goodra",
+    "spellEn": "good",
+    "spellPt": "gordura",
+    "spellEs": "good",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/goodra.png"
+  },
+  {
+    "name": "goomy",
+    "spellEn": "gloomy",
+    "spellPt": "goma",
+    "spellEs": "good",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/goomy.png"
+  },
+  {
+    "name": "gorebyss",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gorebyss.png"
+  },
+  {
+    "name": "gossifleur",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gossifleur.png"
+  },
+  {
+    "name": "gothita",
+    "spellEn": "gothic",
+    "spellPt": "gotta",
+    "spellEs": "gotha",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gothita.png"
+  },
+  {
+    "name": "gothitelle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gothitelle.png"
+  },
+  {
+    "name": "gothorita",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gothorita.png"
+  },
+  {
+    "name": "gourgeist",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gourgeist.png"
+  },
+  {
+    "name": "granbull",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/granbull.png"
+  },
+  {
+    "name": "grapploct",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grapploct.png"
+  },
+  {
+    "name": "graveler",
+    "spellEn": "traveler",
+    "spellPt": "",
+    "spellEs": "traveler",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/graveler.png"
+  },
+  {
+    "name": "greedent",
+    "spellEn": "agreement",
+    "spellPt": "",
+    "spellEs": "agreement",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/greedent.png"
+  },
+  {
+    "name": "greninja",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "renina",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/greninja.png"
+  },
+  {
+    "name": "grimer",
+    "spellEn": "primer",
+    "spellPt": "tremer",
+    "spellEs": "primer",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grimer.png"
+  },
+  {
+    "name": "grimmsnarl",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grimmsnarl.png"
+  },
+  {
+    "name": "grookey",
+    "spellEn": "groove",
+    "spellPt": "",
+    "spellEs": "groove",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grookey.png"
+  },
+  {
+    "name": "grotle",
+    "spellEn": "role",
+    "spellPt": "grogue",
+    "spellEs": "grotte",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grotle.png"
+  },
+  {
+    "name": "groudon",
+    "spellEn": "ground",
+    "spellPt": "grudou",
+    "spellEs": "ground",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/groudon.png"
+  },
+  {
+    "name": "grovyle",
+    "spellEn": "grove",
+    "spellPt": "",
+    "spellEs": "grove",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grovyle.png"
+  },
+  {
+    "name": "growlithe",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/growlithe.png"
+  },
+  {
+    "name": "grubbin",
+    "spellEn": "grabbing",
+    "spellPt": "",
+    "spellEs": "rubin",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grubbin.png"
+  },
+  {
+    "name": "grumpig",
+    "spellEn": "grumpy",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/grumpig.png"
+  },
+  {
+    "name": "gulpin",
+    "spellEn": "pulpit",
+    "spellPt": "",
+    "spellEs": "galpón",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gulpin.png"
+  },
+  {
+    "name": "gumshoos",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gumshoos.png"
+  },
+  {
+    "name": "gurdurr",
+    "spellEn": "",
+    "spellPt": "gordura",
+    "spellEs": "gordura",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gurdurr.png"
+  },
+  {
+    "name": "guzzlord",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/guzzlord.png"
+  },
+  {
+    "name": "gyarados",
+    "spellEn": "",
+    "spellPt": "parados",
+    "spellEs": "grados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/gyarados.png"
+  },
+  {
+    "name": "hakamo-o",
+    "spellEn": "haram-o",
+    "spellPt": "hajam-o",
+    "spellEs": "hagamos-o",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hakamo-o.png"
+  },
+  {
+    "name": "happiny",
+    "spellEn": "happily",
+    "spellPt": "",
+    "spellEs": "happy",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/happiny.png"
+  },
+  {
+    "name": "hariyama",
+    "spellEn": "haryana",
+    "spellPt": "arirama",
+    "spellEs": "hirayama",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hariyama.png"
+  },
+  {
+    "name": "hatenna",
+    "spellEn": "antenna",
+    "spellPt": "paterna",
+    "spellEs": "materna",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hatenna.png"
+  },
+  {
+    "name": "hatterene",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hatterene.png"
+  },
+  {
+    "name": "hattrem",
+    "spellEn": "hatred",
+    "spellPt": "matarem",
+    "spellEs": "harem",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hattrem.png"
+  },
+  {
+    "name": "haunter",
+    "spellEn": "hunter",
+    "spellPt": "manter",
+    "spellEs": "hunter",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/haunter.png"
+  },
+  {
+    "name": "hawlucha",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hawlucha.png"
+  },
+  {
+    "name": "haxorus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "canorus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/haxorus.png"
+  },
+  {
+    "name": "heatmor",
+    "spellEn": "heater",
+    "spellPt": "reator",
+    "spellEs": "hector",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/heatmor.png"
+  },
+  {
+    "name": "heatran",
+    "spellEn": "",
+    "spellPt": "teatral",
+    "spellEs": "teatral",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/heatran.png"
+  },
+  {
+    "name": "heliolisk",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/heliolisk.png"
+  },
+  {
+    "name": "helioptile",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/helioptile.png"
+  },
+  {
+    "name": "heracross",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/heracross.png"
+  },
+  {
+    "name": "herdier",
+    "spellEn": "header",
+    "spellPt": "herdeiro",
+    "spellEs": "perder",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/herdier.png"
+  },
+  {
+    "name": "hippopotas",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hippopotas.png"
+  },
+  {
+    "name": "hippowdon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hippowdon.png"
+  },
+  {
+    "name": "hitmonchan",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hitmonchan.png"
+  },
+  {
+    "name": "hitmonlee",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hitmonlee.png"
+  },
+  {
+    "name": "hitmontop",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hitmontop.png"
+  },
+  {
+    "name": "ho-oh",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ho-oh.png"
+  },
+  {
+    "name": "honchkrow",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/honchkrow.png"
+  },
+  {
+    "name": "honedge",
+    "spellEn": "hedge",
+    "spellPt": "",
+    "spellEs": "hedge",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/honedge.png"
+  },
+  {
+    "name": "hoopa",
+    "spellEn": "hoops",
+    "spellPt": "roupa",
+    "spellEs": "hoop",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hoopa.png"
+  },
+  {
+    "name": "hoothoot",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hoothoot.png"
+  },
+  {
+    "name": "hoppip",
+    "spellEn": "hopper",
+    "spellPt": "",
+    "spellEs": "hopper",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hoppip.png"
+  },
+  {
+    "name": "horsea",
+    "spellEn": "horse",
+    "spellPt": "horas",
+    "spellEs": "horse",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/horsea.png"
+  },
+  {
+    "name": "houndoom",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/houndoom.png"
+  },
+  {
+    "name": "houndour",
+    "spellEn": "honour",
+    "spellPt": "",
+    "spellEs": "honour",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/houndour.png"
+  },
+  {
+    "name": "huntail",
+    "spellEn": "until",
+    "spellPt": "juntai",
+    "spellEs": "until",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/huntail.png"
+  },
+  {
+    "name": "hydreigon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hydreigon.png"
+  },
+  {
+    "name": "hypno",
+    "spellEn": "typo",
+    "spellPt": "hino",
+    "spellEs": "himno",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/hypno.png"
+  },
+  {
+    "name": "igglybuff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/igglybuff.png"
+  },
+  {
+    "name": "illumise",
+    "spellEn": "",
+    "spellPt": "ilumine",
+    "spellEs": "ilumine",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/illumise.png"
+  },
+  {
+    "name": "impidimp",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "impidió",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/impidimp.png"
+  },
+  {
+    "name": "incineroar",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "incinerar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/incineroar.png"
+  },
+  {
+    "name": "indeedee",
+    "spellEn": "indeed",
+    "spellPt": "",
+    "spellEs": "indeed",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/indeedee.png"
+  },
+  {
+    "name": "infernape",
+    "spellEn": "",
+    "spellPt": "infernal",
+    "spellEs": "infernal",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/infernape.png"
+  },
+  {
+    "name": "inkay",
+    "spellEn": "inlay",
+    "spellPt": "inda",
+    "spellEs": "inka",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/inkay.png"
+  },
+  {
+    "name": "inteleon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/inteleon.png"
+  },
+  {
+    "name": "ivysaur",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ivysaur.png"
+  },
+  {
+    "name": "jangmo-o",
+    "spellEn": "tango-o",
+    "spellPt": "animo-o",
+    "spellEs": "rango-o",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jangmo-o.png"
+  },
+  {
+    "name": "jellicent",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jellicent.png"
+  },
+  {
+    "name": "jigglypuff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jigglypuff.png"
+  },
+  {
+    "name": "jirachi",
+    "spellEn": "karachi",
+    "spellPt": "",
+    "spellEs": "grachi",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jirachi.png"
+  },
+  {
+    "name": "jolteon",
+    "spellEn": "molten",
+    "spellPt": "volteou",
+    "spellEs": "volteo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jolteon.png"
+  },
+  {
+    "name": "joltik",
+    "spellEn": "politik",
+    "spellPt": "",
+    "spellEs": "politik",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/joltik.png"
+  },
+  {
+    "name": "jumpluff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jumpluff.png"
+  },
+  {
+    "name": "jynx",
+    "spellEn": "lynx",
+    "spellPt": "jane",
+    "spellEs": "lynx",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/jynx.png"
+  },
+  {
+    "name": "kabuto",
+    "spellEn": "auto",
+    "spellPt": "labuta",
+    "spellEs": "auto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kabuto.png"
+  },
+  {
+    "name": "kabutops",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kabutops.png"
+  },
+  {
+    "name": "kadabra",
+    "spellEn": "",
+    "spellPt": "macabra",
+    "spellEs": "palabra",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kadabra.png"
+  },
+  {
+    "name": "kakuna",
+    "spellEn": "fauna",
+    "spellPt": "lacuna",
+    "spellEs": "fauna",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kakuna.png"
+  },
+  {
+    "name": "kangaskhan",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kangaskhan.png"
+  },
+  {
+    "name": "karrablast",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/karrablast.png"
+  },
+  {
+    "name": "kartana",
+    "spellEn": "ariana",
+    "spellPt": "katana",
+    "spellEs": "katana",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kartana.png"
+  },
+  {
+    "name": "kecleon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kecleon.png"
+  },
+  {
+    "name": "keldeo",
+    "spellEn": "elder",
+    "spellPt": "",
+    "spellEs": "felder",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/keldeo.png"
+  },
+  {
+    "name": "kingdra",
+    "spellEn": "kingdom",
+    "spellPt": "vingara",
+    "spellEs": "kingdom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kingdra.png"
+  },
+  {
+    "name": "kingler",
+    "spellEn": "single",
+    "spellPt": "inglez",
+    "spellEs": "single",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kingler.png"
+  },
+  {
+    "name": "kirlia",
+    "spellEn": "karla",
+    "spellPt": "diria",
+    "spellEs": "siria",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kirlia.png"
+  },
+  {
+    "name": "klang",
+    "spellEn": "lang",
+    "spellPt": "ylang",
+    "spellEs": "lang",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/klang.png"
+  },
+  {
+    "name": "kleavor",
+    "spellEn": "flavor",
+    "spellPt": "lavor",
+    "spellEs": "eleanor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kleavor.png"
+  },
+  {
+    "name": "klefki",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/klefki.png"
+  },
+  {
+    "name": "klink",
+    "spellEn": "link",
+    "spellPt": "clina",
+    "spellEs": "link",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/klink.png"
+  },
+  {
+    "name": "klinklang",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/klinklang.png"
+  },
+  {
+    "name": "koffing",
+    "spellEn": "coffin",
+    "spellPt": "",
+    "spellEs": "coffin",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/koffing.png"
+  },
+  {
+    "name": "komala",
+    "spellEn": "koala",
+    "spellPt": "tomava",
+    "spellEs": "koala",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/komala.png"
+  },
+  {
+    "name": "kommo-o",
+    "spellEn": "komm-o",
+    "spellPt": "como-o",
+    "spellEs": "komm-o",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kommo-o.png"
+  },
+  {
+    "name": "krabby",
+    "spellEn": "rabbi",
+    "spellPt": "",
+    "spellEs": "rabbi",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/krabby.png"
+  },
+  {
+    "name": "kricketot",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kricketot.png"
+  },
+  {
+    "name": "kricketune",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kricketune.png"
+  },
+  {
+    "name": "krokorok",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "kokoro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/krokorok.png"
+  },
+  {
+    "name": "krookodile",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/krookodile.png"
+  },
+  {
+    "name": "kubfu",
+    "spellEn": "kubo",
+    "spellPt": "subiu",
+    "spellEs": "kubo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kubfu.png"
+  },
+  {
+    "name": "kyogre",
+    "spellEn": "youre",
+    "spellPt": "logre",
+    "spellEs": "logre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kyogre.png"
+  },
+  {
+    "name": "kyurem",
+    "spellEn": "",
+    "spellPt": "jurem",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kyurem.png"
+  },
+  {
+    "name": "lairon",
+    "spellEn": "iron",
+    "spellPt": "ladron",
+    "spellEs": "ladron",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lairon.png"
+  },
+  {
+    "name": "lampent",
+    "spellEn": "lament",
+    "spellPt": "lamento",
+    "spellEs": "lamenta",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lampent.png"
+  },
+  {
+    "name": "landorus",
+    "spellEn": "landlords",
+    "spellPt": "landaus",
+    "spellEs": "canorus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/landorus.png"
+  },
+  {
+    "name": "lanturn",
+    "spellEn": "lantern",
+    "spellPt": "lanterna",
+    "spellEs": "lantern",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lanturn.png"
+  },
+  {
+    "name": "lapras",
+    "spellEn": "laps",
+    "spellPt": "lavras",
+    "spellEs": "lapas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lapras.png"
+  },
+  {
+    "name": "larvesta",
+    "spellEn": "largest",
+    "spellPt": "aresta",
+    "spellEs": "largest",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/larvesta.png"
+  },
+  {
+    "name": "larvitar",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "levitar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/larvitar.png"
+  },
+  {
+    "name": "latias",
+    "spellEn": "matias",
+    "spellPt": "latinas",
+    "spellEs": "latinas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/latias.png"
+  },
+  {
+    "name": "latios",
+    "spellEn": "ratios",
+    "spellPt": "labios",
+    "spellEs": "latinos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/latios.png"
+  },
+  {
+    "name": "leafeon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/leafeon.png"
+  },
+  {
+    "name": "leavanny",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/leavanny.png"
+  },
+  {
+    "name": "ledian",
+    "spellEn": "median",
+    "spellPt": "leviana",
+    "spellEs": "median",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ledian.png"
+  },
+  {
+    "name": "ledyba",
+    "spellEn": "",
+    "spellPt": "ledora",
+    "spellEs": "leyva",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ledyba.png"
+  },
+  {
+    "name": "lickilicky",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lickilicky.png"
+  },
+  {
+    "name": "lickitung",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lickitung.png"
+  },
+  {
+    "name": "liepard",
+    "spellEn": "lizard",
+    "spellPt": "limpar",
+    "spellEs": "lizard",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/liepard.png"
+  },
+  {
+    "name": "lileep",
+    "spellEn": "sleep",
+    "spellPt": "",
+    "spellEs": "lineup",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lileep.png"
+  },
+  {
+    "name": "lilligant",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lilligant.png"
+  },
+  {
+    "name": "lillipup",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lillipup.png"
+  },
+  {
+    "name": "linoone",
+    "spellEn": "noone",
+    "spellPt": "insone",
+    "spellEs": "lingote",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/linoone.png"
+  },
+  {
+    "name": "litleo",
+    "spellEn": "title",
+    "spellPt": "libelo",
+    "spellEs": "title",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/litleo.png"
+  },
+  {
+    "name": "litten",
+    "spellEn": "listen",
+    "spellPt": "little",
+    "spellEs": "listen",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/litten.png"
+  },
+  {
+    "name": "litwick",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/litwick.png"
+  },
+  {
+    "name": "lombre",
+    "spellEn": "nombre",
+    "spellPt": "lembre",
+    "spellEs": "nombre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lombre.png"
+  },
+  {
+    "name": "lopunny",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lopunny.png"
+  },
+  {
+    "name": "lotad",
+    "spellEn": "load",
+    "spellPt": "logar",
+    "spellEs": "load",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lotad.png"
+  },
+  {
+    "name": "loudred",
+    "spellEn": "toured",
+    "spellPt": "loudel",
+    "spellEs": "londres",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/loudred.png"
+  },
+  {
+    "name": "lucario",
+    "spellEn": "",
+    "spellPt": "lucrado",
+    "spellEs": "lucro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lucario.png"
+  },
+  {
+    "name": "ludicolo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ludicolo.png"
+  },
+  {
+    "name": "lugia",
+    "spellEn": "lucia",
+    "spellPt": "ugia",
+    "spellEs": "logia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lugia.png"
+  },
+  {
+    "name": "lumineon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lumineon.png"
+  },
+  {
+    "name": "lunala",
+    "spellEn": "lunar",
+    "spellPt": "luneta",
+    "spellEs": "lunata",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lunala.png"
+  },
+  {
+    "name": "lunatone",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lunatone.png"
+  },
+  {
+    "name": "lurantis",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "aurantia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lurantis.png"
+  },
+  {
+    "name": "luvdisc",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/luvdisc.png"
+  },
+  {
+    "name": "luxio",
+    "spellEn": "luxo",
+    "spellPt": "luxo",
+    "spellEs": "lucio",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/luxio.png"
+  },
+  {
+    "name": "luxray",
+    "spellEn": "luxury",
+    "spellPt": "luxar",
+    "spellEs": "murray",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/luxray.png"
+  },
+  {
+    "name": "lycanroc",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/lycanroc.png"
+  },
+  {
+    "name": "machamp",
+    "spellEn": "champ",
+    "spellPt": "marcham",
+    "spellEs": "champ",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/machamp.png"
+  },
+  {
+    "name": "machoke",
+    "spellEn": "machine",
+    "spellPt": "machete",
+    "spellEs": "machos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/machoke.png"
+  },
+  {
+    "name": "machop",
+    "spellEn": "macho",
+    "spellPt": "macho",
+    "spellEs": "machos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/machop.png"
+  },
+  {
+    "name": "magby",
+    "spellEn": "may",
+    "spellPt": "magro",
+    "spellEs": "may",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magby.png"
+  },
+  {
+    "name": "magcargo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "marcarlo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magcargo.png"
+  },
+  {
+    "name": "magearna",
+    "spellEn": "",
+    "spellPt": "materna",
+    "spellEs": "materna",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magearna.png"
+  },
+  {
+    "name": "magikarp",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "magiar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magikarp.png"
+  },
+  {
+    "name": "magmar",
+    "spellEn": "magyar",
+    "spellPt": "mamar",
+    "spellEs": "magma",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magmar.png"
+  },
+  {
+    "name": "magmortar",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magmortar.png"
+  },
+  {
+    "name": "magnemite",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "magnetita",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magnemite.png"
+  },
+  {
+    "name": "magneton",
+    "spellEn": "magnetic",
+    "spellPt": "",
+    "spellEs": "magneto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magneton.png"
+  },
+  {
+    "name": "magnezone",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/magnezone.png"
+  },
+  {
+    "name": "makuhita",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "marchita",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/makuhita.png"
+  },
+  {
+    "name": "malamar",
+    "spellEn": "lamar",
+    "spellPt": "palmar",
+    "spellEs": "calamar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/malamar.png"
+  },
+  {
+    "name": "mamoswine",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mamoswine.png"
+  },
+  {
+    "name": "manaphy",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/manaphy.png"
+  },
+  {
+    "name": "mandibuzz",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mandibuzz.png"
+  },
+  {
+    "name": "manectric",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/manectric.png"
+  },
+  {
+    "name": "mankey",
+    "spellEn": "monkey",
+    "spellPt": "mandey",
+    "spellEs": "monkey",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mankey.png"
+  },
+  {
+    "name": "mantine",
+    "spellEn": "machine",
+    "spellPt": "mantive",
+    "spellEs": "mantiene",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mantine.png"
+  },
+  {
+    "name": "mantyke",
+    "spellEn": "mantle",
+    "spellPt": "mantive",
+    "spellEs": "mantle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mantyke.png"
+  },
+  {
+    "name": "maractus",
+    "spellEn": "marcus",
+    "spellPt": "tractus",
+    "spellEs": "marcus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/maractus.png"
+  },
+  {
+    "name": "mareanie",
+    "spellEn": "",
+    "spellPt": "mareante",
+    "spellEs": "marianne",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mareanie.png"
+  },
+  {
+    "name": "mareep",
+    "spellEn": "career",
+    "spellPt": "margem",
+    "spellEs": "margen",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mareep.png"
+  },
+  {
+    "name": "marill",
+    "spellEn": "marine",
+    "spellPt": "marido",
+    "spellEs": "marido",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/marill.png"
+  },
+  {
+    "name": "marowak",
+    "spellEn": "sarawak",
+    "spellPt": "",
+    "spellEs": "arawak",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/marowak.png"
+  },
+  {
+    "name": "marshadow",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "marchado",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/marshadow.png"
+  },
+  {
+    "name": "marshtomp",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/marshtomp.png"
+  },
+  {
+    "name": "masquerain",
+    "spellEn": "masquerading",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/masquerain.png"
+  },
+  {
+    "name": "mawile",
+    "spellEn": "male",
+    "spellPt": "baile",
+    "spellEs": "baile",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mawile.png"
+  },
+  {
+    "name": "medicham",
+    "spellEn": "medical",
+    "spellPt": "meditam",
+    "spellEs": "medical",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/medicham.png"
+  },
+  {
+    "name": "meditite",
+    "spellEn": "medicine",
+    "spellPt": "mediante",
+    "spellEs": "mediante",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meditite.png"
+  },
+  {
+    "name": "meganium",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meganium.png"
+  },
+  {
+    "name": "melmetal",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/melmetal.png"
+  },
+  {
+    "name": "meloetta",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meloetta.png"
+  },
+  {
+    "name": "meltan",
+    "spellEn": "meta",
+    "spellPt": "metal",
+    "spellEs": "metan",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meltan.png"
+  },
+  {
+    "name": "meowstic",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meowstic.png"
+  },
+  {
+    "name": "meowth",
+    "spellEn": "month",
+    "spellPt": "",
+    "spellEs": "month",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/meowth.png"
+  },
+  {
+    "name": "mesprit",
+    "spellEn": "merit",
+    "spellPt": "mestria",
+    "spellEs": "esprit",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mesprit.png"
+  },
+  {
+    "name": "metagross",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/metagross.png"
+  },
+  {
+    "name": "metang",
+    "spellEn": "meta",
+    "spellPt": "metade",
+    "spellEs": "metano",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/metang.png"
+  },
+  {
+    "name": "metapod",
+    "spellEn": "method",
+    "spellPt": "metamos",
+    "spellEs": "method",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/metapod.png"
+  },
+  {
+    "name": "mew",
+    "spellEn": "new",
+    "spellPt": "me",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mew.png"
+  },
+  {
+    "name": "mewtwo",
+    "spellEn": "metro",
+    "spellPt": "metto",
+    "spellEs": "metro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mewtwo.png"
+  },
+  {
+    "name": "mienfoo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "miento",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mienfoo.png"
+  },
+  {
+    "name": "mienshao",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mienshao.png"
+  },
+  {
+    "name": "mightyena",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mightyena.png"
+  },
+  {
+    "name": "milcery",
+    "spellEn": "miller",
+    "spellPt": "",
+    "spellEs": "miley",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/milcery.png"
+  },
+  {
+    "name": "milotic",
+    "spellEn": "mitotic",
+    "spellPt": "",
+    "spellEs": "mitotic",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/milotic.png"
+  },
+  {
+    "name": "miltank",
+    "spellEn": "militant",
+    "spellPt": "",
+    "spellEs": "milan",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/miltank.png"
+  },
+  {
+    "name": "mime-jr",
+    "spellEn": "",
+    "spellPt": "mim-já",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mime-jr.png"
+  },
+  {
+    "name": "mimikyu",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mimikyu.png"
+  },
+  {
+    "name": "minccino",
+    "spellEn": "",
+    "spellPt": "minucio",
+    "spellEs": "inclino",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/minccino.png"
+  },
+  {
+    "name": "minior",
+    "spellEn": "minor",
+    "spellPt": "mineiro",
+    "spellEs": "minor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/minior.png"
+  },
+  {
+    "name": "minun",
+    "spellEn": "minus",
+    "spellPt": "minha",
+    "spellEs": "minus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/minun.png"
+  },
+  {
+    "name": "misdreavus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/misdreavus.png"
+  },
+  {
+    "name": "mismagius",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mismagius.png"
+  },
+  {
+    "name": "moltres",
+    "spellEn": "metres",
+    "spellPt": "mostres",
+    "spellEs": "molares",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/moltres.png"
+  },
+  {
+    "name": "monferno",
+    "spellEn": "inferno",
+    "spellPt": "inferno",
+    "spellEs": "moderno",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/monferno.png"
+  },
+  {
+    "name": "morelull",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "morella",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/morelull.png"
+  },
+  {
+    "name": "morgrem",
+    "spellEn": "mortem",
+    "spellPt": "morrem",
+    "spellEs": "mortem",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/morgrem.png"
+  },
+  {
+    "name": "morpeko",
+    "spellEn": "torpedo",
+    "spellPt": "morzelo",
+    "spellEs": "moreno",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/morpeko.png"
+  },
+  {
+    "name": "mothim",
+    "spellEn": "mother",
+    "spellPt": "motim",
+    "spellEs": "mathrm",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mothim.png"
+  },
+  {
+    "name": "mr-mime",
+    "spellEn": "",
+    "spellPt": "mr-mim",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mr-mime.png"
+  },
+  {
+    "name": "mr-rime",
+    "spellEn": "mr-time",
+    "spellPt": "mr-rim",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mr-rime.png"
+  },
+  {
+    "name": "mudbray",
+    "spellEn": "murray",
+    "spellPt": "mudaram",
+    "spellEs": "murray",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mudbray.png"
+  },
+  {
+    "name": "mudkip",
+    "spellEn": "ukip",
+    "spellPt": "mudei",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mudkip.png"
+  },
+  {
+    "name": "mudsdale",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/mudsdale.png"
+  },
+  {
+    "name": "muk",
+    "spellEn": "uk",
+    "spellPt": "mu",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/muk.png"
+  },
+  {
+    "name": "munchlax",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/munchlax.png"
+  },
+  {
+    "name": "munna",
+    "spellEn": "manga",
+    "spellPt": "munia",
+    "spellEs": "munda",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/munna.png"
+  },
+  {
+    "name": "murkrow",
+    "spellEn": "marrow",
+    "spellPt": "murros",
+    "spellEs": "marrow",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/murkrow.png"
+  },
+  {
+    "name": "musharna",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "muscaria",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/musharna.png"
+  },
+  {
+    "name": "naganadel",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/naganadel.png"
+  },
+  {
+    "name": "natu",
+    "spellEn": "nat",
+    "spellPt": "",
+    "spellEs": "nat",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/natu.png"
+  },
+  {
+    "name": "necrozma",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/necrozma.png"
+  },
+  {
+    "name": "nickit",
+    "spellEn": "nicki",
+    "spellPt": "nicht",
+    "spellEs": "nicki",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nickit.png"
+  },
+  {
+    "name": "nidoking",
+    "spellEn": "invoking",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidoking.png"
+  },
+  {
+    "name": "nidoqueen",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidoqueen.png"
+  },
+  {
+    "name": "nidoran-f",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "lideran-f",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidoran-f.png"
+  },
+  {
+    "name": "nidoran-m",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "lideran-m",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidoran-m.png"
+  },
+  {
+    "name": "nidorina",
+    "spellEn": "",
+    "spellPt": "nicotina",
+    "spellEs": "nicotina",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidorina.png"
+  },
+  {
+    "name": "nidorino",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nidorino.png"
+  },
+  {
+    "name": "nihilego",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "nihilo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nihilego.png"
+  },
+  {
+    "name": "nincada",
+    "spellEn": "",
+    "spellPt": "ninhada",
+    "spellEs": "pintada",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nincada.png"
+  },
+  {
+    "name": "ninetales",
+    "spellEn": "nineties",
+    "spellPt": "",
+    "spellEs": "minerales",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ninetales.png"
+  },
+  {
+    "name": "ninjask",
+    "spellEn": "ninjas",
+    "spellPt": "ninfas",
+    "spellEs": "ninjas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ninjask.png"
+  },
+  {
+    "name": "noctowl",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/noctowl.png"
+  },
+  {
+    "name": "noibat",
+    "spellEn": "combat",
+    "spellPt": "noivas",
+    "spellEs": "combat",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/noibat.png"
+  },
+  {
+    "name": "noivern",
+    "spellEn": "govern",
+    "spellPt": "",
+    "spellEs": "govern",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/noivern.png"
+  },
+  {
+    "name": "nosepass",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nosepass.png"
+  },
+  {
+    "name": "numel",
+    "spellEn": "name",
+    "spellPt": "numes",
+    "spellEs": "numer",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/numel.png"
+  },
+  {
+    "name": "nuzleaf",
+    "spellEn": "nuclear",
+    "spellPt": "",
+    "spellEs": "nuclear",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/nuzleaf.png"
+  },
+  {
+    "name": "obstagoon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/obstagoon.png"
+  },
+  {
+    "name": "octillery",
+    "spellEn": "artillery",
+    "spellPt": "",
+    "spellEs": "artillery",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/octillery.png"
+  },
+  {
+    "name": "oddish",
+    "spellEn": "dish",
+    "spellPt": "ondis",
+    "spellEs": "dish",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/oddish.png"
+  },
+  {
+    "name": "omanyte",
+    "spellEn": "",
+    "spellPt": "amante",
+    "spellEs": "amante",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/omanyte.png"
+  },
+  {
+    "name": "omastar",
+    "spellEn": "master",
+    "spellPt": "matar",
+    "spellEs": "matar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/omastar.png"
+  },
+  {
+    "name": "onix",
+    "spellEn": "nix",
+    "spellPt": "onde",
+    "spellEs": "nix",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/onix.png"
+  },
+  {
+    "name": "oranguru",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "granguru",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/oranguru.png"
+  },
+  {
+    "name": "orbeetle",
+    "spellEn": "beetle",
+    "spellPt": "",
+    "spellEs": "beetle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/orbeetle.png"
+  },
+  {
+    "name": "oricorio",
+    "spellEn": "oratorio",
+    "spellPt": "",
+    "spellEs": "oratorio",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/oricorio.png"
+  },
+  {
+    "name": "oshawott",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/oshawott.png"
+  },
+  {
+    "name": "overqwil",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/overqwil.png"
+  },
+  {
+    "name": "pachirisu",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pachirisu.png"
+  },
+  {
+    "name": "palkia",
+    "spellEn": "alia",
+    "spellPt": "saloia",
+    "spellEs": "patria",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/palkia.png"
+  },
+  {
+    "name": "palossand",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/palossand.png"
+  },
+  {
+    "name": "palpitoad",
+    "spellEn": "",
+    "spellPt": "palpitou",
+    "spellEs": "palpita",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/palpitoad.png"
+  },
+  {
+    "name": "pancham",
+    "spellEn": "cancha",
+    "spellPt": "pincham",
+    "spellEs": "cancha",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pancham.png"
+  },
+  {
+    "name": "pangoro",
+    "spellEn": "pandora",
+    "spellPt": "langor",
+    "spellEs": "pandora",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pangoro.png"
+  },
+  {
+    "name": "panpour",
+    "spellEn": "vapour",
+    "spellPt": "palpou",
+    "spellEs": "parkour",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/panpour.png"
+  },
+  {
+    "name": "pansage",
+    "spellEn": "passage",
+    "spellPt": "passagem",
+    "spellEs": "passage",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pansage.png"
+  },
+  {
+    "name": "pansear",
+    "spellEn": "parser",
+    "spellPt": "passear",
+    "spellEs": "pasear",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pansear.png"
+  },
+  {
+    "name": "paras",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/paras.png"
+  },
+  {
+    "name": "parasect",
+    "spellEn": "parakeet",
+    "spellPt": "",
+    "spellEs": "parsecs",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/parasect.png"
+  },
+  {
+    "name": "passimian",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/passimian.png"
+  },
+  {
+    "name": "patrat",
+    "spellEn": "part",
+    "spellPt": "para",
+    "spellEs": "para",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/patrat.png"
+  },
+  {
+    "name": "pawniard",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pawniard.png"
+  },
+  {
+    "name": "pelipper",
+    "spellEn": "pepper",
+    "spellPt": "",
+    "spellEs": "pepper",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pelipper.png"
+  },
+  {
+    "name": "perrserker",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/perrserker.png"
+  },
+  {
+    "name": "persian",
+    "spellEn": "",
+    "spellPt": "persas",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/persian.png"
+  },
+  {
+    "name": "petilil",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "petiti",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/petilil.png"
+  },
+  {
+    "name": "phanpy",
+    "spellEn": "happy",
+    "spellPt": "",
+    "spellEs": "happy",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/phanpy.png"
+  },
+  {
+    "name": "phantump",
+    "spellEn": "phantom",
+    "spellPt": "",
+    "spellEs": "phantom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/phantump.png"
+  },
+  {
+    "name": "pheromosa",
+    "spellEn": "",
+    "spellPt": "hermosa",
+    "spellEs": "hermosa",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pheromosa.png"
+  },
+  {
+    "name": "phione",
+    "spellEn": "phone",
+    "spellPt": "priore",
+    "spellEs": "phone",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/phione.png"
+  },
+  {
+    "name": "pichu",
+    "spellEn": "rich",
+    "spellPt": "fichu",
+    "spellEs": "pichi",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pichu.png"
+  },
+  {
+    "name": "pidgeot",
+    "spellEn": "pigeon",
+    "spellPt": "pigeon",
+    "spellEs": "widget",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pidgeot.png"
+  },
+  {
+    "name": "pidgeotto",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pidgeotto.png"
+  },
+  {
+    "name": "pidgey",
+    "spellEn": "ridge",
+    "spellPt": "",
+    "spellEs": "pide",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pidgey.png"
+  },
+  {
+    "name": "pidove",
+    "spellEn": "prove",
+    "spellPt": "prove",
+    "spellEs": "pide",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pidove.png"
+  },
+  {
+    "name": "pignite",
+    "spellEn": "ignite",
+    "spellPt": "pinte",
+    "spellEs": "finite",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pignite.png"
+  },
+  {
+    "name": "pikachu",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pikachu.png"
+  },
+  {
+    "name": "pikipek",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pikipek.png"
+  },
+  {
+    "name": "piloswine",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/piloswine.png"
+  },
+  {
+    "name": "pincurchin",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pincurchin.png"
+  },
+  {
+    "name": "pineco",
+    "spellEn": "piece",
+    "spellPt": "pince",
+    "spellEs": "pinedo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pineco.png"
+  },
+  {
+    "name": "pinsir",
+    "spellEn": "pins",
+    "spellPt": "pensar",
+    "spellEs": "pintor",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pinsir.png"
+  },
+  {
+    "name": "piplup",
+    "spellEn": "popup",
+    "spellPt": "",
+    "spellEs": "popup",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/piplup.png"
+  },
+  {
+    "name": "plusle",
+    "spellEn": "plus",
+    "spellPt": "plus",
+    "spellEs": "plus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/plusle.png"
+  },
+  {
+    "name": "poipole",
+    "spellEn": "dipole",
+    "spellPt": "",
+    "spellEs": "pospone",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/poipole.png"
+  },
+  {
+    "name": "politoed",
+    "spellEn": "polite",
+    "spellPt": "",
+    "spellEs": "politopo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/politoed.png"
+  },
+  {
+    "name": "poliwag",
+    "spellEn": "",
+    "spellPt": "polida",
+    "spellEs": "polita",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/poliwag.png"
+  },
+  {
+    "name": "poliwhirl",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/poliwhirl.png"
+  },
+  {
+    "name": "poliwrath",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/poliwrath.png"
+  },
+  {
+    "name": "polteageist",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "poltergeist",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/polteageist.png"
+  },
+  {
+    "name": "ponyta",
+    "spellEn": "pony",
+    "spellPt": "ponta",
+    "spellEs": "poeta",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ponyta.png"
+  },
+  {
+    "name": "poochyena",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/poochyena.png"
+  },
+  {
+    "name": "popplio",
+    "spellEn": "polio",
+    "spellPt": "populi",
+    "spellEs": "populi",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/popplio.png"
+  },
+  {
+    "name": "porygon",
+    "spellEn": "polygon",
+    "spellPt": "",
+    "spellEs": "polygon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/porygon.png"
+  },
+  {
+    "name": "porygon-z",
+    "spellEn": "polygon-z",
+    "spellPt": "",
+    "spellEs": "polygon-z",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/porygon-z.png"
+  },
+  {
+    "name": "porygon2",
+    "spellEn": "polygon2",
+    "spellPt": "",
+    "spellEs": "polygon2",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/porygon2.png"
+  },
+  {
+    "name": "primarina",
+    "spellEn": "primaria",
+    "spellPt": "primaria",
+    "spellEs": "primaria",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/primarina.png"
+  },
+  {
+    "name": "primeape",
+    "spellEn": "primate",
+    "spellPt": "",
+    "spellEs": "primate",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/primeape.png"
+  },
+  {
+    "name": "prinplup",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/prinplup.png"
+  },
+  {
+    "name": "probopass",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/probopass.png"
+  },
+  {
+    "name": "psyduck",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/psyduck.png"
+  },
+  {
+    "name": "pumpkaboo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pumpkaboo.png"
+  },
+  {
+    "name": "pupitar",
+    "spellEn": "guitar",
+    "spellPt": "pupila",
+    "spellEs": "pupilar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pupitar.png"
+  },
+  {
+    "name": "purrloin",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/purrloin.png"
+  },
+  {
+    "name": "purugly",
+    "spellEn": "purely",
+    "spellPt": "",
+    "spellEs": "purely",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/purugly.png"
+  },
+  {
+    "name": "pyroar",
+    "spellEn": "roar",
+    "spellPt": "parar",
+    "spellEs": "probar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pyroar.png"
+  },
+  {
+    "name": "pyukumuku",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/pyukumuku.png"
+  },
+  {
+    "name": "quagsire",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/quagsire.png"
+  },
+  {
+    "name": "quilava",
+    "spellEn": "",
+    "spellPt": "quitava",
+    "spellEs": "quinasa",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/quilava.png"
+  },
+  {
+    "name": "quilladin",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/quilladin.png"
+  },
+  {
+    "name": "qwilfish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/qwilfish.png"
+  },
+  {
+    "name": "raboot",
+    "spellEn": "reboot",
+    "spellPt": "reboou",
+    "spellEs": "reboot",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/raboot.png"
+  },
+  {
+    "name": "raichu",
+    "spellEn": "rich",
+    "spellPt": "fichu",
+    "spellEs": "racha",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/raichu.png"
+  },
+  {
+    "name": "raikou",
+    "spellEn": "raion",
+    "spellPt": "raiou",
+    "spellEs": "raison",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/raikou.png"
+  },
+  {
+    "name": "ralts",
+    "spellEn": "rats",
+    "spellPt": "ralos",
+    "spellEs": "rats",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ralts.png"
+  },
+  {
+    "name": "rampardos",
+    "spellEn": "ramparts",
+    "spellPt": "tampados",
+    "spellEs": "amparados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rampardos.png"
+  },
+  {
+    "name": "rapidash",
+    "spellEn": "rapids",
+    "spellPt": "rapidas",
+    "spellEs": "rápidas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rapidash.png"
+  },
+  {
+    "name": "raticate",
+    "spellEn": "eradicate",
+    "spellPt": "praticaste",
+    "spellEs": "ratica",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/raticate.png"
+  },
+  {
+    "name": "rattata",
+    "spellEn": "cantata",
+    "spellPt": "cantata",
+    "spellEs": "retrata",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rattata.png"
+  },
+  {
+    "name": "rayquaza",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rayquaza.png"
+  },
+  {
+    "name": "regice",
+    "spellEn": "regime",
+    "spellPt": "regime",
+    "spellEs": "regime",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/regice.png"
+  },
+  {
+    "name": "regidrago",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/regidrago.png"
+  },
+  {
+    "name": "regieleki",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/regieleki.png"
+  },
+  {
+    "name": "regigigas",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/regigigas.png"
+  },
+  {
+    "name": "regirock",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/regirock.png"
+  },
+  {
+    "name": "registeel",
+    "spellEn": "registered",
+    "spellPt": "",
+    "spellEs": "register",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/registeel.png"
+  },
+  {
+    "name": "relicanth",
+    "spellEn": "reliant",
+    "spellPt": "",
+    "spellEs": "replicante",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/relicanth.png"
+  },
+  {
+    "name": "remoraid",
+    "spellEn": "reportid",
+    "spellPt": "remordido",
+    "spellEs": "recordid",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/remoraid.png"
+  },
+  {
+    "name": "reshiram",
+    "spellEn": "",
+    "spellPt": "respiram",
+    "spellEs": "respirar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/reshiram.png"
+  },
+  {
+    "name": "reuniclus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "reunirlos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/reuniclus.png"
+  },
+  {
+    "name": "rhydon",
+    "spellEn": "rayon",
+    "spellPt": "",
+    "spellEs": "rayon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rhydon.png"
+  },
+  {
+    "name": "rhyhorn",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rhyhorn.png"
+  },
+  {
+    "name": "rhyperior",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rhyperior.png"
+  },
+  {
+    "name": "ribombee",
+    "spellEn": "",
+    "spellPt": "ribombou",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ribombee.png"
+  },
+  {
+    "name": "rillaboom",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rillaboom.png"
+  },
+  {
+    "name": "riolu",
+    "spellEn": "role",
+    "spellPt": "criou",
+    "spellEs": "rol",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/riolu.png"
+  },
+  {
+    "name": "rockruff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rockruff.png"
+  },
+  {
+    "name": "roggenrola",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/roggenrola.png"
+  },
+  {
+    "name": "rolycoly",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rolycoly.png"
+  },
+  {
+    "name": "rookidee",
+    "spellEn": "rookie",
+    "spellPt": "",
+    "spellEs": "rookies",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rookidee.png"
+  },
+  {
+    "name": "roselia",
+    "spellEn": "rosea",
+    "spellPt": "rosilha",
+    "spellEs": "rosalia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/roselia.png"
+  },
+  {
+    "name": "roserade",
+    "spellEn": "",
+    "spellPt": "roseado",
+    "spellEs": "roseraie",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/roserade.png"
+  },
+  {
+    "name": "rotom",
+    "spellEn": "room",
+    "spellPt": "roto",
+    "spellEs": "roto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rotom.png"
+  },
+  {
+    "name": "rowlet",
+    "spellEn": "rowlett",
+    "spellPt": "roleta",
+    "spellEs": "rowlett",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rowlet.png"
+  },
+  {
+    "name": "rufflet",
+    "spellEn": "buffet",
+    "spellPt": "buffet",
+    "spellEs": "buffet",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/rufflet.png"
+  },
+  {
+    "name": "runerigus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/runerigus.png"
+  },
+  {
+    "name": "sableye",
+    "spellEn": "sable",
+    "spellPt": "",
+    "spellEs": "sable",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sableye.png"
+  },
+  {
+    "name": "salamence",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "solamente",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/salamence.png"
+  },
+  {
+    "name": "salandit",
+    "spellEn": "",
+    "spellPt": "sarandis",
+    "spellEs": "stlandet",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/salandit.png"
+  },
+  {
+    "name": "salazzle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/salazzle.png"
+  },
+  {
+    "name": "samurott",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/samurott.png"
+  },
+  {
+    "name": "sandaconda",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "anaconda",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sandaconda.png"
+  },
+  {
+    "name": "sandile",
+    "spellEn": "handle",
+    "spellPt": "sandice",
+    "spellEs": "handle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sandile.png"
+  },
+  {
+    "name": "sandshrew",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sandshrew.png"
+  },
+  {
+    "name": "sandslash",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sandslash.png"
+  },
+  {
+    "name": "sandygast",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sandygast.png"
+  },
+  {
+    "name": "sawk",
+    "spellEn": "saw",
+    "spellPt": "sala",
+    "spellEs": "saw",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sawk.png"
+  },
+  {
+    "name": "sawsbuck",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sawsbuck.png"
+  },
+  {
+    "name": "scatterbug",
+    "spellEn": "scattering",
+    "spellPt": "",
+    "spellEs": "scattering",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scatterbug.png"
+  },
+  {
+    "name": "sceptile",
+    "spellEn": "reptile",
+    "spellPt": "sceptico",
+    "spellEs": "reptile",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sceptile.png"
+  },
+  {
+    "name": "scizor",
+    "spellEn": "sailor",
+    "spellPt": "",
+    "spellEs": "suizo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scizor.png"
+  },
+  {
+    "name": "scolipede",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scolipede.png"
+  },
+  {
+    "name": "scorbunny",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scorbunny.png"
+  },
+  {
+    "name": "scrafty",
+    "spellEn": "craft",
+    "spellPt": "",
+    "spellEs": "craft",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scrafty.png"
+  },
+  {
+    "name": "scraggy",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scraggy.png"
+  },
+  {
+    "name": "scyther",
+    "spellEn": "scatter",
+    "spellPt": "",
+    "spellEs": "scher",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/scyther.png"
+  },
+  {
+    "name": "seadra",
+    "spellEn": "sera",
+    "spellPt": "seda",
+    "spellEs": "señora",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seadra.png"
+  },
+  {
+    "name": "seaking",
+    "spellEn": "speaking",
+    "spellPt": "fearing",
+    "spellEs": "speaking",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seaking.png"
+  },
+  {
+    "name": "sealeo",
+    "spellEn": "sealed",
+    "spellPt": "salão",
+    "spellEs": "sealed",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sealeo.png"
+  },
+  {
+    "name": "seedot",
+    "spellEn": "seed",
+    "spellPt": "sendo",
+    "spellEs": "seed",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seedot.png"
+  },
+  {
+    "name": "seel",
+    "spellEn": "see",
+    "spellPt": "sel",
+    "spellEs": "seed",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seel.png"
+  },
+  {
+    "name": "seismitoad",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seismitoad.png"
+  },
+  {
+    "name": "sentret",
+    "spellEn": "centre",
+    "spellPt": "entre",
+    "spellEs": "entre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sentret.png"
+  },
+  {
+    "name": "serperior",
+    "spellEn": "superior",
+    "spellPt": "superior",
+    "spellEs": "superior",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/serperior.png"
+  },
+  {
+    "name": "servine",
+    "spellEn": "service",
+    "spellPt": "servie",
+    "spellEs": "service",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/servine.png"
+  },
+  {
+    "name": "seviper",
+    "spellEn": "sniper",
+    "spellPt": "semper",
+    "spellEs": "seiner",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/seviper.png"
+  },
+  {
+    "name": "sewaddle",
+    "spellEn": "saddle",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sewaddle.png"
+  },
+  {
+    "name": "sharpedo",
+    "spellEn": "shared",
+    "spellPt": "harpejo",
+    "spellEs": "shared",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sharpedo.png"
+  },
+  {
+    "name": "shaymin",
+    "spellEn": "shaman",
+    "spellPt": "",
+    "spellEs": "shaman",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shaymin.png"
+  },
+  {
+    "name": "shedinja",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shedinja.png"
+  },
+  {
+    "name": "shelgon",
+    "spellEn": "selon",
+    "spellPt": "",
+    "spellEs": "sheldon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shelgon.png"
+  },
+  {
+    "name": "shellder",
+    "spellEn": "shoulder",
+    "spellPt": "",
+    "spellEs": "shoulder",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shellder.png"
+  },
+  {
+    "name": "shellos",
+    "spellEn": "shells",
+    "spellPt": "bellos",
+    "spellEs": "sellos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shellos.png"
+  },
+  {
+    "name": "shelmet",
+    "spellEn": "helmet",
+    "spellPt": "",
+    "spellEs": "helmet",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shelmet.png"
+  },
+  {
+    "name": "shieldon",
+    "spellEn": "shield",
+    "spellPt": "",
+    "spellEs": "sheldon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shieldon.png"
+  },
+  {
+    "name": "shiftry",
+    "spellEn": "shift",
+    "spellPt": "",
+    "spellEs": "shift",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shiftry.png"
+  },
+  {
+    "name": "shiinotic",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shiinotic.png"
+  },
+  {
+    "name": "shinx",
+    "spellEn": "shine",
+    "spellPt": "sino",
+    "spellEs": "shin",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shinx.png"
+  },
+  {
+    "name": "shroomish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shroomish.png"
+  },
+  {
+    "name": "shuckle",
+    "spellEn": "shuttle",
+    "spellPt": "",
+    "spellEs": "shuttle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shuckle.png"
+  },
+  {
+    "name": "shuppet",
+    "spellEn": "puppet",
+    "spellPt": "",
+    "spellEs": "snippet",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/shuppet.png"
+  },
+  {
+    "name": "sigilyph",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sigilyph.png"
+  },
+  {
+    "name": "silcoon",
+    "spellEn": "silicon",
+    "spellPt": "",
+    "spellEs": "silicon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/silcoon.png"
+  },
+  {
+    "name": "silicobra",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "silicona",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/silicobra.png"
+  },
+  {
+    "name": "silvally",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/silvally.png"
+  },
+  {
+    "name": "simipour",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/simipour.png"
+  },
+  {
+    "name": "simisage",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/simisage.png"
+  },
+  {
+    "name": "simisear",
+    "spellEn": "similar",
+    "spellPt": "",
+    "spellEs": "similar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/simisear.png"
+  },
+  {
+    "name": "sinistea",
+    "spellEn": "sinister",
+    "spellPt": "sinistra",
+    "spellEs": "sinistra",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sinistea.png"
+  },
+  {
+    "name": "sirfetchd",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sirfetchd.png"
+  },
+  {
+    "name": "sizzlipede",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sizzlipede.png"
+  },
+  {
+    "name": "skarmory",
+    "spellEn": "armory",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skarmory.png"
+  },
+  {
+    "name": "skiddo",
+    "spellEn": "skidoo",
+    "spellPt": "sido",
+    "spellEs": "sido",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skiddo.png"
+  },
+  {
+    "name": "skiploom",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skiploom.png"
+  },
+  {
+    "name": "skitty",
+    "spellEn": "kitty",
+    "spellPt": "",
+    "spellEs": "kitty",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skitty.png"
+  },
+  {
+    "name": "skorupi",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skorupi.png"
+  },
+  {
+    "name": "skrelp",
+    "spellEn": "surely",
+    "spellPt": "",
+    "spellEs": "srep",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skrelp.png"
+  },
+  {
+    "name": "skuntank",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skuntank.png"
+  },
+  {
+    "name": "skwovet",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/skwovet.png"
+  },
+  {
+    "name": "slaking",
+    "spellEn": "shaking",
+    "spellPt": "",
+    "spellEs": "slaying",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slaking.png"
+  },
+  {
+    "name": "slakoth",
+    "spellEn": "sloth",
+    "spellPt": "",
+    "spellEs": "lakota",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slakoth.png"
+  },
+  {
+    "name": "sliggoo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sliggoo.png"
+  },
+  {
+    "name": "slowbro",
+    "spellEn": "slower",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slowbro.png"
+  },
+  {
+    "name": "slowking",
+    "spellEn": "slowing",
+    "spellPt": "",
+    "spellEs": "looking",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slowking.png"
+  },
+  {
+    "name": "slowpoke",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slowpoke.png"
+  },
+  {
+    "name": "slugma",
+    "spellEn": "sigma",
+    "spellPt": "alguma",
+    "spellEs": "suma",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slugma.png"
+  },
+  {
+    "name": "slurpuff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/slurpuff.png"
+  },
+  {
+    "name": "smeargle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/smeargle.png"
+  },
+  {
+    "name": "smoochum",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/smoochum.png"
+  },
+  {
+    "name": "sneasel",
+    "spellEn": "weasel",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sneasel.png"
+  },
+  {
+    "name": "sneasler",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sneasler.png"
+  },
+  {
+    "name": "snivy",
+    "spellEn": "navy",
+    "spellPt": "seiva",
+    "spellEs": "navy",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snivy.png"
+  },
+  {
+    "name": "snom",
+    "spellEn": "nom",
+    "spellPt": "som",
+    "spellEs": "nom",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snom.png"
+  },
+  {
+    "name": "snorlax",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snorlax.png"
+  },
+  {
+    "name": "snorunt",
+    "spellEn": "snout",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snorunt.png"
+  },
+  {
+    "name": "snover",
+    "spellEn": "over",
+    "spellPt": "nove",
+    "spellEs": "silver",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snover.png"
+  },
+  {
+    "name": "snubbull",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/snubbull.png"
+  },
+  {
+    "name": "sobble",
+    "spellEn": "gobble",
+    "spellPt": "sobre",
+    "spellEs": "sobre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sobble.png"
+  },
+  {
+    "name": "solgaleo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/solgaleo.png"
+  },
+  {
+    "name": "solosis",
+    "spellEn": "soloist",
+    "spellPt": "",
+    "spellEs": "solos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/solosis.png"
+  },
+  {
+    "name": "solrock",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "poprock",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/solrock.png"
+  },
+  {
+    "name": "spearow",
+    "spellEn": "sparrow",
+    "spellPt": "separou",
+    "spellEs": "perrow",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spearow.png"
+  },
+  {
+    "name": "spectrier",
+    "spellEn": "spectre",
+    "spellPt": "",
+    "spellEs": "spectre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spectrier.png"
+  },
+  {
+    "name": "spewpa",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "sepa",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spewpa.png"
+  },
+  {
+    "name": "spheal",
+    "spellEn": "shell",
+    "spellPt": "",
+    "spellEs": "shell",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spheal.png"
+  },
+  {
+    "name": "spinarak",
+    "spellEn": "",
+    "spellPt": "opinaram",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spinarak.png"
+  },
+  {
+    "name": "spinda",
+    "spellEn": "spin",
+    "spellPt": "ainda",
+    "spellEs": "spina",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spinda.png"
+  },
+  {
+    "name": "spiritomb",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "spirito",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spiritomb.png"
+  },
+  {
+    "name": "spoink",
+    "spellEn": "point",
+    "spellPt": "spring",
+    "spellEs": "pink",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spoink.png"
+  },
+  {
+    "name": "spritzee",
+    "spellEn": "sprites",
+    "spellPt": "",
+    "spellEs": "sprites",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/spritzee.png"
+  },
+  {
+    "name": "squirtle",
+    "spellEn": "squirrel",
+    "spellPt": "",
+    "spellEs": "squirrel",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/squirtle.png"
+  },
+  {
+    "name": "stakataka",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stakataka.png"
+  },
+  {
+    "name": "stantler",
+    "spellEn": "starter",
+    "spellPt": "",
+    "spellEs": "stanley",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stantler.png"
+  },
+  {
+    "name": "staraptor",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/staraptor.png"
+  },
+  {
+    "name": "staravia",
+    "spellEn": "",
+    "spellPt": "sarava",
+    "spellEs": "saravia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/staravia.png"
+  },
+  {
+    "name": "starly",
+    "spellEn": "start",
+    "spellPt": "stars",
+    "spellEs": "starry",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/starly.png"
+  },
+  {
+    "name": "starmie",
+    "spellEn": "stare",
+    "spellPt": "",
+    "spellEs": "storie",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/starmie.png"
+  },
+  {
+    "name": "staryu",
+    "spellEn": "start",
+    "spellPt": "statu",
+    "spellEs": "story",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/staryu.png"
+  },
+  {
+    "name": "steelix",
+    "spellEn": "steel",
+    "spellPt": "",
+    "spellEs": "steel",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/steelix.png"
+  },
+  {
+    "name": "steenee",
+    "spellEn": "steered",
+    "spellPt": "steeple",
+    "spellEs": "steele",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/steenee.png"
+  },
+  {
+    "name": "stonjourner",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stonjourner.png"
+  },
+  {
+    "name": "stoutland",
+    "spellEn": "scotland",
+    "spellPt": "",
+    "spellEs": "scotland",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stoutland.png"
+  },
+  {
+    "name": "stufful",
+    "spellEn": "stuff",
+    "spellPt": "",
+    "spellEs": "stuff",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stufful.png"
+  },
+  {
+    "name": "stunfisk",
+    "spellEn": "sunfish",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stunfisk.png"
+  },
+  {
+    "name": "stunky",
+    "spellEn": "study",
+    "spellPt": "",
+    "spellEs": "study",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/stunky.png"
+  },
+  {
+    "name": "sudowoodo",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sudowoodo.png"
+  },
+  {
+    "name": "suicune",
+    "spellEn": "suicide",
+    "spellPt": "",
+    "spellEs": "suicide",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/suicune.png"
+  },
+  {
+    "name": "sunflora",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "uniflora",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sunflora.png"
+  },
+  {
+    "name": "sunkern",
+    "spellEn": "sunken",
+    "spellPt": "",
+    "spellEs": "bunker",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sunkern.png"
+  },
+  {
+    "name": "surskit",
+    "spellEn": "pursuit",
+    "spellPt": "",
+    "spellEs": "sudski",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/surskit.png"
+  },
+  {
+    "name": "swablu",
+    "spellEn": "stable",
+    "spellPt": "",
+    "spellEs": "sable",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swablu.png"
+  },
+  {
+    "name": "swadloon",
+    "spellEn": "saloon",
+    "spellPt": "",
+    "spellEs": "saloon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swadloon.png"
+  },
+  {
+    "name": "swalot",
+    "spellEn": "salt",
+    "spellPt": "salto",
+    "spellEs": "salto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swalot.png"
+  },
+  {
+    "name": "swampert",
+    "spellEn": "swamped",
+    "spellPt": "",
+    "spellEs": "samper",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swampert.png"
+  },
+  {
+    "name": "swanna",
+    "spellEn": "wanna",
+    "spellPt": "sanga",
+    "spellEs": "wanna",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swanna.png"
+  },
+  {
+    "name": "swellow",
+    "spellEn": "swallow",
+    "spellPt": "sello",
+    "spellEs": "swallow",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swellow.png"
+  },
+  {
+    "name": "swinub",
+    "spellEn": "swing",
+    "spellPt": "",
+    "spellEs": "swing",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swinub.png"
+  },
+  {
+    "name": "swirlix",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swirlix.png"
+  },
+  {
+    "name": "swoobat",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/swoobat.png"
+  },
+  {
+    "name": "sylveon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "salven",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/sylveon.png"
+  },
+  {
+    "name": "taillow",
+    "spellEn": "allow",
+    "spellPt": "",
+    "spellEs": "tallos",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/taillow.png"
+  },
+  {
+    "name": "talonflame",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/talonflame.png"
+  },
+  {
+    "name": "tangela",
+    "spellEn": "angela",
+    "spellPt": "tangera",
+    "spellEs": "angela",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tangela.png"
+  },
+  {
+    "name": "tangrowth",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tangrowth.png"
+  },
+  {
+    "name": "tapu-bulu",
+    "spellEn": "tape-bull",
+    "spellPt": "tatu-ulu",
+    "spellEs": "tapa-bull",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tapu-bulu.png"
+  },
+  {
+    "name": "tapu-fini",
+    "spellEn": "tape-find",
+    "spellPt": "tatu-fini",
+    "spellEs": "tapa-fini",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tapu-fini.png"
+  },
+  {
+    "name": "tapu-koko",
+    "spellEn": "tape-oko",
+    "spellPt": "tatu-como",
+    "spellEs": "tapa-koko",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tapu-koko.png"
+  },
+  {
+    "name": "tapu-lele",
+    "spellEn": "tape-lee",
+    "spellPt": "tatu-ele",
+    "spellEs": "tapa-lee",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tapu-lele.png"
+  },
+  {
+    "name": "tauros",
+    "spellEn": "turns",
+    "spellPt": "touros",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tauros.png"
+  },
+  {
+    "name": "teddiursa",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/teddiursa.png"
+  },
+  {
+    "name": "tentacool",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "tentacion",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tentacool.png"
+  },
+  {
+    "name": "tentacruel",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tentacruel.png"
+  },
+  {
+    "name": "tepig",
+    "spellEn": "topic",
+    "spellPt": "tupi",
+    "spellEs": "tesis",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tepig.png"
+  },
+  {
+    "name": "terrakion",
+    "spellEn": "terrain",
+    "spellPt": "",
+    "spellEs": "terrain",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/terrakion.png"
+  },
+  {
+    "name": "thievul",
+    "spellEn": "thieves",
+    "spellPt": "",
+    "spellEs": "thieves",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/thievul.png"
+  },
+  {
+    "name": "throh",
+    "spellEn": "throw",
+    "spellPt": "tirou",
+    "spellEs": "throw",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/throh.png"
+  },
+  {
+    "name": "thundurus",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/thundurus.png"
+  },
+  {
+    "name": "thwackey",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/thwackey.png"
+  },
+  {
+    "name": "timburr",
+    "spellEn": "timber",
+    "spellPt": "tilbury",
+    "spellEs": "timbre",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/timburr.png"
+  },
+  {
+    "name": "tirtouga",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "tortuga",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tirtouga.png"
+  },
+  {
+    "name": "togedemaru",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/togedemaru.png"
+  },
+  {
+    "name": "togekiss",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/togekiss.png"
+  },
+  {
+    "name": "togepi",
+    "spellEn": "",
+    "spellPt": "tomei",
+    "spellEs": "tokei",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/togepi.png"
+  },
+  {
+    "name": "togetic",
+    "spellEn": "poetic",
+    "spellPt": "",
+    "spellEs": "poetic",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/togetic.png"
+  },
+  {
+    "name": "torchic",
+    "spellEn": "orchid",
+    "spellPt": "torcia",
+    "spellEs": "orchid",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/torchic.png"
+  },
+  {
+    "name": "torkoal",
+    "spellEn": "",
+    "spellPt": "tornal",
+    "spellEs": "toral",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/torkoal.png"
+  },
+  {
+    "name": "tornadus",
+    "spellEn": "tornado",
+    "spellPt": "tornados",
+    "spellEs": "tornados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tornadus.png"
+  },
+  {
+    "name": "torracat",
+    "spellEn": "",
+    "spellPt": "torradas",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/torracat.png"
+  },
+  {
+    "name": "torterra",
+    "spellEn": "",
+    "spellPt": "torturar",
+    "spellEs": "tortura",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/torterra.png"
+  },
+  {
+    "name": "totodile",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/totodile.png"
+  },
+  {
+    "name": "toucannon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/toucannon.png"
+  },
+  {
+    "name": "toxapex",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/toxapex.png"
+  },
+  {
+    "name": "toxel",
+    "spellEn": "towel",
+    "spellPt": "tonel",
+    "spellEs": "tonel",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/toxel.png"
+  },
+  {
+    "name": "toxicroak",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/toxicroak.png"
+  },
+  {
+    "name": "toxtricity",
+    "spellEn": "toxicity",
+    "spellPt": "",
+    "spellEs": "toxicity",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/toxtricity.png"
+  },
+  {
+    "name": "tranquill",
+    "spellEn": "",
+    "spellPt": "tranquilo",
+    "spellEs": "tranquilo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tranquill.png"
+  },
+  {
+    "name": "trapinch",
+    "spellEn": "",
+    "spellPt": "trapinho",
+    "spellEs": "trapiche",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/trapinch.png"
+  },
+  {
+    "name": "treecko",
+    "spellEn": "",
+    "spellPt": "trecho",
+    "spellEs": "trecho",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/treecko.png"
+  },
+  {
+    "name": "trevenant",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/trevenant.png"
+  },
+  {
+    "name": "tropius",
+    "spellEn": "tropics",
+    "spellPt": "propus",
+    "spellEs": "tropics",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tropius.png"
+  },
+  {
+    "name": "trubbish",
+    "spellEn": "rubbish",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/trubbish.png"
+  },
+  {
+    "name": "trumbeak",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/trumbeak.png"
+  },
+  {
+    "name": "tsareena",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tsareena.png"
+  },
+  {
+    "name": "turtonator",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/turtonator.png"
+  },
+  {
+    "name": "turtwig",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/turtwig.png"
+  },
+  {
+    "name": "tympole",
+    "spellEn": "temple",
+    "spellPt": "",
+    "spellEs": "temple",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tympole.png"
+  },
+  {
+    "name": "tynamo",
+    "spellEn": "dynamo",
+    "spellPt": "tálamo",
+    "spellEs": "dynamo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tynamo.png"
+  },
+  {
+    "name": "type-null",
+    "spellEn": "",
+    "spellPt": "typo-nulo",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/type-null.png"
+  },
+  {
+    "name": "typhlosion",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/typhlosion.png"
+  },
+  {
+    "name": "tyranitar",
+    "spellEn": "",
+    "spellPt": "transitar",
+    "spellEs": "transitar",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tyranitar.png"
+  },
+  {
+    "name": "tyrantrum",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tyrantrum.png"
+  },
+  {
+    "name": "tyrogue",
+    "spellEn": "rogue",
+    "spellPt": "grogue",
+    "spellEs": "rogue",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tyrogue.png"
+  },
+  {
+    "name": "tyrunt",
+    "spellEn": "tyrant",
+    "spellPt": "",
+    "spellEs": "tyrant",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/tyrunt.png"
+  },
+  {
+    "name": "umbreon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "umbro",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/umbreon.png"
+  },
+  {
+    "name": "unfezant",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/unfezant.png"
+  },
+  {
+    "name": "unown",
+    "spellEn": "known",
+    "spellPt": "uno",
+    "spellEs": "known",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/unown.png"
+  },
+  {
+    "name": "ursaluna",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ursaluna.png"
+  },
+  {
+    "name": "ursaring",
+    "spellEn": "rearing",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/ursaring.png"
+  },
+  {
+    "name": "urshifu",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/urshifu.png"
+  },
+  {
+    "name": "uxie",
+    "spellEn": "use",
+    "spellPt": "uni",
+    "spellEs": "xie",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/uxie.png"
+  },
+  {
+    "name": "vanillish",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vanillish.png"
+  },
+  {
+    "name": "vanillite",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vanillite.png"
+  },
+  {
+    "name": "vanilluxe",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vanilluxe.png"
+  },
+  {
+    "name": "vaporeon",
+    "spellEn": "napoleon",
+    "spellPt": "vapores",
+    "spellEs": "vapores",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vaporeon.png"
+  },
+  {
+    "name": "venipede",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "centipede",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/venipede.png"
+  },
+  {
+    "name": "venomoth",
+    "spellEn": "venomous",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/venomoth.png"
+  },
+  {
+    "name": "venonat",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "venosa",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/venonat.png"
+  },
+  {
+    "name": "venusaur",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "venustus",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/venusaur.png"
+  },
+  {
+    "name": "vespiquen",
+    "spellEn": "",
+    "spellPt": "despique",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vespiquen.png"
+  },
+  {
+    "name": "vibrava",
+    "spellEn": "vibrant",
+    "spellPt": "",
+    "spellEs": "brava",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vibrava.png"
+  },
+  {
+    "name": "victini",
+    "spellEn": "victims",
+    "spellPt": "victis",
+    "spellEs": "victims",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/victini.png"
+  },
+  {
+    "name": "victreebel",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/victreebel.png"
+  },
+  {
+    "name": "vigoroth",
+    "spellEn": "vigorous",
+    "spellPt": "vigorosa",
+    "spellEs": "vigoroso",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vigoroth.png"
+  },
+  {
+    "name": "vikavolt",
+    "spellEn": "",
+    "spellPt": "viravolta",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vikavolt.png"
+  },
+  {
+    "name": "vileplume",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vileplume.png"
+  },
+  {
+    "name": "virizion",
+    "spellEn": "verizon",
+    "spellPt": "",
+    "spellEs": "verizon",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/virizion.png"
+  },
+  {
+    "name": "vivillon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "vivieron",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vivillon.png"
+  },
+  {
+    "name": "volbeat",
+    "spellEn": "colbert",
+    "spellPt": "voltear",
+    "spellEs": "volea",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/volbeat.png"
+  },
+  {
+    "name": "volcanion",
+    "spellEn": "volcanic",
+    "spellPt": "",
+    "spellEs": "volcano",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/volcanion.png"
+  },
+  {
+    "name": "volcarona",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "volcaron",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/volcarona.png"
+  },
+  {
+    "name": "voltorb",
+    "spellEn": "",
+    "spellPt": "voltou",
+    "spellEs": "volto",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/voltorb.png"
+  },
+  {
+    "name": "vullaby",
+    "spellEn": "wallaby",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vullaby.png"
+  },
+  {
+    "name": "vulpix",
+    "spellEn": "pulpit",
+    "spellPt": "",
+    "spellEs": "vulpes",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/vulpix.png"
+  },
+  {
+    "name": "wailmer",
+    "spellEn": "walker",
+    "spellPt": "",
+    "spellEs": "wilmer",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wailmer.png"
+  },
+  {
+    "name": "wailord",
+    "spellEn": "warlord",
+    "spellPt": "",
+    "spellEs": "warlord",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wailord.png"
+  },
+  {
+    "name": "walrein",
+    "spellEn": "wherein",
+    "spellPt": "",
+    "spellEs": "warren",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/walrein.png"
+  },
+  {
+    "name": "wartortle",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wartortle.png"
+  },
+  {
+    "name": "watchog",
+    "spellEn": "watchdog",
+    "spellPt": "",
+    "spellEs": "watchdog",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/watchog.png"
+  },
+  {
+    "name": "weavile",
+    "spellEn": "heavily",
+    "spellPt": "",
+    "spellEs": "heavily",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/weavile.png"
+  },
+  {
+    "name": "weedle",
+    "spellEn": "needle",
+    "spellPt": "",
+    "spellEs": "needle",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/weedle.png"
+  },
+  {
+    "name": "weepinbell",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/weepinbell.png"
+  },
+  {
+    "name": "weezing",
+    "spellEn": "weeping",
+    "spellPt": "",
+    "spellEs": "meeting",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/weezing.png"
+  },
+  {
+    "name": "whimsicott",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/whimsicott.png"
+  },
+  {
+    "name": "whirlipede",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/whirlipede.png"
+  },
+  {
+    "name": "whiscash",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "whiplash",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/whiscash.png"
+  },
+  {
+    "name": "whismur",
+    "spellEn": "whisper",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/whismur.png"
+  },
+  {
+    "name": "wigglytuff",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wigglytuff.png"
+  },
+  {
+    "name": "wimpod",
+    "spellEn": "wiped",
+    "spellPt": "limpo",
+    "spellEs": "ipod",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wimpod.png"
+  },
+  {
+    "name": "wingull",
+    "spellEn": "lingual",
+    "spellPt": "",
+    "spellEs": "lingual",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wingull.png"
+  },
+  {
+    "name": "wishiwashi",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wishiwashi.png"
+  },
+  {
+    "name": "wobbuffet",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wobbuffet.png"
+  },
+  {
+    "name": "woobat",
+    "spellEn": "combat",
+    "spellPt": "",
+    "spellEs": "combat",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/woobat.png"
+  },
+  {
+    "name": "wooloo",
+    "spellEn": "wool",
+    "spellPt": "",
+    "spellEs": "voodoo",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wooloo.png"
+  },
+  {
+    "name": "wooper",
+    "spellEn": "cooper",
+    "spellPt": "romper",
+    "spellEs": "cooper",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wooper.png"
+  },
+  {
+    "name": "wormadam",
+    "spellEn": "",
+    "spellPt": "formavam",
+    "spellEs": "formada",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wormadam.png"
+  },
+  {
+    "name": "wurmple",
+    "spellEn": "purple",
+    "spellPt": "",
+    "spellEs": "cumple",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wurmple.png"
+  },
+  {
+    "name": "wynaut",
+    "spellEn": "wyatt",
+    "spellPt": "",
+    "spellEs": "conaut",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wynaut.png"
+  },
+  {
+    "name": "wyrdeer",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "werder",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/wyrdeer.png"
+  },
+  {
+    "name": "xatu",
+    "spellEn": "atu",
+    "spellPt": "catu",
+    "spellEs": "atu",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/xatu.png"
+  },
+  {
+    "name": "xerneas",
+    "spellEn": "kernels",
+    "spellPt": "ternas",
+    "spellEs": "rernas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/xerneas.png"
+  },
+  {
+    "name": "xurkitree",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/xurkitree.png"
+  },
+  {
+    "name": "yamask",
+    "spellEn": "mask",
+    "spellPt": "amas",
+    "spellEs": "ramas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yamask.png"
+  },
+  {
+    "name": "yamper",
+    "spellEn": "hamper",
+    "spellPt": "romper",
+    "spellEs": "camper",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yamper.png"
+  },
+  {
+    "name": "yanma",
+    "spellEn": "yama",
+    "spellPt": "cama",
+    "spellEs": "yama",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yanma.png"
+  },
+  {
+    "name": "yanmega",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "fanega",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yanmega.png"
+  },
+  {
+    "name": "yungoos",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "yungas",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yungoos.png"
+  },
+  {
+    "name": "yveltal",
+    "spellEn": "",
+    "spellPt": "avental",
+    "spellEs": "tzeltal",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/yveltal.png"
+  },
+  {
+    "name": "zacian",
+    "spellEn": "racial",
+    "spellPt": "saciar",
+    "spellEs": "hacia",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zacian.png"
+  },
+  {
+    "name": "zamazenta",
+    "spellEn": "",
+    "spellPt": "amamenta",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zamazenta.png"
+  },
+  {
+    "name": "zangoose",
+    "spellEn": "mongoose",
+    "spellPt": "zangãos",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zangoose.png"
+  },
+  {
+    "name": "zapdos",
+    "spellEn": "dados",
+    "spellPt": "lados",
+    "spellEs": "lados",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zapdos.png"
+  },
+  {
+    "name": "zarude",
+    "spellEn": "parade",
+    "spellPt": "tarde",
+    "spellEs": "tarde",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zarude.png"
+  },
+  {
+    "name": "zebstrika",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zebstrika.png"
+  },
+  {
+    "name": "zekrom",
+    "spellEn": "zero",
+    "spellPt": "zeros",
+    "spellEs": "zero",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zekrom.png"
+  },
+  {
+    "name": "zeraora",
+    "spellEn": "",
+    "spellPt": "zeladora",
+    "spellEs": "perfora",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zeraora.png"
+  },
+  {
+    "name": "zigzagoon",
+    "spellEn": "",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zigzagoon.png"
+  },
+  {
+    "name": "zoroark",
+    "spellEn": "",
+    "spellPt": "coroara",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zoroark.png"
+  },
+  {
+    "name": "zorua",
+    "spellEn": "forum",
+    "spellPt": "rua",
+    "spellEs": "zorra",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zorua.png"
+  },
+  {
+    "name": "zubat",
+    "spellEn": "bat",
+    "spellPt": "subam",
+    "spellEs": "subcat",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zubat.png"
+  },
+  {
+    "name": "zweilous",
+    "spellEn": "zealous",
+    "spellPt": "",
+    "spellEs": "",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zweilous.png"
+  },
+  {
+    "name": "zygarde",
+    "spellEn": "garde",
+    "spellPt": "garde",
+    "spellEs": "garde",
+    "sprite": "https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/zygarde.png"
+  }
+]
