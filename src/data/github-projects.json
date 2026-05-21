@@ -12,18 +12,6 @@
     ]
   },
   {
-    "repo": "marceloprates/Cosmos",
-    "stars": 4,
-    "forks": 0,
-    "gitstarRank": 2834747,
-    "name": "Cosmos",
-    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
-    "link": "https://github.com/marceloprates/Cosmos",
-    "topics": [
-      "TeX"
-    ]
-  },
-  {
     "repo": "marceloprates/easyshader",
     "stars": 26,
     "forks": 2,
@@ -33,6 +21,18 @@
     "link": "https://github.com/marceloprates/easyshader",
     "topics": [
       "Python"
+    ]
+  },
+  {
+    "repo": "marceloprates/Cosmos",
+    "stars": 4,
+    "forks": 0,
+    "gitstarRank": 2834747,
+    "name": "Cosmos",
+    "description": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
+    "link": "https://github.com/marceloprates/Cosmos",
+    "topics": [
+      "TeX"
     ]
   },
   {
@@ -50,18 +50,6 @@
     ]
   },
   {
-    "repo": "marceloprates/TSP-Animation",
-    "stars": 3,
-    "forks": 0,
-    "gitstarRank": 3362029,
-    "name": "TSP-Animation",
-    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
-    "link": "https://github.com/marceloprates/TSP-Animation",
-    "topics": [
-      "Python"
-    ]
-  },
-  {
     "repo": "marceloprates/Turmites",
     "stars": 27,
     "forks": 0,
@@ -71,6 +59,18 @@
     "link": "https://github.com/marceloprates/Turmites",
     "topics": [
       "Processing"
+    ]
+  },
+  {
+    "repo": "marceloprates/TSP-Animation",
+    "stars": 3,
+    "forks": 0,
+    "gitstarRank": 3362029,
+    "name": "TSP-Animation",
+    "description": "CLI tool for generating smooth transition animations from unordered collections of images",
+    "link": "https://github.com/marceloprates/TSP-Animation",
+    "topics": [
+      "Python"
     ]
   },
   {
