@@ -1,4 +1,15 @@
-import { Project } from '@/types';
+/**
+ * Client-side project link resolver.
+ *
+ * Uses `window.__PROJECT_METADATA__` — a global populated at build time by
+ * the server-side `project-metadata.server.ts`. This module runs only in the
+ * browser and is imported by client components that need to prefer local
+ * `/projects/{slug}` links over external GitHub URLs.
+ *
+ * For server-side usage, use `project-metadata.server.ts` directly.
+ */
+
+import type { Project } from '@/types';
 
 interface ProjectMetadata {
     [repo: string]: {

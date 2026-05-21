@@ -11,6 +11,9 @@ dist
 # Local env files
 .env*
 
+# Agent instructions (non-git-tracked)
+AGENTS.md
+
 # OS and editor files
 .DS_Store
 .cache
