@@ -5,6 +5,7 @@ import "./globals.css";
 import 'katex/dist/katex.min.css';
 import { Providers } from "./providers";
 import { getProjectMetadata } from "@/lib/project-metadata.server";
+import { SkipLink } from "@/components/SkipLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,8 +48,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} antialiased relative overflow-x-hidden`}
       >
+        <SkipLink />
         {/* <FilmGrain /> */}
-        <Providers>{children}</Providers>
+        <Providers>
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );

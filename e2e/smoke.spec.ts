@@ -71,3 +71,28 @@ test.describe("home page resume tabs (QW-4 regression guard)", () => {
         await expect(page.locator(`#${ariaControls}`)).toHaveAttribute("role", "tabpanel");
     });
 });
+
+test.describe("skip-to-content link (QW-5 regression guard)", () => {
+    test("link exists and points to #main-content", async ({ page }) => {
+        await page.goto("/");
+        const skipLink = page.getByRole("link", { name: /skip to main content/i });
+        await expect(skipLink).toHaveAttribute("href", "#main-content");
+    });
+
+    test("pressing Tab on page load focuses the skip link first", async ({ page }) => {
+        await page.goto("/");
+        await page.keyboard.press("Tab");
+        const focused = await page.evaluate(() => document.activeElement?.textContent);
+        expect(focused).toMatch(/skip to main content/i);
+    });
+
+    test("activating the skip link moves focus to #main-content", async ({ page }) => {
+        await page.goto("/");
+        // Skip link is sr-only (visually hidden until focused). Use keyboard
+        // activation rather than .click() which can't interact with sr-only.
+        await page.keyboard.press("Tab");
+        await page.keyboard.press("Enter");
+        const focusedId = await page.evaluate(() => document.activeElement?.id);
+        expect(focusedId).toBe("main-content");
+    });
+});
