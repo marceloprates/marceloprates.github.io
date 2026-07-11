@@ -73,7 +73,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 			{/* ── Summary ── */}
 			{basics.summary && (
 				<section id="summary" className="mb-6">
-					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">
+					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-2">
 						Summary
 					</h2>
 					<p className="leading-relaxed text-gray-700 dark:text-gray-300">
@@ -85,7 +85,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 			{/* ── Skills ── */}
 			{skills.length > 0 && (
 				<section id="skills" className="mb-6">
-					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-3">
 						Skills
 					</h2>
 					<div className="flex flex-wrap gap-2">
@@ -98,7 +98,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 									{skill.name}
 								</span>
 								{skill.keywords.length > 0 && (
-									<span className="text-gray-400 dark:text-gray-500 leading-relaxed">
+									<span className="text-gray-600 dark:text-gray-400 leading-relaxed">
 										{skill.keywords.join(" · ")}
 									</span>
 								)}
@@ -111,7 +111,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 			{/* ── Experience ── */}
 			{work.length > 0 && (
 				<section id="experience" className="mb-6">
-					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-3">
 						Experience
 					</h2>
 					<div className="space-y-5">
@@ -131,7 +131,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 										</p>
 									</div>
 									<time
-										className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap shrink-0"
+										className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap shrink-0"
 										dateTime={`${job.startDate}/${job.endDate}`}
 									>
 										{job.startDate} – {job.endDate}
@@ -158,7 +158,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 			{/* ── Education ── */}
 			{education.length > 0 && (
 				<section id="education">
-					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3">
+					<h2 className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-3">
 						Education
 					</h2>
 					<div className="space-y-3">
@@ -175,7 +175,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 										{edu.institution}
 									</p>
 								</div>
-								<time className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap shrink-0">
+								<time className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap shrink-0">
 									{edu.startDate} – {edu.endDate}
 								</time>
 							</div>
