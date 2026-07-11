@@ -35,8 +35,13 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPostBySlug(slug: string) {
     const dir = path.join(contentRoot, 'posts');
+    if (!fs.existsSync(dir)) return null;
     const files = fs.readdirSync(dir);
-    const file = files.find((f) => f.includes(slug));
+    const file = files.find((f) => {
+        // Match exact slug, ignoring extension and any leading YYYY-MM-DD- date prefix (mirrors getProjectBySlug).
+        const base = f.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+        return base === slug || base.toLowerCase() === slug.toLowerCase();
+    });
     if (!file) return null;
     const raw = fs.readFileSync(path.join(dir, file), 'utf8');
     const parsed = matter(raw);
