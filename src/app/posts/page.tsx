@@ -7,6 +7,7 @@ export default function PostsPage() {
 
     return (
         <main className="px-4 py-16 mx-auto max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Posts</h1>
             <Section id="posts" title="Posts" gradient="from-yellow-400 to-orange-500">
                 <div className="grid gap-6">
                     {posts.map((post) => (
