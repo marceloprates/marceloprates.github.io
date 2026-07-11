@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import rehypeRaw from 'rehype-raw';
-import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllProjects, getProjectBySlug } from '@/lib/content';
 import { MarkdownPre } from '@/components/MarkdownPre';
+import { defaultRemarkPlugins, defaultRehypePlugins } from '@/lib/markdown-config';
 
 // Frontmatter shape for project markdown files (extend as needed)
 interface ProjectFrontmatter {
@@ -71,23 +67,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </header>
 
                 <section className="mt-6">
-                    {(() => {
-                        const remarkPlugins: PluggableList = [
-                            remarkMath as unknown as Pluggable,
-                            remarkGfm as unknown as Pluggable,
-                        ];
-                        // rehypeRaw parses raw HTML in markdown (needed for <img> tags in content)
-                        // Place rehypeRaw before other rehype plugins
-                        const rehypePlugins: PluggableList = [
-                            rehypeRaw as unknown as Pluggable,
-                            rehypeKatex as unknown as Pluggable,
-                        ];
-                        return (
-                            <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} components={{ pre: MarkdownPre }}>
-                                {content}
-                            </ReactMarkdown>
-                        );
-                    })()}
+                    <ReactMarkdown
+                        remarkPlugins={defaultRemarkPlugins}
+                        rehypePlugins={defaultRehypePlugins}
+                        components={{ pre: MarkdownPre }}
+                    >
+                        {content}
+                    </ReactMarkdown>
                 </section>
             </article>
         </main>
