@@ -249,3 +249,24 @@ html.dark body::before {
   opacity: 0;
   animation: fadeIn .6s ease-out .6s forwards;
 }
+/* A11y: prose link colors must meet WCAG AA contrast (4.5:1).
+   Tailwind's @tailwindcss/typography default prose link colors
+   fail axe-core contrast checks against the white card backgrounds
+   used by BaseCard (bg-white/60) on the home page, and against
+   the prose body bg on /projects/[slug] and /posts/[slug].
+   blue-700 light + blue-300 dark gives 8.6:1 and ~6:1 respectively. */
+.prose a,
+.dark .prose a {
+  color: #1d4ed8;
+  text-decoration-color: rgba(29, 78, 216, 0.4);
+}
+.dark .prose a {
+  color: #93c5fd;
+  text-decoration-color: rgba(147, 197, 253, 0.4);
+}
+.prose a:hover {
+  color: #1e3a8a;
+}
+.dark .prose a:hover {
+  color: #bfdbfe;
+}
