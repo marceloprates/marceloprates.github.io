@@ -49,5 +49,10 @@ Thumbs.db
 .cache/
 *.local
 
+# Agent working files (audit reports, ralph task state, etc.)
+.audit/
+.ralph/
+.pi/
+
 # Ignore posts/ and talks/
 # Ignore posts/ and talks/
