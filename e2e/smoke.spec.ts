@@ -96,3 +96,23 @@ test.describe("skip-to-content link (QW-5 regression guard)", () => {
         expect(focusedId).toBe("main-content");
     });
 });
+
+test.describe("scrollable <pre> is keyboard-focusable (QW-6 regression guard)", () => {
+    test("/starship/ <pre> block has tabindex=0", async ({ page }) => {
+        await page.goto("/starship");
+        const pre = page.locator("pre").first();
+        await expect(pre).toBeAttached();
+        await expect(pre).toHaveAttribute("tabindex", "0");
+    });
+
+    test("Tab focus reaches the <pre> block on /starship/", async ({ page }) => {
+        await page.goto("/starship");
+        // Cycle through focusable elements; confirm at least one <pre>
+        // is reachable. We just check it's tabbable, not that it's the Nth
+        // tab stop (which depends on tab order of unrelated elements).
+        const pre = page.locator("pre").first();
+        await pre.focus();
+        const focusedTag = await page.evaluate(() => document.activeElement?.tagName);
+        expect(focusedTag).toBe("PRE");
+    });
+});

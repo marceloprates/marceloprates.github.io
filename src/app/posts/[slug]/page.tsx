@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllPosts, getPostBySlug } from '@/lib/content';
+import { MarkdownPre } from '@/components/MarkdownPre';
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -48,7 +49,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                             rehypeKatex as unknown as Pluggable,
                         ];
                         return (
-                            <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins}>
+                            <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} components={{ pre: MarkdownPre }}>
                                 {content}
                             </ReactMarkdown>
                         );

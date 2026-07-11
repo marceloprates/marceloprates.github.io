@@ -7,6 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import type { Pluggable, PluggableList } from 'unified';
 
 import { getAllProjects, getProjectBySlug } from '@/lib/content';
+import { MarkdownPre } from '@/components/MarkdownPre';
 
 // Frontmatter shape for project markdown files (extend as needed)
 interface ProjectFrontmatter {
@@ -82,7 +83,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                             rehypeKatex as unknown as Pluggable,
                         ];
                         return (
-                            <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins}>
+                            <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} components={{ pre: MarkdownPre }}>
                                 {content}
                             </ReactMarkdown>
                         );

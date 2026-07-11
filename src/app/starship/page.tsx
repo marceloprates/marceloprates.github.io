@@ -21,11 +21,13 @@ async function highlightYaml(yaml: string) {
     // catppuccinMocha is imported as a JSON module (typed loosely by TS); shiki's theme slot is union-narrowed, so we narrow through unknown.
     const highlighter = await getHighlighter({ theme: catppuccinMocha as unknown as Parameters<typeof getHighlighter>[0]['theme'] });
     let html = highlighter.codeToHtml(yaml, { lang: 'yaml' });
-    // Make the <pre> span full width and handle its own scrolling; remove internal padding – we'll supply
-    // padding on the outer container so the padding background matches the code background seamlessly.
+    // Make the <pre> span full width, handle its own scrolling, and be
+    // keyboard-focusable (a11y: scrollable region must be focusable).
+    // Remove internal padding – we'll supply padding on the outer
+    // container so the padding background matches the code background seamlessly.
     html = html.replace(
         /<pre([^>]*)>/,
-        '<pre$1 style="display:block;width:100%;box-sizing:border-box;margin:0;overflow:auto;">'
+        '<pre$1 tabindex="0" style="display:block;width:100%;box-sizing:border-box;margin:0;overflow:auto;">'
     );
     return html;
 }
