@@ -89,7 +89,15 @@ export default async function Home() {
 			);
 
 			return pubs.slice(0, max);
-		} catch {
+		} catch (err) {
+			// Loud failure: previously swallowed silently (P0 #4). Build-time
+			// fetch failure should be visible in the build log, not just a
+			// missing publications section on the rendered home page.
+			console.warn(
+				`[fetchPublications] failed to read data/publications.scholar.json: ${
+					err instanceof Error ? err.message : String(err)
+				}. Run 'npm run fetch-scholar' to populate.`,
+			);
 			return [];
 		}
 	};
