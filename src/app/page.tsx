@@ -182,7 +182,7 @@ export default async function Home() {
 						</h2>
 						<a
 							href="#"
-							className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+							className="text-sm font-medium text-blue-700 dark:text-blue-300 hover:underline inline-flex items-center gap-1"
 							aria-label="See all projects"
 						>
 							All <ArrowRight className="w-4 h-4" />
@@ -350,7 +350,7 @@ export default async function Home() {
 						</h2>
 						<a
 							href="https://github.com/marceloprates"
-							className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+							className="text-sm font-medium text-blue-700 dark:text-blue-300 hover:underline inline-flex items-center gap-1"
 							aria-label="See GitHub"
 						>
 							All on GitHub <ArrowRight className="w-4 h-4" />
@@ -388,7 +388,7 @@ export default async function Home() {
 							href="https://www.semanticscholar.org/author/Marcelo-O.-R.-Prates/144677268"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-blue-600 dark:text-blue-400 hover:underline"
+							className="text-blue-700 dark:text-blue-300 hover:underline"
 						>
 							Semantic Scholar
 						</a>

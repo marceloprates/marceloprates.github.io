@@ -47,8 +47,8 @@ export function ResumeTabs() {
 						className={[
 							"px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px",
 							active === v.id
-								? "border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400"
-								: "border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300",
+								? "border-blue-700 text-blue-700 dark:border-blue-300 dark:text-blue-300"
+								: "border-transparent text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200",
 						].join(" ")}
 						aria-selected={active === v.id}
 						role="tab"

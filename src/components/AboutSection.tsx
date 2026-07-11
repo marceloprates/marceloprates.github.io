@@ -96,7 +96,7 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
                   href="https://www.csauthors.net/distance/marcelo-o-r-prates/paul-erdos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                  className="text-blue-700 dark:text-blue-300 hover:underline"
                   aria-label="See detailed Erdős number path"
                 >
                   My Erdős number is 3
@@ -168,7 +168,7 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
                   href="https://github.com/marceloprates/prettymaps"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                  className="text-blue-700 dark:text-blue-300 hover:underline"
                   aria-label="prettymaps on GitHub"
                 >
                   Visit the repository
