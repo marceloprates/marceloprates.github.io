@@ -321,7 +321,11 @@ export function TileButton({ tile, flipGrowPercent = 25 }: TileButtonProps) {
                     </div>
 
                     {/* Back side - mirror the front gradient/color */}
-                    <div className={`${styles.flipCardBack} ${gradClass || styles.flipCardBackNeutral}`}>
+                    <div
+                        className={`${styles.flipCardBack} ${gradClass || styles.flipCardBackNeutral}`}
+                        aria-hidden={!isFlipped}
+                        inert={!isFlipped}
+                    >
                         {/* Back content */}
                         <div className="relative block h-full p-4 flex items-center justify-center">
                             {tile.backContent && (
