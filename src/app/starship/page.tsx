@@ -18,7 +18,8 @@ async function fetchGist(): Promise<string> {
 
 async function highlightYaml(yaml: string) {
     // Directly use the imported Catppuccin Mocha theme object; avoids server fetch of a relative hashed asset
-    const highlighter = await getHighlighter({ theme: catppuccinMocha as any });
+    // catppuccinMocha is imported as a JSON module (typed loosely by TS); shiki's theme slot is union-narrowed, so we narrow through unknown.
+    const highlighter = await getHighlighter({ theme: catppuccinMocha as unknown as Parameters<typeof getHighlighter>[0]['theme'] });
     let html = highlighter.codeToHtml(yaml, { lang: 'yaml' });
     // Make the <pre> span full width and handle its own scrolling; remove internal padding – we'll supply
     // padding on the outer container so the padding background matches the code background seamlessly.

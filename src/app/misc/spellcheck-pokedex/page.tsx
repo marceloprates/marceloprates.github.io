@@ -33,7 +33,7 @@ export default function SpellcheckPokedexPortuguese() {
                         Pokédex Spellcheck Reference
                     </h1>
                     <p className="text-gray-700 dark:text-gray-300">
-                        All Pokémon names run through spell checkers in English, Portuguese, and Spanish. Shows the closest real-word matches suggested by each language's dictionary.
+                        All Pokémon names run through spell checkers in English, Portuguese, and Spanish. Shows the closest real-word matches suggested by each language&apos;s dictionary.
                     </p>
                 </header>
 
