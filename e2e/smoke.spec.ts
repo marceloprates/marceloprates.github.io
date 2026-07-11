@@ -44,3 +44,30 @@ test.describe("/posts page (QW-3 regression guard)", () => {
         expect(response?.status()).toBe(200);
     });
 });
+
+test.describe("home page resume tabs (QW-4 regression guard)", () => {
+    test("has a role=tablist with 3 tabs", async ({ page }) => {
+        await page.goto("/");
+        const tablist = page.locator('[role="tablist"]');
+        await expect(tablist).toBeVisible();
+        await expect(tablist.locator('[role="tab"]')).toHaveCount(3);
+    });
+
+    test("clicking a tab switches the active panel", async ({ page }) => {
+        await page.goto("/");
+        const tabs = page.locator('[role="tab"]');
+        await expect(tabs.nth(0)).toHaveAttribute("aria-selected", "true");
+        await tabs.nth(1).click();
+        await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
+        await expect(tabs.nth(0)).toHaveAttribute("aria-selected", "false");
+    });
+
+    test("tab buttons have aria-controls pointing to a tabpanel", async ({ page }) => {
+        await page.goto("/");
+        const tabs = page.locator('[role="tab"]');
+        const firstTab = tabs.nth(0);
+        const ariaControls = await firstTab.getAttribute("aria-controls");
+        expect(ariaControls).toBeTruthy();
+        await expect(page.locator(`#${ariaControls}`)).toHaveAttribute("role", "tabpanel");
+    });
+});

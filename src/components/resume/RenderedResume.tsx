@@ -10,13 +10,19 @@ import { Mail, Linkedin, Github, Globe } from "lucide-react";
 
 interface Props {
 	resume: JsonResume;
+	variantId: string;
 }
 
-export function RenderedResume({ resume }: Props) {
+export function RenderedResume({ resume, variantId }: Props) {
 	const { basics, work, skills, education } = resume;
 
 	return (
-		<article className="font-sans text-sm text-gray-800 dark:text-gray-200">
+		<article
+			id={`resume-panel-${variantId}`}
+			role="tabpanel"
+			aria-labelledby={`resume-tab-${variantId}`}
+			className="font-sans text-sm text-gray-800 dark:text-gray-200"
+		>
 			{/* ── Header ── */}
 			<header className="border-b border-gray-200 dark:border-gray-700 pb-4 mb-6">
 				<h1 className="text-2xl font-bold text-gray-900 dark:text-white">

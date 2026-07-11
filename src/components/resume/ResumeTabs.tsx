@@ -38,10 +38,11 @@ export function ResumeTabs() {
 	return (
 		<div>
 			{/* Tab bar */}
-			<div className="flex gap-1 mb-4 border-b border-gray-200 dark:border-gray-700">
+			<div role="tablist" aria-label="Resume variants" className="flex gap-1 mb-4 border-b border-gray-200 dark:border-gray-700">
 				{VARIANTS.map((v) => (
 					<button
 						key={v.id}
+						id={`resume-tab-${v.id}`}
 						onClick={() => setActive(v.id)}
 						className={[
 							"px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px",
@@ -51,6 +52,7 @@ export function ResumeTabs() {
 						].join(" ")}
 						aria-selected={active === v.id}
 						role="tab"
+						aria-controls={`resume-panel-${v.id}`}
 					>
 						{v.label}
 					</button>
@@ -58,7 +60,7 @@ export function ResumeTabs() {
 			</div>
 
 			{/* Resume content */}
-			<RenderedResume resume={resume} />
+			<RenderedResume resume={resume} variantId={active} />
 
 			{/* JSON-LD structured data — injected below the article for SEO */}
 			<JsonLd resume={resume} />
