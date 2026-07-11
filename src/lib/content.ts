@@ -9,8 +9,32 @@ export type PostMeta = {
     date?: string;
     tags?: string[];
     excerpt?: string;
+    /**
+     * Optional cover image URL extracted from the post excerpt HTML at
+     * build time. Set automatically when the excerpt begins with an
+     * <img> tag. This avoids needing DOMParser inside PostCard.tsx
+     * (which previously parsed the excerpt in the browser).
+     */
+    image?: string;
     slug: string;
 };
+
+/**
+ * Extract an <img src="..."> URL from an HTML excerpt string.
+ * Returns undefined if the excerpt is plain text or has no image.
+ */
+function extractFirstImageUrl(html: string): string | undefined {
+    if (!html) return undefined;
+    const m = html.match(/<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/i);
+    return m?.[1] || undefined;
+}
+
+/**
+ * Strip HTML tags from an excerpt to produce plain text.
+ */
+function stripHtml(html: string): string {
+    return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
 
 export function getAllPosts(): PostMeta[] {
     const dir = path.join(contentRoot, 'posts');
@@ -21,11 +45,13 @@ export function getAllPosts(): PostMeta[] {
         const parsed = matter(raw);
         const name = file.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
         const meta = parsed.data || {};
+        const excerptHtml = meta.excerpt || meta.summary || '';
         return {
             title: meta.title || name,
             date: meta.date || undefined,
             tags: Array.isArray(meta.tags) ? meta.tags : meta.tags ? [meta.tags] : [],
-            excerpt: meta.excerpt || meta.summary || '',
+            excerpt: excerptHtml,
+            image: extractFirstImageUrl(excerptHtml),
             slug: name,
         } as PostMeta;
     });
