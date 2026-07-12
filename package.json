@@ -14,7 +14,7 @@
     "validate:frontmatter": "npm exec -- tsx ./scripts/validate-content-frontmatter.ts",
     "build:search-index": "npm exec -- tsx ./scripts/build-search-index.ts",
     "precommit": "npm run typecheck && npm run lint && npm run validate:content-images && npm run validate:frontmatter && npm test",
-    "ci:check": "npm run lint && npm run build && npm run build:search-index && npm run validate:validate-content-images",
+    "ci:check": "npm run lint && npm run build && npm run build:search-index && npm run validate:content-images",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
