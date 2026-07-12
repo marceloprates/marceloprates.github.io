@@ -7,11 +7,15 @@ import matter from "gray-matter";
 import {
 	buildCandidateReport,
 	buildSeedManifestTemplate,
+	cacheIncludedBodies,
 	emptyPortfolioDecisions,
+	isOptedIn,
+	loadPortfolioDecisions,
 	parsePortfolioManifest,
 	stageSeedManifests,
 	stagingFolderFor,
 	type CandidateRow,
+	type PortfolioDecisions,
 	type RepoInfo,
 } from "../portfolio-scan";
 import { PORTFOLIO_DEFAULT_TIER, PortfolioFrontmatterSchema } from "@/data/portfolio-schema";
@@ -519,5 +523,249 @@ describe("stageSeedManifests (filesystem)", () => {
 		expect(parsed.ok).toBe(true);
 		expect(parsed.data?.include).toBe(true);
 		expect(parsed.data?.tier).toBe(PORTFOLIO_DEFAULT_TIER);
+	});
+});
+
+describe("isOptedIn", () => {
+	const repo: RepoInfo = {
+		owner: "marceloprates",
+		name: "alpha",
+		visibility: "private",
+		defaultBranch: "main",
+		description: null,
+		primaryLanguage: null,
+		stars: 0,
+		topics: [],
+	};
+
+	it("returns true when manifest is included and no decisions override", () => {
+		expect(isOptedIn(repo, "included", {})).toBe(true);
+	});
+
+	it("returns false when manifest is excluded and no decisions override", () => {
+		expect(isOptedIn(repo, "excluded", {})).toBe(false);
+	});
+
+	it("returns false when manifest is missing and no decisions override", () => {
+		expect(isOptedIn(repo, "no-manifest", {})).toBe(false);
+	});
+
+	it("returns false when manifest is invalid and no decisions override", () => {
+		expect(isOptedIn(repo, "invalid", {})).toBe(false);
+	});
+
+	it("decisions override: include: true wins over excluded manifest", () => {
+		const d: PortfolioDecisions = { "marceloprates/alpha": { include: true } };
+		expect(isOptedIn(repo, "excluded", d)).toBe(true);
+	});
+
+	it("decisions override: include: false wins over included manifest", () => {
+		const d: PortfolioDecisions = { "marceloprates/alpha": { include: false } };
+		expect(isOptedIn(repo, "included", d)).toBe(false);
+	});
+
+	it("decisions override: include: true opts in even with no manifest", () => {
+		const d: PortfolioDecisions = { "marceloprates/alpha": { include: true } };
+		expect(isOptedIn(repo, "no-manifest", d)).toBe(true);
+	});
+
+	it("decisions override: include: false opts out even with no manifest", () => {
+		const d: PortfolioDecisions = { "marceloprates/alpha": { include: false } };
+		expect(isOptedIn(repo, "no-manifest", d)).toBe(false);
+	});
+
+	it("decisions override: include: true forces opt-in for invalid manifest", () => {
+		const d: PortfolioDecisions = { "marceloprates/alpha": { include: true } };
+		expect(isOptedIn(repo, "invalid", d)).toBe(true);
+	});
+});
+
+describe("cacheIncludedBodies (filesystem)", () => {
+	let tmp: string;
+	beforeEach(() => {
+		tmp = fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-bodies-"));
+	});
+	afterEach(() => {
+		fs.rmSync(tmp, { recursive: true, force: true });
+	});
+
+	const mkRepo = (overrides: Partial<RepoInfo>): RepoInfo => ({
+		owner: "marceloprates",
+		name: "repo",
+		visibility: "private",
+		defaultBranch: "main",
+		description: null,
+		primaryLanguage: null,
+		stars: 0,
+		topics: [],
+		...overrides,
+	});
+
+	const RAW = `---
+include: true
+tier: featured
+---
+
+# Body content`;
+
+	it("writes one file per opted-in repo with raw body", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "alpha" }),
+				manifestState: "included",
+				raw: RAW,
+			},
+			{
+				repo: mkRepo({ name: "beta" }),
+				manifestState: "included",
+				raw: RAW.replace("# Body content", "# Beta body"),
+			},
+		];
+		const result = cacheIncludedBodies(rows, {}, tmp);
+		expect(result.wrote.length).toBe(2);
+		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.md"))).toBe(true);
+		expect(fs.existsSync(path.join(tmp, "marceloprates-beta", "portfolio.md"))).toBe(true);
+	});
+
+	it("preserves raw content byte-for-byte (no re-serialization)", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "included", raw: RAW },
+		];
+		cacheIncludedBodies(rows, {}, tmp);
+		const cached = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		expect(cached).toBe(RAW);
+	});
+
+	it("skips opted-out repos", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "excluded", raw: RAW },
+		];
+		const result = cacheIncludedBodies(rows, {}, tmp);
+		expect(result.wrote).toEqual([]);
+		expect(result.skipped[0].reason).toMatch(/not opted in/);
+	});
+
+	it("skips opted-in repos with no raw body (404)", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "no-manifest" },
+		];
+		const decisions: PortfolioDecisions = {
+			"marceloprates/alpha": { include: true },
+		};
+		const result = cacheIncludedBodies(rows, decisions, tmp);
+		expect(result.wrote).toEqual([]);
+		expect(result.skipped[0].reason).toMatch(/no manifest body/);
+	});
+
+	it("caches invalid manifests when decisions override opts in", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "invalid", raw: RAW },
+		];
+		const decisions: PortfolioDecisions = {
+			"marceloprates/alpha": { include: true },
+		};
+		const result = cacheIncludedBodies(rows, decisions, tmp);
+		expect(result.wrote.length).toBe(1);
+		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.md"))).toBe(true);
+	});
+
+	it("is a no-op when no opted-in repos", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "excluded", raw: RAW },
+			{ repo: mkRepo({ name: "beta" }), manifestState: "no-manifest" },
+		];
+		const result = cacheIncludedBodies(rows, {}, tmp);
+		expect(result.wrote).toEqual([]);
+		expect(result.skipped.length).toBe(2);
+		expect(fs.readdirSync(tmp)).toEqual([]);
+	});
+
+	it("creates nested directories (mkdir -p)", () => {
+		const nested = path.join(tmp, "nested", "deeper");
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "included", raw: RAW },
+		];
+		const result = cacheIncludedBodies(rows, {}, nested);
+		expect(result.wrote.length).toBe(1);
+		expect(
+			fs.existsSync(path.join(nested, "marceloprates-alpha", "portfolio.md")),
+		).toBe(true);
+	});
+
+	it("is idempotent — re-running overwrites", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "included", raw: RAW },
+		];
+		cacheIncludedBodies(rows, {}, tmp);
+		cacheIncludedBodies(rows, {}, tmp);
+		expect(fs.readdirSync(tmp).length).toBe(1);
+		const cached = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		expect(cached).toBe(RAW);
+	});
+
+	it("cached body re-parses cleanly via the lib's parser", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "included", raw: RAW },
+		];
+		cacheIncludedBodies(rows, {}, tmp);
+		const cached = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		const parsed = parsePortfolioManifest(cached);
+		expect(parsed.ok).toBe(true);
+		expect(parsed.data?.include).toBe(true);
+		expect(parsed.body).toContain("# Body content");
+	});
+});
+
+describe("loadPortfolioDecisions", () => {
+	let tmp: string;
+	beforeEach(() => {
+		tmp = fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-decisions-"));
+	});
+	afterEach(() => {
+		fs.rmSync(tmp, { recursive: true, force: true });
+	});
+
+	it("returns empty object when file is missing", () => {
+		expect(loadPortfolioDecisions(path.join(tmp, "missing.json"))).toEqual({});
+	});
+
+	it("parses a valid decisions JSON", () => {
+		const file = path.join(tmp, "decisions.json");
+		fs.writeFileSync(
+			file,
+			JSON.stringify({ "marceloprates/alpha": { include: true } }),
+		);
+		expect(loadPortfolioDecisions(file)).toEqual({
+			"marceloprates/alpha": { include: true },
+		});
+	});
+
+	it("treats invalid JSON as empty (with warning)", () => {
+		const file = path.join(tmp, "decisions.json");
+		fs.writeFileSync(file, "{not valid json");
+		expect(loadPortfolioDecisions(file)).toEqual({});
+	});
+
+	it("treats non-object JSON (array, string, number, null) as empty", () => {
+		const file = path.join(tmp, "decisions.json");
+		for (const bad of ["[]", '"a string"', "42", "null"]) {
+			fs.writeFileSync(file, bad);
+			expect(loadPortfolioDecisions(file)).toEqual({});
+		}
+	});
+
+	it("treats empty object as empty", () => {
+		const file = path.join(tmp, "decisions.json");
+		fs.writeFileSync(file, "{}");
+		expect(loadPortfolioDecisions(file)).toEqual({});
 	});
 });

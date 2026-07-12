@@ -97,6 +97,13 @@ export interface CandidateRow {
 	manifestState: ManifestState;
 	manifestError?: string;
 	frontmatter?: ResolvedPortfolioFrontmatter;
+	/**
+	 * Raw `portfolio.md` text fetched from raw.githubusercontent.com.
+	 * Present only when the file was successfully fetched (even if its
+	 * frontmatter failed Zod validation — the body may still be useful).
+	 * Absent when the file 404'd.
+	 */
+	raw?: string;
 }
 
 /**
@@ -323,4 +330,114 @@ export function stageSeedManifests(
 	}
 
 	return result;
+}
+
+/* ------------------------------------------------------------------ *
+ * Body cache — write raw `portfolio.md` for every opted-in repo to
+ * `portfolio-bodies/<owner>-<name>.md` (gitignored) so the build
+ * doesn't depend on GitHub being reachable.
+ * ------------------------------------------------------------------ */
+
+/** Outcome of the body-cache step. */
+export interface BodyCacheResult {
+	/** Files written (absolute paths). */
+	wrote: string[];
+	/** Repos that were intentionally NOT cached, with reason. */
+	skipped: { repo: string; reason: string }[];
+}
+
+/**
+ * Effective opt-in for a single repo, given manifest state + decisions.
+ * Decisions JSON wins over the in-repo manifest when both exist.
+ */
+export function isOptedIn(
+	repo: RepoInfo,
+	manifestState: ManifestState,
+	decisions: PortfolioDecisions,
+): boolean {
+	const repoKey = `${repo.owner}/${repo.name}`;
+	const decision = decisions[repoKey];
+	if (decision?.include !== undefined) {
+		return decision.include === true;
+	}
+	return manifestState === "included";
+}
+
+/**
+ * Cache the raw `portfolio.md` text locally for every opted-in repo.
+ *
+ * Rules:
+ *   - Opted-in via manifest (`include: true`) OR decisions override → cache.
+ *   - Opted-out via either → skip.
+ *   - Opted-in but no manifest body (404) → skip with explicit reason.
+ *   - Invalid manifest + opted-in via decisions → cache the raw anyway;
+ *     the user is forcing inclusion, the body is still useful even if
+ *     frontmatter needs fixing.
+ *
+ * NO REMOTE WRITES. The cached file is the exact raw text we fetched
+ * (frontmatter + body), preserved byte-for-byte so re-parsing during
+ * the build yields the same result.
+ *
+ * Idempotent: re-running overwrites with fresh content.
+ */
+export function cacheIncludedBodies(
+	rows: CandidateRow[],
+	decisions: PortfolioDecisions,
+	outDir: string,
+): BodyCacheResult {
+	const result: BodyCacheResult = { wrote: [], skipped: [] };
+
+	for (const row of rows) {
+		const repoKey = `${row.repo.owner}/${row.repo.name}`;
+		const repoId: RepoInfo = row.repo;
+
+		if (!isOptedIn(repoId, row.manifestState, decisions)) {
+			result.skipped.push({
+				repo: repoKey,
+				reason: `not opted in (manifest=${row.manifestState})`,
+			});
+			continue;
+		}
+
+		if (row.raw === undefined || row.raw === null) {
+			result.skipped.push({
+				repo: repoKey,
+				reason: "opted in but no manifest body (404 on portfolio.md)",
+			});
+			continue;
+		}
+
+		const dir = path.join(outDir, `${row.repo.owner}-${row.repo.name}`);
+		fs.mkdirSync(dir, { recursive: true });
+		const filePath = path.join(dir, "portfolio.md");
+		fs.writeFileSync(filePath, row.raw, "utf8");
+		result.wrote.push(filePath);
+	}
+
+	return result;
+}
+
+/**
+ * Load decisions JSON from disk. Returns `{}` if the file is missing
+ * (first run) or invalid (logs warning, treats as empty). Lenient by
+ * design — a malformed decisions file shouldn't break the entire scan.
+ */
+export function loadPortfolioDecisions(filePath: string): PortfolioDecisions {
+	if (!fs.existsSync(filePath)) return {};
+	try {
+		const raw = fs.readFileSync(filePath, "utf8");
+		const parsed = JSON.parse(raw);
+		if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+			console.warn(
+				`[portfolio] decisions JSON at ${filePath} is not an object; treating as empty`,
+			);
+			return {};
+		}
+		return parsed as PortfolioDecisions;
+	} catch (err) {
+		console.warn(
+			`[portfolio] failed to parse decisions JSON at ${filePath}: ${err instanceof Error ? err.message : String(err)}; treating as empty`,
+		);
+		return {};
+	}
 }

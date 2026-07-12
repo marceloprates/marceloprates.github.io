@@ -28,7 +28,9 @@ import { fileURLToPath } from "node:url";
 
 import {
 	buildCandidateReport,
+	cacheIncludedBodies,
 	emptyPortfolioDecisions,
+	loadPortfolioDecisions,
 	parsePortfolioManifest,
 	stageSeedManifests,
 	type CandidateRow,
@@ -44,6 +46,7 @@ const OWNER = process.env.PORTFOLIO_OWNER ?? "marceloprates";
 const REPORT_PATH = path.join(ROOT, "portfolio-candidates.md");
 const DECISIONS_PATH = path.join(ROOT, "portfolio-decisions.json");
 const SEED_DIR = path.join(ROOT, "portfolio-manifests-to-seed");
+const BODIES_DIR = path.join(ROOT, "portfolio-bodies");
 const API = "https://api.github.com";
 const RAW = "https://raw.githubusercontent.com";
 const USER_AGENT = "marceloprates-portfolio-scan";
@@ -224,18 +227,21 @@ async function main(): Promise<void> {
 					repo,
 					manifestState: "invalid",
 					manifestError: parseResult.error,
+					raw,
 				};
 			} else if (parseResult.data?.include) {
 				row = {
 					repo,
 					manifestState: "included",
 					frontmatter: parseResult.data,
+					raw,
 				};
 			} else {
 				row = {
 					repo,
 					manifestState: "excluded",
 					frontmatter: parseResult.data,
+					raw,
 				};
 			}
 		} catch (err) {
@@ -294,6 +300,35 @@ async function main(): Promise<void> {
 			.map(([reason, n]) => `${n} ${reason}`)
 			.join("; ");
 		console.log(`[scan] skipped staging: ${summary}`);
+	}
+
+	// Cache raw `portfolio.md` bodies locally for opted-in repos. This
+	// way the build (`getProjectBySlug` fallback in Phase C) doesn't
+	// depend on GitHub being reachable. Decisions JSON wins over the
+	// in-repo manifest.
+	const decisions = loadPortfolioDecisions(DECISIONS_PATH);
+	const caching = cacheIncludedBodies(rows, decisions, BODIES_DIR);
+	if (caching.wrote.length > 0) {
+		console.log(
+			`[scan] cached ${caching.wrote.length} body file(s) under ${path.relative(ROOT, BODIES_DIR)}/ (gitignored)`,
+		);
+		for (const p of caching.wrote) {
+			console.log(`  + ${path.relative(ROOT, p)}`);
+		}
+	} else {
+		console.log(
+			`[scan] no bodies to cache (no opted-in repos with a manifest). ${path.relative(ROOT, BODIES_DIR)}/ untouched.`,
+		);
+	}
+	if (caching.skipped.length > 0) {
+		const skipByReason = caching.skipped.reduce<Record<string, number>>((acc, s) => {
+			acc[s.reason] = (acc[s.reason] ?? 0) + 1;
+			return acc;
+		}, {});
+		const summary = Object.entries(skipByReason)
+			.map(([reason, n]) => `${n} ${reason}`)
+			.join("; ");
+		console.log(`[scan] skipped caching: ${summary}`);
 	}
 
 	const counts = rows.reduce(
