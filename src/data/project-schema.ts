@@ -46,6 +46,19 @@ export const ProjectFrontmatterSchema = z
 		tags: z.array(z.string()).optional(),
 		/** Optional GitHub `owner/repo` shorthand. */
 		repo: z.string().optional(),
+		/**
+		 * Optional. When true, the project is private on GitHub but opted into
+		 * the public portfolio via `portfolio.md`. Drives the `private` badge
+		 * on the card and the project page (see `PrivateBadge`).
+		 * See `.ralph/private-portfolio-candidates.md`.
+		 */
+		private: z.boolean().optional(),
+		/**
+		 * Optional sort tier for the card grid. `featured` cards sort first,
+		 * `hidden` cards are excluded from the default view but available via
+		 * filter. Default is `normal` (see `PORTFOLIO_DEFAULT_TIER`).
+		 */
+		tier: z.enum(["featured", "normal", "hidden"]).optional(),
 	})
 	.passthrough();
 

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Star, GitFork } from 'lucide-react';
 import { Project } from '@/types';
 import BaseCard from './BaseCard';
+import { PrivateBadge } from './PrivateBadge';
 
 interface ProjectCardProps {
     project: Project;
@@ -80,6 +81,7 @@ export const ProjectCard = React.memo(function ProjectCard({ project }: ProjectC
                     >
                         {project.title}
                     </a>
+                    {project.private && <PrivateBadge className="ml-auto shrink-0" />}
                 </h3>
                 {hasDesc && (
                     <p className="text-base text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">

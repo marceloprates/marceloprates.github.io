@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { getAllProjects, getProjectBySlug } from '@/lib/content';
 import { MarkdownPre } from '@/components/MarkdownPre';
 import { defaultRemarkPlugins, defaultRehypePlugins } from '@/lib/markdown-config';
+import { PrivateBadge } from '@/components/PrivateBadge';
 
 export async function generateStaticParams() {
     const projects = getAllProjects();
@@ -33,7 +34,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <main className="px-4 py-16 mx-auto max-w-4xl">
             <article className="prose dark:prose-invert">
                 <header>
-                    <h1 className="text-3xl font-extrabold mb-2">{meta.title || slug}</h1>
+                    <div className="flex items-start gap-3 mb-2 flex-wrap">
+                        <h1 className="text-3xl font-extrabold">{meta.title || slug}</h1>
+                        {meta.private && <PrivateBadge className="mt-1.5" />}
+                    </div>
                     {meta.date && <p className="text-sm text-gray-600">{meta.date}</p>}
                     {/* Optional cover image from frontmatter (cover or image) */}
                     {(() => {
