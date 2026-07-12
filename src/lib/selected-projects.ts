@@ -96,7 +96,7 @@ function projectFromContent(
  * Resolve a single entry. Returns null if no strategy matched.
  */
 function resolveEntry(entry: string, input: ResolveSelectedProjectsInput): Project | null {
-	const { allProjects, contentProjects, projectMetadata, getContentBySlug } = input;
+	const { allProjects, contentProjects, getContentBySlug } = input;
 
 	// Strategy 1: owner/repo → match against enriched projects or fall through to slug
 	if (entry.includes("/")) {
