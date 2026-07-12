@@ -14,6 +14,7 @@ import fs from "fs";
 import path from "path";
 import https from "https";
 import http from "http";
+import { resolveLocalLatexPath } from "../src/lib/paths";
 
 // ─── Inlined education ────────────────────────────────────────────────────────
 // PhD data is the same across all variants and does not change. Inlined so the
@@ -82,9 +83,18 @@ interface JsonResume {
 
 const RAW_BASE =
 	"https://raw.githubusercontent.com/marceloprates/Resume/master/src";
-const LOCAL_BASE = process.env.RESUME_LOCAL_PATH
-	? path.join(process.env.RESUME_LOCAL_PATH, "src")
-	: "";
+//
+// Resolve local LaTeX repo path. Priority:
+//   1. RESUME_LOCAL_PATH env var (explicit override)
+//   2. Auto-detect ~/projects/active/personal/resume (the user's local clone)
+// If neither resolves, fall back to the raw.githubusercontent.com fetch
+// (which will fail for the private repo, surfacing a clear error in the
+// parse step). We do not throw here — letting the JSON parse fail loudly
+// is the existing behavior and avoids breaking the script contract for
+// environments that may legitimately need the raw fetch (e.g. CI where
+// the repo is public for a future release).
+const LOCAL_LATEX_PATH = resolveLocalLatexPath();
+const LOCAL_BASE = LOCAL_LATEX_PATH ? path.join(LOCAL_LATEX_PATH, "src") : "";
 
 const VARIANTS = [
 	{ id: "ai", label: "AI/ML Engineer", tex: "ats__ai.tex" },
