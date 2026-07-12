@@ -17,8 +17,8 @@ interface SectionProps {
 export function Section({ id, title, gradient, children, as = 'h3' }: SectionProps) {
     const Heading = as;
     return (
-        <div id={id} className="group">
-            <Heading className="text-2xl md:text-3xl font-semibold mb-4 tracking-tight">
+        <div id={id} className="group mt-24">
+            <Heading className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
                 <span className={`bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
                     {title}
                 </span>
