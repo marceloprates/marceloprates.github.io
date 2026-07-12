@@ -44,8 +44,19 @@ Exported site is written to `out/`. Push `out/` to the `gh-pages` branch or conf
 
 ## Resume pipeline
 
-The Resume section on the home page shows three ATS variants (AI/ML Engineer,
-Data Scientist, ML Engineer) plus a per-variant PDF download button.
+The Resume section on the home page shows four ATS variants:
+
+| Tab | Variant id | Source `.tex` |
+|---|---|---|
+| AI Engineer | `ai` | `ats__ai.tex` |
+| AI/ML Engineer | `ai+ml` | `ats__ai+ml.tex` |
+| Data Scientist | `ds` | `ats__ds.tex` |
+| ML Engineer | `ml` | `ats__ml.tex` |
+
+Each tab has its own PDF download button. Job-targeted variants (e.g.
+`ai+huawei`, `ai+ml__applied-research-engineer`) exist in the LaTeX repo
+but are intentionally excluded from this site — see
+`scripts/_variants.ts` for the inclusion list.
 
 The pipeline has two pieces, both wired into `npm run build`:
 
@@ -55,15 +66,15 @@ The pipeline has two pieces, both wired into `npm run build`:
      override the auto-detect fallback in `src/lib/paths.ts`).
    - Runs the `generate:resumes` script (`scripts/generate-json-resume.ts`)
      which parses the LaTeX `\Exp*Title` macros into the JSON Resume schema.
-   - Output: `src/data/resumes/{ai,ds,ml}.json` — **committed to git** so
-     the deployed site ships the latest content without needing the LaTeX
-     clone at build time.
+   - Output: `src/data/resumes/{ai,ai+ml,ds,ml}.json` — **committed to git**
+     so the deployed site ships the latest content without needing the
+     LaTeX clone at build time.
    - Regenerate with `npm run generate:resumes` after editing the LaTeX.
 
 2. **PDF snapshots** — mirrored from the same LaTeX clone's `output/latest/`
-   directory into `public/resumes/{ai,ds,ml}.pdf`. These are **gitignored**
-   (build artifacts) and served as static assets by Next.js's static export.
-   Regenerate with `npm run generate:resume-pdfs`.
+   directory into `public/resumes/{ai,ai+ml,ds,ml}.pdf`. These are
+   **gitignored** (build artifacts) and served as static assets by Next.js's
+   static export. Regenerate with `npm run generate:resume-pdfs`.
 
 The combined `npm run generate:resume-assets` runs both steps. The
 `build` script invokes this automatically before `next build`.
