@@ -3,16 +3,8 @@ import { isEnabled, sections } from "../sections";
 import type { SectionConfig } from "../schema";
 
 describe("sections config", () => {
-	it("exports 7 sections in expected order", () => {
-		expect(sections.map((s) => s.id)).toEqual([
-			"hero",
-			"quick-tiles",
-			"about",
-			"selected-projects",
-			"open-source",
-			"papers",
-			"resume",
-		]);
+	it("exports only hero + about (nav-redesign Phase C)", () => {
+		expect(sections.map((s) => s.id)).toEqual(["hero", "about"]);
 	});
 
 	it("all sections are enabled by default", () => {
@@ -40,9 +32,8 @@ describe("isEnabled", () => {
 		const list: SectionConfig[] = [
 			{ id: "hero", enabled: true },
 			{ id: "about", enabled: false },
-			{ id: "resume", enabled: true },
 		];
 		const visible = list.filter(isEnabled).map((s) => s.id);
-		expect(visible).toEqual(["hero", "resume"]);
+		expect(visible).toEqual(["hero"]);
 	});
 });

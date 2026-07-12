@@ -1,73 +1,41 @@
 export interface Project {
-    title: string;
-    desc: string;
-    tags: string[];
-    link: string;
-    image?: string;
-    /** Optional GitHub stats (filled at build/server render time) */
-    stars?: number;
-    /** Number of forks on GitHub */
-    forks?: number;
-    /** Canonical repo identifier owner/repo when available */
-    repo?: string;
-    /**
-     * Optional repository popularity rank.
-     * Originally intended for gitstar-ranking.com (global rank) but if that service
-     * is unreachable, this field is populated with an owner-level star rank
-     * (1 = most starred among the owner's public repos fetched) as a fallback.
-     */
-    gitstarRank?: number;
-    /** Optional canonical gitstar (or fallback) URL for the repo */
-    gitstarUrl?: string;
-}
-
-import type { ReactNode } from 'react';
-
-export interface BackLine {
-    /** Text to display for the line */
-    text: string;
-    /** Optional href to open when clicked */
-    href?: string;
-    /** Optional semantic type for custom rendering/behavior */
-    type?: 'email' | 'linkedin' | 'github' | 'link';
+	title: string;
+	desc: string;
+	tags: string[];
+	link: string;
+	image?: string;
+	/** Optional GitHub stats (filled at build/server render time) */
+	stars?: number;
+	/** Number of forks on GitHub */
+	forks?: number;
+	/** Canonical repo identifier owner/repo when available */
+	repo?: string;
+	/**
+	 * Optional repository popularity rank.
+	 * Originally intended for gitstar-ranking.com (global rank) but if that service
+	 * is unreachable, this field is populated with an owner-level star rank
+	 * (1 = most starred among the owner's public repos fetched) as a fallback.
+	 */
+	gitstarRank?: number;
+	/** Optional canonical gitstar (or fallback) URL for the repo */
+	gitstarUrl?: string;
 }
 
 /**
- * A single item that can appear on the back of a Tile.
- * Supports plain strings, structured lines, raw HTML, or full React nodes.
+ * A publication surfaced on the home page in the (now-deprecated)
+ * Papers section. The /misc route and the planned /publications
+ * route still consume this shape via src/components/PublicationCard.
+ *
+ * Kept on this file because PublicationCard (@/components/PublicationCard)
+ * imports from @/types — the type is reused even after the section
+ * was deleted.
  */
-export type BackItem = string | BackLine | { html: string } | ReactNode;
-
-export interface Tile {
-    label: string;
-    href: string;
-    variant: 'lg' | 'md' | 'sm';
-    gradient?: string; // deprecated: use gradientClass for CSS-based gradients
-    gradientClass?: string;
-    image?: string; // optional illustration shown on the right with a diagonal slash
-    /**
-     * Controls what happens when the tile is clicked.
-     * - 'flip': show the back side with extra content
-     * - 'scroll': smoothly scroll to the element referenced by `href` (default)
-     */
-    clickBehavior?: 'flip' | 'scroll';
-    /**
-     * Optional content to show on the back of the tile when flipped.
-    * Can be a single string (supports line breaks) or an array of lines.
-    * Also supports structured objects for explicit control of labels and links,
-    * raw HTML via { html: string }, or full React nodes for maximum flexibility.
-     */
-    backContent?: BackItem | BackItem[];
-}
-
-export type SpanClasses = Record<'lg' | 'md' | 'sm', string>;
-
 export interface Publication {
-    title: string;
-    venue: string;
-    year: number;
-    url: string;
-    pdfUrl?: string;
-    /** Optional citation count (Cited by N) scraped from Google Scholar */
-    citations?: number;
+	title: string;
+	venue: string;
+	year: number;
+	url: string;
+	pdfUrl?: string;
+	/** Optional citation count (Cited by N) scraped from Google Scholar */
+	citations?: number;
 }

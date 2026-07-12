@@ -4,7 +4,10 @@ import React from 'react';
 import Image, { type StaticImageData } from 'next/image';
 import Tilt from './Tilt';
 import effects from './CardEffects.module.css';
-import slashStyles from './TileButton.module.css';
+// nav-redesign Phase C (2026-07-12): the `imageRightClip` clip-path
+// previously imported from ./TileButton.module.css is now inlined as
+// a style attribute below. Keeping the CSS module just for one rule
+// would force us to keep TileButton (deleted in this commit).
 import halftone from './Texture.module.css';
 
 type ImageVariant = 'right-slashed' | 'full';
@@ -76,7 +79,8 @@ export const BaseCard = React.memo(function BaseCard({
             {image?.src && image.variant === 'right-slashed' ? (
                 <span
                     aria-hidden
-                    className={`pointer-events-none absolute inset-y-0 right-0 w-1/2 ${slashStyles.imageRightClip}`}
+                    className={`pointer-events-none absolute inset-y-0 right-0 w-1/2`}
+                    style={{ clipPath: 'polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
                 >
                     <Image
                         src={image.src}

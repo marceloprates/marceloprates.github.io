@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { getProjectMetadata } from "@/lib/project-metadata.server";
 import { SkipLink } from "@/components/SkipLink";
 import { NavShell } from "@/components/nav/NavShell";
+import { getSearchItems } from "@/lib/search-items.server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Get project metadata at build time
+  // Build the search index server-side. NavShell is a client
+  // component — it must never import fs-backed modules. Layout
+  // resolves the index here (in the server boundary) and passes
+  // it down as a prop. Phase F replaces this resolver body with
+  // a fetch against /public/search-index.json; the prop shape
+  // does not change.
+  const searchItems = getSearchItems();
+  // window.__PROJECT_METADATA__ is read by client components that
+  // map a GitHub repo to a local /projects/[slug] page. The home
+  // page no longer consumes it (Phase C), but the field stays
+  // injected so /work and future pages can still read it cheaply.
   const projectMetadata = getProjectMetadata();
 
   return (
@@ -52,7 +63,7 @@ export default function RootLayout({
         <SkipLink />
         {/* <FilmGrain /> */}
         <Providers>
-          <NavShell />
+          <NavShell items={searchItems} />
           <div id="main-content" tabIndex={-1}>
             {children}
           </div>

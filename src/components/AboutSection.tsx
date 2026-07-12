@@ -4,16 +4,10 @@ import Tilt from './Tilt';
 import { Section } from './Section';
 import effects from './CardEffects.module.css';
 
-// aboutLinks are currently unused; keep definition commented for future navigation
-/*
-const aboutLinks = [
-  { href: '#education', label: 'Education' },
-  { href: '#career', label: 'Career' },
-  { href: '#art', label: 'Creative Coding' },
-  { href: '#interests', label: 'Interests' },
-  { href: '#oss', label: 'Open Source' },
-];
-*/
+// aboutLinks removed during nav-redesign Phase C (2026-07-12). The
+// Sections previously listed (Open Source, etc.) now live on their
+// own dedicated routes — see TopNav (src/components/nav/TopNav.tsx)
+// for the locked IA.
 
 interface AboutSectionProps {
   name: string;
@@ -159,23 +153,10 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
             </div>
           </Section>
 
-          <Section id="oss" title="Open Source" gradient="from-lime-500 to-green-600">
-            <div className="w-full md:w-3/4">
-              <p>
-                I’m the creator of the open-source Python package <strong>prettymaps</strong> (now boasting more than 10k stars on
-                GitHub!) which allows anyone to create highly stylized maps from public OpenStreetMap data for free.{' '}
-                <a
-                  href="https://github.com/marceloprates/prettymaps"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 dark:text-blue-300 hover:underline"
-                  aria-label="prettymaps on GitHub"
-                >
-                  Visit the repository
-                </a>.
-              </p>
-            </div>
-          </Section>
+          {/* nav-redesign Phase C (2026-07-12): the dedicated Open
+           * Source block (#oss) was removed. Open Source is now a
+           * `/work?tag=open-source` filter on the new faceted grid
+           * (Phase D). Use the TopNav to reach it. */}
         </div>
       </div >
     </section >

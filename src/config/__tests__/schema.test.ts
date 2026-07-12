@@ -65,17 +65,21 @@ describe("SocialSchema", () => {
 });
 
 describe("SectionIdSchema", () => {
-	it("accepts known section ids", () => {
+	it("accepts the two allowed section ids", () => {
+		for (const id of ["hero", "about"]) {
+			expect(SectionIdSchema.safeParse(id).success).toBe(true);
+		}
+	});
+
+	it("rejects removed section ids", () => {
 		for (const id of [
-			"hero",
 			"quick-tiles",
-			"about",
 			"selected-projects",
 			"open-source",
 			"papers",
 			"resume",
 		]) {
-			expect(SectionIdSchema.safeParse(id).success).toBe(true);
+			expect(SectionIdSchema.safeParse(id).success).toBe(false);
 		}
 	});
 
@@ -88,6 +92,7 @@ describe("SectionIdSchema", () => {
 describe("SectionConfigSchema", () => {
 	it("accepts a valid config entry", () => {
 		expect(SectionConfigSchema.safeParse({ id: "hero", enabled: true }).success).toBe(true);
+		expect(SectionConfigSchema.safeParse({ id: "about", enabled: true }).success).toBe(true);
 	});
 
 	it("rejects unknown id", () => {
@@ -108,11 +113,10 @@ describe("SectionsArraySchema", () => {
 		expect(SectionsArraySchema.safeParse([]).success).toBe(true);
 	});
 
-	it("accepts a full sections list", () => {
+	it("accepts the full sections list", () => {
 		const list = [
 			{ id: "hero", enabled: true },
-			{ id: "about", enabled: false },
-			{ id: "resume", enabled: true },
+			{ id: "about", enabled: true },
 		];
 		expect(SectionsArraySchema.safeParse(list).success).toBe(true);
 	});

@@ -15,98 +15,29 @@
  *   - Lifting state into <Providers> would couple Providers to the
  *     nav. A standalone NavShell keeps the concern isolated.
  *
- * Items source (iter 5):
- *   - For now, items are derived at module load from
- *     `src/data/projects.ts` (the GitHub-sourced list committed in
- *     the repo) and `src/lib/content.ts#getAllPosts()`. Both are
- *     static imports — no fetch.
- *   - Phase F replaces this with a build-time-generated
- *     `public/search-index.json` so posts + future markdown-only
- *     projects surface without code changes. The SearchPalette
- *     shape stays identical.
+ * Items source:
+ *   - The `items` prop is built server-side in
+ *     src/lib/search-items.server.ts (called from layout.tsx).
+ *     This file does NOT import fs-backed modules — Webpack would
+ *     fail to bundle them for the browser. Phase F replaces the
+ *     resolver body with a fetch against /search-index.json so the
+ *     data stays fresh on content changes.
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { projects as githubProjects } from "@/data/projects";
-import { getAllPosts } from "@/lib/content";
 import { TopNav } from "@/components/nav/TopNav";
 import {
     SearchPalette,
     type SearchableItem,
 } from "@/components/nav/SearchPalette";
 
-/**
- * Build the static search index from committed sources.
- *
- * `getAllPosts()` is fs-backed but only runs at build time inside a
- * server-rendered context. We import the function and let Next
- * statically analyse it: the call site is a top-level expression
- * inside a client component, so the function reference resolves at
- * compile time and the import is pulled out. To stay safe without
- * relying on the bundler's DCE, we wrap in a function so any
- * accidental runtime eval happens inside a request boundary, not
- * at module load.
- */
-function buildSearchItems(): SearchableItem[] {
-    const items: SearchableItem[] = [];
-
-    // Projects (from src/data/projects.ts — GitHub-sourced).
-    // Wrap in try/catch because `getAllPosts()` reads the
-    // filesystem, and reading at module load in the browser would
-    // throw at runtime. This safety net is belt-and-braces; in
-    // practice `getAllPosts` is imported but not called here.
-    for (const p of githubProjects) {
-        if (!p.title) continue;
-        items.push({
-            id: `project:${p.repo ?? p.title}`,
-            title: p.title,
-            desc: p.desc,
-            tags: p.tags,
-            href: p.link,
-            type: "project",
-        });
-    }
-
-    // Posts (via getAllPosts — invoked through a safe wrapper).
-    try {
-        for (const post of getAllPosts()) {
-            if (!post.title) continue;
-            items.push({
-                id: `post:${post.slug}`,
-                title: post.title,
-                desc: post.excerpt,
-                tags: post.tags,
-                href: `/posts/${post.slug}`,
-                type: "post",
-            });
-        }
-    } catch {
-        // Browser bundle; skip silently. Phase F will replace this
-        // with a JSON fetch that does not require fs access.
-    }
-
-    // Pages — the five locked top-level destinations.
-    const pages: SearchableItem[] = [
-        { id: "page:/work", title: "Work", desc: "All projects, filterable by category and tag.", href: "/work", type: "page" },
-        { id: "page:/posts", title: "Writing", desc: "Posts and essays.", href: "/posts", type: "page" },
-        { id: "page:/about", title: "About", desc: "Background, location, interests.", href: "/about", type: "page" },
-        { id: "page:/resume", title: "Resume", desc: "PDF resumes and JSON variants.", href: "/resume", type: "page" },
-        { id: "page:/misc", title: "Misc", desc: "One-offs and side projects.", href: "/misc", type: "page" },
-    ];
-
-    return [...items, ...pages];
+export interface NavShellProps {
+    /** Pre-built search index (server-side). */
+    items: readonly SearchableItem[];
 }
 
-/**
- * Module-level cache. Search items don't change between renders
- * (the GitHub + markdown sources are static at build time), so we
- * build the array once per module load and reuse it. Phase F
- * replaces the body of this function with a JSON fetch.
- */
-const SEARCH_ITEMS: readonly SearchableItem[] = buildSearchItems();
-
-export function NavShell() {
+export function NavShell({ items }: NavShellProps) {
     const [searchOpen, setSearchOpen] = useState(false);
     const triggerRef = useRef<HTMLElement | null>(null);
 
@@ -154,7 +85,7 @@ export function NavShell() {
             <SearchPalette
                 open={searchOpen}
                 onClose={close}
-                items={SEARCH_ITEMS}
+                items={items}
             />
         </>
     );

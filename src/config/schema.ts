@@ -23,16 +23,16 @@ export const SocialSchema = z.object({
 	semanticScholar: z.url().optional(),
 });
 
-/** Allowed section IDs for the home page composition. */
-export const SectionIdSchema = z.enum([
-	"hero",
-	"quick-tiles",
-	"about",
-	"selected-projects",
-	"open-source",
-	"papers",
-	"resume",
-]);
+/**
+ * Allowed section IDs for the home page composition.
+ *
+ * As of nav-redesign Phase C (2026-07-12), the home page is reduced
+ * to Hero + About. The deleted sections (quick-tiles, selected-
+ * projects, open-source, papers, resume) live on /work, /about, and
+ * /resume now — see src/app/(content)/work/page.tsx,
+ * src/app/(content)/about/page.tsx, src/app/(content)/resume/page.tsx.
+ */
+export const SectionIdSchema = z.enum(["hero", "about"]);
 
 /** A single section entry: id + visibility flag. */
 export const SectionConfigSchema = z.object({
