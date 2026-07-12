@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 /**
- * misc-orphan-discoverability loop regression suite.
+ * misc-orphan-discoverability + page-organization-refactor loop regression.
  *
  * Verifies every wired path that closed an orphan:
  *   - /misc renders the registry index
- *   - /misc/spellcheck-pokedex is reachable from /misc
+ *   - /spellcheck-pokedex is reachable from /misc (was /misc/spellcheck-pokedex;
+ *     promoted to top-level in page-organization-refactor iter 6)
  *   - QuickTiles 'Misc' reaches /misc (via the tile button)
  *   - QuickTiles 'Blog' reaches /posts (via the tile button)
  *   - QuickTiles 'Speaking' has a href pointing at Semantic Scholar
@@ -19,19 +20,19 @@ test.describe("misc discoverability", () => {
         expect(res?.status()).toBe(200);
         const h1 = page.locator("h1").first();
         await expect(h1).toHaveText("Misc");
-        const cards = page.locator('main a[href^="/misc/"]');
+        const cards = page.locator('main a[href="/spellcheck-pokedex"]');
         await expect(cards.first()).toBeVisible();
     });
 
-    test("clicking the spellcheck-pokedex card lands on the existing page", async ({ page }) => {
+    test("clicking the spellcheck-pokedex card lands on the promoted URL", async ({ page }) => {
         await page.goto("/misc", { waitUntil: "domcontentloaded" });
-        await page.locator('a[href="/misc/spellcheck-pokedex"]').first().click();
-        await expect(page).toHaveURL(/\/misc\/spellcheck-pokedex\/?$/);
+        await page.locator('a[href="/spellcheck-pokedex"]').first().click();
+        await expect(page).toHaveURL(/\/spellcheck-pokedex\/?$/);
         await expect(page.locator("h1").first()).toContainText(/Pok\xe9?dex/i);
     });
 
-    test("/misc/spellcheck-pokedex loads directly", async ({ page }) => {
-        const res = await page.goto("/misc/spellcheck-pokedex", {
+    test("/spellcheck-pokedex loads directly", async ({ page }) => {
+        const res = await page.goto("/spellcheck-pokedex", {
             waitUntil: "domcontentloaded",
         });
         expect(res?.status()).toBe(200);
