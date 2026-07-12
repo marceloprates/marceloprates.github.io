@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { StarshipCard } from "@/components/StarshipCard";
 import type { Project } from "@/types";
@@ -22,13 +23,13 @@ export function SelectedProjects({ projects }: { projects: Project[] }) {
 				<h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white">
 					Selected Projects
 				</h2>
-				<a
-					href="#"
+				<Link
+					href="/projects"
 					className="text-sm font-medium text-blue-700 dark:text-blue-300 hover:underline inline-flex items-center gap-1"
 					aria-label="See all projects"
 				>
 					All <ArrowRight className="w-4 h-4" />
-				</a>
+				</Link>
 			</div>
 			<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 				<StarshipCard href="/starship" />

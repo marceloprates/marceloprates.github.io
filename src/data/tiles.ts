@@ -1,4 +1,23 @@
 import { Tile } from '@/types';
+import { siteConfig } from '@/config/site';
+
+/**
+ * Optional 'Speaking' tile: shown only when a Semantic Scholar URL is
+ * configured. Renders as an external link (opens in new tab via
+ * TileButton's external-href branch — see TileButton.openHref).
+ *
+ * Builds the array at module load so the tile disappears cleanly when
+ * the config drops the URL.
+ */
+const speakingTile: Tile | null = siteConfig.social.semanticScholar
+    ? {
+          label: 'Speaking',
+          href: siteConfig.social.semanticScholar,
+          variant: 'sm',
+          gradientClass: 'speaking',
+          image: '/globe.svg',
+      }
+    : null;
 
 export const tiles: Tile[] = [
     {
@@ -34,14 +53,14 @@ export const tiles: Tile[] = [
                 html: `
                 <a href="https://www.linkedin.com/in/marceloprates" target="_blank" rel="noopener noreferrer"
                    class="no-underline transition-colors duration-150 hover:text-amber-200 focus-visible:text-amber-200 hover:opacity-90">
-                  <span class="font-nerd mr-1"> </span>marceloprates
+                  <span class="font-nerd mr-1"> </span>marceloprates
                 </a>`
             },
             {
                 html: `
                 <a href="https://github.com/marceloprates" target="_blank" rel="noopener noreferrer"
                    class="no-underline transition-colors duration-150 hover:text-amber-200 focus-visible:text-amber-200 hover:opacity-90">
-                  <span class="font-nerd mr-1"> </span>marceloprates
+                  <span class="font-nerd mr-1"> </span>marceloprates
                 </a>`
             },
         ],
@@ -55,18 +74,12 @@ export const tiles: Tile[] = [
     },
     {
         label: 'Blog',
-        href: '#recent-posts',
+        href: '/posts',
         variant: 'md',
         gradientClass: 'blog',
         image: '/vercel.svg',
     },
-    {
-        label: 'Speaking',
-        href: '#',
-        variant: 'sm',
-        gradientClass: 'speaking',
-        image: '/globe.svg',
-    },
+    ...(speakingTile ? [speakingTile] : []),
     {
         label: 'Open Source',
         href: '#open-source',

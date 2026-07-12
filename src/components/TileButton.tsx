@@ -49,8 +49,12 @@ export function TileButton({ tile, flipGrowPercent = 25 }: TileButtonProps) {
             }
             return;
         }
-        // external/internal route → navigate in same tab
-        window.location.href = tile.href;
+        // external URLs (http/https) → open in new tab; internal routes → same-tab nav
+        if (/^https?:\/\//.test(tile.href)) {
+            window.open(tile.href, '_blank', 'noopener,noreferrer');
+        } else {
+            window.location.href = tile.href;
+        }
     };
 
     const handleClick = (e: React.MouseEvent) => {
