@@ -24,11 +24,28 @@ test.describe("resume download PDF button", () => {
         expect(href).toBe("/resumes/ai.pdf");
 
         const ariaLabel = await downloadAi.getAttribute("aria-label");
-        expect(ariaLabel).toBe("Download AI/ML Engineer resume as PDF");
+        expect(ariaLabel).toBe("Download AI Engineer resume as PDF");
 
         // download attribute suggests a sensible filename
         const download = await downloadAi.getAttribute("download");
         expect(download).toBe("marceloprates-resume-ai.pdf");
+    });
+
+    test("clicking the ai+ml tab updates the download link to /resumes/ai+ml.pdf", async ({ page }) => {
+        await page.goto("/", { waitUntil: "domcontentloaded" });
+        await page.waitForTimeout(800); // React hydration
+
+        const aiMlTab = page.locator('[id="resume-tab-ai+ml"]');
+        await aiMlTab.click();
+
+        const downloadAiMl = page.locator('[id="resume-download-ai+ml"]');
+        await expect(downloadAiMl).toBeVisible();
+
+        const href = await downloadAiMl.getAttribute("href");
+        expect(href).toBe("/resumes/ai+ml.pdf");
+
+        const ariaLabel = await downloadAiMl.getAttribute("aria-label");
+        expect(ariaLabel).toBe("Download AI/ML Engineer resume as PDF");
     });
 
     test("clicking the ds tab updates the download link to /resumes/ds.pdf", async ({ page }) => {
@@ -66,13 +83,23 @@ test.describe("resume download PDF button", () => {
     });
 
     test("the PDF assets actually serve from the dev server", async ({ request }) => {
-        // Direct request to /resumes/ai.pdf — proves Next.js serves the
+        // Direct request to /resumes/{id}.pdf — proves Next.js serves the
         // file from public/. If public/resumes/ is not built or the
         // file is missing, this fails loudly with 404.
-        for (const id of ["ai", "ds", "ml"]) {
+        for (const id of ["ai", "ai+ml", "ds", "ml"]) {
             const response = await request.get(`/resumes/${id}.pdf`);
             expect(response.status(), `/resumes/${id}.pdf status`).toBe(200);
             expect(response.headers()["content-type"]).toContain("pdf");
         }
+    });
+
+    test("Resume tablist has 4 tabs (ai, ai+ml, ds, ml)", async ({ page }) => {
+        await page.goto("/", { waitUntil: "domcontentloaded" });
+        const tabs = page.locator('[role="tablist"] [role="tab"]');
+        await expect(tabs).toHaveCount(4);
+        await expect(tabs.nth(0)).toHaveText("AI Engineer");
+        await expect(tabs.nth(1)).toHaveText("AI/ML Engineer");
+        await expect(tabs.nth(2)).toHaveText("Data Scientist");
+        await expect(tabs.nth(3)).toHaveText("ML Engineer");
     });
 });

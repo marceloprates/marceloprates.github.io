@@ -50,7 +50,7 @@ test.describe("home page resume tabs (QW-4 regression guard)", () => {
         await page.goto("/", { waitUntil: "domcontentloaded" });
         const tablist = page.locator('[role="tablist"]');
         await expect(tablist).toBeVisible();
-        await expect(tablist.locator('[role="tab"]')).toHaveCount(3);
+        await expect(tablist.locator('[role="tab"]')).toHaveCount(4);
     });
 
     test("clicking a tab switches the active panel", async ({ page }) => {
