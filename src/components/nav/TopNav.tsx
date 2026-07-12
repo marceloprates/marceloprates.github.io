@@ -180,4 +180,3 @@ export function TopNav({ onSearchClick }: TopNavProps) {
     );
 }
 
-export default TopNav;

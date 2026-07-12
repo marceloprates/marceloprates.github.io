@@ -37,7 +37,7 @@ export interface CardBaseProps {
 }
 
 // Shared base card with Tilt, optional shine, optional image (right-slashed or full), and a clickable overlay
-export const BaseCard = React.memo(function BaseCard({
+const BaseCard = React.memo(function BaseCard({
     href,
     external = false,
     className,

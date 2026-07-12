@@ -123,4 +123,3 @@ export function FilterBar({
     );
 }
 
-export default FilterBar;

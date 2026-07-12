@@ -194,4 +194,3 @@ export function WorkGrid({ projects, initial }: WorkGridProps) {
     );
 }
 
-export default WorkGrid;

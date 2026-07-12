@@ -136,4 +136,3 @@ export const ProjectCard = React.memo(function ProjectCard({ project }: ProjectC
     );
 });
 
-export default ProjectCard;

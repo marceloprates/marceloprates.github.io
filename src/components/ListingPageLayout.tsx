@@ -54,4 +54,3 @@ export const ListingPageLayout = React.memo(function ListingPageLayout({
     );
 });
 
-export default ListingPageLayout;

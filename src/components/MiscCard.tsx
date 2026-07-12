@@ -65,4 +65,3 @@ export const MiscCard = React.memo(function MiscCard({ entry }: MiscCardProps) {
     );
 });
 
-export default MiscCard;

@@ -14,7 +14,7 @@ interface TiltProps {
     rotationRef?: MutableRefObject<{ rotateX: MotionValue<number>; rotateY: MotionValue<number> }>;
 }
 
-export function Tilt({ children, className = '', max = 12, scale = 1.03, style, rotationRef }: TiltProps) {
+function Tilt({ children, className = '', max = 12, scale = 1.03, style, rotationRef }: TiltProps) {
     const prefersReduced = usePrefersReducedMotion();
 
     const rotateX = useMotionValue(0);

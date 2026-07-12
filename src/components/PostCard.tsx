@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 import type { PostMeta } from '@/data/post-schema';
 
 interface PostCardProps {
@@ -14,7 +14,7 @@ interface PostCardProps {
 }
 
 // Thin wrapper that reuses ProjectCard for posts. Maps post shape to project shape.
-export const PostCard = React.memo(function PostCard({ post }: PostCardProps) {
+const PostCard = React.memo(function PostCard({ post }: PostCardProps) {
     return (
         <ProjectCard
             project={{
