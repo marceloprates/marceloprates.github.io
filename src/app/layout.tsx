@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 import { getProjectMetadata } from "@/lib/project-metadata.server";
 import { SkipLink } from "@/components/SkipLink";
 import { NavShell } from "@/components/nav/NavShell";
+import { FilmGrain } from "@/components/FilmGrain";
 import { getSearchItems } from "@/lib/search-items.server";
 
 const geistSans = Geist({
@@ -61,8 +62,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} antialiased relative overflow-x-hidden`}
       >
         <SkipLink />
-        {/* <FilmGrain /> */}
         <Providers>
+          <FilmGrain
+            className="pointer-events-none fixed inset-0"
+            intensity={20}
+            fps={0}
+            tileSize={800}
+          />
           <NavShell items={searchItems} />
           <div id="main-content" tabIndex={-1}>
             {children}
