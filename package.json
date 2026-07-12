@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run build:search-index && next dev",
     "build": "npm run generate:resume-assets && npm run build:search-index && next build",
     "build:full": "npm run generate:resume-assets && npm run generate:projects && node scripts/generate-github-projects.mjs && npm run build:search-index && next build",
     "export": "echo \"Export handled during \"next build\" when \"output: 'export'\" is set in next.config.js\"",
