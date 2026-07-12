@@ -18,8 +18,8 @@ import type { Project } from "@/types";
 export function SelectedProjects({ projects }: { projects: Project[] }) {
 	return (
 		<section id="projects" className="mt-24 mb-16">
-			<div className="flex items-center justify-between mb-8">
-				<h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+			<div className="flex items-baseline justify-between mb-8">
+				<h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white">
 					Selected Projects
 				</h2>
 				<a
