@@ -45,9 +45,9 @@ export default function ProjectsPage() {
     // the client. We pass the always-empty initial here.
     const initial = { primary: "all" as const, tag: null };
     // Resolve all project links server-side so the URL is the same
-    // in SSR HTML and the client render (avoids a hydration
-    // mismatch that used to come from getProjectLink consulting
-    // window.__PROJECT_METADATA__ only on the client).
+    // in SSR HTML and the client render. This avoids a hydration
+    // mismatch where the previous resolver consulted a window-
+    // injected metadata map that only existed on the client.
     const metadata = getProjectMetadata();
     const projects = resolveProjectLinks(getWorkProjects(), metadata);
 

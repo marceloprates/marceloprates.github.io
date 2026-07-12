@@ -4,7 +4,6 @@ import { Archivo_Black } from "next/font/google";
 import "./globals.css";
 import 'katex/dist/katex.min.css';
 import { Providers } from "./providers";
-import { getProjectMetadata } from "@/lib/project-metadata.server";
 import { SkipLink } from "@/components/SkipLink";
 import { NavShell } from "@/components/nav/NavShell";
 import { FilmGrain } from "@/components/FilmGrain";
@@ -43,21 +42,10 @@ export default function RootLayout({
   // a fetch against /public/search-index.json; the prop shape
   // does not change.
   const searchItems = getSearchItems();
-  // window.__PROJECT_METADATA__ is read by client components that
-  // map a GitHub repo to a local /projects/[slug] page. The home
-  // page no longer consumes it (Phase C), but the field stays
-  // injected so /projects and future pages can still read it cheaply.
-  const projectMetadata = getProjectMetadata();
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.__PROJECT_METADATA__ = ${JSON.stringify(projectMetadata)};`,
-          }}
-        />
-      </head>
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${archivoBlack.variable} antialiased relative overflow-x-hidden`}
       >

@@ -6,17 +6,12 @@
  *
  * Pure utility — takes the project + the metadata snapshot as
  * parameters so it runs identically on the server and in the
- * browser. The previous version (`getProjectLink`) read
- * `window.__PROJECT_METADATA__` at render time, which produced
- * divergent SSR vs CSR output and a hydration mismatch.
+ * browser.
  *
- * Server Component (the /projects page) calls
+ * The /projects page server-component calls
  * `resolveProjectLinks(getWorkProjects(), getProjectMetadata())`
  * once at build time and threads the result into WorkGrid, so
- * the client never has to re-resolve. The legacy
- * `getProjectLink(project)` shim remains exported because an
- * older test imports it; callers should prefer
- * `resolveProjectLinks` for new code.
+ * the client never has to re-resolve.
  */
 
 import type { Project } from "@/types";
@@ -60,19 +55,4 @@ export function resolveProjectLinks<T extends Pick<Project, "repo" | "link">>(
         ...p,
         link: resolveProjectLink(p, metadata),
     }));
-}
-
-/**
- * @deprecated Use resolveProjectLink(project, metadata) — passing
- * the metadata snapshot explicitly avoids SSR / CSR divergence.
- * Kept exported because vitest fixtures import it; new call
- * sites should use resolveProjectLink / resolveProjectLinks.
- */
-export function getProjectLink(project: Project): string {
-    // Server-side fallback path: when called from a Server
-    // Component, `window` is undefined and we have no metadata
-    // snapshot. The /projects page passes a snapshot explicitly
-    // (via resolveProjectLinks) so this branch is hit only by
-    // legacy test code.
-    return project.link;
 }
