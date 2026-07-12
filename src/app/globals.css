@@ -270,3 +270,19 @@ html.dark body::before {
 .dark .prose a:hover {
   color: #bfdbfe;
 }
+
+/* Global focus-visible ring (Phase 4.8 commit 21)
+ * Provides a consistent focus indicator for interactive elements
+ * that don't have their own explicit focus styles (links, buttons,
+ * inputs across the site). Components with explicit focus overrides
+ * (SkipLink, BaseCard, TileButton) keep their custom styles.
+ * Color matches blue-500 light / blue-400 dark for AA contrast. */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html.dark :focus-visible {
+  outline-color: #60a5fa;
+}
