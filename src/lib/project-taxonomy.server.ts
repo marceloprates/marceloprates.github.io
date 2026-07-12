@@ -1,7 +1,7 @@
 /**
  * Project taxonomy resolvers (server-only).
  *
- * Two pure functions used by /work and the ⌘K palette to enrich
+ * Two pure functions used by /projects and the ⌘K palette to enrich
  * project records with a primary category and merged tags.
  *
  * - `assignPrimary`: decide which of the 4 primaries a project belongs

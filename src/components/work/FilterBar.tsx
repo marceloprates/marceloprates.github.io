@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * FilterBar — primary segmented control + tag chips for /work.
+ * FilterBar — primary segmented control + tag chips for /projects.
  *
  * Pure presentational. Receives `primary` + `tag` from the parent
  * (WorkGrid) and emits `onChange` with the next filter state; the

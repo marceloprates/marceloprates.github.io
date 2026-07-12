@@ -4,8 +4,8 @@
  * Covers:
  *   - Renders all 5 nav items in locked order.
  *   - Marks the active item with aria-current="page".
- *   - Marks query-bearing links (e.g. /work?tag=open-source) as
- *     inactive on /work — the "Work" link is the canonical match.
+ *   - Marks query-bearing links (e.g. /projects?tag=open-source) as
+ *     inactive on /projects — the "Projects" link is the canonical match.
  *   - Search button is rendered when onSearchClick is provided.
  *   - Mobile menu toggle opens/closes via the hamburger button;
  *     aria-expanded reflects state and aria-controls points at the
@@ -71,7 +71,7 @@ describe("TopNav", () => {
         const activeLinks = screen
             .getAllByRole("link")
             .filter((a) => a.getAttribute("aria-current") === "page");
-        // Hero "marceloprates" link points at / but /work etc. are not active.
+        // Hero "marceloprates" link points at / but /projects etc. are not active.
         expect(activeLinks.length).toBeLessThanOrEqual(1);
         // If anything is active, it's the home link.
         if (activeLinks[0]) {

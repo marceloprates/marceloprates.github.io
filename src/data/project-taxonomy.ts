@@ -5,7 +5,7 @@
  * category (driving its main URL/filter slot) and any number of tags.
  * This mirrors the faceted-classification convention (Ranganathan 1933
  * + NNG "Faceted Search" guidance): a single primary facet gives us
- * stable IA, while free-form tags power the /work filter and the ⌘K
+ * stable IA, while free-form tags power the /projects filter and the ⌘K
  * command palette without combinatorial URL explosion.
  *
  * The four primaries were chosen to match the user's actual output
@@ -16,7 +16,7 @@
  *   - experiments: one-offs, hacks, simulations
  *
  * Open Source is NOT a primary — it is a `tag: open-source` filter on
- * /work. This avoids the Projects / Open Source / Papers redundancy
+ * /projects. This avoids the Projects / Open Source / Papers redundancy
  * the old bento had.
  */
 
@@ -31,7 +31,7 @@ export type PrimaryCategory = (typeof PRIMARY_CATEGORIES)[number];
 
 /**
  * Display labels for the four primary categories. Capitalized, ready
- * for the segmented control + filter chips on /work.
+ * for the segmented control + filter chips on /projects.
  */
 export const PRIMARY_LABEL: Record<PrimaryCategory, string> = {
     code: "Code",

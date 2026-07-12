@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * WorkGrid — the /work page's faceted grid.
+ * WorkGrid — the /projects page's faceted grid.
  *
  * Pure presentational + URL-synced state. Receives the static list
  * of projects from the server (work/page.tsx) and renders a
@@ -17,7 +17,7 @@
  *   3. Starship (the prompt-theme project) is one of the cards in
  *      the grid; it's a regular record, not a featured callout
  *      (the previous prominent banner was retired in the
- *      post-loop refinement so /work stops feeling like a
+ *      post-loop refinement so /projects stops feeling like a
  *      dashboard with one tile that doesn't fit the others).
  *
  * Filtering:

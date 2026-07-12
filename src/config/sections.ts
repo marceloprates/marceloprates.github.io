@@ -12,7 +12,7 @@ import type { SectionConfig } from "./schema";
  * As of nav-redesign Phase C (2026-07-12), the home page is
  * deliberately minimal: Hero + About only. Every other surface
  * lives at its own route:
- *   - /work      — faceted grid of all projects (Phase D)
+ *   - /projects  — faceted grid of all projects (Phase D)
  *   - /posts     — blog/essays (unchanged)
  *   - /about     — full About page, see AboutSection (Phase E)
  *   - /resume    — resume tabs (Phase E)

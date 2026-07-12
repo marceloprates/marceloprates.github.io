@@ -54,10 +54,10 @@ const ITEMS: SearchableItem[] = [
         type: "post",
     },
     {
-        id: "page:/work",
+        id: "page:/projects",
         title: "Work",
         desc: "All projects.",
-        href: "/work",
+        href: "/projects",
         type: "page",
     },
 ];

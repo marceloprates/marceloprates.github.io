@@ -1,10 +1,10 @@
 /**
- * /work project resolver.
+ * /projects project resolver.
  *
  * Joins the two project data sources (GitHub-sourced in
  * `src/data/projects.ts` and markdown-sourced in
  * `content/projects/*.md`) into a single WorkProject[] ready to feed
- * the /work faceted grid.
+ * the /projects faceted grid.
  *
  * Each record carries:
  *   - everything from `Project` (id, desc, tags, link, image, repo,
@@ -30,7 +30,7 @@ export interface WorkProject extends Project {
 }
 
 /**
- * Build the unified /work projects list.
+ * Build the unified /projects projects list.
  *
  * Source priority + dedup rules:
  *   1. GitHub-sourced projects (canonical — carry stars/forks/gitstar
@@ -87,7 +87,7 @@ export function getWorkProjects(): WorkProject[] {
     }
 
     // Featured surfaces that aren't GitHub-backed but still belong
-    // on /work. Today that's the Starship prompt-theme project; it
+    // on /projects. Today that's the Starship prompt-theme project; it
     // renders as one more card in the grid via <ProjectCard>.
     out.push({
         title: "Starship",

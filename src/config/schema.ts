@@ -28,8 +28,8 @@ export const SocialSchema = z.object({
  *
  * As of nav-redesign Phase C (2026-07-12), the home page is reduced
  * to Hero + About. The deleted sections (quick-tiles, selected-
- * projects, open-source, papers, resume) live on /work, /about, and
- * /resume now — see src/app/(content)/work/page.tsx,
+ * projects, open-source, papers, resume) live on /projects, /about, and
+ * /resume now — see src/app/(content)/projects/page.tsx,
  * src/app/(content)/about/page.tsx, src/app/(content)/resume/page.tsx.
  */
 export const SectionIdSchema = z.enum(["hero", "about"]);
