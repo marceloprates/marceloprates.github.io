@@ -3,15 +3,6 @@ import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
-    "title": "audio-gravity",
-    "desc": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
-    "tags": [
-      "Processing"
-    ],
-    "link": "https://github.com/marceloprates/audio-gravity",
-    "repo": "marceloprates/audio-gravity"
-  },
-  {
     "title": "Cosmos",
     "desc": "An edited, modernized LaTeX edition of Humboldt’s “Cosmos” (Vol. 1) from OCR, with figures and improved accessibility; PDF available.",
     "tags": [
@@ -44,16 +35,6 @@ export const projects: Project[] = [
     "image": "https://github.com/marceloprates/prettymaps/raw/main/pictures/heerhugowaard.png"
   },
   {
-    "title": "Rorschach",
-    "desc": "Processing sketch to draw animated Rorschach tests",
-    "tags": [
-      "Processing"
-    ],
-    "link": "https://github.com/marceloprates/Rorschach",
-    "repo": "marceloprates/Rorschach",
-    "image": "https://raw.githubusercontent.com/marceloprates/Rorschach/master/prints/330.png"
-  },
-  {
     "title": "TSP-Animation",
     "desc": "CLI tool for generating smooth transition animations from unordered collections of images",
     "tags": [
@@ -81,6 +62,6 @@ export const projects: Project[] = [
     ],
     "link": "https://github.com/marceloprates/Voxel-Watersim",
     "repo": "marceloprates/Voxel-Watersim",
-    "image": "http://i.imgur.com/fYbfG4g.gif"
+    "image": "https://i.imgur.com/fYbfG4g.gif"
   }
 ];

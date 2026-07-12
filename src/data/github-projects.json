@@ -1,17 +1,5 @@
 [
   {
-    "repo": "marceloprates/audio-gravity",
-    "stars": 0,
-    "forks": 0,
-    "gitstarRank": 14078311,
-    "name": "audio-gravity",
-    "description": "Audio Gravity is a Processing sketch implementing a gravitational particle system which reacts in real-time to an user-inputed song",
-    "link": "https://github.com/marceloprates/audio-gravity",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
     "repo": "marceloprates/Cosmos",
     "stars": 4,
     "forks": 0,
@@ -81,15 +69,6 @@
     "name": "Voxel-Watersim",
     "description": "A voxel fluid simulator implemented in Processing",
     "link": "https://github.com/marceloprates/Voxel-Watersim",
-    "topics": [
-      "Processing"
-    ]
-  },
-  {
-    "repo": "marceloprates/Rorschach",
-    "name": "Rorschach",
-    "description": "Processing sketch to draw animated Rorschach tests",
-    "link": "https://github.com/marceloprates/Rorschach",
     "topics": [
       "Processing"
     ]

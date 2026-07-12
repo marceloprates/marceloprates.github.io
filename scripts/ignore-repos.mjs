@@ -10,5 +10,8 @@ export const IGNORE_REPOS = [
     'Gender-Bias',
     'Resume',
     'marceloprates',
-    'Hexmosaic-Wallpapers-Processing'
+    'Hexmosaic-Wallpapers-Processing',
+    'Rorschach',
+    'audio-gravity',
+    'streamlines'
 ];

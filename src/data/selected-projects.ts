@@ -6,5 +6,5 @@ export const selectedProjects: string[] = [
     'marceloprates/prettymaps',
     'marceloprates/easyshader',
     'marceloprates/Cosmos',
-    'marceloprates/streamlines'
+    'marceloprates/TSP-Animation'
 ];
