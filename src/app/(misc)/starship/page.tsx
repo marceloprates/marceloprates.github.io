@@ -1,6 +1,6 @@
 import 'server-only';
 import { getHighlighter } from 'shiki';
-import catppuccinMocha from '../../../config/shiki/catppuccin-mocha.json';
+import catppuccinMocha from '../../../../config/shiki/catppuccin-mocha.json';
 import styles from './CodeBlock.module.css';
 import React from 'react';
 
