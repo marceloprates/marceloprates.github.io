@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './page.module.css';
 import pokedexData from './pokedex-data.json';
 
@@ -73,13 +74,17 @@ export default function SpellcheckPokedexPortuguese() {
                                 >
                                     <td className="px-4 py-3">
                                         <div className="w-12 h-12 relative flex items-center justify-center">
-                                            <img
+                                            <Image
                                                 src={pokemon.sprite}
                                                 alt={pokemon.name}
                                                 width={48}
                                                 height={48}
                                                 className={styles.pixelated}
                                                 loading="lazy"
+                                                // Global images.unoptimized=true is set in
+                                                // next.config.js. So next/image here behaves
+                                                // as <img> + intrinsic-size hint; no fetch
+                                                // rewrite, no domain allowlist needed.
                                             />
                                         </div>
                                     </td>
