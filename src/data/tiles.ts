@@ -91,6 +91,13 @@ export const tiles: Tile[] = [
         gradientClass: 'papers',
         image: '/window.svg',
     },
+    {
+        label: 'Misc',
+        href: '/misc',
+        variant: 'md',
+        gradientClass: 'misc',
+        image: '/globe.svg',
+    },
 ];
 
 export const spanClasses: Record<string, string> = {
