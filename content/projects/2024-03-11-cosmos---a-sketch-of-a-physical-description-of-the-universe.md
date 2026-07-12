@@ -3,7 +3,8 @@ title: "Cosmos - A Sketch of a Physical Description of the Universe"
 date: "2024-03-11"
 tags: []
 categories: []
-excerpt: "<img src='/images/sketches/cosmos/cosmos-cover.png'>"
+cover: "/images/projects/cosmos/cosmos-cover.png"
+excerpt: "An edited, modernized LaTeX edition of Humboldt's \"Cosmos\" (Vol. 1) from OCR, with figures and improved accessibility; PDF available."
 original_path: "_portfolio/2024-3-13-cosmos.md"
 ---
 
