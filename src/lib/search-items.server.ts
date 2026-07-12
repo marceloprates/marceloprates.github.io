@@ -1,84 +1,45 @@
 /**
  * Search items resolver (server-only).
  *
- * Builds the static search index used by SearchPalette. Owns the
- * fs-backed data fetch (getAllPosts reads content/posts/*.md) so
- * that no fs import is ever dragged into the client bundle.
+ * Reads the build-time-generated `public/search-index.json`
+ * (produced by `scripts/build-search-index.ts`, wired into
+ * `npm run build`). The static export then ships the JSON file
+ * as a regular asset at `/search-index.json`, and the runtime
+ * resolver fetches (or, in the Server Component, reads from
+ * disk) the same shape.
  *
- * The layout (src/app/layout.tsx) calls this once at build / page
- * request time and threads the resulting array into <NavShell> as
- * a prop. NavShell forwards it to <SearchPalette>.
+ * Why a build-time artefact:
+ *   - The static export puts every page in `out/` once. Without a
+ *     JSON sidecar, content changes would only land after a full
+ *     `next build`.
+ *   - The `npm run build:search-index` script is independent of
+ *     `next build`, so content edits (new post / project card)
+ *     can refresh the index without re-running the page renderer.
  *
- * Phase F (nav-redesign) replaces this with a build-time-generated
- * `public/search-index.json` so the data stays fresh on every
- * content change without a full page re-render. The shape of the
- * array stays identical, so NavShell and SearchPalette do not
- * change when that swap lands.
+ * The shape returned here is identical to the previous inline
+ * construction — SearchPalette's `SearchableItem` type is
+ * unchanged.
  */
 
-import { projects as githubProjects } from "@/data/projects";
-import { getAllPosts, getAllProjects } from "@/lib/content";
+import fs from "fs";
+import path from "path";
+
 import type { SearchableItem } from "@/components/nav/SearchPalette";
 
+const INDEX_PATH = path.join(process.cwd(), "public", "search-index.json");
+
 /**
- * Build the search index from committed sources.
- *
- * Sources (in order, deduplicated by id):
- *   1. GitHub-sourced projects (src/data/projects.ts).
- *   2. Markdown-only projects (content/projects/*.md) — projects
- *      without a GitHub repo surface here for the first time.
- *   3. Markdown posts (content/posts/*.md).
- *   4. The five locked top-level pages (Work, Writing, About,
- *      Resume, Misc).
+ * Read the search index from disk. Throws if the JSON is missing
+ * — that means `npm run build:search-index` was skipped before
+ * `npm run build`, which is now a hard pre-req of `npm run ci:check`.
  */
 export function getSearchItems(): SearchableItem[] {
-    const items: SearchableItem[] = [];
-
-    for (const p of githubProjects) {
-        if (!p.title) continue;
-        items.push({
-            id: `project:${p.repo ?? p.title}`,
-            title: p.title,
-            desc: p.desc,
-            tags: p.tags,
-            href: p.link,
-            type: "project",
-        });
+    if (!fs.existsSync(INDEX_PATH)) {
+        throw new Error(
+            `search-index.json missing at ${INDEX_PATH}; run \`npm run build:search-index\`.`,
+        );
     }
-
-    // Markdown-only project pages — surfaces on /work for the
-    // first time; useful for any project without a GitHub repo.
-    for (const meta of getAllProjects()) {
-        if (!meta.title) continue;
-        items.push({
-            id: `project:md:${meta.slug}`,
-            title: meta.title,
-            desc: meta.excerpt,
-            tags: meta.tags,
-            href: `/projects/${meta.slug}`,
-            type: "project",
-        });
-    }
-
-    for (const post of getAllPosts()) {
-        if (!post.title) continue;
-        items.push({
-            id: `post:${post.slug}`,
-            title: post.title,
-            desc: post.excerpt,
-            tags: post.tags,
-            href: `/posts/${post.slug}`,
-            type: "post",
-        });
-    }
-
-    const pages: SearchableItem[] = [
-        { id: "page:/work", title: "Work", desc: "All projects, filterable by category and tag.", href: "/work", type: "page" },
-        { id: "page:/posts", title: "Writing", desc: "Posts and essays.", href: "/posts", type: "page" },
-        { id: "page:/about", title: "About", desc: "Background, location, interests.", href: "/about", type: "page" },
-        { id: "page:/resume", title: "Resume", desc: "PDF resumes and JSON variants.", href: "/resume", type: "page" },
-        { id: "page:/misc", title: "Misc", desc: "One-offs and side projects.", href: "/misc", type: "page" },
-    ];
-
-    return [...items, ...pages];
+    const raw = fs.readFileSync(INDEX_PATH, "utf8");
+    const parsed = JSON.parse(raw) as SearchableItem[];
+    return parsed;
 }
