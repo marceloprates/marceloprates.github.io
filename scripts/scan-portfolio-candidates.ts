@@ -30,6 +30,7 @@ import {
 	buildCandidateReport,
 	emptyPortfolioDecisions,
 	parsePortfolioManifest,
+	stageSeedManifests,
 	type CandidateRow,
 	type ManifestParseResult,
 	type RepoInfo,
@@ -42,6 +43,7 @@ const ROOT = path.resolve(__dirname, "..");
 const OWNER = process.env.PORTFOLIO_OWNER ?? "marceloprates";
 const REPORT_PATH = path.join(ROOT, "portfolio-candidates.md");
 const DECISIONS_PATH = path.join(ROOT, "portfolio-decisions.json");
+const SEED_DIR = path.join(ROOT, "portfolio-manifests-to-seed");
 const API = "https://api.github.com";
 const RAW = "https://raw.githubusercontent.com";
 const USER_AGENT = "marceloprates-portfolio-scan";
@@ -265,6 +267,33 @@ async function main(): Promise<void> {
 		console.log(
 			`[scan] decisions already exist at ${path.relative(ROOT, DECISIONS_PATH)} (not overwritten; edit manually to opt in/out)`,
 		);
+	}
+
+	// Stage seed manifests for private repos that don't have one yet.
+	// **No remote writes.** The user copies these files into the source repo
+	// and commits them per-repo. Public repos are NEVER auto-staged.
+	const staging = stageSeedManifests(rows, SEED_DIR);
+	if (staging.wrote.length > 0) {
+		console.log(
+			`[scan] staged ${staging.wrote.length} seed manifest(s) under ${path.relative(ROOT, SEED_DIR)}/ (gitignored; user commits per-repo)`,
+		);
+		for (const p of staging.wrote) {
+			console.log(`  + ${path.relative(ROOT, p)}`);
+		}
+	} else {
+		console.log(
+			`[scan] no private repos needed staging (all have manifests, or none are private). ${path.relative(ROOT, SEED_DIR)}/ untouched.`,
+		);
+	}
+	if (staging.skipped.length > 0) {
+		const skipByReason = staging.skipped.reduce<Record<string, number>>((acc, s) => {
+			acc[s.reason] = (acc[s.reason] ?? 0) + 1;
+			return acc;
+		}, {});
+		const summary = Object.entries(skipByReason)
+			.map(([reason, n]) => `${n} ${reason}`)
+			.join("; ");
+		console.log(`[scan] skipped staging: ${summary}`);
 	}
 
 	const counts = rows.reduce(

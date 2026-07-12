@@ -1,12 +1,20 @@
-import { describe, expect, it } from "vitest";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import matter from "gray-matter";
 import {
 	buildCandidateReport,
+	buildSeedManifestTemplate,
 	emptyPortfolioDecisions,
 	parsePortfolioManifest,
+	stageSeedManifests,
+	stagingFolderFor,
 	type CandidateRow,
 	type RepoInfo,
 } from "../portfolio-scan";
-import { PORTFOLIO_DEFAULT_TIER } from "@/data/portfolio-schema";
+import { PORTFOLIO_DEFAULT_TIER, PortfolioFrontmatterSchema } from "@/data/portfolio-schema";
 
 const VALID_MANIFEST = `---
 include: true
@@ -283,5 +291,233 @@ describe("emptyPortfolioDecisions", () => {
 		expect(a).not.toBe(b);
 		a["foo/bar"] = { include: true };
 		expect(b["foo/bar"]).toBeUndefined();
+	});
+});
+
+describe("stagingFolderFor", () => {
+	it("uses '<owner>-<name>' (no slashes; filesystem-safe)", () => {
+		const repo: RepoInfo = {
+			owner: "marceloprates",
+			name: "secret-project",
+			visibility: "private",
+			defaultBranch: "main",
+			description: null,
+			primaryLanguage: null,
+			stars: 0,
+			topics: [],
+		};
+		expect(stagingFolderFor(repo)).toBe("marceloprates-secret-project");
+	});
+
+	it("preserves dots and underscores in the repo name", () => {
+		const repo: RepoInfo = {
+			owner: "owner",
+			name: "my.cool_project",
+			visibility: "private",
+			defaultBranch: "main",
+			description: null,
+			primaryLanguage: null,
+			stars: 0,
+			topics: [],
+		};
+		expect(stagingFolderFor(repo)).toBe("owner-my.cool_project");
+	});
+});
+
+describe("buildSeedManifestTemplate", () => {
+	const repo: RepoInfo = {
+		owner: "marceloprates",
+		name: "secret-project",
+		visibility: "private",
+		defaultBranch: "main",
+		description: "A secret project for testing",
+		primaryLanguage: "TypeScript",
+		stars: 0,
+		topics: [],
+	};
+
+	it("starts with a YAML frontmatter block", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		expect(tpl).toMatch(/^---\n/);
+		expect(tpl).toMatch(/\n---\n/);
+	});
+
+	it("includes include: true and the default tier", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		expect(tpl).toMatch(/^include: true$/m);
+		expect(tpl).toMatch(/^tier: normal$/m);
+	});
+
+	it("uses the repo description as the summary seed", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		expect(tpl).toContain("A secret project for testing");
+	});
+
+	it("uses a generic summary when description is null", () => {
+		const tpl = buildSeedManifestTemplate({ ...repo, description: null });
+		expect(tpl).toContain("Short pitch for secret-project");
+	});
+
+	it("uses a generic body when description is null", () => {
+		const tpl = buildSeedManifestTemplate({ ...repo, description: null });
+		expect(tpl).toContain("# secret-project");
+		expect(tpl).toContain("/projects/<slug>");
+	});
+
+	it("includes the repo name as the H1", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		expect(tpl).toMatch(/^# secret-project$/m);
+	});
+
+	it("includes an HTML comment explaining how to opt out", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		expect(tpl).toMatch(/<!--/);
+		expect(tpl).toMatch(/include: false/);
+		expect(tpl).toMatch(/-->/);
+	});
+
+	it("frontmatter parses cleanly with PortfolioFrontmatterSchema (round-trip)", () => {
+		const tpl = buildSeedManifestTemplate(repo);
+		// Re-parse the generated frontmatter the way the scan script does
+		// after the user commits this file to the source repo. Confirms
+		// the seed template is consumable end-to-end.
+		const parsed = matter(tpl);
+		const result = PortfolioFrontmatterSchema.safeParse(parsed.data);
+		expect(result.success).toBe(true);
+	});
+});
+
+describe("stageSeedManifests (filesystem)", () => {
+	let tmp: string;
+	beforeEach(() => {
+		tmp = fs.mkdtempSync(path.join(os.tmpdir(), "portfolio-stage-"));
+	});
+	afterEach(() => {
+		fs.rmSync(tmp, { recursive: true, force: true });
+	});
+
+	const mkRepo = (overrides: Partial<RepoInfo>): RepoInfo => ({
+		owner: "marceloprates",
+		name: "repo",
+		visibility: "private",
+		defaultBranch: "main",
+		description: null,
+		primaryLanguage: null,
+		stars: 0,
+		topics: [],
+		...overrides,
+	});
+
+	it("is a no-op when there are no private no-manifest repos", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "public-ok", visibility: "public" }),
+				manifestState: "no-manifest",
+			},
+			{
+				repo: mkRepo({ name: "private-has-manifest" }),
+				manifestState: "included",
+			},
+			{
+				repo: mkRepo({ name: "private-excluded" }),
+				manifestState: "excluded",
+			},
+			{
+				repo: mkRepo({ name: "private-invalid" }),
+				manifestState: "invalid",
+			},
+		];
+		const result = stageSeedManifests(rows, tmp);
+		expect(result.wrote).toEqual([]);
+		// All 4 rows should be in the skipped list with reasons.
+		expect(result.skipped.length).toBe(4);
+		// No folders created.
+		expect(fs.readdirSync(tmp)).toEqual([]);
+	});
+
+	it("writes one file per private no-manifest repo", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "alpha", visibility: "private" }),
+				manifestState: "no-manifest",
+			},
+			{
+				repo: mkRepo({ name: "beta", visibility: "private" }),
+				manifestState: "no-manifest",
+			},
+		];
+		const result = stageSeedManifests(rows, tmp);
+		expect(result.wrote.length).toBe(2);
+		// Folders are <owner>-<name>/portfolio.md.
+		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.md"))).toBe(true);
+		expect(fs.existsSync(path.join(tmp, "marceloprates-beta", "portfolio.md"))).toBe(true);
+	});
+
+	it("does NOT stage public repos (safety check)", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "public-one", visibility: "public" }),
+				manifestState: "no-manifest",
+			},
+		];
+		const result = stageSeedManifests(rows, tmp);
+		expect(result.wrote).toEqual([]);
+		expect(result.skipped[0].reason).toMatch(/public repo/);
+	});
+
+	it("does NOT overwrite or stage when a manifest already exists", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "has-manifest", visibility: "private" }),
+				manifestState: "included",
+			},
+		];
+		const result = stageSeedManifests(rows, tmp);
+		expect(result.wrote).toEqual([]);
+		expect(result.skipped[0].reason).toMatch(/manifest state: included/);
+	});
+
+	it("creates the staging directory if it doesn't exist", () => {
+		const nested = path.join(tmp, "nested", "deeper");
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "no-manifest" },
+		];
+		const result = stageSeedManifests(rows, nested);
+		expect(result.wrote.length).toBe(1);
+		expect(fs.existsSync(path.join(nested, "marceloprates-alpha", "portfolio.md"))).toBe(true);
+	});
+
+	it("is idempotent — re-running overwrites the seed file", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha" }), manifestState: "no-manifest" },
+		];
+		stageSeedManifests(rows, tmp);
+		const first = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		stageSeedManifests(rows, tmp);
+		const second = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		// Same content; no corruption, no duplicate files.
+		expect(second).toBe(first);
+		expect(fs.readdirSync(tmp).length).toBe(1);
+	});
+
+	it("staged content is a valid portfolio.md (frontmatter parses via the lib's parser)", () => {
+		const rows: CandidateRow[] = [
+			{ repo: mkRepo({ name: "alpha", description: "An alpha" }), manifestState: "no-manifest" },
+		];
+		stageSeedManifests(rows, tmp);
+		const staged = fs.readFileSync(
+			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
+			"utf8",
+		);
+		const parsed = parsePortfolioManifest(staged);
+		expect(parsed.ok).toBe(true);
+		expect(parsed.data?.include).toBe(true);
+		expect(parsed.data?.tier).toBe(PORTFOLIO_DEFAULT_TIER);
 	});
 });
