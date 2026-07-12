@@ -149,9 +149,9 @@ prettymaps.presets()
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
-      <th>preset</th>
-      <th>params</th>
+      <th scope="col">#</th>
+      <th scope="col">preset</th>
+      <th scope="col">params</th>
     </tr>
   </thead>
   <tbody>
@@ -447,9 +447,9 @@ plot.geodataframes['building']
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
-      <th>geometry</th>
-      <th>bicycle</th>
+      <th scope="col">#</th>
+      <th scope="col">geometry</th>
+      <th scope="col">bicycle</th>
       <th>highway</th>
       <th>leisure</th>
       <th>addr:housenumber</th>
