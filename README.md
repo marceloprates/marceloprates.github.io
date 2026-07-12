@@ -171,6 +171,103 @@ the pipeline silently overwrites committed copies).
   (`/tmp/marceloprates-audit/home-axe.mjs`) checks for a11y violations
   on `/`.
 
+## Private portfolio workflow
+
+Show opted-in private (or public-with-portfolio.md) repos on the site
+without making the source repo public. Each repo owns its own opt-in
+via a `portfolio.md` file at the root.
+
+### Quick start
+
+1. Create a private GitHub repo (or use an existing one).
+2. Add a `portfolio.md` at its root:
+
+   ```markdown
+   ---
+   include: true
+   tier: normal
+   summary: >
+     Short pitch for the card.
+   tags: [python, ml]
+   primary: code
+   ---
+
+   # My Project
+
+   Body content here. The H1 becomes the title on
+   `/projects/<slug>`, the body renders as a blogpost section.
+   ```
+
+3. Run the scan locally:
+
+   ```bash
+   npm run scan:portfolio
+   ```
+
+   This enumerates every repo, fetches each `portfolio.md`, and
+   produces:
+   - `portfolio-candidates.md` (gitignored) — review report
+   - `portfolio-manifests-to-seed/<owner>-<name>/portfolio.md`
+     (gitignored) — seed template per repo missing a manifest
+   - `portfolio-bodies/<owner>-<name>/portfolio.md` +
+     `portfolio.meta.json` (gitignored) — cached body + visibility
+     sidecar for opted-in repos
+   - `portfolio-decisions.json` (committed) — your override layer
+
+4. Edit `portfolio-decisions.json` to opt in/out per repo:
+
+   ```json
+   {
+     "marceloprates/my-private-repo": { "include": true }
+   }
+   ```
+
+   Decisions win over the in-repo manifest. Re-run
+   `npm run scan:portfolio` after edits.
+
+5. Build:
+
+   ```bash
+   npm run build
+   ```
+
+   Opted-in repos now surface on `/projects` and `/work` with a
+   small `private` badge on the card AND the project detail page.
+
+### Frontmatter reference
+
+| Field | Required | Type | Notes |
+|---|---|---|---|
+| `include` | yes | bool | `true` to opt in. `false` opts out. |
+| `summary` | no | string | Card excerpt override. Falls back to first prose paragraph. |
+| `tags` | no | string[] | Card tag list override. |
+| `cover` | no | string | Path in the repo, served via `raw.githubusercontent.com`. |
+| `slug` | no | string | `/projects/<slug>` segment. Defaults to repo name. |
+| `primary` | no | `"code" \| "art" \| "writing" \| "experiments"` | Faceted-grid filter. |
+| `tier` | no | `"featured" \| "normal" \| "hidden"` | Default `normal`. |
+
+### Commands
+
+- `npm run scan:portfolio` — enumerate, fetch, parse, stage, cache
+  (all in one). Requires `GH_TOKEN` env var OR `gh auth login` first.
+
+### Critical rules
+
+- **The script never pushes to GitHub.** "Stage locally" is
+  non-negotiable. Seed manifests live in
+  `portfolio-manifests-to-seed/` and the user copies them per-repo.
+- `portfolio-decisions.json` is committed; the others are gitignored.
+  See `.gitignore` for the full pattern list.
+- `gray-matter` is the parser (already a transitive dep).
+
+### Plan + reference
+
+- Design lock + phase order: `.ralph/private-portfolio-candidates.md`
+- Loop summary (post-completion): `.ralph/private-portfolio-candidates-summary.md`
+- Agent context: `AGENTS.md § Private portfolio candidates`
+- Schema: `src/data/portfolio-schema.ts`
+- Scan lib: `src/lib/portfolio-scan.ts`
+
 ## Pointers
 
 - **Agent-specific context**: `AGENTS.md` (local-only, gitignored)

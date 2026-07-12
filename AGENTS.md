@@ -150,6 +150,51 @@ Component layout never crashes on a missing index.
 - Client components only (`'use client'`); wrapped in `dynamic()` to
   skip SSR. Static export means no SSR hooks, no server data.
 
+### Private portfolio candidates (Phase A–D, 2026-07-12)
+- Each owned repo opts in via a `portfolio.md` file at its root:
+  YAML frontmatter (`include`, `summary`, `tags[]`, `cover`, `slug`,
+  `primary`, `tier`) + body that renders on `/projects/<slug>` as a
+  blogpost section. Schema at `src/data/portfolio-schema.ts` (loose
+  passthrough, matching `ProjectFrontmatterSchema`).
+- `npm run scan:portfolio` enumerates every repo the user owns
+  (public + private), fetches `portfolio.md` from
+  `raw.githubusercontent.com`, and produces three artifacts (all
+  **gitignored**): `portfolio-candidates.md` (review report),
+  `portfolio-manifests-to-seed/<owner>-<name>/portfolio.md` (seed
+  templates for private repos missing a manifest), and
+  `portfolio-bodies/<owner>-<name>/portfolio.md` +
+  `portfolio.meta.json` (raw body + visibility sidecar for opted-in
+  repos).
+- **No remote writes.** The script never pushes to GitHub. The
+  "stage locally" lock is non-negotiable: the user copies
+  `portfolio-manifests-to-seed/*` into their repos and commits
+  per-repo at their own pace.
+- `portfolio-decisions.json` is **committed** and acts as the
+  override layer. Decisions win over the in-repo manifest at every
+  stage. Loader is lenient (`loadPortfolioDecisions` returns `{}`
+  with a warning for missing/invalid JSON so a bad file can't break
+  the build).
+- Ingestion: `getWorkProjects()` adds a Pass 4 that reads cached
+  portfolio bodies via `listPortfolioBodies()`, converts via
+  `buildPortfolioWorkProjects()` (pure; takes records + decisions
+  explicitly), dedupes against GitHub + markdown + Starship by repo
+  slug or title. Body fallback: `getProjectBySlug()` checks local
+  `content/projects/<slug>.md` first, falls back to
+  `portfolio-bodies/<owner>-<name>/portfolio.md` via the lazy
+  `buildPortfolioBodiesIndexForRoot()` helper.
+- `ProjectCard` and the project detail page render `<PrivateBadge>`
+  (amber pill, lock icon, `aria-label="Private repository"`) when
+  `project.private === true`. The flag is set ONLY for
+  private-visibility bodies (per the sidecar) — public opted-in
+  repos never show the badge.
+- Slug resolution chain (in order): `frontmatter.slug` → folder
+  `<name>` part (from `<owner>-<name>`) → folder name. Title chain:
+  `frontmatter.title` → first H1 → slug. Description chain:
+  decisions summary → frontmatter summary → first prose paragraph.
+- Single source of truth for opt-in: `isOptedIn(repo, manifestState,
+  decisions)` in `src/lib/portfolio-scan.ts`. The "decisions win"
+  rule is enforced here, not duplicated across modules.
+
 ---
 
 ## 5. File Structure (key paths)
