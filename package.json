@@ -44,7 +44,8 @@
     "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
     "shiki": "^0.14.0",
-    "three": "^0.180.0"
+    "three": "^0.180.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
