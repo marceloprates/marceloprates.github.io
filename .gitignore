@@ -54,6 +54,12 @@ Thumbs.db
 .ralph/
 .pi/
 
+# Test/debug artifacts
+.playwright-report/
+test-results/
+.playwright/
+.research/
+
 # Ignore posts/ and talks/
 # Ignore posts/ and talks/
 

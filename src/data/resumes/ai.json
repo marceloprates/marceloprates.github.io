@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Marcelo Prates, PhD",
-    "label": "AI/ML Engineer",
+    "label": "AI Engineer",
     "email": "marceloorp@gmail.com",
     "phone": "",
     "website": "https://marceloprates.github.io",
@@ -265,6 +265,6 @@
   "meta": {
     "canonical": "https://marceloprates.github.io/#resume-ai",
     "version": "0.1.0",
-    "lastModified": "2026-05-21"
+    "lastModified": "2026-07-12"
   }
 }
