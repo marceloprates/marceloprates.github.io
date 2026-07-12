@@ -54,7 +54,7 @@ const stubContentLookup: ContentLookup = (slug) => {
 			repo: "marceloprates/prettymaps",
 		},
 	};
-	return content[slug] ? { slug, meta: content[slug] } : null;
+	return content[slug] ? { meta: content[slug] } : null;
 };
 
 const stubMetadata = {

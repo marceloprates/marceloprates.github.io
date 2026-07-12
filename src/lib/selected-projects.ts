@@ -19,7 +19,6 @@ export interface ContentProjectMeta {
 }
 
 export interface ContentProjectSource {
-	slug: string;
 	meta: Record<string, unknown>;
 }
 
