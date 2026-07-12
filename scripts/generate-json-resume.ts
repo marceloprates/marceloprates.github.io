@@ -15,6 +15,7 @@ import path from "path";
 import https from "https";
 import http from "http";
 import { resolveLocalLatexPath } from "../src/lib/paths";
+import { VARIANTS } from "./_variants";
 
 // ─── Inlined education ────────────────────────────────────────────────────────
 // PhD data is the same across all variants and does not change. Inlined so the
@@ -95,12 +96,6 @@ const RAW_BASE =
 // the repo is public for a future release).
 const LOCAL_LATEX_PATH = resolveLocalLatexPath();
 const LOCAL_BASE = LOCAL_LATEX_PATH ? path.join(LOCAL_LATEX_PATH, "src") : "";
-
-const VARIANTS = [
-	{ id: "ai", label: "AI/ML Engineer", tex: "ats__ai.tex" },
-	{ id: "ds", label: "Data Scientist", tex: "ats__ds.tex" },
-	{ id: "ml", label: "ML Engineer", tex: "ats__ml.tex" },
-] as const;
 
 // ─── HTTP ─────────────────────────────────────────────────────────────────────
 

@@ -20,12 +20,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { resolveLocalLatexPath } from "../src/lib/paths";
-
-const VARIANTS = [
-	{ id: "ai", source: "cv_ats__ai.pdf" },
-	{ id: "ds", source: "cv_ats__ds.pdf" },
-	{ id: "ml", source: "cv_ats__ml.pdf" },
-] as const;
+import { VARIANTS } from "./_variants";
 
 const TARGET_DIR = path.join(process.cwd(), "public", "resumes");
 
@@ -98,7 +93,7 @@ function main(): void {
 	fs.mkdirSync(TARGET_DIR, { recursive: true });
 
 	const results: VariantResult[] = VARIANTS.map((v) => {
-		const sourcePath = path.join(sourceDir, v.source);
+		const sourcePath = path.join(sourceDir, v.pdf);
 		const targetPath = path.join(TARGET_DIR, `${v.id}.pdf`);
 		try {
 			const outcome = copyIfNewer(sourcePath, targetPath);
