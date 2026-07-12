@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { getAllPosts, getPostBySlug } from '@/lib/content';
+import { getAllPostSlugs, getPostBySlug } from '@/lib/content';
 import { MarkdownPre } from '@/components/MarkdownPre';
 import { defaultRemarkPlugins, defaultRehypePlugins } from '@/lib/markdown-config';
 
 export async function generateStaticParams() {
-    const posts = getAllPosts();
-    return posts.map((p) => ({ slug: p.slug }));
+    // Enumerate EVERY slug on disk (incl. drafts) so Next's static
+    // export can pre-render a "Post not found" page for draft
+    // slugs. The draft filter lives in getPostBySlug() at render
+    // time, not here.
+    return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {

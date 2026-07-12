@@ -18,6 +18,23 @@ export interface ContentEntry<F> {
 
 const contentRoot = path.join(process.cwd(), 'content');
 
+/**
+ * Every post slug on disk (including drafts). Used by
+ * `generateStaticParams()` for the `[slug]/page.tsx` route — Next's
+ * static export needs an exhaustive slug list so the build can
+ * pre-render a 404 for any slug that turns out to be a draft at
+ * render time. Keeping the list unfiltered here is intentional;
+ * the public-facing `getAllPosts()` is the one that filters.
+ */
+export function getAllPostSlugs(): string[] {
+    const dir = path.join(contentRoot, 'posts');
+    if (!fs.existsSync(dir)) return [];
+    return fs
+        .readdirSync(dir)
+        .filter((f) => f.endsWith('.md') || f.endsWith('.markdown'))
+        .map(slugFromFilename);
+}
+
 export function getAllPosts(): PostMeta[] {
     const dir = path.join(contentRoot, 'posts');
     if (!fs.existsSync(dir)) return [];
