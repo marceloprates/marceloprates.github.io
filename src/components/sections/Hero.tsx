@@ -11,8 +11,8 @@ import { siteConfig } from "@/config/site";
 export function Hero({ years }: { years: number }) {
 	const { owner } = siteConfig;
 	return (
-		<header className="mb-10 text-center">
-			<h1 className="text-4xl font-extrabold leading-tight mb-4 text-gray-900 dark:text-white libre-baskerville">
+		<header className="mb-12 text-center">
+			<h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-balance text-gray-900 dark:text-white libre-baskerville">
 				{">"} Hi, I&apos;m{" "}
 				<span className="relative inline-block">
 					<span
@@ -22,12 +22,12 @@ export function Hero({ years }: { years: number }) {
 						<span className="absolute inset-0 opacity-60 mix-blend-multiply bg-gradient-to-br from-transparent via-black/5 to-transparent" />
 						<span className="absolute inset-0 opacity-90 mix-blend-multiply bg-[length:40px_40px] bg-[url('data:image/svg+xml;utf8,<svg width=\'40\' height=\'40\' xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grain\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'1.0\' numOctaves=\'3\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23grain)\' opacity=\'0.35\'/></svg>')]" />
 					</span>
-					<span className="relative z-10 font-extrabold text-gray-900 dark:text-gray-900">
+					<span className="relative z-10 font-extrabold text-gray-900 dark:text-gray-900 selection:bg-yellow-300 dark:selection:bg-yellow-400/80">
 						{owner.shortName}!
 					</span>
 				</span>
 			</h1>
-			<p className="mx-auto max-w-3xl text-lg text-gray-700 dark:text-gray-300 text-justify">
+			<p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-pretty">
 				My name is {owner.name}, I&apos;m a {years}yo software developer and
 				artist based in {owner.location}.
 			</p>
