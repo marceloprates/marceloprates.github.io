@@ -41,7 +41,7 @@ describe("getSearchItems", () => {
 
     it("includes the locked top-level pages", () => {
         const items = getSearchItems();
-        for (const p of ["/work", "/posts", "/about", "/resume", "/misc"]) {
+        for (const p of ["/projects", "/posts", "/about", "/resume", "/misc"]) {
             const page = items.find((i) => i.id === `page:${p}`);
             expect(page, `missing page entry for ${p}`).toBeDefined();
             expect(page?.type).toBe("page");
