@@ -105,17 +105,32 @@ export function WorkGrid({ projects, initial }: WorkGridProps) {
      * Compute the tag union for the primary-filtered subset so
      * the chips bar shows only the tags that COULD apply to the
      * active primary. Tags update reactively when primary changes.
+     *
+     * Ordering: descending by frequency (% of projects in the
+     * subset carrying the tag), tiebroken alphabetically. This is
+     * data-driven, not a hardcoded list — the chips the user sees
+     * reflect the actual distribution of tags across the items.
      */
     const tagUniverse = useMemo(() => {
         const subset =
             primary === "all"
                 ? projects
                 : projects.filter((p) => p.primary === primary);
-        const set = new Set<string>();
+        const counts = new Map<string, number>();
         for (const p of subset) {
-            for (const t of p.tags ?? []) set.add(t.toLowerCase());
+            for (const t of p.tags ?? []) {
+                const key = t.toLowerCase();
+                counts.set(key, (counts.get(key) ?? 0) + 1);
+            }
         }
-        return Array.from(set).sort();
+        return Array.from(counts.entries())
+            .sort(([a, ac], [b, bc]) => {
+                // Higher count first; alphabetical tiebreak so the
+                // order is stable across renders.
+                if (bc !== ac) return bc - ac;
+                return a.localeCompare(b);
+            })
+            .map(([t]) => t);
     }, [projects, primary]);
 
     /**

@@ -93,10 +93,10 @@ export function getWorkProjects(): WorkProject[] {
         title: "Starship",
         desc:
             "My personal Starship prompt, tailored for data-science workflows. Terminal-themed static page that demonstrates reusable prompt design.",
-        tags: mergeTags({ existing: [], repo: "starship" }),
+        tags: ["code", "prompt"],
         link: "/starship",
         image: "/images/projects/starship/cover.png",
-        primary: assignPrimary({ repo: "starship" }),
+        primary: assignPrimary({ slug: "starship" }),
     });
 
     return out;

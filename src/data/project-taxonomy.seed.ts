@@ -41,26 +41,26 @@ export const SEED: Record<SeedKey, SeedEntry> = {
     // GitHub-backed projects (src/data/projects.ts).
     "marceloprates/prettymaps": {
         primary: "art",
-        tags: ["open-source", "maps", "matplotlib"],
+        tags: ["open-source", "code", "maps", "matplotlib"],
     },
     "marceloprates/easyshader": {
         primary: "art",
-        tags: ["open-source", "sdf", "raymarching"],
+        tags: ["open-source", "code", "sdf", "raymarching"],
     },
     "marceloprates/Cosmos": {
         primary: "experiments",
-        tags: ["open-source", "latex", "ocr"],
+        tags: ["open-source", "code", "latex", "ocr"],
     },
     "marceloprates/TSP-Animation": {
         primary: "art",
-        tags: ["open-source", "cli", "animation"],
+        tags: ["open-source", "code", "cli", "animation"],
     },
     "marceloprates/Turmites": {
         primary: "art",
-        tags: ["open-source", "processing", "turing"],
+        tags: ["open-source", "code", "processing", "turing"],
     },
     "marceloprates/Voxel-Watersim": {
         primary: "experiments",
-        tags: ["unity", "simulation"],
+        tags: ["code", "processing", "simulation"],
     },
 };
