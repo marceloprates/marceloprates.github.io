@@ -25,3 +25,13 @@ if (typeof Element !== "undefined" && !Element.prototype.scrollIntoView) {
         /* no-op for jsdom */
     };
 }
+
+// src/lib/projects.ts → getProjectLink reads window.__PROJECT_METADATA__
+// to map a GitHub repo to a local /projects/[slug] page. The real
+// value is injected by src/app/layout.tsx at runtime; under jsdom we
+// give every test a default empty object so reading it is safe.
+// Individual tests that need the local-page behaviour can override
+// the global before mounting.
+if (typeof window !== "undefined") {
+    (window as unknown as { __PROJECT_METADATA__?: Record<string, unknown> }).__PROJECT_METADATA__ = {};
+}
