@@ -40,6 +40,12 @@ export function getAllPosts(): PostMeta[] {
         const name = file.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
         const meta = parsed.data || {};
         const excerptHtml = meta.excerpt || meta.summary || '';
+        // Cover contract (parallel to getAllProjects): `cover:` frontmatter
+        // preferred; if absent, fall back to the first <img src> in the
+        // excerpt. Mirrors the project-side wire-up.
+        const image = (typeof meta.cover === 'string' && meta.cover.length > 0
+            ? meta.cover
+            : extractFirstImageUrl(excerptHtml));
         return {
             title: meta.title || name,
             date: meta.date || undefined,
@@ -47,7 +53,7 @@ export function getAllPosts(): PostMeta[] {
             // Sanitize at extraction time; ProjectCard renders as plain
             // text. Cover <img> is extracted separately into `image`.
             excerpt: stripHtml(excerptHtml),
-            image: extractFirstImageUrl(excerptHtml),
+            image,
             slug: name,
         } as PostMeta;
     });
