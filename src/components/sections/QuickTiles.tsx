@@ -8,7 +8,7 @@ import { TileButton } from "@/components/TileButton";
 export function QuickTiles() {
 	return (
 		<section aria-label="Quick links" className="mb-16">
-			<div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[88px] gap-4">
+			<div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[88px] gap-3">
 				{tiles.map((tile) => (
 					<TileButton key={tile.label} tile={tile} />
 				))}
