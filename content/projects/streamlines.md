@@ -36,7 +36,7 @@ $$vector\_field\_fn$$ is defined by sampling the coefficients of a 2nd degree po
 
 The streamlines are transformed into Shapely LineString objects, and a post-processing step is carried out to ``dilate'' them using different thickness values sampled from an uniform distribution.
 
-The color of each individual curve is sampled randomly from a predefined color palette: <span style="color:#DB2B39">#DB2B39</span>, <span style="color:#46579B">#46579B</span>, <span style="color:#F3A712">#F3A712</span>, <span style="color:#F0CEA0">#F0CEA0</span>
+The color of each individual curve is sampled randomly from a predefined color palette: <span style="color:#DB2B39">#DB2B39</span>, <span style="color:#46579B">#46579B</span>, <span style="color:#91640A">#91640A</span>, <span style="color:#847158">#847158</span>
 
 By combining a median blur filter with Simple Linear Iterative Clustering (SLIC) applied over the stylized streamlines art, we can create a ``paint'' effect, with colors blending together in an organic way:
 
