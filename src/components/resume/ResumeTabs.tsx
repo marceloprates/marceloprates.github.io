@@ -11,22 +11,25 @@ import { RenderedResume } from "./RenderedResume";
 import type { JsonResume } from "@/types/resume";
 
 const VARIANTS = [
-	{ id: "ai", label: "AI/ML Engineer", filename: "ai.json" },
+	{ id: "ai", label: "AI Engineer", filename: "ai.json" },
+	{ id: "ai+ml", label: "AI/ML Engineer", filename: "ai+ml.json" },
 	{ id: "ds", label: "Data Scientist", filename: "ds.json" },
 	{ id: "ml", label: "ML Engineer", filename: "ml.json" },
 ] as const;
 
 type VariantId = (typeof VARIANTS)[number]["id"];
 
-// Eagerly import all three JSON files so Next.js bundles them at build time.
+// Eagerly import all four JSON files so Next.js bundles them at build time.
 // Using the `public/data/resumes/` path (already in `out/` after build).
 // For dev/build, we import directly from the static files.
 import aiResume from "@/data/resumes/ai.json";
+import aiMlResume from "@/data/resumes/ai+ml.json";
 import dsResume from "@/data/resumes/ds.json";
 import mlResume from "@/data/resumes/ml.json";
 
 const resumeMap: Record<VariantId, JsonResume> = {
 	ai: aiResume as JsonResume,
+	"ai+ml": aiMlResume as JsonResume,
 	ds: dsResume as JsonResume,
 	ml: mlResume as JsonResume,
 };
