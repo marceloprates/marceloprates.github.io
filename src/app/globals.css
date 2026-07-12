@@ -286,3 +286,19 @@ html.dark body::before {
 html.dark :focus-visible {
   outline-color: #60a5fa;
 }
+
+/* nav-redesign Phase B: keep focused content visible under the
+ * sticky TopNav (h-14 = 56 px). Without this offset, the SkipLink's
+ * target sits behind the header on jump (WCAG 2.4.11 Focus Not
+ * Obscured). The 8 px of breathing room past the bar keeps the
+ * focus ring on the first heading visible. */
+#main-content {
+  scroll-margin-top: 64px;
+}
+
+/* Suppress the default focus outline on the page-level skip-link
+ * target — tabbing into the inner page should surface the first
+ * heading's focus ring, not the outer wrapper's. */
+#main-content:focus {
+  outline: none;
+}
