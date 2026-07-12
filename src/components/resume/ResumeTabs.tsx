@@ -38,7 +38,7 @@ export function ResumeTabs() {
 	return (
 		<div>
 			{/* Tab bar */}
-			<div role="tablist" aria-label="Resume variants" className="flex gap-1 mb-4 border-b border-gray-200 dark:border-gray-700">
+			<div role="tablist" aria-label="Resume variants" className="flex flex-wrap items-center gap-1 mb-4 border-b border-gray-200 dark:border-gray-700">
 				{VARIANTS.map((v) => (
 					<button
 						key={v.id}
@@ -57,6 +57,37 @@ export function ResumeTabs() {
 						{v.label}
 					</button>
 				))}
+				{/* Download link for the currently active variant.
+				 * Lives in the same flex row as the tabs so it's
+				 * always visible regardless of which tab is open.
+				 * `download` attribute suggests a sensible filename
+				 * to the browser; modern browsers honor it for same-
+				 * origin URLs. The href points at a static asset
+				 * mirrored into public/resumes/ at build time.
+				 */}
+				<a
+					id={`resume-download-${active}`}
+					href={`/resumes/${active}.pdf`}
+					download={`marceloprates-resume-${active}.pdf`}
+					aria-label={`Download ${VARIANTS.find((v) => v.id === active)?.label ?? active} resume as PDF`}
+					className="ml-auto mb-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-700 dark:hover:border-blue-300 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+				>
+					<svg
+						aria-hidden="true"
+						className="h-3.5 w-3.5"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						viewBox="0 0 24 24"
+					>
+						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+						<polyline points="7 10 12 15 17 10" />
+						<line x1="12" y1="15" x2="12" y2="3" />
+					</svg>
+					Download PDF
+				</a>
 			</div>
 
 			{/* Resume content */}
