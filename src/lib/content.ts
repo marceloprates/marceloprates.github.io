@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { stripHtml } from './excerpt';
+import { resolveCoverImage, slugFromFilename } from './cover-image';
 
 const contentRoot = path.join(process.cwd(), 'content');
 
@@ -20,16 +21,6 @@ export type PostMeta = {
     slug: string;
 };
 
-/**
- * Extract an <img src="..."> URL from an HTML excerpt string.
- * Returns undefined if the excerpt is plain text or has no image.
- */
-function extractFirstImageUrl(html: string): string | undefined {
-    if (!html) return undefined;
-    const m = html.match(/<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/i);
-    return m?.[1] || undefined;
-}
-
 export function getAllPosts(): PostMeta[] {
     const dir = path.join(contentRoot, 'posts');
     if (!fs.existsSync(dir)) return [];
@@ -37,15 +28,10 @@ export function getAllPosts(): PostMeta[] {
     const items = files.map((file) => {
         const raw = fs.readFileSync(path.join(dir, file), 'utf8');
         const parsed = matter(raw);
-        const name = file.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+        const name = slugFromFilename(file);
         const meta = parsed.data || {};
         const excerptHtml = meta.excerpt || meta.summary || '';
-        // Cover contract (parallel to getAllProjects): `cover:` frontmatter
-        // preferred; if absent, fall back to the first <img src> in the
-        // excerpt. Mirrors the project-side wire-up.
-        const image = (typeof meta.cover === 'string' && meta.cover.length > 0
-            ? meta.cover
-            : extractFirstImageUrl(excerptHtml));
+        const image = resolveCoverImage(meta, excerptHtml);
         return {
             title: meta.title || name,
             date: meta.date || undefined,
@@ -84,16 +70,10 @@ export function getAllProjects(): PostMeta[] {
     const items = files.map((file) => {
         const raw = fs.readFileSync(path.join(dir, file), 'utf8');
         const parsed = matter(raw);
-        // keep filename without extension and strip leading date if present
-        const name = file.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+        const name = slugFromFilename(file);
         const meta = parsed.data || {};
         const excerptHtml = meta.excerpt || meta.summary || '';
-        // Cover contract: `cover:` frontmatter preferred; if absent, fall
-        // back to the first <img src> in the excerpt (mirrors
-        // getAllPosts' image extraction pattern).
-        const image = (typeof meta.cover === 'string' && meta.cover.length > 0
-            ? meta.cover
-            : extractFirstImageUrl(excerptHtml));
+        const image = resolveCoverImage(meta, excerptHtml);
         return {
             title: meta.title || name,
             date: meta.date || undefined,
