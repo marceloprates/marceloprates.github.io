@@ -13,6 +13,11 @@ vi.mock("@/lib/content", () => ({
     getAllProjects: vi.fn(),
     getPostBySlug: vi.fn(),
     getProjectBySlug: vi.fn(),
+    listPortfolioBodies: vi.fn(() => []),
+}));
+
+vi.mock("@/lib/portfolio-scan", () => ({
+    loadPortfolioDecisions: vi.fn(() => ({})),
 }));
 
 import * as contentModule from "@/lib/content";

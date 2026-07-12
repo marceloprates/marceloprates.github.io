@@ -223,6 +223,56 @@ export function _resetPortfolioBodiesIndexForTests(): void {
 }
 
 /**
+ * Return all cached portfolio bodies (parsed) with their sidecar
+ * metadata. Used by `getWorkProjects()` to surface opted-in private
+ * projects on `/projects` and `/work`. Pure relative to the cached
+ * files on disk; returns an empty array when no portfolio-bodies
+ * directory exists or no bodies have been scanned.
+ *
+ * Sidecars without valid visibility / owner / name are skipped with a
+ * console warning (matching the index-build policy).
+ */
+export interface PortfolioBodyRecord {
+    slug: string;
+    filePath: string;
+    /** Raw frontmatter from the body file (gray-matter). */
+    frontmatter: Record<string, unknown>;
+    /** Body markdown (the 'blogpost' section). */
+    content: string;
+    /** Sidecar with build-time metadata (visibility, canonical id, stars). */
+    sidecar: PortfolioBodyMetaSidecar;
+}
+
+export function listPortfolioBodies(): PortfolioBodyRecord[] {
+    const root = getPortfolioBodiesRoot();
+    if (!fs.existsSync(root)) return [];
+    const index = buildPortfolioBodiesIndexForRoot(root);
+    const records: PortfolioBodyRecord[] = [];
+    for (const [slug, filePath] of index.entries()) {
+        const sidecar = readPortfolioMetaSidecar(filePath);
+        if (!sidecar) continue; // already warned at index-build time
+        try {
+            const raw = fs.readFileSync(filePath, 'utf8');
+            const parsed = matter(raw);
+            records.push({
+                slug,
+                filePath,
+                frontmatter: (parsed.data ?? {}) as Record<string, unknown>,
+                content: parsed.content,
+                sidecar,
+            });
+        } catch (err) {
+            console.warn(
+                `[content] failed to parse portfolio body ${filePath}: ${
+                    err instanceof Error ? err.message : String(err)
+                }; skipping`,
+            );
+        }
+    }
+    return records;
+}
+
+/**
  * Every post slug on disk (including drafts). Used by
  * `generateStaticParams()` for the `[slug]/page.tsx` route — Next's
  * static export needs an exhaustive slug list so the build can
