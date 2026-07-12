@@ -6,7 +6,7 @@ import 'katex/dist/katex.min.css';
 import { Providers } from "./providers";
 import { getProjectMetadata } from "@/lib/project-metadata.server";
 import { SkipLink } from "@/components/SkipLink";
-import { TopNav } from "@/components/nav/TopNav";
+import { NavShell } from "@/components/nav/NavShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +52,7 @@ export default function RootLayout({
         <SkipLink />
         {/* <FilmGrain /> */}
         <Providers>
-          <TopNav />
+          <NavShell />
           <div id="main-content" tabIndex={-1}>
             {children}
           </div>
