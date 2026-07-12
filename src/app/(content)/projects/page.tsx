@@ -4,7 +4,7 @@ import { ListingPageLayout } from '@/components/ListingPageLayout';
 
 /**
  * /projects listing — discoverability surface for markdown project pages.
- * Maps PostMeta -> ProjectCard.project inline, including the cover image
+ * Maps ProjectMeta -> ProjectCard.project inline, including the cover image
  * extracted at build time by getAllProjects() (cover: frontmatter, or
  * <img src> fallback inside the excerpt).
  */

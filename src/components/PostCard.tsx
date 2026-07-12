@@ -1,20 +1,16 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import type { PostMeta } from '@/data/post-schema';
 
 interface PostCardProps {
-    post: {
-        title: string;
-        date?: string;
-        excerpt?: string;
-        slug: string;
-        tags?: string[];
-        /**
-         * Cover image URL. If provided, rendered by ProjectCard.
-         * Sourced from PostMeta.image (extracted at build time by
-         * getAllPosts in src/lib/content.ts).
-         */
-        image?: string;
-    };
+    /**
+     * Build-time shape from `getAllPosts()` (src/lib/content.ts).
+     * Pick selects exactly the fields PostCard renders; PostMeta carries
+     * additional fields (cover, categories, original_path) that PostCard
+     * doesn't touch. Type-safe — if a future field is required, extend
+     * the Pick here.
+     */
+    post: Pick<PostMeta, 'title' | 'date' | 'excerpt' | 'slug' | 'tags' | 'image'>;
 }
 
 // Thin wrapper that reuses ProjectCard for posts. Maps post shape to project shape.
