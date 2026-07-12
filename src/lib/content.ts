@@ -3,13 +3,18 @@ import path from 'path';
 import matter from 'gray-matter';
 import { stripHtml } from './excerpt';
 import { resolveCoverImage, slugFromFilename } from './cover-image';
-import type { PostMeta } from '@/data/post-schema';
-import type { ProjectMeta } from '@/data/project-schema';
+import type { PostFrontmatter, PostMeta } from '@/data/post-schema';
+import type { ProjectFrontmatter, ProjectMeta } from '@/data/project-schema';
 
 // Re-export the per-kind types so existing `import { PostMeta } from '@/lib/content'`
 // call sites continue to work. New code should import from the schema files
 // directly to make the type provenance explicit.
 export type { PostMeta, ProjectMeta };
+
+export interface ContentEntry<F> {
+    meta: F;
+    content: string;
+}
 
 const contentRoot = path.join(process.cwd(), 'content');
 
@@ -39,7 +44,7 @@ export function getAllPosts(): PostMeta[] {
     return items;
 }
 
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string): ContentEntry<PostFrontmatter> | null {
     const dir = path.join(contentRoot, 'posts');
     if (!fs.existsSync(dir)) return null;
     const files = fs.readdirSync(dir);
@@ -51,7 +56,13 @@ export function getPostBySlug(slug: string) {
     if (!file) return null;
     const raw = fs.readFileSync(path.join(dir, file), 'utf8');
     const parsed = matter(raw);
-    return { meta: parsed.data, content: parsed.content };
+    // Runtime conformance is enforced by `npm run validate:frontmatter`
+    // (precommit gate). At build-time we know content/* conforms to the
+    // schema, so the assertion is safe.
+    return {
+        meta: parsed.data as PostFrontmatter,
+        content: parsed.content,
+    };
 }
 
 // Projects (markdown pages stored under content/projects)
@@ -81,7 +92,7 @@ export function getAllProjects(): ProjectMeta[] {
     return items;
 }
 
-export function getProjectBySlug(slug: string) {
+export function getProjectBySlug(slug: string): ContentEntry<ProjectFrontmatter> | null {
     const dir = path.join(contentRoot, 'projects');
     if (!fs.existsSync(dir)) return null;
     const files = fs.readdirSync(dir);
@@ -93,5 +104,11 @@ export function getProjectBySlug(slug: string) {
     if (!file) return null;
     const raw = fs.readFileSync(path.join(dir, file), 'utf8');
     const parsed = matter(raw);
-    return { meta: parsed.data, content: parsed.content };
+    // Runtime conformance is enforced by `npm run validate:frontmatter`
+    // (precommit gate). At build-time we know content/* conforms to the
+    // schema, so the assertion is safe.
+    return {
+        meta: parsed.data as ProjectFrontmatter,
+        content: parsed.content,
+    };
 }

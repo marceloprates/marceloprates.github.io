@@ -5,17 +5,6 @@ import { getAllProjects, getProjectBySlug } from '@/lib/content';
 import { MarkdownPre } from '@/components/MarkdownPre';
 import { defaultRemarkPlugins, defaultRehypePlugins } from '@/lib/markdown-config';
 
-// Frontmatter shape for project markdown files (extend as needed)
-interface ProjectFrontmatter {
-    title?: string;
-    date?: string;
-    tags?: string[];
-    excerpt?: string;
-    cover?: string; // canonical cover field
-    image?: string; // fallback legacy field name
-    [key: string]: unknown; // allow additional arbitrary keys without using 'any'
-}
-
 export async function generateStaticParams() {
     const projects = getAllProjects();
     return projects.map((p) => ({ slug: p.slug }));
@@ -34,8 +23,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         );
     }
 
-    const meta = (project.meta || {}) as ProjectFrontmatter;
-    const content = project.content || '';
+    // meta is now typed as ProjectFrontmatter via getProjectBySlug's
+    // return type. Runtime conformance enforced by validate:frontmatter
+    // (precommit gate).
+    const meta = project.meta;
+    const content = project.content;
 
     return (
         <main className="px-4 py-16 mx-auto max-w-4xl">

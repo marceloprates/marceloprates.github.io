@@ -6,6 +6,7 @@ import {
 	type ResolveSelectedProjectsInput,
 } from "../selected-projects";
 import type { Project } from "@/types";
+import type { ProjectFrontmatter } from "@/data/project-schema";
 
 const stubAllProjects: Project[] = [
 	{
@@ -39,7 +40,7 @@ const stubContentProjects = [
 ];
 
 const stubContentLookup: ContentLookup = (slug) => {
-	const content: Record<string, Record<string, unknown>> = {
+	const content: Record<string, ProjectFrontmatter> = {
 		streamlines: {
 			title: "Streamlines",
 			excerpt: "A <b>cool</b> library about streamlines.",
@@ -74,39 +75,47 @@ function makeInput(entries: string[]): ResolveSelectedProjectsInput {
 
 describe("resolveProjectImage", () => {
 	it("returns absolute URLs as-is", () => {
-		expect(resolveProjectImage({ image: "https://example.com/x.jpg" }, "slug")).toBe(
-			"https://example.com/x.jpg",
-		);
+		expect(
+			resolveProjectImage(
+				{ title: "x", image: "https://example.com/x.jpg" },
+				"slug",
+			),
+		).toBe("https://example.com/x.jpg");
 	});
 
 	it("returns root-relative URLs as-is", () => {
-		expect(resolveProjectImage({ image: "/images/x.jpg" }, "slug")).toBe("/images/x.jpg");
+		expect(resolveProjectImage({ title: "x", image: "/images/x.jpg" }, "slug")).toBe(
+			"/images/x.jpg",
+		);
 	});
 
 	it("prepends /images/projects/{slug}/ for bare filenames", () => {
-		expect(resolveProjectImage({ image: "cover.jpg" }, "myslug")).toBe(
+		expect(resolveProjectImage({ title: "x", image: "cover.jpg" }, "myslug")).toBe(
 			"/images/projects/myslug/cover.jpg",
 		);
 	});
 
 	it("falls back to cover field if image is missing", () => {
-		expect(resolveProjectImage({ cover: "cover.png" }, "slug")).toBe(
+		expect(resolveProjectImage({ title: "x", cover: "cover.png" }, "slug")).toBe(
 			"/images/projects/slug/cover.png",
 		);
 	});
 
 	it("falls back to first <img src=...> in excerpt", () => {
 		expect(
-			resolveProjectImage({ excerpt: '<p><img src="thumb.png" alt="x"/></p>' }, "slug"),
+			resolveProjectImage(
+				{ title: "x", excerpt: '<p><img src="thumb.png" alt="x"/></p>' },
+				"slug",
+			),
 		).toBe("/images/projects/slug/thumb.png");
 	});
 
 	it("returns undefined when no image source is found", () => {
-		expect(resolveProjectImage({}, "slug")).toBeUndefined();
+		expect(resolveProjectImage({ title: "x" }, "slug")).toBeUndefined();
 	});
 
 	it("ignores non-string image fields", () => {
-		expect(resolveProjectImage({ image: 42 }, "slug")).toBeUndefined();
+		expect(resolveProjectImage({ title: "x", image: 42 }, "slug")).toBeUndefined();
 	});
 });
 
