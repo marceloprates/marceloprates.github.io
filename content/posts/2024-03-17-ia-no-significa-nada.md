@@ -3,7 +3,8 @@ title: "IA não significa nada"
 date: "2024-03-17"
 tags: []
 categories: []
-excerpt: "<img src='https://upload.wikimedia.org/wikipedia/commons/a/ab/Armillaria_ostoyae.jpg'>"
+cover: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Armillaria_ostoyae.jpg"
+excerpt: "Reflexões sobre por que o termo 'Inteligência Artificial' não significa nada — desmontando memes de IFs encadeados e a falsa dicotomia entre Deep Learning e 'verdadeira' IA."
 original_path: "_posts/2024-3-17-IA.md"
 ---
 
