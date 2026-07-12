@@ -85,11 +85,19 @@ export function getAllProjects(): PostMeta[] {
         // keep filename without extension and strip leading date if present
         const name = file.replace(/\.mdx?$|\.markdown$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
         const meta = parsed.data || {};
+        const excerptHtml = meta.excerpt || meta.summary || '';
+        // Cover contract: `cover:` frontmatter preferred; if absent, fall
+        // back to the first <img src> in the excerpt (mirrors
+        // getAllPosts' image extraction pattern).
+        const image = (typeof meta.cover === 'string' && meta.cover.length > 0
+            ? meta.cover
+            : extractFirstImageUrl(excerptHtml));
         return {
             title: meta.title || name,
             date: meta.date || undefined,
             tags: Array.isArray(meta.tags) ? meta.tags : meta.tags ? [meta.tags] : [],
-            excerpt: meta.excerpt || meta.summary || '',
+            excerpt: excerptHtml,
+            image,
             slug: name,
         } as PostMeta;
     });

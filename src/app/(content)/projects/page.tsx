@@ -4,8 +4,9 @@ import { ListingPageLayout } from '@/components/ListingPageLayout';
 
 /**
  * /projects listing — discoverability surface for markdown project pages.
- * Maps PostMeta -> ProjectCard.project inline. Image is undefined until
- * getAllProjects() extracts cover/image from frontmatter (deferred).
+ * Maps PostMeta -> ProjectCard.project inline, including the cover image
+ * extracted at build time by getAllProjects() (cover: frontmatter, or
+ * <img src> fallback inside the excerpt).
  */
 export default function ProjectsIndexPage() {
     const projects = getAllProjects();
@@ -25,7 +26,7 @@ export default function ProjectsIndexPage() {
                             tags: project.tags || [],
                             link: `/projects/${project.slug}`,
                             repo: undefined,
-                            image: undefined,
+                            image: project.image,
                         }}
                     />
                 ))}
