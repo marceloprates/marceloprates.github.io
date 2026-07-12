@@ -3,23 +3,15 @@ import path from 'path';
 import matter from 'gray-matter';
 import { stripHtml } from './excerpt';
 import { resolveCoverImage, slugFromFilename } from './cover-image';
+import type { PostMeta } from '@/data/post-schema';
+import type { ProjectMeta } from '@/data/project-schema';
+
+// Re-export the per-kind types so existing `import { PostMeta } from '@/lib/content'`
+// call sites continue to work. New code should import from the schema files
+// directly to make the type provenance explicit.
+export type { PostMeta, ProjectMeta };
 
 const contentRoot = path.join(process.cwd(), 'content');
-
-export type PostMeta = {
-    title: string;
-    date?: string;
-    tags?: string[];
-    excerpt?: string;
-    /**
-     * Optional cover image URL extracted from the post excerpt HTML at
-     * build time. Set automatically when the excerpt begins with an
-     * <img> tag. This avoids needing DOMParser inside PostCard.tsx
-     * (which previously parsed the excerpt in the browser).
-     */
-    image?: string;
-    slug: string;
-};
 
 export function getAllPosts(): PostMeta[] {
     const dir = path.join(contentRoot, 'posts');
@@ -63,7 +55,7 @@ export function getPostBySlug(slug: string) {
 }
 
 // Projects (markdown pages stored under content/projects)
-export function getAllProjects(): PostMeta[] {
+export function getAllProjects(): ProjectMeta[] {
     const dir = path.join(contentRoot, 'projects');
     if (!fs.existsSync(dir)) return [];
     const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md') || f.endsWith('.markdown'));
