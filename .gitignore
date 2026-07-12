@@ -63,6 +63,11 @@ test-results/
 # Ignore posts/ and talks/
 # Ignore posts/ and talks/
 
+# Local drafts — kept on disk, untracked, hidden from the public site
+# via the `draft: true` frontmatter flag (see src/lib/content.ts
+# getAllPosts / getPostBySlug). 2026-07-12.
+content/posts/2024-03-17-ia-no-significa-nada.md
+
 # Resume PDF snapshots — generated at build time from local LaTeX repo
 # (mirrored by scripts/generate-pdf-snapshots.ts). Never committed.
 public/resumes/

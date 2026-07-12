@@ -73,4 +73,8 @@ export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>;
 export type PostMeta = PostFrontmatter & {
 	slug: string;
 	image?: string;
+	/** Optional draft flag. When true, the post is hidden from the public
+	 * /posts listing and the ⌘K palette; the markdown stays on disk for
+	 * the author's reference. */
+	draft?: boolean;
 };

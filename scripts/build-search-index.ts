@@ -100,6 +100,10 @@ function buildPostItems(): SearchableItem[] {
         const meta = parsed.data || {};
         const slug = file.replace(/\.(md|markdown)$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
         if (!meta.title) continue;
+        // Drafts (frontmatter `draft: true`) are kept on disk for the
+        // author but never surfaced via the ⌘K palette or /posts routes.
+        // Mirrors the filter in src/lib/content.ts getAllPosts().
+        if (meta.draft === true) continue;
         items.push({
             id: `post:${slug}`,
             title: meta.title,

@@ -48,10 +48,13 @@ describe("getSearchItems", () => {
         }
     });
 
-    it("returns at least one post item (content/posts/ has IA post)", () => {
+    it("does not surface draft posts in the ⌘K palette", () => {
+        // The IA post is unpublished as of 2026-07-12. Its `draft: true`
+        // frontmatter flag must keep it out of the search index that
+        // SearchPalette hydrates from.
         const items = getSearchItems();
-        const posts = items.filter((i) => i.type === "post");
-        expect(posts.length).toBeGreaterThan(0);
+        const ia = items.find((i) => i.id === "post:ia-no-significa-nada");
+        expect(ia, "draft IA post leaked into the search index").toBeUndefined();
     });
 
     it("throws a clear error when the index file is missing", () => {

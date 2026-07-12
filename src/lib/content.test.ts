@@ -2,11 +2,8 @@ import { describe, it, expect } from "vitest";
 import { getPostBySlug, getProjectBySlug, getAllPosts } from "./content";
 
 describe("getPostBySlug", () => {
-    it("returns the post when an exact slug matches the filename", () => {
-        const post = getPostBySlug("ia-no-significa-nada");
-        expect(post).not.toBeNull();
-        expect(post?.meta.title).toBeTruthy();
-        expect(post?.content).toContain("IA");
+    it("returns null for an unknown slug", () => {
+        expect(getPostBySlug("this-post-does-not-exist")).toBeNull();
     });
 
     it("rejects substring matches (regression: audit P0 #2)", () => {
@@ -18,16 +15,14 @@ describe("getPostBySlug", () => {
         expect(getPostBySlug("nada")).toBeNull();
     });
 
-    it("returns null for an unknown slug", () => {
-        expect(getPostBySlug("this-post-does-not-exist")).toBeNull();
-    });
-
-    it("strips a leading YYYY-MM-DD- date prefix", () => {
-        // File is '2024-03-17-ia-no-significa-nada.md'; the slug is the
-        // date-stripped base. Both 'ia-no-significa-nada' (case-sensitive)
-        // and the case-insensitive variant should work.
-        expect(getPostBySlug("ia-no-significa-nada")).not.toBeNull();
-        expect(getPostBySlug("IA-NO-SIGNIFICA-NADA")).not.toBeNull();
+    it("returns null for a draft post (defense in depth — the page route already 404s)", () => {
+        // The IA post is unpublished as of 2026-07-12. Even though its
+        // filename still matches the slug, the `draft: true` frontmatter
+        // flag causes getPostBySlug to return null. The author can still
+        // read the markdown source on disk; it just isn't surfaced via
+        // the public resolver.
+        expect(getPostBySlug("ia-no-significa-nada")).toBeNull();
+        expect(getPostBySlug("IA-NO-SIGNIFICA-NADA")).toBeNull();
     });
 });
 
@@ -48,24 +43,23 @@ describe("getProjectBySlug", () => {
     });
 });
 
-describe("getAllPosts — image extraction (P0 #3 regression)", () => {
-    it("extracts the <img src> URL from post excerpt at build time", () => {
-        // The single existing post has an excerpt containing the Wikipedia
-        // Armillaria ostoyae image. getAllPosts should now extract that URL
-        // into post.image so PostCard doesn't need DOMParser in the browser.
+describe("getAllPosts — image extraction + draft filter", () => {
+    it("filters out drafts so the public listing never surfaces them", () => {
+        // The IA post has `draft: true` in its frontmatter (2026-07-12).
+        // The /posts listing and the ⌘K palette should never see it.
         const posts = getAllPosts();
-        const turmite = posts.find((p) => p.slug === "ia-no-significa-nada");
-        expect(turmite).toBeDefined();
-        expect(turmite?.image).toBe(
-            "https://upload.wikimedia.org/wikipedia/commons/a/ab/Armillaria_ostoyae.jpg"
-        );
+        const drafts = posts.filter((p) => p.draft === true);
+        expect(drafts).toHaveLength(0);
+        // And the slug itself must not appear in the public listing.
+        expect(posts.find((p) => p.slug === "ia-no-significa-nada")).toBeUndefined();
     });
 
     it("returns undefined image when excerpt is plain text", () => {
-        // All current posts have an <img>; this is a forward-looking assertion.
+        // Forward-looking: any future published post either has an image
+        // URL or undefined. (The IA post is the only file currently, and
+        // it's a draft, so the loop is a no-op until another post lands.)
         const posts = getAllPosts();
         posts.forEach((p) => {
-            // image is either a URL or undefined; both are valid
             expect(p.image === undefined || typeof p.image === "string").toBe(true);
         });
     });

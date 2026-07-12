@@ -38,8 +38,13 @@ export function getAllPosts(): PostMeta[] {
             excerpt: stripHtml(excerptHtml),
             image,
             slug: name,
+            draft: meta.draft === true,
         } as PostMeta;
-    });
+    })
+    // Filter out drafts so the public site /posts listing and the ⌘K
+    // palette don't surface unpublished work. Drafts are still readable
+    // from disk via the markdown source for the author.
+    .filter((p) => !p.draft);
     items.sort((a, b) => (a.date && b.date ? (a.date > b.date ? -1 : 1) : 0));
     return items;
 }
@@ -56,6 +61,10 @@ export function getPostBySlug(slug: string): ContentEntry<PostFrontmatter> | nul
     if (!file) return null;
     const raw = fs.readFileSync(path.join(dir, file), 'utf8');
     const parsed = matter(raw);
+    // Drafts are unreachable from the public site. The page route
+    // surfaces a 404 via generateStaticParams excluding drafts, and
+    // this lookup returns null for direct slugs as a defense in depth.
+    if (parsed.data?.draft === true) return null;
     // Runtime conformance is enforced by `npm run validate:frontmatter`
     // (precommit gate). At build-time we know content/* conforms to the
     // schema, so the assertion is safe.
