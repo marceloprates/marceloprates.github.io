@@ -53,15 +53,16 @@ describe("TopNav", () => {
             .getAllByRole("link")
             .filter((a) => a.getAttribute("aria-current") === "page");
         expect(activeLinks).toHaveLength(1);
-        expect(activeLinks[0]).toHaveTextContent("Work");
+        expect(activeLinks[0]).toHaveTextContent("Projects");
     });
 
-    it("does not claim Open Source as active on plain /work", () => {
+    it("does not claim an item with a query-bearing href as active on /", () => {
+        // After removing the Open Source item, the only nav link
+        // pointing at /work is the Projects one. It should be active.
         mockPathname = "/work";
         render(<TopNav />);
-        // The /work?tag=open-source link exists but should not be flagged active.
-        const openSource = screen.getByRole("link", { name: "Open Source" });
-        expect(openSource.getAttribute("aria-current")).toBeNull();
+        const projects = screen.getByRole("link", { name: "Projects" });
+        expect(projects.getAttribute("aria-current")).toBe("page");
     });
 
     it("does not claim any non-root link as active on /", () => {

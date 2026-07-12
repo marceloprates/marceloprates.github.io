@@ -5,8 +5,10 @@ import { test, expect } from "@playwright/test";
  *
  * Asserts the new site-wide navigation surface:
  *   - TopNav renders on every page.
- *   - Five locked text items are present (Work, Writing, Open
- *     Source, About, Resume).
+ *   - Four locked text items are present (Projects, Writing,
+ *     About, Resume). Open Source was removed in a post-loop
+ *     refinement (it duplicated Projects via the
+ *     /work?tag=open-source query filter).
  *   - Active state is correct on every locked destination.
  *   - ⌘K opens the palette; Esc closes it; the Search button
  *     opens it; selecting a result navigates.
@@ -16,9 +18,8 @@ import { test, expect } from "@playwright/test";
  */
 
 const NAV_ITEMS = [
-    { label: "Work", path: "/work" },
+    { label: "Projects", path: "/work" },
     { label: "Writing", path: "/posts" },
-    { label: "Open Source", path: "/work?tag=open-source" },
     { label: "About", path: "/about" },
     { label: "Resume", path: "/resume" },
 ] as const;
@@ -37,13 +38,13 @@ test.describe("TopNav presence + active state", () => {
         });
     }
 
-    test("/work marks the Work item with aria-current=page", async ({ page }) => {
+    test("/work marks the Projects item with aria-current=page", async ({ page }) => {
         await page.goto("/work", { waitUntil: "domcontentloaded" });
-        const work = page
+        const projects = page
             .getByRole("banner")
-            .getByRole("link", { name: "Work" })
+            .getByRole("link", { name: "Projects" })
             .first();
-        await expect(work).toHaveAttribute("aria-current", "page");
+        await expect(projects).toHaveAttribute("aria-current", "page");
     });
 
     test("/about marks the About item with aria-current=page", async ({ page }) => {

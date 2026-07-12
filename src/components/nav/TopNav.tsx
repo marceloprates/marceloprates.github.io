@@ -48,16 +48,22 @@ export interface NavItem {
 /**
  * Canonical nav item order. The list maps to the locked top-level IA
  * (see .ralph/nav-redesign.md Phase B):
- *   Work · Writing · Open Source · About · Resume.
+ *   Projects · Writing · About · Resume.
  *
- * Open Source is a query-prefixed route (`/work?tag=open-source`) so
- * it lands on the existing /work page with the right filter
- * pre-applied (URL sync lives in Phase D /components/work/FilterBar).
+ * Post-loop refinement (2026-07-12): Open Source was removed because
+ * it was just a /work?tag=open-source query filter, which surfaced a
+ * confusing duplicate against the Projects link. The tag is still
+ * reachable via the SearchPalette and the /work filter chips; only
+ * the TopNav entry is gone.
+ *
+ * "Work" was renamed to "Projects" to match the user-facing
+ * expectation (a "Projects" page is the conventional portfolio
+ * surface). The route stays /work for now (renaming the URL would
+ * break existing inbound links).
  */
 export const NAV_ITEMS: readonly NavItem[] = [
-    { label: "Work", href: "/work" },
+    { label: "Projects", href: "/work" },
     { label: "Writing", href: "/posts" },
-    { label: "Open Source", href: "/work?tag=open-source" },
     { label: "About", href: "/about" },
     { label: "Resume", href: "/resume" },
 ] as const;

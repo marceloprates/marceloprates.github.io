@@ -20,7 +20,7 @@ import { WorkGrid } from "@/components/work/WorkGrid";
  */
 
 export const metadata: Metadata = {
-    title: "Work — Marcelo Prates",
+    title: "Projects — Marcelo Prates",
     description:
         "All projects, filterable by category (Code · Art · Writing · Experiments) and tag (open-source, ml, threejs, ...).",
 };
@@ -47,7 +47,7 @@ export default function WorkPage() {
     return (
         <main className="px-4 py-16 mx-auto max-w-6xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-                Work
+                Projects
             </h1>
             <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl">
                 Every project — generative art, dev tools, experiments,

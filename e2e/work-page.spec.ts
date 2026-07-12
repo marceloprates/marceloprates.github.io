@@ -14,7 +14,7 @@ import { test, expect } from "@playwright/test";
 test.describe("/work grid + filters", () => {
     test("renders the page header and FilterBar controls", async ({ page }) => {
         await page.goto("/work", { waitUntil: "domcontentloaded" });
-        await expect(page.getByRole("heading", { level: 1, name: "Work" })).toBeVisible();
+        await expect(page.getByRole("heading", { level: 1, name: "Projects" })).toBeVisible();
         // The 5 toggle buttons: All, Code, Art, Writing, Experiments.
         for (const p of ["All", "Code", "Art", "Writing", "Experiments"]) {
             await expect(page.getByTestId(`primary-toggle-${p.toLowerCase()}`)).toBeVisible();
