@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { stripHtml } from './excerpt';
 
 const contentRoot = path.join(process.cwd(), 'content');
 
@@ -29,13 +30,6 @@ function extractFirstImageUrl(html: string): string | undefined {
     return m?.[1] || undefined;
 }
 
-/**
- * Strip HTML tags from an excerpt to produce plain text.
- */
-function stripHtml(html: string): string {
-    return html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-}
-
 export function getAllPosts(): PostMeta[] {
     const dir = path.join(contentRoot, 'posts');
     if (!fs.existsSync(dir)) return [];
@@ -50,7 +44,9 @@ export function getAllPosts(): PostMeta[] {
             title: meta.title || name,
             date: meta.date || undefined,
             tags: Array.isArray(meta.tags) ? meta.tags : meta.tags ? [meta.tags] : [],
-            excerpt: excerptHtml,
+            // Sanitize at extraction time; ProjectCard renders as plain
+            // text. Cover <img> is extracted separately into `image`.
+            excerpt: stripHtml(excerptHtml),
             image: extractFirstImageUrl(excerptHtml),
             slug: name,
         } as PostMeta;
@@ -96,7 +92,9 @@ export function getAllProjects(): PostMeta[] {
             title: meta.title || name,
             date: meta.date || undefined,
             tags: Array.isArray(meta.tags) ? meta.tags : meta.tags ? [meta.tags] : [],
-            excerpt: excerptHtml,
+            // Sanitize at extraction time; ProjectCard renders as plain
+            // text. Cover <img> is extracted separately into `image`.
+            excerpt: stripHtml(excerptHtml),
             image,
             slug: name,
         } as PostMeta;
