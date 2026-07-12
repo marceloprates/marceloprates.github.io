@@ -52,3 +52,25 @@ export const PostFrontmatterSchema = z
 	.passthrough();
 
 export type PostFrontmatter = z.infer<typeof PostFrontmatterSchema>;
+
+/**
+ * Build-time shape returned by `src/lib/content.ts getAllPosts()`.
+ *
+ * Differs from {@link PostFrontmatter} in two ways:
+ * 1. Adds `slug: string` — derived from filename (see
+ *    `src/lib/cover-image.ts slugFromFilename`). Always present.
+ * 2. Adds `image?: string` — computed at build time via
+ *    `resolveCoverImage(meta, excerptHtml)`. Always a URL or path
+ *    (covers the `cover:` and excerpt-img contract).
+ *
+ * All other frontmatter fields are preserved (incl. ad-hoc ones via
+ * `.passthrough()`), so `PostMeta` is a strict superset of
+ * `PostFrontmatter` minus the build-time-only `image` provenance.
+ *
+ * Consumers: `src/components/PostCard.tsx`, `(content)/posts/page.tsx`,
+ * `(content)/posts/[slug]/page.tsx`.
+ */
+export type PostMeta = PostFrontmatter & {
+	slug: string;
+	image?: string;
+};
