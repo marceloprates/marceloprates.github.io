@@ -36,7 +36,7 @@ This work is [licensed](LICENSE) under a GNU Affero General Public License v3.0 
 
 # Installation
 
-### Install locally:
+## Install locally:
 Install prettymaps with:
 
 ```
