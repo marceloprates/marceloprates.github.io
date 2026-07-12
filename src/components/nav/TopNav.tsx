@@ -69,10 +69,8 @@ export const NAV_ITEMS: readonly NavItem[] = [
 ] as const;
 
 /**
- * Visual nav height (px). Used by globals.css scroll-margin-top and
- * by tests asserting layout.
+ * Visual nav height (px). Used by globals.css scroll-margin-top.
  */
-export const TOPNAV_HEIGHT_PX = 56;
 
 function isActive(href: string, pathname: string): boolean {
     if (pathname === "/" && href === "/") return true;

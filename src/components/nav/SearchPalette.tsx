@@ -31,7 +31,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 
-export type SearchableItemType = "project" | "post" | "page";
+type SearchableItemType = "project" | "post" | "page";
 
 export interface SearchableItem {
     /** Stable id, used as cmdk Command.Item key. */

@@ -46,5 +46,4 @@ export const SectionsArraySchema = z.array(SectionConfigSchema);
 // Inferred TS types (single source of truth — schema is the spec).
 export type SiteOwner = z.infer<typeof SiteOwnerSchema>;
 export type Social = z.infer<typeof SocialSchema>;
-export type SectionId = z.infer<typeof SectionIdSchema>;
 export type SectionConfig = z.infer<typeof SectionConfigSchema>;

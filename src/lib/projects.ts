@@ -16,7 +16,7 @@
 
 import type { Project } from "@/types";
 
-export interface ProjectMetadataEntry {
+interface ProjectMetadataEntry {
     readonly hasLocalPage: boolean;
     readonly slug?: string;
 }

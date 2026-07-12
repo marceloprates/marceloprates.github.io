@@ -36,4 +36,3 @@ export const MiscEntrySchema = z.object({
 export const MiscArraySchema = z.array(MiscEntrySchema);
 
 export type MiscEntry = z.infer<typeof MiscEntrySchema>;
-export type MiscArray = z.infer<typeof MiscArraySchema>;

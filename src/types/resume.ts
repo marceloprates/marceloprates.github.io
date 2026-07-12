@@ -3,19 +3,19 @@
  * @see https://jsonresume.org/schema/
  */
 
-export interface ResumeProfile {
+interface ResumeProfile {
 	network: string;
 	username: string;
 	url: string;
 }
 
-export interface ResumeLocation {
+interface ResumeLocation {
 	city: string;
 	region: string;
 	country: string;
 }
 
-export interface ResumeBasics {
+interface ResumeBasics {
 	name: string;
 	label: string;
 	email: string;
@@ -28,7 +28,7 @@ export interface ResumeBasics {
 	profiles: ResumeProfile[];
 }
 
-export interface ResumeWork {
+interface ResumeWork {
 	name: string;
 	position: string;
 	startDate: string;
@@ -38,13 +38,13 @@ export interface ResumeWork {
 	highlights: string[];
 }
 
-export interface ResumeSkill {
+interface ResumeSkill {
 	name: string;
 	level: string;
 	keywords: string[];
 }
 
-export interface ResumeEducation {
+interface ResumeEducation {
 	institution: string;
 	area: string;
 	studyType: string;

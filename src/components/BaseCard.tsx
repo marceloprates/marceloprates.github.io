@@ -12,7 +12,7 @@ import halftone from './Texture.module.css';
 
 type ImageVariant = 'right-slashed' | 'full';
 
-export interface CardImage {
+interface CardImage {
     src?: string | StaticImageData;
     alt?: string;
     variant?: ImageVariant;
@@ -20,7 +20,7 @@ export interface CardImage {
     sizes?: string;
 }
 
-export interface CardBaseProps {
+interface CardBaseProps {
     href?: string;
     external?: boolean;
     className?: string;
