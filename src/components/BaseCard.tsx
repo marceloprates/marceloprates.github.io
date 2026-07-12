@@ -115,6 +115,7 @@ const BaseCard = React.memo(function BaseCard({
             <div className={[
                 'relative z-20 p-6',
                 contentInteractive ? 'pointer-events-auto' : 'pointer-events-none',
+                href ? 'cursor-pointer' : '',
                 contentClassName || '',
             ].filter(Boolean).join(' ')}>
                 {children}
@@ -126,7 +127,7 @@ const BaseCard = React.memo(function BaseCard({
                     href={href}
                     target={external ? '_blank' : undefined}
                     rel={external ? 'noopener noreferrer' : undefined}
-                    className="absolute inset-0 z-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
+                    className="absolute inset-0 z-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
                     aria-label={overlayAriaLabel}
                 />
             ) : null}

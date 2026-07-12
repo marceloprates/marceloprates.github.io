@@ -58,7 +58,7 @@ export const ProjectCard = React.memo(function ProjectCard({ project }: ProjectC
         >
             {/* Left content over image */}
             <div
-                className="p-6 pointer-events-auto"
+                className="p-6 pointer-events-auto cursor-pointer"
                 // Make the card content keyboard-focusable and activate on Enter/Space
                 role="link"
                 tabIndex={0}
