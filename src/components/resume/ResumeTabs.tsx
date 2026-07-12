@@ -40,8 +40,11 @@ export function ResumeTabs() {
 
 	return (
 		<div>
-			{/* Tab bar */}
-			<div role="tablist" aria-label="Resume variants" className="flex flex-wrap items-center gap-1 mb-4 border-b border-gray-200 dark:border-gray-700">
+			{/* Tab bar — tablist contains ONLY role=tab children per ARIA spec.
+			 * The download link sits in a sibling row below the tab bar so
+			 * we don't pollute the tablist with non-tab content.
+			 */}
+			<div role="tablist" aria-label="Resume variants" className="flex flex-wrap items-center gap-1 mb-2 border-b border-gray-200 dark:border-gray-700">
 				{VARIANTS.map((v) => (
 					<button
 						key={v.id}
@@ -60,20 +63,22 @@ export function ResumeTabs() {
 						{v.label}
 					</button>
 				))}
-				{/* Download link for the currently active variant.
-				 * Lives in the same flex row as the tabs so it's
-				 * always visible regardless of which tab is open.
-				 * `download` attribute suggests a sensible filename
-				 * to the browser; modern browsers honor it for same-
-				 * origin URLs. The href points at a static asset
-				 * mirrored into public/resumes/ at build time.
-				 */}
+			</div>
+
+			{/* Download link for the currently active variant.
+			 * Sibling row below the tab bar, right-aligned.
+			 * `download` attribute suggests a sensible filename
+			 * to the browser; modern browsers honor it for same-
+			 * origin URLs. The href points at a static asset
+			 * mirrored into public/resumes/ at build time.
+			 */}
+			<div className="flex justify-end mb-4">
 				<a
 					id={`resume-download-${active}`}
 					href={`/resumes/${active}.pdf`}
 					download={`marceloprates-resume-${active}.pdf`}
 					aria-label={`Download ${VARIANTS.find((v) => v.id === active)?.label ?? active} resume as PDF`}
-					className="ml-auto mb-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-700 dark:hover:border-blue-300 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+					className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-700 dark:hover:border-blue-300 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
 				>
 					<svg
 						aria-hidden="true"
