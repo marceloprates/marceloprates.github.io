@@ -19,6 +19,20 @@ export interface Project {
 	gitstarRank?: number;
 	/** Optional canonical gitstar (or fallback) URL for the repo */
 	gitstarUrl?: string;
+	/**
+	 * Optional. When true, the repo is private on GitHub but the user has
+	 * opted it into the public portfolio via `portfolio.md`. Drives the
+	 * "private" badge on the card and the project page. See
+	 * `.ralph/private-portfolio-candidates.md` and `src/data/portfolio-schema.ts`.
+	 */
+	private?: boolean;
+	/**
+	 * Optional sort tier for the card grid. `featured` cards sort first,
+	 * `hidden` cards are excluded from the default view but available via
+	 * filter, `normal` is the default. Default applied at consumption time
+	 * is `normal` (see `PORTFOLIO_DEFAULT_TIER`).
+	 */
+	tier?: "featured" | "normal" | "hidden";
 }
 
 /**
