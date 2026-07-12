@@ -20,6 +20,7 @@
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
     "fetch-scholar": "node ./scripts/fetch-scholar.js",
+    "scan:portfolio": "npm exec -- tsx ./scripts/scan-portfolio-candidates.ts",
     "ci:fetch-publications": "npm run fetch-scholar",
     "generate:projects": "node scripts/generate-github-projects.mjs",
     "generate:resumes": "npx tsx scripts/generate-json-resume.ts",

@@ -82,3 +82,12 @@ src/data/resumes/*.json
 # scripts/build-search-index.ts. Tracked nowhere; fresh clones run
 # the script during `npm run build`.
 public/search-index.json
+
+# private-portfolio-candidates Phase B (2026-07-12):
+# `npm run scan:portfolio` produces a per-repo candidate report
+# (visibility + include flag + tier + summary + tags). Gitignored
+# because it's regenerated on every scan; the source of truth is
+# each repo's portfolio.md + portfolio-decisions.json.
+portfolio-candidates.md
+portfolio-manifests-to-seed/
+portfolio-bodies/
