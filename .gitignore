@@ -56,3 +56,7 @@ Thumbs.db
 
 # Ignore posts/ and talks/
 # Ignore posts/ and talks/
+
+# Resume PDF snapshots — generated at build time from local LaTeX repo
+# (mirrored by scripts/generate-pdf-snapshots.ts). Never committed.
+public/resumes/

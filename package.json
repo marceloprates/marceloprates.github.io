@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate:resumes && next build",
-    "build:full": "npm run generate:resumes && npm run generate:projects && node scripts/generate-github-projects.mjs && next build",
+    "build": "npm run generate:resume-assets && next build",
+    "build:full": "npm run generate:resume-assets && npm run generate:projects && node scripts/generate-github-projects.mjs && next build",
     "export": "echo \"Export handled during \"next build\" when \"output: 'export'\" is set in next.config.js\"",
     "start": "next start",
     "lint": "eslint --ext .ts,.tsx,.js,.jsx --config ./config/eslint.config.mjs .",
@@ -20,7 +20,9 @@
     "fetch-scholar": "node ./scripts/fetch-scholar.js",
     "ci:fetch-publications": "npm run fetch-scholar",
     "generate:projects": "node scripts/generate-github-projects.mjs",
-    "generate:resumes": "npx tsx scripts/generate-json-resume.ts"
+    "generate:resumes": "npx tsx scripts/generate-json-resume.ts",
+    "generate:resume-pdfs": "npx tsx scripts/generate-pdf-snapshots.ts",
+    "generate:resume-assets": "npm run generate:resumes && npm run generate:resume-pdfs"
   },
   "dependencies": {
     "@fontsource/pacifico": "^5.2.6",
