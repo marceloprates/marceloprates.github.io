@@ -17,7 +17,7 @@ export function RenderedResume({ resume, variantId }: Props) {
 	const { basics, work, skills, education } = resume;
 
 	return (
-		<article
+		<div
 			id={`resume-panel-${variantId}`}
 			role="tabpanel"
 			aria-labelledby={`resume-tab-${variantId}`}
@@ -183,6 +183,6 @@ export function RenderedResume({ resume, variantId }: Props) {
 					</div>
 				</section>
 			)}
-		</article>
+		</div>
 	);
 }
