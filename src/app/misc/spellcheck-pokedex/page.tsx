@@ -49,7 +49,12 @@ export default function SpellcheckPokedexPortuguese() {
                 </div>
 
                 {/* Table */}
-                <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+                <div
+                    tabIndex={0}
+                    role="region"
+                    aria-label="Pokemon list"
+                    className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm"
+                >
                     <table className="w-full text-sm text-left">
                         <thead className="text-xs uppercase bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
                             <tr>
