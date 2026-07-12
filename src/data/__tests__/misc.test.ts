@@ -13,7 +13,7 @@ describe("misc registry", () => {
 	it("includes the spellcheck-pokedex entry", () => {
 		const pokedex = getMiscEntryById("spellcheck-pokedex");
 		expect(pokedex).toBeDefined();
-		expect(pokedex?.href).toBe("/misc/spellcheck-pokedex");
+		expect(pokedex?.href).toBe("/spellcheck-pokedex");
 		expect(pokedex?.enabled).toBe(true);
 	});
 

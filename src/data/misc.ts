@@ -16,7 +16,7 @@ const miscEntries: MiscEntry[] = MiscArraySchema.parse([
 	{
 		id: "spellcheck-pokedex",
 		title: "Pokédex Spellcheck Reference",
-		href: "/misc/spellcheck-pokedex",
+		href: "/spellcheck-pokedex",
 		description:
 			"All Pokémon names run through spell checkers in English, Portuguese, and Spanish. Closest real-word matches per language dictionary.",
 		icon: "/globe.svg",
