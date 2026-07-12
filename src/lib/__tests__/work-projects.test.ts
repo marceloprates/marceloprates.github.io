@@ -38,9 +38,11 @@ describe("getWorkProjects", () => {
         vi.clearAllMocks();
     });
 
-    it("returns all six GitHub-sourced projects when no markdown exists", () => {
+    it("returns six GitHub-sourced projects + Starship when no markdown exists", () => {
         const out = getWorkProjects();
-        expect(out).toHaveLength(6);
+        // 6 GitHub projects + Starship (the supplemental record
+        // appended by getWorkProjects itself).
+        expect(out).toHaveLength(7);
         // Spot-check: every record carries a primary.
         for (const p of out) {
             expect(p.primary).toMatch(/^(code|art|writing|experiments)$/);
@@ -82,8 +84,9 @@ describe("getWorkProjects", () => {
         ]);
 
         const out = getWorkProjects();
-        // Two markdown shadows were dropped, so still six records.
-        expect(out).toHaveLength(6);
+        // Two markdown shadows were dropped, so still 7 records (6
+        // GitHub + Starship appended).
+        expect(out).toHaveLength(7);
         // Original titles preserved.
         const titles = out.map((p) => p.title);
         expect(titles).toContain("prettymaps");
@@ -102,7 +105,7 @@ describe("getWorkProjects", () => {
 
         const out = getWorkProjects();
         // Title match ("PRETTYMAPS" vs "prettymaps") suppresses the dupe.
-        expect(out).toHaveLength(6);
+        expect(out).toHaveLength(7);
         expect(out.find((p) => p.title === "PRETTYMAPS")).toBeUndefined();
     });
 
@@ -118,8 +121,8 @@ describe("getWorkProjects", () => {
         ]);
 
         const out = getWorkProjects();
-        // 6 GitHub + 1 markdown = 7.
-        expect(out).toHaveLength(7);
+        // 6 GitHub + 1 markdown + 1 Starship = 8.
+        expect(out).toHaveLength(8);
         const streamlines = out.find((p) => p.title === "Streamlines");
         expect(streamlines).toBeDefined();
         expect(streamlines?.link).toBe("/projects/streamlines");
@@ -132,6 +135,6 @@ describe("getWorkProjects", () => {
     it("handles an empty markdown source cleanly", () => {
         getAllProjects.mockReturnValue([]);
         const out = getWorkProjects();
-        expect(out).toHaveLength(6);
+        expect(out).toHaveLength(7);
     });
 });

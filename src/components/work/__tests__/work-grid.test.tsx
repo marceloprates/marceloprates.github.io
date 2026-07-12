@@ -2,7 +2,6 @@
  * Tests for WorkGrid.
  *
  * Coverage:
- *   - Renders the StarshipCard callout at the top of the page.
  *   - Renders one card per project when no filter is active.
  *   - Filters by primary: clicking a FilterBar primary emits an
  *     onChange that survives the component boundary (verified
@@ -29,7 +28,7 @@ let searchParamsValue = new URLSearchParams();
 vi.mock("next/navigation", () => ({
     useRouter: () => ({ push: pushMock, replace: replaceMock, refresh: vi.fn() }),
     useSearchParams: () => searchParamsValue,
-    usePathname: () => "/work",
+    usePathname: () => "/projects",
 }));
 
 import { WorkGrid } from "@/components/work/WorkGrid";
@@ -87,13 +86,6 @@ afterEach(() => {
 });
 
 describe("WorkGrid", () => {
-    it("renders the StarshipCard featured callout", () => {
-        setupSearchParams();
-        render(<WorkGrid projects={PROJECTS} initial={{ primary: "all", tag: null }} />);
-        // StarshipCard renders a BaseCard with aria-label matching.
-        expect(screen.getByLabelText(/view my starship/i)).toBeInTheDocument();
-    });
-
     it("renders one card per project when primary=all", () => {
         setupSearchParams();
         render(<WorkGrid projects={PROJECTS} initial={{ primary: "all", tag: null }} />);
@@ -158,7 +150,7 @@ describe("WorkGrid", () => {
         render(<WorkGrid projects={PROJECTS} initial={{ primary: "all", tag: null }} />);
         fireEvent.click(screen.getByTestId("primary-toggle-all"));
         await waitFor(() => {
-            expect(replaceMock).toHaveBeenCalledWith("/work", { scroll: false });
+            expect(replaceMock).toHaveBeenCalledWith("/projects", { scroll: false });
         });
     });
 });

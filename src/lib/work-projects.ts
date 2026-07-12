@@ -86,5 +86,18 @@ export function getWorkProjects(): WorkProject[] {
         });
     }
 
+    // Featured surfaces that aren't GitHub-backed but still belong
+    // on /work. Today that's the Starship prompt-theme project; it
+    // renders as one more card in the grid via <ProjectCard>.
+    out.push({
+        title: "Starship",
+        desc:
+            "My personal Starship prompt, tailored for data-science workflows. Terminal-themed static page that demonstrates reusable prompt design.",
+        tags: mergeTags({ existing: [], repo: "starship" }),
+        link: "/starship",
+        image: "/images/projects/starship/cover.png",
+        primary: assignPrimary({ repo: "starship" }),
+    });
+
     return out;
 }

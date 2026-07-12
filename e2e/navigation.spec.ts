@@ -8,7 +8,7 @@ import { test, expect } from "@playwright/test";
  *   - Four locked text items are present (Projects, Writing,
  *     About, Resume). Open Source was removed in a post-loop
  *     refinement (it duplicated Projects via the
- *     /work?tag=open-source query filter).
+ *     /projects?tag=open-source query filter).
  *   - Active state is correct on every locked destination.
  *   - ⌘K opens the palette; Esc closes it; the Search button
  *     opens it; selecting a result navigates.
@@ -18,7 +18,7 @@ import { test, expect } from "@playwright/test";
  */
 
 const NAV_ITEMS = [
-    { label: "Projects", path: "/work" },
+    { label: "Projects", path: "/projects" },
     { label: "Writing", path: "/posts" },
     { label: "About", path: "/about" },
     { label: "Resume", path: "/resume" },
@@ -38,8 +38,8 @@ test.describe("TopNav presence + active state", () => {
         });
     }
 
-    test("/work marks the Projects item with aria-current=page", async ({ page }) => {
-        await page.goto("/work", { waitUntil: "domcontentloaded" });
+    test("/projects marks the Projects item with aria-current=page", async ({ page }) => {
+        await page.goto("/projects", { waitUntil: "domcontentloaded" });
         const projects = page
             .getByRole("banner")
             .getByRole("link", { name: "Projects" })

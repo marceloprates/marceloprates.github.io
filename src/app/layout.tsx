@@ -45,7 +45,7 @@ export default function RootLayout({
   // window.__PROJECT_METADATA__ is read by client components that
   // map a GitHub repo to a local /projects/[slug] page. The home
   // page no longer consumes it (Phase C), but the field stays
-  // injected so /work and future pages can still read it cheaply.
+  // injected so /projects and future pages can still read it cheaply.
   const projectMetadata = getProjectMetadata();
 
   return (

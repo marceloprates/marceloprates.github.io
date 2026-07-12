@@ -155,7 +155,7 @@ export function AboutSection({ name, role, location }: AboutSectionProps) {
 
           {/* nav-redesign Phase C (2026-07-12): the dedicated Open
            * Source block (#oss) was removed. Open Source is now a
-           * `/work?tag=open-source` filter on the new faceted grid
+           * `/projects?tag=open-source` filter on the new faceted grid
            * (Phase D). Use the TopNav to reach it. */}
         </div>
       </div >

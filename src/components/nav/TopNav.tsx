@@ -51,18 +51,18 @@ export interface NavItem {
  *   Projects · Writing · About · Resume.
  *
  * Post-loop refinement (2026-07-12): Open Source was removed because
- * it was just a /work?tag=open-source query filter, which surfaced a
+ * it was just a /projects?tag=open-source query filter, which surfaced a
  * confusing duplicate against the Projects link. The tag is still
- * reachable via the SearchPalette and the /work filter chips; only
+ * reachable via the SearchPalette and the /projects filter chips; only
  * the TopNav entry is gone.
  *
  * "Work" was renamed to "Projects" to match the user-facing
  * expectation (a "Projects" page is the conventional portfolio
- * surface). The route stays /work for now (renaming the URL would
+ * surface).
  * break existing inbound links).
  */
 export const NAV_ITEMS: readonly NavItem[] = [
-    { label: "Projects", href: "/work" },
+    { label: "Projects", href: "/projects" },
     { label: "Writing", href: "/posts" },
     { label: "About", href: "/about" },
     { label: "Resume", href: "/resume" },
@@ -81,8 +81,8 @@ function isActive(href: string, pathname: string): boolean {
         return false;
     }
     // For query-bearing links, don't claim active on plain pathname
-    // matches — the /work page itself is owned by the "Work" link,
-    // not the "Open Source" link.
+    // matches — the /projects page itself is owned by the
+    // "Projects" link, not a query-bearing link.
     if (query) return false;
     return true;
 }

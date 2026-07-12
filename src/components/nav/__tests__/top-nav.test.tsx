@@ -47,7 +47,7 @@ describe("TopNav", () => {
     });
 
     it("marks the active link with aria-current=page", () => {
-        mockPathname = "/work";
+        mockPathname = "/projects";
         render(<TopNav />);
         const activeLinks = screen
             .getAllByRole("link")
@@ -57,9 +57,9 @@ describe("TopNav", () => {
     });
 
     it("does not claim an item with a query-bearing href as active on /", () => {
-        // After removing the Open Source item, the only nav link
-        // pointing at /work is the Projects one. It should be active.
-        mockPathname = "/work";
+        // The Projects nav link points at /projects. It should be
+        // active when the pathname is exactly /projects.
+        mockPathname = "/projects";
         render(<TopNav />);
         const projects = screen.getByRole("link", { name: "Projects" });
         expect(projects.getAttribute("aria-current")).toBe("page");

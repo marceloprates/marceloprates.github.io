@@ -11,12 +11,14 @@
  * interactions round-trip back into the URL via router.replace.
  *
  * Layout:
- *   1. Optional <StarshipCard> featured at the top (always visible,
- *      not affected by filters — it's an in-house callout, not a
- *      project record).
- *   2. <FilterBar> (primary segmented control + multi-select tag
+ *   1. <FilterBar> (primary segmented control + multi-select tag
  *      chips).
- *   3. The filtered card grid using the existing <ProjectCard>.
+ *   2. The filtered card grid using the existing <ProjectCard>.
+ *   3. Starship (the prompt-theme project) is one of the cards in
+ *      the grid; it's a regular record, not a featured callout
+ *      (the previous prominent banner was retired in the
+ *      post-loop refinement so /work stops feeling like a
+ *      dashboard with one tile that doesn't fit the others).
  *
  * Filtering:
  *   - primary === "all": no category filter.
@@ -38,7 +40,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useCallback } from "react";
 
 import { ProjectCard } from "@/components/ProjectCard";
-import { StarshipCard } from "@/components/StarshipCard";
 import {
     PRIMARY_CATEGORIES,
     PRIMARY_LABEL,
@@ -51,7 +52,12 @@ import {
 } from "@/components/work/FilterBar";
 
 export interface WorkGridProps {
-    /** Static list from getWorkProjects() (server-rendered). */
+    /**
+     * Static list from getWorkProjects() (server-rendered), with
+     * project links pre-resolved by the caller via
+     * resolveProjectLinks(...) so the SSR href matches the CSR
+     * href byte-for-byte.
+     */
     projects: readonly WorkProject[];
     /**
      * Initial filter state from server-side `?primary=...&tag=...`
@@ -133,15 +139,13 @@ export function WorkGrid({ projects, initial }: WorkGridProps) {
                 params.set("tag", next.tag);
             }
             const qs = params.toString();
-            router.replace(qs ? `/work?${qs}` : "/work", { scroll: false });
+            router.replace(qs ? `/projects?${qs}` : "/projects", { scroll: false });
         },
         [router, searchParams],
     );
 
     return (
         <div className="space-y-8">
-            <StarshipCard href="/starship" />
-
             <FilterBar
                 primary={primary}
                 tag={tag}

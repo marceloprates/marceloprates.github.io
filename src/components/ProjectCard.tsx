@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Star, GitFork } from 'lucide-react';
 import { Project } from '@/types';
 import BaseCard from './BaseCard';
-import { getProjectLink } from '@/lib/projects';
 
 interface ProjectCardProps {
     project: Project;
@@ -14,7 +13,13 @@ interface ProjectCardProps {
 export const ProjectCard = React.memo(function ProjectCard({ project }: ProjectCardProps) {
     const hasDesc = typeof project.desc === 'string' && project.desc.trim().length > 0;
     const hasTags = Array.isArray(project.tags) && project.tags.length > 0;
-    const projectLink = getProjectLink(project);
+    // project.link is pre-resolved by the parent (the /projects page
+    // server-resolves all links via resolveProjectLinks, see
+    // src/lib/projects.ts). This avoids the previous SSR / CSR
+    // hydration mismatch where getProjectLink consulted
+    // window.__PROJECT_METADATA__ and rendered two different
+    // values for the same project on server vs client.
+    const projectLink = project.link;
     const isExternalLink = projectLink.startsWith('http');
     // Prefer an explicit GitHub repo link when available; otherwise fall back to projectLink
     const repoHref = project.repo

@@ -1,10 +1,14 @@
-// Manually curated list of projects to show in the "Selected Projects" section.
-// Use GitHub repo identifier (owner/name) when available. Keep 'starship' out of
-// this list because the UI already renders a dedicated StarshipCard component.
+// Manually curated list of GitHub repo identifiers for any
+// component that needs the historical `selectedProjects` shape.
+// Since nav-redesign Phase C the home page no longer renders a
+// Selected Projects section; Phase D's /work grid covers the
+// curated surface via getWorkProjects(). The Starship project is
+// not on GitHub — its record is appended by getWorkProjects()
+// directly. This file is kept only because legacy imports still
+// reference the symbol.
 export const selectedProjects: string[] = [
-    // The homepage already includes a special Starship card; keep other projects here
     'marceloprates/prettymaps',
     'marceloprates/easyshader',
     'marceloprates/Cosmos',
-    'marceloprates/TSP-Animation'
+    'marceloprates/TSP-Animation',
 ];

@@ -114,7 +114,7 @@ function buildPostItems(): SearchableItem[] {
 
 function buildPageItems(): SearchableItem[] {
     return [
-        { id: 'page:/work', title: 'Projects', desc: 'All projects, filterable by category and tag.', href: '/work', type: 'page' },
+        { id: 'page:/projects', title: 'Projects', desc: 'All projects, filterable by category and tag.', href: '/projects', type: 'page' },
         { id: 'page:/posts', title: 'Writing', desc: 'Posts and essays.', href: '/posts', type: 'page' },
         { id: 'page:/about', title: 'About', desc: 'Background, location, interests.', href: '/about', type: 'page' },
         { id: 'page:/resume', title: 'Resume', desc: 'PDF resumes and JSON variants.', href: '/resume', type: 'page' },
