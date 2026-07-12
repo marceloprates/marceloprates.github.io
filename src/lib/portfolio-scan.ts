@@ -411,7 +411,22 @@ export function cacheIncludedBodies(
 		fs.mkdirSync(dir, { recursive: true });
 		const filePath = path.join(dir, "portfolio.md");
 		fs.writeFileSync(filePath, row.raw, "utf8");
+		// Also write a small sidecar with build-time metadata the body
+		// fallback (src/lib/content.ts getProjectBySlug) needs:
+		// repo visibility for the `private` badge, default tier, and the
+		// canonical owner/name. Cheap, gitignored, and avoids a re-fetch
+		// from GitHub at build time.
+		const sidecarPath = path.join(dir, "portfolio.meta.json");
+		const sidecar = {
+			owner: row.repo.owner,
+			name: row.repo.name,
+			visibility: row.repo.visibility,
+			defaultBranch: row.repo.defaultBranch,
+			stars: row.repo.stars,
+		};
+		fs.writeFileSync(sidecarPath, JSON.stringify(sidecar, null, 2) + "\n", "utf8");
 		result.wrote.push(filePath);
+		result.wrote.push(sidecarPath);
 	}
 
 	return result;

@@ -622,9 +622,36 @@ tier: featured
 			},
 		];
 		const result = cacheIncludedBodies(rows, {}, tmp);
-		expect(result.wrote.length).toBe(2);
+		// Two bodies + two sidecars = four writes total.
+		expect(result.wrote.length).toBe(4);
 		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.md"))).toBe(true);
 		expect(fs.existsSync(path.join(tmp, "marceloprates-beta", "portfolio.md"))).toBe(true);
+	});
+
+	it("writes a portfolio.meta.json sidecar per cached body with visibility + canonical owner/name", () => {
+		const rows: CandidateRow[] = [
+			{
+				repo: mkRepo({ name: "alpha", visibility: "private" }),
+				manifestState: "included",
+				raw: RAW,
+			},
+			{
+				repo: mkRepo({ name: "beta", visibility: "public" }),
+				manifestState: "included",
+				raw: RAW,
+			},
+		];
+		cacheIncludedBodies(rows, {}, tmp);
+		const alphaSidecar = JSON.parse(
+			fs.readFileSync(path.join(tmp, "marceloprates-alpha", "portfolio.meta.json"), "utf8"),
+		);
+		expect(alphaSidecar.owner).toBe("marceloprates");
+		expect(alphaSidecar.name).toBe("alpha");
+		expect(alphaSidecar.visibility).toBe("private");
+		const betaSidecar = JSON.parse(
+			fs.readFileSync(path.join(tmp, "marceloprates-beta", "portfolio.meta.json"), "utf8"),
+		);
+		expect(betaSidecar.visibility).toBe("public");
 	});
 
 	it("preserves raw content byte-for-byte (no re-serialization)", () => {
@@ -668,8 +695,10 @@ tier: featured
 			"marceloprates/alpha": { include: true },
 		};
 		const result = cacheIncludedBodies(rows, decisions, tmp);
-		expect(result.wrote.length).toBe(1);
+		// One body + one sidecar = two writes per repo.
+		expect(result.wrote.length).toBe(2);
 		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.md"))).toBe(true);
+		expect(fs.existsSync(path.join(tmp, "marceloprates-alpha", "portfolio.meta.json"))).toBe(true);
 	});
 
 	it("is a no-op when no opted-in repos", () => {
@@ -689,7 +718,8 @@ tier: featured
 			{ repo: mkRepo({ name: "alpha" }), manifestState: "included", raw: RAW },
 		];
 		const result = cacheIncludedBodies(rows, {}, nested);
-		expect(result.wrote.length).toBe(1);
+		// One body + one sidecar = two writes per repo.
+		expect(result.wrote.length).toBe(2);
 		expect(
 			fs.existsSync(path.join(nested, "marceloprates-alpha", "portfolio.md")),
 		).toBe(true);
@@ -701,7 +731,12 @@ tier: featured
 		];
 		cacheIncludedBodies(rows, {}, tmp);
 		cacheIncludedBodies(rows, {}, tmp);
+		// One folder, two files (body + sidecar).
 		expect(fs.readdirSync(tmp).length).toBe(1);
+		expect(fs.readdirSync(path.join(tmp, "marceloprates-alpha")).sort()).toEqual([
+			"portfolio.md",
+			"portfolio.meta.json",
+		]);
 		const cached = fs.readFileSync(
 			path.join(tmp, "marceloprates-alpha", "portfolio.md"),
 			"utf8",
