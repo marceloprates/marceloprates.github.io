@@ -10,7 +10,15 @@ export async function generateStaticParams() {
     // export can pre-render a "Post not found" page for draft
     // slugs. The draft filter lives in getPostBySlug() at render
     // time, not here.
-    return getAllPostSlugs().map((slug) => ({ slug }));
+    const slugs = getAllPostSlugs();
+    // Next's output:export check requires every dynamic route to
+    // produce at least one prerendered route — an empty list fails
+    // the build with 'missing "generateStaticParams()"'. Zero posts
+    // is a legitimate state (the only post is a gitignored local
+    // draft), so emit a sentinel slug that renders the same "Post
+    // not found" page as any unknown slug.
+    if (slugs.length === 0) return [{ slug: '_not-found' }];
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
