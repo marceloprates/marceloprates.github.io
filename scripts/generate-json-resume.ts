@@ -106,16 +106,21 @@ function fetchUrl(url: string): Promise<string> {
 			url,
 			{ headers: { "User-Agent": "npm/generate-json-resume" } },
 			(res: http.IncomingMessage) => {
-				if (res.statusCode === 404 || res.statusCode === 403) {
+				if (res.statusCode !== 200) {
+					// Drain the unconsumed response so its socket is released.
+					// Without this, an error-status response keeps the socket (and
+					// the Node event loop) alive until the CDN's idle timeout
+					// (~10 min on raw.githubusercontent.com) — the script prints
+					// "generation complete" but the process never exits, hanging
+					// `npm run build` in CI.
+					res.resume();
 					reject(
 						new Error(
-							`HTTP ${res.statusCode} — GitHub unreachable, using inlined fallback`,
+							res.statusCode === 404 || res.statusCode === 403
+								? `HTTP ${res.statusCode} — GitHub unreachable, using inlined fallback`
+								: `HTTP ${res.statusCode}`,
 						),
 					);
-					return;
-				}
-				if (res.statusCode !== 200) {
-					reject(new Error(`HTTP ${res.statusCode}`));
 					return;
 				}
 				const bufs: Buffer[] = [];
@@ -124,6 +129,10 @@ function fetchUrl(url: string): Promise<string> {
 			},
 		);
 		req.on("error", reject);
+		// Hard cap so a stalled connection can never hang the build.
+		req.setTimeout(30_000, () => {
+			req.destroy(new Error("request timed out after 30s"));
+		});
 	});
 }
 
