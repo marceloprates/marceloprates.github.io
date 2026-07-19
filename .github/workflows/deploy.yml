@@ -53,7 +53,18 @@ jobs:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
-          npm run build
+          # Only regenerate resume artefacts when the local LaTeX repo is
+          # actually available. CI commits the generated JSONs + PDFs (see
+          # AGENTS.md), and the LaTeX repo is private — the script's
+          # GitHub-raw fallback would otherwise overwrite the committed
+          # JSONs with 0-job versions and ship an empty /resume/ page.
+          if [ -n "$RESUME_LOCAL_PATH" ] && [ -d "$RESUME_LOCAL_PATH" ]; then
+            npm run generate:resume-assets
+          else
+            echo "RESUME_LOCAL_PATH not set or not a directory; using committed resume JSONs + PDFs"
+          fi
+          npm run build:search-index
+          npx next build
           # Prevent GitHub Pages from processing the site with Jekyll
           touch out/.nojekyll
 
