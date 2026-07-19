@@ -8,12 +8,29 @@ import React from 'react';
 // Route: /starship
 async function fetchGist(): Promise<string> {
     const url = 'https://gist.githubusercontent.com/marceloprates/08d994f3aa6d0e8e6ce4dbd44ccde6b2/raw';
-    const res = await fetch(url, {
-        next: { revalidate: 60 * 60 * 12 },
-        cache: 'force-cache',
-    });
-    if (!res.ok) throw new Error(`Failed to fetch Starship gist: ${res.status}`);
-    return res.text();
+    // Retry with exponential backoff — GitHub Actions runners occasionally
+    // hit transient ECONNRESET on raw.githubusercontent.com / gist hosts
+    // during static prerendering, which used to fail the entire build.
+    const MAX_ATTEMPTS = 3;
+    let lastError: unknown;
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+        try {
+            const res = await fetch(url, {
+                next: { revalidate: 60 * 60 * 12 },
+                cache: 'force-cache',
+            });
+            if (!res.ok) throw new Error(`Failed to fetch Starship gist: ${res.status}`);
+            return res.text();
+        } catch (err) {
+            lastError = err;
+            if (attempt < MAX_ATTEMPTS) {
+                await new Promise((r) => setTimeout(r, 500 * Math.pow(2, attempt - 1)));
+            }
+        }
+    }
+    throw lastError instanceof Error
+        ? lastError
+        : new Error('Failed to fetch Starship gist after retries');
 }
 
 async function highlightYaml(yaml: string) {
