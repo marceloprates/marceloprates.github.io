@@ -1,0 +1,100 @@
+{
+  "basics": {
+    "name": "Marcelo Prates, PhD",
+    "label": "Data Scientist",
+    "email": "marceloorp@gmail.com",
+    "phone": "",
+    "website": "https://marceloprates.github.io",
+    "summary": "Recent physics graduate from the University of São Paulo (USP) with 1+ year of industry experience building financial automation and data pipelines at Cyrela, one of Brazil's largest real-estate developers. Combines research-grade quantitative training (particle physics, scientific Python) with hands-on enterprise work in Python and VBA automation, SAP/BI data extraction, and cross-functional analysis. Incoming MBA candidate at USP ESALQ (Data Science, Analytics and Machine Learning), starting the second semester of 2026. Targeting junior data scientist roles where physics rigor and Python fluency translate into measurable business impact.",
+    "linkedin": "https://linkedin.com/in/marceloprates",
+    "github": "https://github.com/marceloprates",
+    "location": {
+      "city": "Porto Alegre",
+      "region": "RS",
+      "country": "Brazil"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "marceloprates",
+        "url": "https://linkedin.com/in/marceloprates"
+      },
+      {
+        "network": "GitHub",
+        "username": "marceloprates",
+        "url": "https://github.com/marceloprates"
+      }
+    ]
+  },
+  "work": [],
+  "skills": [
+    {
+      "name": "Programming and Data",
+      "level": "",
+      "keywords": [
+        "Python (Pandas",
+        "NumPy",
+        "Matplotlib",
+        "SciPy)",
+        "SQL",
+        "VBA",
+        "Git",
+        "Docusaurus"
+      ]
+    },
+    {
+      "name": "Enterprise and BI",
+      "level": "",
+      "keywords": [
+        "SAP",
+        "Power BI (foundational)",
+        "Google Workspace",
+        "Microsoft Excel (advanced)"
+      ]
+    },
+    {
+      "name": "Analytical Methods",
+      "level": "",
+      "keywords": [
+        "Statistical data analysis",
+        "Monte Carlo methods",
+        "particle-physics data workflows",
+        "scientific computing",
+        "financial cash-flow and viability analysis"
+      ]
+    },
+    {
+      "name": "Research and Communication",
+      "level": "",
+      "keywords": [
+        "Scientific writing",
+        "technical presentations",
+        "international research collaboration (CERN/ATLAS)",
+        "English (fluent)",
+        "Japanese (basic)."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Federal University of Rio Grande do Sul (UFRGS)",
+      "area": "Computer Science",
+      "studyType": "PhD",
+      "startDate": "Aug 2015",
+      "endDate": "Jul 2019",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "projects": [],
+  "references": [],
+  "languages": [],
+  "interests": [],
+  "awards": [],
+  "certifications": [],
+  "meta": {
+    "canonical": "https://marceloprates.github.io/#resume-ds",
+    "version": "0.1.0",
+    "lastModified": "2026-07-18"
+  }
+}

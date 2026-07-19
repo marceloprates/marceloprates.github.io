@@ -13,13 +13,13 @@
  * with an empty `work` array fails loudly with a clear pointer at
  * the resolution chain.
  *
- * Note: as of nav-redesign Phase B (2026-07-12), the JSONs are
- * gitignored (see `.gitignore`); they exist on disk only when the
- * generator has run. The import statements below double as a
- * presence check — if a file is missing the build is broken and
- * the test should fail loudly. The `ds` variant is the lone
- * exception: its LaTeX persona has not been populated yet, and
- * the test skips that one slot pending work in the LaTeX source.
+ * The JSONs are committed artefacts (reverted from the 2026-07-12
+ * gitignore decision on 2026-07-18, see AGENTS.md). The import
+ * statements below double as a presence check — if a file is
+ * missing the build is broken and the test should fail loudly.
+ * The `ds` variant is the lone exception: its LaTeX persona has
+ * not been populated yet, and the test skips that one slot pending
+ * work in the LaTeX source.
  */
 import { describe, expect, it } from "vitest";
 import ai from "../ai.json";
